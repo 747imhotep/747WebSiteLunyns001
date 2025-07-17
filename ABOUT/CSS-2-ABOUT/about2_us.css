@@ -1,0 +1,72 @@
+.hero {
+  background-color: #001f3f;
+  background-size: contain;
+  background: url('../../IMAGES/LOGO\ _banner_06.png') center center/cover no-repeat; 
+  width: 100%;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Optional: Make sure the text inside scales well */
+.hero h1, .hero p {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+    min-height: 80vh;
+    background-position: center top;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 10px;
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+}
+
+
+
+/* ✅ 1. Primary Brand Color */
+:root {
+  --brand-blue: #002f81;
+  --brand-blue-light: #1947a1; /* lighter variant for hover */
+  --brand-blue-dark: #001d4f;  /* darker variant */
+  --text-light: #ffffff;
+  --text-footer: #93d2f7;
+  --text-dark: #1a1a1a;
+  --light-blue-hover: #a5c9ff; /* light blue on hover */
+  --footer-border: #360000; /* Plainte en rouge */
+}
