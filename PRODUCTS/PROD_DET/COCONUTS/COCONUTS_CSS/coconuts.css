@@ -1,0 +1,116 @@
+.header-content {
+  background-color: #001f3f;
+  background-size: contain;
+  /* background-size: cover; */
+  background-image: url(../../../../IMAGES/PRODUCT_EN590_01.png);
+  /**/
+  background-position: center;
+
+  /* height: 100vh; /* or 97vh if you want a slight margin */
+  min-height: 100vh; 
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center;
+  text-align: center;
+  /* box-sizing: border-box; */
+  color: #eff0eb;
+  position: relative; /* relative Or fixed, depending on layout */
+  overflow: hidden;
+  margin: 0; /* remove extra spacing */
+  left: 0;
+}
+
+
+
+.hero {
+  background: url('../../../../IMAGES/VIGNETTES/VIGNETTES09.png') center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  color: #333;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+  text-align: center;
+}
+
+/*...................IMAGE CAROUSEL 
+.styled-img {
+  max-width: 1200px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+....................*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+  display: flex;
+  width: 400%; /* 4 images = 100% * 4 */
+  animation: slide 20s infinite;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+
+  100% { transform: translateX(0); }
+}
+
+
+
+
+
+

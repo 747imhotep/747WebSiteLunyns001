@@ -1,0 +1,210 @@
+.hero {
+  background-color: #001f3f;
+  background-size: contain;
+  background: url('../../IMAGES/Stock001.png') center center/cover no-repeat; 
+  width: 100%;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero .lead {
+  background-color: rgba(40, 32, 40, 0.6); /* black with 60% opacity */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+
+/* Optional: Make sure the text inside scales well */
+.hero h1, .hero p {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+    min-height: 80vh;
+    background-position: center top;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 10px;
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--brand-blue);
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+
+.left{
+  text-align: left;
+}
+
+.product-block{
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.vignette{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: inherit;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: var(--vignette-product);
+  background-position: center top;
+  transition: all 0.3s ease; /* Fixed transition syntax */
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+.products {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Product item styling */
+.product-item {
+  display: block;
+  background-color: #f5dcdc;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease; /* Fixed transition syntax */
+}
+
+.product-wrapper{
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+/*
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem; */
+}
+
+.product-img{
+  width: 190px;
+  height: 190px;
+  padding: 0.20rem;
+  margin: 1rem;
+  margin-right: 1rem;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-item:hover {
+  color: #fff;
+  transform: scale(1.03);
+  background-color: var(--Vignette-hover);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.product-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-item p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .product-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-block {
+    flex-direction: column;
+  }
+
+  .product-wrapper {
+    flex-direction: column;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/* ✅ 1. Primary Brand Color */
+:root {
+  --brand-blue: #002f81;
+  --brand-blue-light: #1947a1; /* lighter variant for hover */
+  --brand-blue-dark: #001d4f;  /* darker variant */
+  --text-light: #ffffff;
+  --text-footer: #93d2f7;
+  --text-dark: #1a1a1a;
+  --light-blue-hover: #a5c9ff; /* light blue on hover */
+  --footer-border: #360000; /* Plainte en rouge */
+  --vignette-product: #f5dcdc; /* Face */
+  --Vignette-hover: #051e70e8; /* Hover */
+}

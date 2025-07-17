@@ -1,0 +1,86 @@
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE HEADER ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.header{
+  width: 100%;
+  background-color: #f4f4f4;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.header-content{
+  background-image: url(/home/kmt/Documents/Web_Sites/IMAGES/LUNYNS_BANNER_25_03.png);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  color: #eff0eb;
+  margin-top: 7px; /* marge top de l' image*/
+  padding: 16px;
+}/* */
+
+.locpage{
+  background-color: #aa0000;
+  color: #dbffac;
+  text-align: left;
+  font-size: large;
+  text-decoration: underline;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE BODY ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.section {
+  margin: 40px 0;
+}
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE PRODUCTS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.products {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Produits */
+.product-item {
+  background-color: #f5dcdc;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 22%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-item:hover {
+  color: #fff;
+  transform: scale(1.03);
+  background-color: #e97c7c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0,5s ease;
+  cursor: pointer;
+}
+
+.product-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-item p {
+  font-size: 1rem;
+}
+

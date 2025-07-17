@@ -1,0 +1,39 @@
+.header-content {
+  background-color: #001f3f;
+  background-size: contain;
+  /* background-size: cover; */
+  background-image: url(../../../../IMAGES/PRODUCT_EN590_01.png);
+  /**/
+  background-position: center;
+
+  /* height: 100vh; /* or 97vh if you want a slight margin */
+  min-height: 100vh; 
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center;
+  text-align: center;
+  /* box-sizing: border-box; */
+  color: #eff0eb;
+  position: relative; /* relative Or fixed, depending on layout */
+  overflow: hidden;
+  margin: 0; /* remove extra spacing */
+  left: 0;
+}
+
+
+
+.hero {
+  /* CHANGER ICI */
+  background: url('../../../../IMAGES/VIGNETTES/VIGNETTES04.png') center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  /* CHANGER ICI */
+  color: #333;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+  text-align: center;
+}
+
+
