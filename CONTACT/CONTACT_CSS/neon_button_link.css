@@ -1,0 +1,119 @@
+/*body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+*/
+
+
+
+.container2
+{
+    border: 5px solid red;
+    max-width: 700px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button1
+{
+    display: flex;
+    position: relative;
+    width: 180px;
+    height: 3vh;
+    padding: 30px;
+    border: 06px solid #15f4ee;
+    border-radius: 100px;
+    margin: auto;
+    align-items: center; /*alignemeent vertical*/
+    justify-content: center; /*alignement horiontal*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #15f4ee;    
+    text-transform: uppercase;
+    letter-spacing: 9px;    
+    cursor: pointer;
+    transform: 1.5s;
+}
+
+.button2
+{
+    display: flex;
+    position: relative;
+    width: 180px;
+    height: 3vh;
+    padding: 30px;
+    border: 06px solid #15f4ee;
+    border-radius: 100px;
+    margin: auto;
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #15f4ee;    
+    text-transform: uppercase;
+    letter-spacing: 9px;    
+    cursor: pointer;
+    transform: 1.5s;
+}
+
+.button3
+{
+    display: flex;
+    position: relative;
+    width: 180px;
+    height: 3vh;
+    padding: 30px;
+    border: 06px solid #15f4ee;
+    border-radius: 100px;
+    margin: auto;
+    margin-bottom: 12px;
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #15f4ee;    
+    text-transform: uppercase;
+    letter-spacing: 9px;    
+    cursor: pointer;
+    transform: 1.5s;
+
+}
+
+.button1:hover
+{
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
+
+.button2:hover
+{
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
+
+.button3:hover
+{
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+                0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
