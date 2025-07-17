@@ -1,0 +1,55 @@
+.hero-contact {
+  background: url('../../IMAGES/LOGO\ _banner_O1.jpg') center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  color: white;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+}
+
+
+
+/* under-construction.css */
+
+.construction-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.content {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #c0392b; /* Red-orange */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-home {
+  background-color: #002f81;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #ffdb20;
+  color: #333;
+  border: solid #c0392b;
+  font-weight: bold;
+}
