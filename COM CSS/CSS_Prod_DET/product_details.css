@@ -1,0 +1,55 @@
+main {
+  /* padding: 1px 1px 1px 1px;           in navBar.css  */
+  /* no display: flex; */
+  flex-wrap: wrap;
+
+}
+
+.product-info {
+  background-color: rgb(248, 236, 236);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h1 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #aca4a4;
+  text-align: center;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.contact-info {
+  background-color: rgb(240, 147, 147);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info:hover{
+  color: aqua;
+  background-color: aqua;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+}

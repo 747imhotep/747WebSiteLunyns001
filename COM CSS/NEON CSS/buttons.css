@@ -1,0 +1,79 @@
+/* Buttons container */
+.ppm-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 40px 0;
+}
+
+/* Square buttons */
+.ppm-btn {
+  width: 250px;
+  height: 250px;
+  background-color: #020a3a;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.ppm-btn:hover {
+  background-color: #056addc0;
+  transform: scale(1.05);
+}
+
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+.vignette-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  /**/
+  background-color: #1a2b3c;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.vignette-item:hover {
+  background-color: #f1f17b;
+  transform: translateY(-3px);
+}
+
+/* Text inside the card */
+.vignette-item h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #9abfe9;
+  transition: color 0.3s ease;
+}
+
+.vignette-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #07f1bf;
+  transition: color 0.3s ease;
+}
+
+/* On hover, text changes */
+.vignette-item:hover h3 {
+  color: #020e20;
+}
+
+.vignette-item:hover p {
+  color: #020a3a;
+}

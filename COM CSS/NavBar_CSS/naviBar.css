@@ -1,0 +1,276 @@
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::: START :::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*  */
+/* Reset and base styles */
+* {/* This is universal container and remove all default margin and padding */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.50; /* height separation between text */
+  margin: 0;
+  padding: 200px 0 0 10px; /* space after the fixed nav */
+  background-color: #f4f4f4; /* Entire background page */
+  color: #333;
+}
+
+.main{
+  padding: 1px 1px 1px 1px;
+}
+
+h1{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #003b7f;
+  display: inline-block;
+  font-variant: small-caps;
+  font-size: 25px;
+  border: none;
+  
+  
+}
+
+h2{
+  font-variant: normal;
+  color: #333;
+  display: inline-block;
+  background-color: #cddff5;
+  padding: 12px 24px;
+  border-radius: 30px;
+  margin: 20px 0;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+}
+
+h3{
+  color: #003b7f;
+  margin: 10px 0;
+}
+
+h6{
+  color: #f7f306;
+  font-size: x-large;
+  font-weight: bold;
+  
+  margin: 9px 0;
+}
+
+.paragraph{
+  background-color: #fcf1f1;
+  border-radius: 10px;
+  border-style: initial;
+  row-gap: 12px;
+  padding: 20px;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::: NAVBAR ::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/* Fixed Navbar */
+.navbar { /* Navbar started here */
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 70px 0px;
+  background-image: url(../../IMAGES/LOGO\ _banner_O1.jpg);
+  background-color: rgba(72, 60, 139, 0.6);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  z-index: 999;
+  box-shadow: 0 2px 15px rgba(116, 241, 14, 0.2);
+}
+
+.navbar .container { /* This is where to work. Container size NOT GOOD!!! */
+  display: flex; /* don't change this */
+  gap: 60px;
+  justify-content: space-between;
+  align-items: first baseline;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .logo a { /* 1ere colonne */
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.logo img{ /* 1ere colonne */
+  margin-left: 0.1vw;
+  height: 5.6vw;
+  max-height: 60px;
+  width: auto;
+}
+
+.navbar .nav-links a { /* 2eme colonne */
+  margin-left: 1px;
+  gap: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #fbff00;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+/* search and quote section */
+.navbar-right { /* 3eme colonne */
+  
+  margin-left: 2;
+  bottom: 15px;
+}
+
+.search-form {
+  /* absolute doesn't work ? */
+  /* display flex doesn't work*/
+  align-items: flex-end; /* 22:05 change center to right */
+  gap: 10px;
+}
+
+.search-form input {
+  padding: 7px 10px;
+}
+
+.search-form button {
+  padding: 7px 10px;
+}
+
+.quote-btn {
+  padding: 1.2px 10px;
+  background-color: #c60303; /* Slightly more solid for readability */
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 7px 15px rgba(116, 241, 14, 0.2);
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+
+
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::::::::: FOOTER ::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.footer{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  background-color: #b6d3e5;
+  /*background-color: #b2cbdc;*/
+  /*background-image: url(../../IMAGES/LOGO\ _banner_O4.png);*/
+  border-top: 1px solid #c4bdbd;
+  color: #000;
+}
+
+.footerQL{
+  padding-left: 24px;
+  text-align: left;
+  color: #000;
+}
+
+.footerQL :hover{
+  color: #fbff00;
+  text-decoration: underline;
+}
+
+
+/*::::::::::::::::::::::: COLONNES SUITE ::::::::::::::::::::::*/
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  width: 100%;
+  flex-flow: row wrap; /* Will push the box to the next line, if not enough space. */
+  margin: 5px 0;
+  padding: 1% 1% 1% 1% ;
+  gap: 40px;
+  /* NEW BOX*/
+}
+
+/*1ere colonne*/
+.column:first-child {
+  justify-content: left;
+  text-align: justify;
+  background-image: url(../IMAGES/LOGO\ _banner_O4.png);
+  background-color: #cee1ed;
+  margin-left: 5;
+  flex-grow: 1;
+}
+
+/*2d colonne*/
+.column {
+  flex: 1;
+  justify-content: left;
+  text-align: left;
+  align-items: stretch;
+  background-image: url(../IMAGES/LOGO\ _banner_O4.png);
+  background-color: #cee1ed;
+  margin: 5px 0;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 7px 7px 15px rgba(5, 2, 54, 0.2);
+}
+
+/*3eme colonne*/
+.column:last-child {
+  justify-content: left;
+  text-align: justify;
+  background-image: url(../IMAGES/LOGO\ _banner_O4.png);
+  background-color: #cee1ed;
+  margin-left: auto;
+  flex-grow: 2;
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::::::: COLONNES TITRES :::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.titre1{
+  font-size: 2.5vh;
+  font: small-caps bold;
+  text-align: left;
+}
+
+.titre2{
+  font-size: 2.5vh;
+  font: small-caps bold  ;
+  text-align: left;
+}
+
+.titre3{
+  font-size: 2.5vh;
+  font: small-caps bold  ;
+  text-align: left;
+}
+/*::::::::::::::::::::::: END OF COLONNES ::::::::::::::::::::::*/
+
+.footerEnd{
+  font-size: small;
+  color: #f4f4f4;
+  text-align: center;
+  background-color: #360000;
+}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+  

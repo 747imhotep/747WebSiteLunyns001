@@ -1,0 +1,46 @@
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE PRODUCT ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 3rem 2rem;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-list{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #f8eded;
+  border-radius: 10px;
+  border-style: initial;
+  
+  padding: 20px;
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  border-bottom: #f3b7b7 solid;
+}
+
+.product-list:hover{
+  transform: translateY(-5px);
+}
+
+.product-list a{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-list h3 {
+  margin-top: 0;
+  color: #003b7f;
+}
+
+.product-list p {
+  margin-bottom: 0;
+  color: #333;
+}
