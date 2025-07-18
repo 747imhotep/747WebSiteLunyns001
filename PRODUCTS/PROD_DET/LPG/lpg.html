@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIESEL EN590  | </title>
+
+  <!-- ✅ Bootstrap First -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../COM CSS/Master-CSS/Master-css.css">
+  <link rel="stylesheet" href="../../PROD_DET/EN590/EN590_css/EN590_20.css">
+  <link rel="stylesheet" href="../../../COM CSS/NEON CSS/buttons.css">
+  <!-- Optional custom styles -->
+</head>
+<body>
+
+<!-- Navigation Bar (reused from original) -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../HOME/Home.html">
+      <img src="../../../IMAGES/LOGO _HTEST_03.png" alt="LUNYNS Ltd. logo" height="40" class="me-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse gap-2" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../../../Welcome/intex_do.html">INDEX</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../../ABOUT/about2_us.html">ABOUT2 US</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="../../products20.html" id="productsDropdown" role="button">PRODUCTS20</a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="../../../PRODUCTS/PROD_DET/EN590/en590ppm20.html">DIESEL EN590</a></li>
+            <li><a class="dropdown-item" href="../../../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
+            <li><a class="dropdown-item" href="../../../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
+            <li><a class="dropdown-item" href="../../../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
+            <!-- CHANGE HERE -->
+            <!-- Add more sub-links as needed -->
+          </ul>
+         </li><!-- products END -->
+        <li class="nav-item"><a class="nav-link" href="../../../CONTACT/contact20.html">CONTACT20</a></li>
+      </ul>
+      <form class="d-flex ms-3" action="/search" method="GET">
+        <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+        <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ </a>
+      </form>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="container">
+    <h1 class="display-4 fw-bold">🛢️ DIESEL LOW SULFURE</h1>
+  </div>
+</header>
+
+<img class="img-fluid" src="../../../IMAGES/imgCONSTRUCTION/underConstruction003.png" alt="Ultra Low Sulfur Diesel">
+
+<main class="container my-5">
+  
+
+
+  <!-- <img class="img-fluid" src="../../../IMAGES/imgCONSTRUCTION/underConstruction001.png" alt="Ultra Low Sulfur Diesel"> -->
+</main>
+
+
+
+
+<!-- CHANGER ICI -->
+
+
+
+
+
+<!-- RFQ Modal 150-200  -->
+
+
+<div class="modal fade" id="RFQ-modal" tabindex="-1" aria-labelledby="rfqModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rfqModalLabel">Request FREE Quotation!</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:*</label>
+            <input type="text" id="name" name="name" required class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:*</label>
+            <input type="email" id="email" name="email" required class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject:*</label>
+            <input type="text" id="subject" name="subject" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea id="message" name="message" required class="form-control" rows="4"></textarea>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-light me-2">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <button type="button" id="clearFormBtn" class="btn btn-secondary">
+              <i class="fas fa-eraser"></i> Clear Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- RFQ Modal 150-200 END-->
+
+
+<!-- Footer -->
+  <footer class="footer">
+  <section class="columns">
+    <!-- QUICK LINKS -->
+    <div class="column" id="quick-links">
+      <h2 class="titre1"><b>QUICK LINKS</b></h2>
+      <ul class="footer-list">
+        <li><a href="../../../index/intex_do.html">Home</a></li>
+        <li><a href="../../../ABOUT/about2_us.html">About Us</a></li>
+        <li><a href="../../../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../../../CONTACT/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="column" id="products">
+      <h2 class="titre2"><b>PRODUCTS</b></h2>
+      <p><b>Let’s build a secure and long-term partnership.</b></p>
+      <ul class="footer-list">
+        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="column" id="contact-info">
+      <h2 class="titre3"><b>CONTACT</b></h2>
+      <ul class="footer-list">
+        <li><strong>📄 Quotation:</strong> <a href="#RFQ">My RFQ</a></li>
+        <li><strong>📧 Email:</strong> <a href="mailto:contact@lunyns.com">contact@lunyns.com</a></li>
+        <li><strong>🌐 Website:</strong> <a href="https://www.lunyns.com" target="_blank">www.lunyns.com</a></li>
+        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+<!-- Footer Label -->
+<footer class="footer-bottom py-3 mt-auto">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2023 LUNYNS Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<!-- SCRIPT 255-353 -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!---------------------------------------------------------------------------------------->
+
+
+<!-- CLEAR FORM -->
+  <script>
+  // Clear all form fields when Clear Form button is clicked
+  document.getElementById('clearFormBtn').addEventListener('click', () => {
+    const form = document.querySelector('form[action^="mailto"]');
+    if (form) {
+      form.reset();  // resets all input/textarea/select to their default values (empty in your case)
+    }
+  });
+</script>
+<!-- CLEAR FORM END -->
+
+
+<!-- OPEN RFQ -->
+      <script>
+      // Function to open modal and optionally prefill form
+      function openRFQModal(prefillProduct = null) {
+        const modal = document.getElementById('RFQ-modal');
+        if (modal) {
+          modal.style.display = 'block';
+        }
+
+        // Prefill the subject if product info is provided
+        if (prefillProduct) {
+          const subjectInput = document.getElementById('subject');
+          if (subjectInput) {
+            subjectInput.value = `${prefillProduct.toUpperCase()}  Quotation Request`;
+          }
+
+          // Optional: Prefill the message textarea
+          const messageInput = document.getElementById('message');
+          if (messageInput) {
+            messageInput.value = `Dear team,\n\nI would like to request a quotation for ${prefillProduct.toUpperCase()} \nKindly provide details regarding pricing, payment method, and minimum order quantity (MOQ) at your earliest convenience.\n\nThank you.`;
+          }
+        }
+      }
+
+
+      // Handle opening the modal on page load based on URL hash
+      window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash;
+
+        if (hash === '#RFQ') {
+          openRFQModal(); // basic modal open
+        } else if (hash.startsWith('#RFQ-')) {
+          const product = hash.replace('#RFQ-', ''); // e.g., "10ppm"
+          openRFQModal(product); // open and prefill
+        }
+      });
+
+      // Close the modal when the close button is clicked
+      document.querySelector('#RFQ-modal .close')?.addEventListener('click', function () {
+        const modal = document.getElementById('RFQ-modal');
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      });
+      // Also close the modal when Escape key is pressed
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          const modal = document.getElementById('RFQ-modal');
+          if (modal && modal.style.display === 'block') {
+        modal.style.display = 'none';
+          }
+        }
+      });
+      // Close the modal if user clicks outside of it
+      window.onclick = function (event) {
+        const modal = document.getElementById('RFQ-modal');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+
+       // Handle links like <a href="#RFQ">
+document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    openRFQModal();
+    history.replaceState(null, '', '#RFQ');
+  });
+});
+
+// Handle links like <a href="#RFQ-10ppm">
+document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const product = this.getAttribute('href').replace('#RFQ-', '');
+    openRFQModal(product);
+    history.replaceState(null, '', `#RFQ-${product}`);
+  });
+});
+
+
+    </script>
+<!-- OPEN RFQ END -->
+</body>
+</html>
