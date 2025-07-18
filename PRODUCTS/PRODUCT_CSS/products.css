@@ -8,7 +8,7 @@
 }
 
 .header-content{
-  background-image: url(../../IMAGES/main\IMAGES/img\BANNER/LUNYNS_BANNER_25_03.png);
+  background: url(../../IMAGES/mainIMAGES/imgBANNER/LUNYNS_BANNER_25_03.png);
   display: flex;
   justify-content: center;
   align-items: end;
