@@ -1,0 +1,67 @@
+.header-content {
+  background-color: #001f3f;
+  background-size: contain;
+  /* background-size: cover; */
+  /* TO MODIFY */
+  background-image: url(../../../../IMAGES/mainIMAGES/imgPETROLEUM/PRODUCT_EN590_01.png);
+  /**/
+  background-position: center;
+
+  /* height: 100vh; /* or 97vh if you want a slight margin */
+  min-height: 100vh; 
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center;
+  text-align: center;
+  /* box-sizing: border-box; */
+  color: #eff0eb;
+  position: relative; /* relative Or fixed, depending on layout */
+  overflow: hidden;
+  margin: 0; /* remove extra spacing */
+  left: 0;
+}
+
+
+.hero {
+  /* TO MODIFY */
+  background: url('../../../../IMAGES/VIGNETTES/VIGNETTES005.1.png') center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  /* CHANGER ICI */
+  color: #f4f4f4;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+  text-align: center;
+}
+
+.product-detail{
+  color: var(--brand-blue-light);
+}
+
+.firstline {
+  background-color: var(--footer-border); /* example blue */
+  color: var(--text-footer);
+}
+
+
+
+
+
+
+
+
+
+
+/* ✅ 1. Primary Brand Color */
+:root {
+  --brand-blue: #002f81;
+  --brand-blue-light: #1947a1; /* lighter variant for hover */
+  --brand-blue-dark: #001d4f;  /* darker variant */
+  --text-light: #ffffff;
+  --text-footer: #93d2f7;
+  --text-dark: #1a1a1a;
+  --light-blue-hover: #a5c9ff; /* light blue on hover */
+  --footer-border: #360000; /* Plainte en rouge */
+}
