@@ -338,16 +338,25 @@
         }
       };
 
-       // Dynamically handle all RFQ- links
-  document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const product = this.getAttribute('href').replace('#RFQ-', '');
-      openRFQModal(product);
-      // Optional: update the hash without jumping
-      history.replaceState(null, '', `#RFQ-${product}`);
-    });
+       // Handle links like <a href="#RFQ">
+document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    openRFQModal();
+    history.replaceState(null, '', '#RFQ');
   });
+});
+
+// Handle links like <a href="#RFQ-10ppm">
+document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const product = this.getAttribute('href').replace('#RFQ-', '');
+    openRFQModal(product);
+    history.replaceState(null, '', `#RFQ-${product}`);
+  });
+});
+
 
     </script>
 <!-- OPEN RFQ END -->
