@@ -295,12 +295,6 @@
         }
       }
 
-      // Event listener for the RFQ button on the same page
-      document.getElementById('openQuote')?.addEventListener('click', function (e) {
-        e.preventDefault();
-        openRFQModal(); // no product passed — just opens modal
-        history.replaceState(null, '', '#RFQ'); // Optional: keep hash in URL
-      });
 
       // Handle opening the modal on page load based on URL hash
       window.addEventListener('DOMContentLoaded', () => {
