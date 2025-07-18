@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
 <!-- Navigation Bar (reused from original) -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
   <div class="container">
@@ -49,6 +50,18 @@
   </div>
 </nav>
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Hero Section -->
 <header class="hero">
   <div class="container">
@@ -56,6 +69,7 @@
     <p class="lead">Delivering reliability, globally.</p>
   </div>
 </header>
+
 
 
 <!-- About Section -->
@@ -117,7 +131,43 @@
   </div>
 </main>
 
-<!-- RFQ Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- RFQ Modal 170-200-->
 <div id="RFQ-modal" class="modal" style="display: none;">
   <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
     <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
@@ -149,17 +199,17 @@
 </div>
 <!-- RFQ Modal END-->
 
-<!-- Footer -->
+<!-- Footer 215-250 -->
   <footer class="footer">
   <section class="columns">
     <!-- QUICK LINKS -->
     <div class="column" id="quick-links">
       <h2 class="titre1"><b>QUICK LINKS</b></h2>
       <ul class="footer-list">
-        <li><a href="../index/intex_do.html">Home</a></li>
-        <li><a href="../ABOUT/about2_us.html">About Us</a></li>
-        <li><a href="../PRODUCTS/products20.html">Products</a></li>
-        <li><a href="../CONTACT/contact20.html">Contact Us</a></li>
+        <li><a href="../HOME/Home.html">Home</a></li>
+        <li><a href="../ABOUT/about_us.html">About Us</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
       </ul>
     </div>
 
@@ -182,8 +232,7 @@
     <div class="column" id="contact-info">
       <h2 class="titre3"><b>CONTACT</b></h2>
       <ul class="footer-list">
-        <li><strong>📄Quotation:</strong> <a href="#RFQ" id="openQuote" class="btn quote-btn">My RFQ</a> </li>
-        <li><strong>📄 Quotation:</strong> <a href="../CONTACT/contact.html#RFQ">My RFQ</a></li>
+        <li><strong>📄 Quotation:</strong> <a href="#RFQ">My RFQ</a></li>
         <li><strong>📧 Email:</strong> <a href="mailto:contact@lunyns.com">contact@lunyns.com</a></li>
         <li><strong>🌐 Website:</strong> <a href="https://www.lunyns.com" target="_blank">www.lunyns.com</a></li>
         <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
@@ -199,9 +248,14 @@
   </div>
 </footer>
 
+
+
+
+<!-- SCRIPT 255-353 -->
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!---------------------------------------------------------------------------------------->
+
 
 <!-- CLEAR FORM -->
   <script>
@@ -216,7 +270,7 @@
 <!-- CLEAR FORM END -->
 
 
-  <!-- OPEN RFQ -->
+<!-- OPEN RFQ -->
       <script>
       // Function to open modal and optionally prefill form
       function openRFQModal(prefillProduct = null) {
@@ -244,6 +298,7 @@
       document.getElementById('openQuote')?.addEventListener('click', function (e) {
         e.preventDefault();
         openRFQModal(); // no product passed — just opens modal
+        history.replaceState(null, '', '#RFQ'); // Optional: keep hash in URL
       });
 
       // Handle opening the modal on page load based on URL hash
@@ -259,13 +314,21 @@
       });
 
       // Close the modal when the close button is clicked
-      document.querySelector('.close')?.addEventListener('click', function () {
+      document.querySelector('#RFQ-modal .close')?.addEventListener('click', function () {
         const modal = document.getElementById('RFQ-modal');
         if (modal) {
           modal.style.display = 'none';
         }
       });
-
+      // Also close the modal when Escape key is pressed
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          const modal = document.getElementById('RFQ-modal');
+          if (modal && modal.style.display === 'block') {
+        modal.style.display = 'none';
+          }
+        }
+      });
       // Close the modal if user clicks outside of it
       window.onclick = function (event) {
         const modal = document.getElementById('RFQ-modal');
@@ -273,6 +336,18 @@
           modal.style.display = 'none';
         }
       };
+
+       // Dynamically handle all RFQ- links
+  document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const product = this.getAttribute('href').replace('#RFQ-', '');
+      openRFQModal(product);
+      // Optional: update the hash without jumping
+      history.replaceState(null, '', `#RFQ-${product}`);
+    });
+  });
+
     </script>
 <!-- OPEN RFQ END -->
 </body>
