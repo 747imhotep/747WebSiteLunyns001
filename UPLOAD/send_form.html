@@ -4,8 +4,36 @@
     <title>Secure Download</title>
     <link rel="stylesheet" href="/UPLOAD/upload css/upload.css">
     <title>Secure Document Delivery</title>
+
+
+
+  <style>
+    body {
+      text-align: center;
+      margin-top: 200px;
+      background-image: url('/IMAGES/mainIMAGES/imgBANNER/ClickHere.png');
+      background-size: cover; /* Optional: cover the whole screen */
+      background-repeat: no-repeat; /* Optional: prevent tiling */
+      background-position: center center; /* Optional: center the image */
+      font-family: Arial, sans-serif;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: rgb(230, 14, 122);
+    }
+  </style>
 </head>
-<body style="text-align: center; margin-top: 100px;">
+
+
+
+<body>
   <h2>Enter Your Email to Receive the Document</h2>
   <form action="send_email.php" method="POST">
     <input type="email" name="email" required placeholder="Enter your email">
@@ -13,4 +41,6 @@
     <button type="submit">Send Document</button>
   </form>
 </body>
+</html>
+
 </html>
