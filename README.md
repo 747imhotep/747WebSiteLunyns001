@@ -38,7 +38,8 @@ A simple personal website built with HTML, CSS, and JavaScript.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/747imhotep/747WebSiteLunyns001.git
+git clone 
+https://github.com/747imhotep/747WebSiteLunyns001.git
 
 
 
