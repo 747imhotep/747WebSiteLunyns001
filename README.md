@@ -9,13 +9,11 @@ A simple personal website built with HTML, CSS, and JavaScript.
 
 
 ## 🌐 Live Demo
-
-[View it here](https://yourusername.github.io/your-repo-name/)
+[View it here](https://747imhotep.github.io/your-repo-name/)
 
 
 
 ## 🚀 Features
-
 - Responsive layout
 - Clean design
 - Interactive elements with JavaScript
@@ -34,7 +32,6 @@ A simple personal website built with HTML, CSS, and JavaScript.
 
 
 ## 🛠️ How to Run Locally
-
 1. Clone the repository:
 
 ```bash
