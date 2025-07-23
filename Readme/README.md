@@ -22,12 +22,12 @@ A simple personal website built with HTML, CSS, and JavaScript.
 
 
 ## 📁 Project Structure
-/project-root
-│
-├── index.html
-├── style.css
-├── script.js
-└── assets/
+lunyns.github.io/
+├── index.html       ✅ <-- Required
+├── style.css        (optional)
+├── script.js        (optional)
+└── README.md        (optional)
+
 
 
 
