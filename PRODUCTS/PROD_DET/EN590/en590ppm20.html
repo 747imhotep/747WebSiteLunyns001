@@ -17,7 +17,7 @@
 <!-- Navigation Bar (reused from original) -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="../../../index/index.html">
+    <a class="navbar-brand d-flex align-items-center" href="/index.html">
       <img src="../../../IMAGES/mainIMAGES/imgBANNER/LOGO _HTEST_03.png" alt="LUNYNS Ltd. logo" height="40" class="me-2">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,7 +25,7 @@
     </button>
     <div class="collapse navbar-collapse gap-2" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="../../../index/index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="../../../ABOUT/about2_us.html">ABOUT US</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="../../products20.html" id="productsDropdown" role="button">PRODUCTS20</a>
@@ -150,49 +150,37 @@
 <!-- RFQ Modal 150-200  -->
 
 
-<div class="modal fade" id="RFQ-modal" tabindex="-1" aria-labelledby="rfqModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark text-light">
-      <div class="modal-header">
-        <h5 class="modal-title" id="rfqModalLabel">Request FREE Quotation!</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+<!-- RFQ Modal -->
+<div id="RFQ-modal" class="modal" style="display: none;">
+  <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
+    <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
 
-      <div class="modal-body">
-        <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name:*</label>
-            <input type="text" id="name" name="name" required class="form-control">
-          </div>
+    <div class="boxquote">
+      <h2>Request FREE Quotation!</h2>
+      <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain">
+        <label for="name">Name:*</label>
+        <input type="text" id="name" name="name" required class="form-control mb-3">
 
-          <div class="mb-3">
-            <label for="email" class="form-label">Email:*</label>
-            <input type="email" id="email" name="email" required class="form-control">
-          </div>
+        <label for="email">Email:*</label>
+        <input type="email" id="email" name="email" required class="form-control mb-3">
 
-          <div class="mb-3">
-            <label for="subject" class="form-label">Subject:*</label>
-            <input type="text" id="subject" name="subject" class="form-control">
-          </div>
+        <label for="subject">Subject:*</label>
+        <input type="text" id="subject" name="subject" class="form-control mb-3">
 
-          <div class="mb-3">
-            <label for="message" class="form-label">Message:</label>
-            <textarea id="message" name="message" required class="form-control" rows="4"></textarea>
-          </div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
 
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-light me-2">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-            <button type="button" id="clearFormBtn" class="btn btn-secondary">
-              <i class="fas fa-eraser"></i> Clear Form
-            </button>
-          </div>
-        </form>
-      </div>
+        <button type="submit" class="btn btn-light">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
+            <i class="fas fa-eraser"></i> Clear Form
+        </button>
+      </form>
     </div>
   </div>
 </div>
+<!-- RFQ Modal END-->
 
 
 
@@ -207,7 +195,7 @@
     <div class="column" id="quick-links">
       <h2 class="titre1"><b>QUICK LINKS</b></h2>
       <ul class="footer-list">
-        <li><a href="../../../index/index.html">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
         <li><a href="../../../ABOUT/about2_us.html">About Us</a></li>
         <li><a href="../../../PRODUCTS/products20.html">Products</a></li>
         <li><a href="../../../CONTACT/contact.html">Contact Us</a></li>
