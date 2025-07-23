@@ -1,6 +1,5 @@
 .hero {
-  background: url(../../IMAGES/mainIMAGES/imgBANNER/LogoBanner01.jpg) center center/cover no-repeat;
-  background-image: url(../../IMAGES/mainIMAGES/imgBANNER/LogoBanner01.jpg) ;
+  background: url(/IMAGES/mainIMAGES/imgBANNER/LogoBanner01.jpg) center center/cover no-repeat;
   min-height: 90vh;
   padding: 60px 20px;
   cursor: default;
