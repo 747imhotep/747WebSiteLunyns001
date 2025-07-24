@@ -37,6 +37,7 @@
 
 .glossy-text {
   color: #f4f4f4;                 /* Make sure text is visible */
+  font-weight: bold;
   background: linear-gradient(to top, #ffffff 0%, #f4f4f4 40%, #dcdcdc 60%, #f4f4f4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
