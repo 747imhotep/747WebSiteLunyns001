@@ -31,9 +31,16 @@
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
   /* CHANGER ICI */
-  color: #333;                 /* Make sure text is visible */
   padding: 100px 0;             /* Add vertical spacing */
   text-align: center;
+}
+
+.glossy-text {
+  color: #f4f4f4;                 /* Make sure text is visible */
+  background: linear-gradient(to top, #ffffff 0%, #f4f4f4 40%, #dcdcdc 60%, #f4f4f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 
