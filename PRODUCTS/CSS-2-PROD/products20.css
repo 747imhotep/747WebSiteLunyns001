@@ -74,6 +74,7 @@
 
 .product-block{
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   gap: 20px;
   border: 1px solid #ddd;
@@ -81,6 +82,13 @@
   padding: 10px;
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .product-block {
+    flex-direction: column;
+  }
+}
+
 
 .vignette{
   flex: 1;
@@ -97,6 +105,8 @@
   background-position: center top;
   transition: all 0.3s ease; /* Fixed transition syntax */
 }
+
+
 /*--------------------------------------------------------------------------------------------------------------*/
 .products {
   padding: 3rem 2rem;
@@ -143,7 +153,8 @@
 
 .product-img{
   width: 190px;
-  height: 190px;
+  height: auto; /* 190px */
+  max-width: 100%; /* new */
   padding: 0.20rem;
   margin: 1rem;
   margin-right: 1rem;
