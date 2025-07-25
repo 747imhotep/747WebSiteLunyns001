@@ -220,11 +220,6 @@
         }
       }
 
-      // Event listener for the RFQ button on the same page
-      document.getElementById('openQuote')?.addEventListener('click', function (e) {
-        e.preventDefault();
-        openRFQModal(); // no product passed — just opens modal
-      });
 
       // Handle opening the modal on page load based on URL hash
       window.addEventListener('DOMContentLoaded', () => {
@@ -239,13 +234,21 @@
       });
 
       // Close the modal when the close button is clicked
-      document.querySelector('.close')?.addEventListener('click', function () {
+      document.querySelector('#RFQ-modal .close')?.addEventListener('click', function () {
         const modal = document.getElementById('RFQ-modal');
         if (modal) {
           modal.style.display = 'none';
         }
       });
-
+      // Also close the modal when Escape key is pressed
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          const modal = document.getElementById('RFQ-modal');
+          if (modal && modal.style.display === 'block') {
+        modal.style.display = 'none';
+          }
+        }
+      });
       // Close the modal if user clicks outside of it
       window.onclick = function (event) {
         const modal = document.getElementById('RFQ-modal');
@@ -254,16 +257,25 @@
         }
       };
 
-       // Dynamically handle all RFQ- links
-  document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const product = this.getAttribute('href').replace('#RFQ-', '');
-      openRFQModal(product);
-      // Optional: update the hash without jumping
-      history.replaceState(null, '', `#RFQ-${product}`);
-    });
+       // Handle links like <a href="#RFQ">
+document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    openRFQModal();
+    history.replaceState(null, '', '#RFQ');
   });
+});
+
+// Handle links like <a href="#RFQ-10ppm">
+document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const product = this.getAttribute('href').replace('#RFQ-', '');
+    openRFQModal(product);
+    history.replaceState(null, '', `#RFQ-${product}`);
+  });
+});
+
 
     </script>
 <!-- OPEN RFQ END -->
