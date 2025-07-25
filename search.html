@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Search Results</title>
+
+
   <style>
     body { font-family: sans-serif; padding: 2rem; }
     .result { margin-bottom: 1rem; }
   </style>
 </head>
+
+
+
+
 <body>
 
   <h1>Search Results</h1>
   <div id="results">Loading...</div>
+
+
+
+
+
 
   <script>
     // Dummy content to "search"
@@ -38,7 +49,7 @@
           `<div class="result"><strong>${match.title}</strong><p>${match.text}</p></div>`
         ).join('');
       } else {
-        resultsContainer.textContent = "No results found.";
+        resultsContainer.textContent = "No results found, for the moment.";
       }
     } else {
       resultsContainer.textContent = "No search term provided.";
