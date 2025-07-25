@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    .result { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Search Results</h1>
+  <div id="results">Loading...</div>
+
+  <script>
+    // Dummy content to "search"
+    const content = [
+      { title: "Bitumen 60-70", text: "High-quality bitumen for road construction." },
+      { title: "D6 Diesel", text: "Reliable diesel fuel for heavy industries." },
+      { title: "EN590 Diesel", text: "Diesel fuel with 10–5000 PPM sulfur content." },
+      { title: "LPG Supply", text: "Liquefied Petroleum Gas for global markets." },
+      { title: "LNG Supply", text: "Liquefied Natural Gas for power and industry." }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q")?.toLowerCase() || "";
+    const resultsContainer = document.getElementById("results");
+
+    if (query) {
+      const matches = content.filter(item =>
+        item.title.toLowerCase().includes(query) ||
+        item.text.toLowerCase().includes(query)
+      );
+
+      if (matches.length > 0) {
+        resultsContainer.innerHTML = matches.map(match =>
+          `<div class="result"><strong>${match.title}</strong><p>${match.text}</p></div>`
+        ).join('');
+      } else {
+        resultsContainer.textContent = "No results found.";
+      }
+    } else {
+      resultsContainer.textContent = "No search term provided.";
+    }
+  </script>
+</body>
+</html>
