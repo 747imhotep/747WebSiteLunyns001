@@ -74,6 +74,12 @@ flexibility in search queries.
 
         window.location.href = `/search?query=${encodeURIComponent(query)}`;
       }
+
+      document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  handleSearch();
+});
+
     </script>
   </body>
 

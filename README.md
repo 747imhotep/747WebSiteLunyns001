@@ -23,8 +23,26 @@ A simple personal website built with HTML, CSS, and JavaScript.
 
 ## 📁 Project Structure
 lunyns.github.io/
-├── index.html       ✅ <-- Required
+
+
+
+
+
+/
+├─ index.html       ✅ <-- Required
 ├── style.css        (optional)
+├─ CONTACT/
+│  └─ contact.html
+├─ PRODUCTS/
+│  └─ PROD_DET/
+│     ├─ EN590/en590ppm20.html
+│     ├─ JET_A1_FUEL/jetA1fuel.html
+│     ├─ COCONUTS/coconuts.html
+│     └─ CASHEW_NUTS/cashewNuts.html
+├─ ABOUT/about2_us.html
+├─ js/
+│  └─ searchHandler.js   <-- Contains logic
+├─ search-results.html
 ├── script.js        (optional)
 └── README.md        (optional)
 

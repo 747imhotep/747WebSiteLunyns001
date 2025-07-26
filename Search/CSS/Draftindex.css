@@ -1,0 +1,88 @@
+.hero {
+  background: url(../Picture/LogoBanner01.jpg) center center/cover no-repeat;
+  min-height: 90vh;
+  padding: 60px 20px;
+  cursor: default;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1300px) {
+  .responsive-img {
+    max-width: 1300px;
+  }
+}
+
+
+
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.product-card {
+  /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: 4px solid #eaeaea;
+  background-color: #fff;
+  text-align: center;
+}
+
+.product-card:hover {
+  /*transform: translateY(-5px);*/
+  background-color: #f1f1ff;
+  border-color: #d4cfcf;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.product-card a{
+    transition: color 0.2s ease;
+}
+
+.product-card:hover a{
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+
+
+.btn-primary{
+    background-color: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover{
+    background-color: var(--brand-blue-light);
+    border-color: var(--brand-blue-light);
+    color: var(--text-light);
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/* ✅ 1. Primary Brand Color */
+:root {
+  --brand-blue: #002f81;
+  --brand-blue-light: #1947a1; /* lighter variant for hover */
+  --brand-blue-dark: #001d4f;  /* darker variant */
+  --text-light: #ffffff;
+  --text-footer: #93d2f7;
+  --text-dark: #1a1a1a;
+  --light-blue-hover: #a5c9ff; /* light blue on hover */
+  --footer-border: #360000; /* Plainte en rouge */
+}
+
