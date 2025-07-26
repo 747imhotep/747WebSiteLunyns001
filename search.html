@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results</title>
   <link rel="stylesheet" href="/index/index css/Search.css">
-  <link rel="icon" href="/Search/favicon.ico">
+  <link rel="icon" href="IMAGES/Favicon/Favicon-01.svg">
 
 
 
@@ -28,59 +28,89 @@ flexibility in search queries.
 
 
 
-  <body>
+  <body style="background-image: url(IMAGES/imgSEARCH/SearchPage.jpg);">
     <section class="search">
       <input type="text" id="search" placeholder="Search our site..." />
       <button onclick="handleSearch()">Search</button>
     </section>
+    <img src="PRODUCTS/PROD_DET/EN590/" alt="">
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <script>
       const hardcodedRedirects = {
-        "pricing": "/pricing",
-        "contact": "/contact-us",
-        "about": "/about",
-        "blog": "/blog",
-        "login": "/login",
-        "signup": "/signup"
+      "contact": "CONTACT/contact.html",
+      "about": "ABOUT/about2_us.html",
+      "L.O.I.": "ABOUT/about2_us.html",
+      "Letter of Intent": "ABOUT/about2_us.html",
+      "diesel": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "en590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "10ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "50ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "500ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "5000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "5,000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "jet": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jetA1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jet A1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jetA1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jet A1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "JP54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "JP 54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "coconuts": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "husks": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "dry": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "shell": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "cashew": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "raw": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html"
       };
 
       const searchablePages = Object.keys(hardcodedRedirects).map(key => ({
-        keyword: key,
-        path: hardcodedRedirects[key]
-      }));
+      keyword: key,
+      path: hardcodedRedirects[key]
+    }));
+    
+  // ✅ Fuse initialized AFTER definitions
+    const fuse = new Fuse(searchablePages, {
+      keys: ['keyword'],
+      threshold: 0.3
+    });
 
-      const fuse = new Fuse(searchablePages, {
-        keys: ['keyword'],
-        threshold: 0.3
-      });
+    function handleSearch() {
+      const input = document.getElementById("search");
+      if (!input) return;
 
-      function handleSearch() {
-        const query = document.getElementById("search").value.toLowerCase().trim();
+      const query = input.value.toLowerCase().trim();
 
-        if (hardcodedRedirects[query]) {
-          window.location.href = hardcodedRedirects[query];
-          return;
-        }
-
-        const results = fuse.search(query);
-        if (results.length > 0) {
-          const bestMatch = results[0];
-          if (bestMatch.score < 0.3) {
-            window.location.href = bestMatch.item.path;
-            return;
-          }
-        }
-
-        window.location.href = `/search?query=${encodeURIComponent(query)}`;
+      if (hardcodedRedirects[query]) {
+        window.location.href = hardcodedRedirects[query];
+        return;
       }
 
-      document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  handleSearch();
-});
+      const results = fuse.search(query);
+      if (results.length > 0 && results[0].score < 0.3) {
+        window.location.href = results[0].item.path;
+        return;
+      }
 
-    </script>
+      // If no match found, go to fallback search results
+      window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
+    }
+
+    // Optional: auto-handle query from URL
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get("query");
+      if (query) {
+        const input = document.getElementById("search");
+        if (input) input.value = query;
+        // Uncomment to auto-redirect based on query
+        // handleSearch();
+      }
+    };
+  </script>
   </body>
 
 </html>
