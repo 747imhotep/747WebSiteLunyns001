@@ -1,6 +1,6 @@
 .hero-contact {
   height: 26vh;
-  background: url('/IMAGES/mainIMAGES/imgBANNER/ThankYou.jpg') center center/cover no-repeat;
+  background: url('/IMAGES/mainIMAGES/imgBANNER/Hero57.jpg') center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
@@ -9,6 +9,14 @@
 }
 
 /* Thanks.css */
+.merci{
+  background: url('/IMAGES/mainIMAGES/imgBANNER/ThankYou.jpg') center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  color: rgb(238, 114, 114);    /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+}
 
 
 
