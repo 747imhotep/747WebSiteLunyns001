@@ -1,5 +1,5 @@
 .hero-contact {
-  height: 26vh;  
+  height: 16vh;  
   padding: 100px 0;             /* Add vertical spacing */
 
 }
@@ -17,8 +17,8 @@
 
 
 .thank-you-container {
-  background-color: rgba(235, 127, 127, 0.7); /* ✅ Makes background transparent */
-  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.87); /* ✅ Makes background transparent */
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
