@@ -1,13 +1,44 @@
 const hardcodedRedirects = {
-  "home": "index.html",
-  "about": "ABOUT/about2_us.html",
-  "contact": "CONTACT/contact.html",
-  "diesel": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-  "en590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-  "jet": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-  "jet a1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-  "coconuts": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
-  "cashew": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html"
+      // CONTACT US
+      "contact": "CONTACT/contact.html",
+      // ABOUT US
+      "about": "ABOUT/about2_us.html",
+      "L.O.I.": "ABOUT/about2_us.html",
+      "Letter of Intent": "ABOUT/about2_us.html",
+      // PRODUCTS EN590
+      "diesel": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "en590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "10ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "50ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "500ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "5000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "5,000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "Low Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      "Ultra Low Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+      // PRODUCTS JET A1 FUEL
+      "jet": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jetA1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jet A1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jet fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jetA1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "jet A1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "JP54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      "JP 54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+      // PRODUCTS COCONUTS
+      "coconuts": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "husks": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "dry": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      "shell": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+      // PRODUCTS CASHEW NUTS
+      "cashew": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "w180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "w320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+      "raw": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html"
 };
 
 const searchablePages = Object.keys(hardcodedRedirects).map(key => ({
