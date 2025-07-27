@@ -24,6 +24,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Center the container horizontally */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
   padding: 40px 20px;
   color : #002f81; /* text brand blue */
 }
