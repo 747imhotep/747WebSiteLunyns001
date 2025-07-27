@@ -13,6 +13,7 @@
 
 
 .thank-you-container {
+  background-color: transparent; /* ✅ Makes background transparent */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,7 @@
   text-align: center;
   padding: 40px 20px;
 }
+
 
 .thank-you-container h1 {
   font-size: 2.5rem;
