@@ -36,94 +36,124 @@ flexibility in search queries.
     <img src="PRODUCTS/PROD_DET/EN590/" alt="">
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-    <script>
-      const hardcodedRedirects = {
-      // CONTACT US
-      "contact": "CONTACT/contact.html",
-      // ABOUT US
-      "about": "ABOUT/about2_us.html",
-      "L.O.I.": "ABOUT/about2_us.html",
-      "Letter of Intent": "ABOUT/about2_us.html",
-      // PRODUCTS EN590
-      "diesel": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "en590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "10ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "50ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "500ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "5000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "5,000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "Low Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      "Ultra Low Sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
-      // PRODUCTS JET A1 FUEL
-      "jet": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "jetA1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "jet A1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "jet fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "jetA1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "jet A1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "JP54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      "JP 54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
-      // PRODUCTS COCONUTS
-      "coconuts": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
-      "husks": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
-      "dry": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
-      "shell": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
-      // PRODUCTS CASHEW NUTS
-      "cashew": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
-      "180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
-      "w180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
-      "320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
-      "w320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
-      "raw": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html"
-      };
+<script>
+  // 🔁 Hardcoded keywords to redirect to specific pages
+  const hardcodedRedirects = {
+    // CONTACT US
+    "contact": "CONTACT/contact.html",
+    // ABOUT US
+    "about": "ABOUT/about2_us.html",
+    "l.o.i.": "ABOUT/about2_us.html",
+    "letter of intent": "ABOUT/about2_us.html",
+    // PRODUCTS EN590
+    "diesel": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "en590": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "10ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "50ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "500ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "5000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "5,000ppm": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "low sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    "ultra low sulfur": "PRODUCTS/PROD_DET/EN590/en590ppm20.html",
+    // PRODUCTS JET A1 FUEL
+    "jet": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jeta1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jet a1": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jet fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jeta1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jet a1 fuel": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jp54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    "jp 54": "PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html",
+    // PRODUCTS COCONUTS
+    "coconuts": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+    "husks": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+    "dry": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+    "shell": "PRODUCTS/PROD_DET/COCONUTS/coconuts.html",
+    // PRODUCTS CASHEW NUTS
+    "cashew": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+    "180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+    "w180": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+    "320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+    "w320": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html",
+    "raw": "PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html"
+  };
 
-      const searchablePages = Object.keys(hardcodedRedirects).map(key => ({
-      keyword: key,
-      path: hardcodedRedirects[key]
-    }));
-    
-  // ✅ Fuse initialized AFTER definitions
-    const fuse = new Fuse(searchablePages, {
-      keys: ['keyword'],
-      threshold: 0.3
-    });
+  // 🔎 Create array of searchable keywords for Fuse.js
+  const searchablePages = Object.keys(hardcodedRedirects).map(key => ({
+    keyword: key,
+    path: hardcodedRedirects[key]
+  }));
 
-    function handleSearch() {
+  // 🔧 Initialize Fuse for fuzzy searching
+  const fuse = new Fuse(searchablePages, {
+    keys: ['keyword'],
+    threshold: 0.3
+  });
+
+  // 🔍 Called on Search button click
+  function handleSearch() {
+    const input = document.getElementById("search");
+    if (!input) return;
+
+    const query = input.value.toLowerCase().trim();
+
+    if (hardcodedRedirects[query]) {
+      window.location.href = hardcodedRedirects[query];
+      return;
+    }
+
+    const results = fuse.search(query);
+    if (results.length > 0 && results[0].score < 0.3) {
+      window.location.href = results[0].item.path;
+      return;
+    }
+
+    // No match — go to fallback search results page
+    window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
+  }
+
+  // 🚀 Auto-fill input + redirect if query is in URL (?q= or ?query=)
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const queryFromURL = params.get("query") || params.get("q");
+
+    if (queryFromURL) {
       const input = document.getElementById("search");
-      if (!input) return;
+      if (input) {
+        input.value = queryFromURL; // Keep user's original query visible
+      }
 
-      const query = input.value.toLowerCase().trim();
+      const normalized = queryFromURL
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .replace(/[^a-z0-9 ]/gi, '')
+        .trim();
 
-      if (hardcodedRedirects[query]) {
-        window.location.href = hardcodedRedirects[query];
+      // Check for exact match
+      if (hardcodedRedirects[normalized]) {
+        window.location.href = hardcodedRedirects[normalized];
         return;
       }
 
-      const results = fuse.search(query);
+      // Try fuzzy match
+      const results = fuse.search(normalized);
       if (results.length > 0 && results[0].score < 0.3) {
         window.location.href = results[0].item.path;
         return;
       }
 
-      // If no match found, go to fallback search results
-      window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
-    }
-
-    // Optional: auto-handle query from URL
-    window.onload = function () {
-      const params = new URLSearchParams(window.location.search);
-      const query = params.get("query");
-      if (query) {
-        const input = document.getElementById("search");
-        if (input) input.value = query;
-        // Uncomment to auto-redirect based on query
-        // handleSearch();
+      // Show optional fallback message if search fails
+      const output = document.getElementById("search-output");
+      if (output) {
+        output.innerText = `No match found for "${queryFromURL}". Please try another keyword.`;
       }
-    };
-  </script>
+    }
+  });
+</script>
+
   </body>
 
 </html>
