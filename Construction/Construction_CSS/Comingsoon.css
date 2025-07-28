@@ -1,13 +1,13 @@
 /* coming-soon.css */
 
 .hero-contact {
-  height: 100vh; /* Adjusted height for the hero section */
-  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg) center center/cover no-repeat;
-  background-size: cover;       /* Makes sure image covers entire section */
-  background-position: center;  /* Centers the image */
-  background-repeat: no-repeat; /* No repeating */
-  color: white;                 /* Make sure text is visible */
-  backgroundpadding: 10px 0px 20px 0px; /* This follows the TRBL rule: Top → Right → Bottom → Left */
+  height: 100vh;
+  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg) center 40% / cover no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 10px 0 20px;
 }
 
 
