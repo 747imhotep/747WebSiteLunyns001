@@ -2,7 +2,7 @@
 
 .hero-contact {
   height: 70vh; /* Adjusted height for the hero section */
-  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg) center center/cover no-repeat;
+  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg) center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
@@ -26,7 +26,7 @@
   margin: 0;
   padding: 0; /* Temporarily remove to test */
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
-  background-size: contain; /* Adjusted to cover the entire container */
+  background-size: cover; /* Adjusted to cover the entire container */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
