@@ -23,6 +23,18 @@
   background-repeat: no-repeat;
 }
 
+.commingsoon-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon\ .jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 .content {
   background-color: rgba(255, 255, 255, 0.9); /*  semi-transparent white */
