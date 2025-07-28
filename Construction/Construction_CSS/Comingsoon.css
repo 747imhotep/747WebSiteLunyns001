@@ -17,6 +17,13 @@ body-soon{
   background-repeat: no-repeat; /* No repeating */
 }
 
+.content-soon {
+  /* coming-soon page specific styles*/
+  background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 
 .comingsoon-container {
@@ -33,13 +40,7 @@ body-soon{
 }
 
 
-.content-soon {
-  /* coming-soon page specific styles*/
-  background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
-  padding: 40px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+
 
 h1 {
   font-size: 2.5rem;
