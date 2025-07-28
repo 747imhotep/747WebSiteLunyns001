@@ -1,7 +1,7 @@
 /* coming-soon.css */
 
 .hero-contact {
-  height: 70vh; /* Adjusted height for the hero section */
+  height: 100vh; /* Adjusted height for the hero section */
   background: url(/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg) center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
@@ -22,16 +22,13 @@
 
 
 .comingsoon-container {
-  height: 100vh;
-  margin: 0;
-  padding: 0; /* Temporarily remove to test */
+  height: 50vh;
+  margin: 0; /* Reset margin */
+  padding: 10px 20px; 
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
   background-size: cover; /* Adjusted to cover the entire container */
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 
