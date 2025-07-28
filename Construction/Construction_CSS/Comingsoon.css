@@ -51,10 +51,10 @@ p {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  border-color: 1px solid #679efc;
+  border-color: 2px solid #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 25px;
+  box-shadow: rgba(119, 116, 116, 0.29) 0px 10px 25px;
 }
 
 .btn-home:hover {
