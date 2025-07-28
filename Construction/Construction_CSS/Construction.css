@@ -37,7 +37,6 @@
 
 
 .content {
-  width: 650px; /* Set a fixed width for the content box */
   background-color: rgba(255, 255, 255, 0.35); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
