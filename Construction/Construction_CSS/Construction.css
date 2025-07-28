@@ -37,14 +37,15 @@
 
 
 .content {
-  background-color: rgba(255, 255, 255, 0.3); /*  semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.2); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
   font-size: 2.5rem;
+  font-size: bold;
   color: #c0392b; /* Red-orange */
   margin-bottom: 20px;
 }
