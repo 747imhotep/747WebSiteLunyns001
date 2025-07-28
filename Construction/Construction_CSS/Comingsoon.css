@@ -7,7 +7,7 @@
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
   color: white;                 /* Make sure text is visible */
-  padding: 10px 0px 40px 0px;     /* This follows the TRBL rule: Top → Right → Bottom → Left */
+  backgroundpadding: 10px 0px 20px 0px; /* This follows the TRBL rule: Top → Right → Bottom → Left */
 }
 
 
@@ -51,7 +51,7 @@ p {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  border-color: 2px solid #679efc;
+  border-color: 4px solid #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
   box-shadow: rgba(119, 116, 116, 0.29) 0px 10px 25px;
