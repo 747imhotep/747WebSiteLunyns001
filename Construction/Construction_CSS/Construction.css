@@ -30,7 +30,7 @@
   align-items: center;
   padding: 40px 20px;
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon\ .jpg');
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
 }
