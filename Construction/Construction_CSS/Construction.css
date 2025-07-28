@@ -37,6 +37,7 @@
 
 
 .content {
+  /* coming-soon page specific styles*/
   background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
@@ -45,7 +46,8 @@
 }
 
 .content-four {
-  background-color: rgba(255, 255, 255, 0.21); /*  semi-transparent white */
+  /* 404 page specific styles*/
+  background-color: rgba(255, 255, 255, 0.31); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -71,7 +73,7 @@ p {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  border-color: #679efc;
+  border-color: 1px solid #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 25px;
