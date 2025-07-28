@@ -1,5 +1,7 @@
+/* coming-soon.css */
+
 .hero-contact {
-  background: url(/IMAGES/imgCONSTRUCTION/underConstruction004.png) center center/cover no-repeat;
+  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg) center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
@@ -7,30 +9,35 @@
   padding: 100px 0;             /* Add vertical spacing */
 }
 
-
-/* under-construction.css */
-
-.construction-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background-image: url('/IMAGES/imgCONSTRUCTION/underConstruction004.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+body-soon{
+  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg');
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
 }
 
 
 
-.content-four {
-  /* 404 page specific styles*/
-  background-color: rgba(255, 255, 255, 0.37); /*  semi-transparent white */
+.comingsoon-container {
+  height: 100vh;
+  margin: 0;
+  padding: 0; /* Temporarily remove to test */
+  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
+  background-size: contain; /* Adjusted to cover the entire container */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.content-soon {
+  /* coming-soon page specific styles*/
+  background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  align-items: center; /* Center content vertically */
 }
 
 h1 {
