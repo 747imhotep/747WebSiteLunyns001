@@ -28,7 +28,7 @@
   margin: 0;
   padding: 0; /* Temporarily remove to test */
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
-  background-size: cover;
+  background-size: contain; /* Adjusted to cover the entire container */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -43,12 +43,11 @@
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  align-items: center; /* Center content vertically */
 }
 
 .content-four {
   /* 404 page specific styles*/
-  background-color: rgba(255, 255, 255, 0.31); /*  semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.37); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
