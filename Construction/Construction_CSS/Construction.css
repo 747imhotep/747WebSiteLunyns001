@@ -30,14 +30,14 @@
   align-items: center;
   padding: 40px 20px;
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 
 .content {
-  background-color: rgba(255, 255, 255, 0.0); /*  semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
