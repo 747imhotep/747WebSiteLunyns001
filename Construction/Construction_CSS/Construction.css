@@ -23,16 +23,17 @@
   background-repeat: no-repeat;
 }
 
-.comingsoon-container{
+.comingsoon-container {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  margin: 0;
+  padding: 0; /* Temporarily remove to test */
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon03.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
