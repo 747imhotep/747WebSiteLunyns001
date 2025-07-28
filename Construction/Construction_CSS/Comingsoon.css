@@ -48,13 +48,13 @@ p {
 .btn-home {
   background-color: #002f81;
   color: white;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0px 2px 0px;
   text-decoration: none;
   border-radius: 5px;
   border-color: 4px solid #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  box-shadow: rgba(119, 116, 116, 0.29) 0px 10px 25px;
+  box-shadow: rgba(204, 198, 198, 0.29) 0px 10px 25px;
 }
 
 .btn-home:hover {
