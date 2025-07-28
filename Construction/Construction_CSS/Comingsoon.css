@@ -10,12 +10,7 @@
   padding: 100px 0;             /* Add vertical spacing */
 }
 
-body-soon{
-  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg');
-  background-size: cover;       /* Makes sure image covers entire section */
-  background-position: center;  /* Centers the image */
-  background-repeat: no-repeat; /* No repeating */
-}
+
 
 .content-soon {
   /* coming-soon page specific styles*/
@@ -39,8 +34,6 @@ body-soon{
   justify-content: center;
   align-items: center;
 }
-
-
 
 
 h1 {
