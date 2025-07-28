@@ -66,7 +66,7 @@ p {
   border-color: #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 25px;
 }
 
 .btn-home:hover {
