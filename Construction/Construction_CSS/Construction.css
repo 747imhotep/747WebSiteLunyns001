@@ -47,14 +47,14 @@
 h1 {
   font-size: 2.5rem;
   font-size: bold;
-  color: #eb6b5d; /* Red-orange */
+  color: #fa7e70; /* Red-orange */
   margin-bottom: 20px;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #f2f2f2; /* Light gray for better readability */
+  color: #333; /* Light gray for better readability */
 }
 
 .btn-home {
