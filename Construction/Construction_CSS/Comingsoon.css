@@ -13,8 +13,12 @@
 
 .content-soon {
   /* coming-soon page specific styles*/
-  width: fit-content; /* TEST */
+  width: fit-content; /* good */
+  
+  display: flex; /* Required for align-item to work */
+  flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center content vertically */
+
   text-align: center; /* Center text */
   background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
@@ -24,6 +28,12 @@
 
 
 .comingsoon-container {
+  /* NEW */
+  display: flex; 
+  justify-content: center; /* Horizontal centering */ 
+  align-items: center; /* Center content horizontally */  
+  height: 100vh; /* Full viewport height */
+  /* NEW */
   height: 50vh;
   align-items: center; /* Center content vertically */
   margin: 0; /* Reset margin */
