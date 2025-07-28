@@ -19,6 +19,7 @@ body-soon{
 
 .content-soon {
   /* coming-soon page specific styles*/
+  text-align: center; /* Center text */
   background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
