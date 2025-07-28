@@ -63,8 +63,10 @@ p {
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+  border-color: #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 
 .btn-home:hover {
