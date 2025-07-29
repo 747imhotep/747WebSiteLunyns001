@@ -2,11 +2,13 @@
 
 /* HERO SECTION */
 .hero-contact {
-  height: 100vh;
+  height: 25vh;
+  /*
   background: url('/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg') center 60% / cover no-repeat;
   background-size: cover;
   background-position: center 60%;
   background-repeat: no-repeat;
+  */
   color: white;
   padding: 10px 0 40px;
 }
@@ -42,8 +44,8 @@
   width: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  /* align-items: center; --> Center content vertically */
+  text-align: center; /* Center text */
   background-color: rgba(255, 255, 255, 0.01);
   padding: 40px 30px;
   border-radius: 10px;
