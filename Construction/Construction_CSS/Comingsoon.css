@@ -72,20 +72,20 @@ p {
 
 /* BUTTON STYLES */
 .btn-home {
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: #002f81;
   color: white;
   padding: 14px;
   text-decoration: none;
   border-radius: 15px;
-  border: 1.5px solid #679efc;
+  border: 1.5px solid #0241ad;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  box-shadow: rgba(251, 238, 125, 0.29) 0px 10px 25px;
+  box-shadow: rgba(251, 238, 125, 0.29) 9px 9px 23px;
 }
 
 .btn-home:hover {
-  background-color: #fbee7d;
+  background-color: #ac853f;
   color: #333;
   border: solid #c0392b;
   font-weight: bold;
