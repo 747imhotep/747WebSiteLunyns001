@@ -1,6 +1,5 @@
 /* coming-soon.css */
 
-/* HERO SECTION */
 .hero-contact {
   height: 100vh;
   background: url('/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg') center 60% / cover no-repeat;
@@ -11,8 +10,7 @@
   padding: 10px 0 40px;
 }
 
-/* FULL BACKGROUND WRAPPER */
-.body-soon {
+.body-soon{
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon04.jpg');
   background-size: cover;
   background-position: center;
@@ -23,48 +21,56 @@
   align-items: center;
 }
 
-/* MESSAGE CONTAINER */
 .comingsoon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh; /* You had both 100vh and 50vh — 50vh is used here */
-  margin: 0;
-  padding: 10px 20px;
+  /* NEW */
+  display: flex; 
+  justify-content: center; /* Horizontal centering */ 
+  align-items: center; /* Center content horizontally */  
+  height: 100vh; /* Full viewport height */
+  /* NEW */
+  height: 50vh;
+  align-items: center; /* Center content vertically */
+  margin: 0; /* Reset margin */
+  padding: 10px 20px; 
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon02.jpg');
-  background-size: contain;
+  background-size: contain; /* Adjusted to cover the entire container */
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* INNER CONTENT BLOCK */
+
 .content-soon {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.01);
+  /* coming-soon page specific styles*/
+  width: fit-content; /* good */
+  
+  display: flex; /* Required for align-item to work */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center content vertically */
+
+  text-align: center; /* Center text */
+  background-color: rgba(255, 255, 255, 0.01); /*  semi-transparent white */
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* TEXT ELEMENTS */
+
+
+
+
 h1 {
   font-size: 2.5rem;
-  font-weight: bold;  /* 🔧 FIXED: 'font-size: bold' is invalid */
-  color: #fa7e70;
+  font-size: bold;
+  color: #fa7e70; /* Red-orange */
   margin-bottom: 20px;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #333;
+  color: #333; /* Light gray for better readability */
 }
 
-/* BUTTON STYLES */
 .btn-home {
   margin-top: 30px;
   background-color: #002f81;
