@@ -2,7 +2,7 @@
 
 .hero-contact {
   height: 100vh;
-  background: url(/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg) center 60% / cover no-repeat;
+  background: url('/IMAGES/imgCONSTRUCTION/Comingsoon01.jpg') center 60% / cover no-repeat;
   background-size: cover;
   background-position: center 60%;
   background-repeat: no-repeat;
