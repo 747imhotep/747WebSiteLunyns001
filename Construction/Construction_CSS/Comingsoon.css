@@ -10,6 +10,17 @@
   padding: 10px 0 40px;
 }
 
+.body-soon{
+  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon04.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .comingsoon-container {
   /* NEW */
   display: flex; 
