@@ -26,18 +26,20 @@
 }
 
 /* MESSAGE CONTAINER */
+/*
 .comingsoon-container {
   display: flex;
   justify-content: center; /* Center horizontally */
   /* Center vertically removed */
-  height: 100vh; /* You had both 100vh and 50vh — 50vh is used here */
-  margin: 0;
+ /* height: 100vh; /* You had both 100vh and 50vh — 50vh is used here */
+ /* margin: 0;
   padding: 10px 20px;
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon02.jpg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+*/
 
 /* INNER CONTENT BLOCK */
 .content-soon {
