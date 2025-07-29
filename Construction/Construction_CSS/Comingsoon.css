@@ -2,6 +2,7 @@
 
 /* HERO SECTION */
 .hero-contact {
+  display: flex;
   height: 65vh;
   
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon04.jpg');
