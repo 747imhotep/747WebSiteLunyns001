@@ -2,11 +2,11 @@
 
 /* HERO SECTION */
 .hero-contact {
-  height: 55vh;
+  height: 65vh;
   
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon04.jpg');
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 40%;
   background-repeat: no-repeat;
   /*  */
   color: white;
