@@ -31,15 +31,12 @@
 
 .comingsoon-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  /* Center vertically removed */
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align to the top */
  /* height: 100vh; /* You had both 100vh and 50vh — 50vh is used here */
   margin: 0;
-  padding: 10px 20px;
-  
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 20px;
 }
 
 
@@ -72,13 +69,13 @@ p {
 
 /* BUTTON STYLES */
 .btn-home {
-  margin-top: 10px;
+  margin-top: 0px;
   background-color: #002f81;
   color: white;
   padding: 14px;
   text-decoration: none;
   border-radius: 15px;
-  border: 1.5px solid #0241ad;
+  border: 1.5px solid #72767b;
   font-weight: 500;
   transition: background-color 0.3s ease;
   box-shadow: rgba(251, 238, 125, 0.29) 9px 9px 23px;
