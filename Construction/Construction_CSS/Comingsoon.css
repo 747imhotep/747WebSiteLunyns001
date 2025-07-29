@@ -3,11 +3,11 @@
 /* HERO SECTION */
 .hero-contact {
   display: flex;
-  height: 165vh;
+  height: 145vh;
   background-color: #1d1d1d;
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon04.jpg');
   background-size: contain;
-  background-position: center 10%;
+  background-position: center 40%;
   background-repeat: no-repeat;
   /*  */
   color: white;
