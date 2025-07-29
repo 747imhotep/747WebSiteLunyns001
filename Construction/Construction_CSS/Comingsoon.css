@@ -79,11 +79,11 @@ p {
   border: 1.5px solid #679efc;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  box-shadow: rgba(248, 232, 87, 0.29) 0px 10px 25px;
+  box-shadow: rgba(251, 238, 125, 0.29) 0px 10px 25px;
 }
 
 .btn-home:hover {
-  background-color: #ffdb20;
+  background-color: #fbee7d;
   color: #333;
   border: solid #c0392b;
   font-weight: bold;
