@@ -87,6 +87,6 @@ p {
 .btn-home:hover {
   background-color: #ac853f;
   color: #333;
-  border: solid #c0392b;
+  border: 1.5px solid #fbee7d;
   font-weight: bold;
 }
