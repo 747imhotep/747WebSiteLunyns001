@@ -15,8 +15,9 @@
 
 /* FULL BACKGROUND WRAPPER */
 .body-soon {
+  background-color: #222222;
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon04.jpg');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
