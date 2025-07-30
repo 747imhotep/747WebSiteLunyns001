@@ -9,7 +9,7 @@ body {
 
 .hero-downloader {
   height: 16vh;
-  background: url('../../IMAGES/mainIMAGES/imgBANNER/Downloading04') center center/cover no-repeat;
+  background: url('../IMAGES/mainIMAGES/imgBANNER/Downloading04') center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
@@ -19,7 +19,7 @@ body {
 
 
 .hidden {
-  display: flexbox;
+  display: none;
 }
 
 .download-image{
@@ -28,7 +28,7 @@ body {
   height: auto;
 }
 
-#downloadDocuments {
+.downloadDocuments {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
