@@ -17,6 +17,8 @@
   display: flex;
   align-items: center; 
   justify-content: center;
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
   width: 1600px;        /* set a size */
   height: 1065px;
   background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon05.jpg');
@@ -27,17 +29,26 @@
 
 }
 
+.body-wrapper {
+  background-color: #222222;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  height: 100vh;            /* full height of screen */
+  margin: 0;
+}
+
 
 
 /* FULL BACKGROUND WRAPPER */
 .body-soon {
+  display: flex;
   background-color: #222222;
   background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon05.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 20vh;
-  display: block;
   justify-content: center;
   align-items: center;
 }
@@ -58,7 +69,6 @@
 
 /* INNER CONTENT BLOCK */
 .content-soon {
-  width: fit-content;
   display: flex;
   flex-direction: column;
   /* align-items: center; --> Center content vertically */
