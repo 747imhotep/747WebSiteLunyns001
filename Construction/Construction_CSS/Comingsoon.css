@@ -37,8 +37,6 @@ body {
 }
 
 
-
-
 .section {
     align-items: center; /* Center content in section */
     max-width: 1000px;
@@ -85,3 +83,31 @@ body {
 }
 
 
+/* Optional: Fine-tune with media queries */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 10vw;
+    }
+
+    .lead {
+        font-size: 6vw;
+    }
+
+    .officer {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-4 {
+        font-size: 12vw;
+    }
+
+    .lead {
+        font-size: 7vw;
+    }
+
+    .officer {
+        font-size: 5vw;
+    }
+}
