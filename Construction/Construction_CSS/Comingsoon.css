@@ -15,24 +15,23 @@ body {
 
 
 .display-4 {
-    font-size: 6.8em;
+    font-size: 6vw;
     margin-bottom: 10px;
     color: #fbee7d;
-    text-align: center; /* Ensure header text is readable */
-    
+    text-align: center;
 }
 
-.lead{
-    font-size: 2.2em;
+.lead {
+    font-size: 3vw;
     font-weight: bold;
     color: #ac853f;
-    text-align: center; /* Ensure lead text is readable */
+    text-align: center;
 }
 
 .officer {
-    font-size: 1.2em;
+    font-size: 1.8vw;
     color: #fbee7d;
-    text-align: center; /* Ensure header text is readable */
+    text-align: center;
 }
 
 
