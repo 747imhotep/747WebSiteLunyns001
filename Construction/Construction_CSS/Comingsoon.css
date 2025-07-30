@@ -64,22 +64,19 @@ body {
 }
 
 
-.quote-btn {
+.btn-primary {
   font-weight: 500;
   margin-right: 15px;
-  background-color: #001d4f;
-  color: #f4f4f4;
+  padding: 1%  10px;
+  border-radius: 10px;
+  background-color: #99b9f0;
+  color: #333;
   transition: background-color 0.3s ease;
 }
 
-.quote-btn:hover {
-  background-color: #dcdcdc;
+.btn-primary:hover {
+  background-color: #fbee7d;
   color: #000;
 }
 
-.footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+
