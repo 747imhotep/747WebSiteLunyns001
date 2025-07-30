@@ -73,15 +73,18 @@
 
     const errorBox = document.getElementById("emailError");
 if (!email || !validateEmail(email)) {
+      console.log("Invalid email format!");
   errorBox.textContent = "⚠️ Please enter a valid email.";
   errorBox.classList.remove("hidden");
   return;
 } else {
+      console.log("Email is valid.");
   errorBox.classList.add("hidden");
 }
 
 
     verifiedEmail = email;
+      console.log("Verified email set to:", verifiedEmail);
 
     // Hide email prompt and show download UI
     document.getElementById("emailPrompt").classList.add("hidden");
