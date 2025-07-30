@@ -19,12 +19,7 @@ body {
     margin-bottom: 10px;
     color: #fbee7d;
     text-align: center; /* Ensure header text is readable */
-}
-
-.officer {
-    font-size: 1.2em;
-    color: #fbee7d;
-    text-align: center; /* Ensure header text is readable */
+    
 }
 
 .lead{
@@ -33,6 +28,13 @@ body {
     color: #ac853f;
     text-align: center; /* Ensure lead text is readable */
 }
+
+.officer {
+    font-size: 1.2em;
+    color: #fbee7d;
+    text-align: center; /* Ensure header text is readable */
+}
+
 
 
 
@@ -53,6 +55,8 @@ body {
   font-weight: 500;
   background-color: #ac853f;
   color: #fbee7d;
+  margin-top: 5px;
+  margin-bottom: 20px;
   border: 1.5px solid #fbee7d;
   transition: background-color 0.3s ease, color 0.3s ease !important;
 }
