@@ -1,103 +1,85 @@
-/* coming-soon.css */
 
-/* HERO SECTION */
-.hero-contact {
-  display: flex;
-  height: 15vh;
-  background-color: #222222;
-  /*  */
-  color: white;
-  padding: 0px 0 10px;
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
-/*--------------------------------------------------------------------------------------------------------------*/
 
-
-.clickable-image {
-  display: block;
-  align-items: center; 
-  justify-content: center;
-  max-width: 1600px; /* Ensure the image is responsive */
-  height: auto; /* Maintain aspect ratio */
-  width: 1600px;        /* set a size */
-  height: 1065px;
-  margin-bottom: 20px;
-  background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon05.jpg');
-  background-size: contain;
+.hero{
+  height: 100vh;
+  background-color: #161401;
+  background-image: url('/IMAGES/imgCONSTRUCTION/MessageSoon06.jpg'); 
+  background-size: cover;
   background-position: center;
-  text-decoration: none;
-  color: transparent; /* Hide text */
-
-}
-
-/* FULL BACKGROUND WRAPPER */
-.body-wrapper {
-  background-color: #222222;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Align to the bottom */ 
-  justify-content: center;  /* center horizontally */
-  align-items: center;      /* center vertically */
-  height: 20vh;            /* full height of screen */
-  margin: 0;
 }
 
 
-/* MESSAGE CONTAINER */
-.comingsoon-container {
-  background-color: #222222;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: flex-start; /* Align to the top */
- /* height: 100vh; /* You had both 100vh and 50vh — 50vh is used here */
-  margin: 0;
-  padding: 20px;
+.display-4 {
+    font-size: 6.8em;
+    margin-bottom: 10px;
+    color: #fbee7d;
+    text-align: center; /* Ensure header text is readable */
+}
+
+.officer {
+    font-size: 1.2em;
+    color: #fbee7d;
+    text-align: center; /* Ensure header text is readable */
+}
+
+.lead{
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #ac853f;
+    text-align: center; /* Ensure lead text is readable */
 }
 
 
-/* INNER CONTENT BLOCK */
-.content-soon {
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; --> Center content vertically */
-  text-align: center; /* Center text */
-  background-color: rgba(255, 255, 255, 0.01);
-  padding: 40px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+.section {
+    align-items: center; /* Center content in section */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* TEXT ELEMENTS */
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;  /* 🔧 FIXED: 'font-size: bold' is invalid */
-  color: #fa7e70;
-  margin-bottom: 20px;
+.section-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #003366;
 }
 
-p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* BUTTON STYLES */
-.btn-home {
-  margin-top: 0px;
-  background-color: #002f81;
-  color: white;
-  padding: 14px;
-  text-decoration: none;
-  border-radius: 15px;
-  border: 1.5px solid #72767b;
+.btn{
   font-weight: 500;
-  transition: background-color 0.3s ease;
-  box-shadow: rgba(251, 238, 125, 0.29) 9px 9px 23px;
+  background-color: #ac853f;
+  color: #fbee7d;
+  border: 1.5px solid #fbee7d;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
-.btn-home:hover {
+.btn:hover {
   background-color: #fbee7d;
-  color: #333;
-  border: 1.5px solid #002f81;
-  font-weight: bold;
+  color: #000;
+  border: 1.5px solid #ac853f;
+}
+
+
+.quote-btn {
+  font-weight: 500;
+  margin-right: 15px;
+  background-color: #001d4f;
+  color: #f4f4f4;
+  transition: background-color 0.3s ease;
+}
+
+.quote-btn:hover {
+  background-color: #dcdcdc;
+  color: #000;
+}
+
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
