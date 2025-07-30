@@ -1,0 +1,13 @@
+Bootstrap Toggle Buttons
+<button type="button" class="btn btn-primary" data-toggle="button"> Primary toggle </button>
+<button type="button" class="btn btn-success" data-toggle="button"> Success toggle </button>
+<button type="button" class="btn btn-warning" data-toggle="button"> Warning toggle </button>
+<button type="button" class="btn btn-light" data-toggle="button"> Light toggle </button>
+
+Bootstrap Button States
+<button type="button" class="btn btn-info active">Active Button</button>
+<button type="button" class="btn btn-info" disabled>Disabled Button</button>
+<a href="#" class="btn btn-danger disabled">Disabled Link</a>
+
+Bootstrap Outline Buttons
+

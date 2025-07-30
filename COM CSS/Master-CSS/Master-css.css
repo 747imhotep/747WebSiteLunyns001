@@ -69,8 +69,9 @@ body {
 }
 
 .quote-btn:hover {
-  background-color: #dcdcdc;
-  color: #000;
+  /* RFQ Button */
+  background-color: #aa0000;
+  color: #fbee7d;
 }
 
 #openQuote {
