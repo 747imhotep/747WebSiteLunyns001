@@ -3,12 +3,11 @@
 /* HERO SECTION */
 .hero-contact {
   display: flex;
-  height: 45vh;
+  height: 15vh;
   background-color: #222222;
-
   /*  */
   color: white;
-  padding: 10px 0 10px;
+  padding: 0px 0 10px;
 }
 /*--------------------------------------------------------------------------------------------------------------*/
 
@@ -30,6 +29,7 @@
 
 }
 
+/* FULL BACKGROUND WRAPPER */
 .body-wrapper {
   background-color: #222222;
   display: flex;
@@ -37,27 +37,12 @@
   justify-content: flex-end; /* Align to the bottom */ 
   justify-content: center;  /* center horizontally */
   align-items: center;      /* center vertically */
-  height: 100vh;            /* full height of screen */
+  height: 20vh;            /* full height of screen */
   margin: 0;
 }
 
 
-
-/* FULL BACKGROUND WRAPPER */
-.body-soon {
-  display: flex;
-  background-color: #222222;
-  background-image: url('/IMAGES/imgCONSTRUCTION/Comingsoon05.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 20vh;
-  justify-content: center;
-  align-items: center;
-}
-
 /* MESSAGE CONTAINER */
-
 .comingsoon-container {
   background-color: #222222;
   display: flex;
