@@ -1,0 +1,111 @@
+#contactForm {
+    background-color: #e4e6fc;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 400px;
+    margin: 40px auto;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+
+#contactForm:hover{
+    transform: translate(-5px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.3); /* more lift on hover */
+}
+
+#contactForm h3 {
+    margin-top: 0;
+    font-size: 25px;
+    color: #222;
+}
+
+#contactForm p {
+  font-size: 16px;
+  color: #664;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#requestForm label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  font-weight: 600;
+}
+
+#requestForm input[type="text"],
+#requestForm input[type="email"],
+#requestForm textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #8d8d8d;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+#requestForm input:focus,
+#requestForm textarea:focus {
+  outline: none;
+  border: 1.6px solid #007BFF;
+  background-color: #fff;
+}
+
+#requestForm textarea {
+  resize: vertical;
+}
+
+#requestForm button[type="submit"] {
+  margin-top: 25px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#requestForm button[type="submit"]:hover {
+  background-color: #002f81;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+/* ========================================================================== */
+
+/* Initial hidden state */
+#contactForm.hidden {
+  display: none;
+}
+
+/* Optional transition class */
+#contactForm.visible {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

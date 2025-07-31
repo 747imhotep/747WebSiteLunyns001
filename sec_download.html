@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="/DOWNLERCSS/downloader.css">
   <link  rel="icon" href="/IMAGEDO/Favicon/Favicon-01.png">
+  <link rel="stylesheet" href="/DOWNLERCSS/requestForm.css">
 </head>
 
 
@@ -21,19 +22,37 @@
     
 <!-- Contact form (hidden by default) -->
     <div id="contactForm" class="hidden">
-      <h3>Request Access</h3>
-      <p>Please complete the form to request download authorization.</p>
-      <form id="requestForm">
+  <h3>Contact Us for Access</h3>
+  <p>Please fill in the form below to request the document you need.</p>
+
+  
+<!-- Use your email address here -->
+      <form id="requestForm" action="https://formsubmit.co/contact@lunyns.com" method="POST">
+
         <label for="requestName">Your Name:</label>
-        <input type="text" id="requestName" required>
+        <input type="text" id="requestName" name="name" required>
 
         <label for="requestEmail">Your Email:</label>
-        <input type="email" id="requestEmail" required>
+        <input type="email" id="requestEmail" name="email" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" rows="4" required>I'd like access to the download section.</textarea>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Send Request</button>
+  <!-- Formsubmit anti-spam honeypot -->
+        <input type="text" name="_honey" style="display:none">
+
+  <!-- Disable CAPTCHA -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="New submission!">
+        <input type="hidden" name="_blacklist,scammer" value="spammy pattern, banned term, phrase">
+        <input type="text" name="_honey" style="position:absolute;left:-9999px;">
+        
+
+  <!-- Redirect after submission (optional) -->
+        <input type="hidden" name="_next" value="https://lunyns.com/Thanks/Thanks.html">
+
+        <button type="submit">Submit Request</button>
       </form>
     </div>
 <!-- Contact form END) -->
@@ -96,22 +115,7 @@
     </div>
   </section>
 
-  <div id="contactForm" class="hidden">
-  <h3>Contact Us for Access</h3>
-  <p>Please fill in the form below to request the document you need.</p>
-  <form id="requestForm">
-    <label for="requestName">Your Name:</label>
-    <input type="text" id="requestName" name="requestName" required>
-
-    <label for="requestEmail">Your Email:</label>
-    <input type="email" id="requestEmail" name="requestEmail" required>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-
-    <button type="submit">Submit Request</button>
-  </form>
-</div>
+      
 
 
   
@@ -147,8 +151,12 @@
         }
 
         // Check if email is authorize
-        if(!authorizedEmails.includes(email)) {
+        if (!authorizedEmails.includes(email)) {
           alert("Please contact us to obtain authorization to download a specific document.");
+          const form = document.getElementById("contactForm");
+          form.classList.remove("hidden");
+          form.classList.add("visible", "form-reveal"); // Add animation/styling class
+          
           document.getElementById("contactForm").classList.remove("hidden");
           document.getElementById("requestEmail").value = email; //auto-fill
           return
@@ -255,8 +263,7 @@
           "contact@lunyns.com",
           "sonia.nyimi@gmail.com"
         ];
-
     </script>
-
+<!------------------------------------------------------------------------------------------------>
   </body>
 </html>
