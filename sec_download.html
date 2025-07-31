@@ -33,18 +33,15 @@
         <p>Stay safe and secure!</p>
       </div>
 
-<p id="confirmation" class="hidden" style="color: green; margin-top: 20px;"></p>
+
 
 <!-- Arrow indicator -->
- <div id="arrowIndicator" class="arrow-indicator">⬇️</div>
+    <div id="arrowIndicator" class="arrow-indicator">⬇️</div>
 
-<div id="downloadInstructions" class="hidden">
-  <div class="confirmation" id="confirmation"></div>
-
-  <div id="downloadsWrapper" class="downloadDocuments download-highlight">
-    <!-- your .download-item elements here -->
-  </div>
-</div>
+    <div id="downloadInstructions" class="hidden">
+      <div class="confirmation" id="confirmation"></div>
+      <p id="confirmation" class="hidden" style="color: green; margin-top: 20px;"></p>
+    </div>
 
 
 
@@ -75,6 +72,11 @@
       <button class="download-btn" onclick="downloadDoc('doc4.pdf')"><i class="fas fa-file-download"></i> Download Doc 4</button>
     </div>
   </section>
+
+  <div id="downloadInstructions" class="hidden">
+    <div class="confirmation" id="confirmation"></div>
+    <button id="confirmation" class="hidden" onclick="/index.html">Return to HOME</button>
+  </div>
 
 
     
