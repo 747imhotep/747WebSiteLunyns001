@@ -119,8 +119,12 @@
     });
       }
 
-      // Restart green animation
+
+// Restart green animation
       const wrapper = document.getElementById("downloadsWrapper");
+      wrapper.classList.remove("download-highlight");
+      void wrapper.offsetWidth; // Force reflow to restart animation
+      wrapper.classList.add("download-highlight");
 
       // Show arrow indicator
       document.getElementById("arrowIndicator").classList.remove("hidden");
