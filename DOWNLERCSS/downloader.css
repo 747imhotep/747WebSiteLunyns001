@@ -122,7 +122,7 @@ body {
 .informer p {
   margin-bottom: 12px;
 }
-/* ========================================================================== */
+
 
 .email-form {
   display: flex;
@@ -138,14 +138,14 @@ body {
   flex: 1 1 60%;
   padding: 12px 16px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1.5px solid #ccc;
   border-radius: 6px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 .email-form input[type="email"]:focus {
-  border-color: 1.5px solid #002f81;
+  border: 1.5px solid #002f81;
 }
 
 .email-form button {
@@ -161,16 +161,15 @@ body {
 
 .email-form button:hover {
   background-color: #0f69f1;
-  border-color: 1.5px solid  #002f81;
+  border: 1.5px solid  #002f81;
   color: #fff;
 }
-
 
 .download-item {
   margin: 20px 0;
   margin-bottom: 20px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #b1b1b1;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px;
@@ -237,67 +236,13 @@ body {
   text-align: center;
 }
 
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.smailing {
-      text-align: center;
-      margin-top: 200px;
-      background-image: url('/IMAGES/mainIMAGES/imgBANNER/Downloading01.png');
-      background-size: cover; /* Optional: cover the whole screen */
-      background-repeat: no-repeat; /* Optional: prevent tiling */
-      background-position: center center; /* Optional: center the image */
-    }
-/* Thanks.css */
-
-.boutonz{
-      padding: 10px 20px;
-      font-size: 16px;
-      color: rgb(230, 14, 122);
-}
-
-.input[type="email"] {
-      padding: 20px;
-      width: 450px;
-      height: 40px;
-    }
-
 .officer{
   font-size: 2rem;
   color: #002f81;
   margin-top: 40px;
-}    
+}   
 
-.thank-you-container {
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-}
+/* ========================================================================== */
 
-.thank-you-container h1 {
-  font-size: 2.5rem;
-  color: #002f81; /* brand blue */
-  margin-bottom: 20px;
-}
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-.thank-you-container p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-.btn-back {
-  background-color: #002f81;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-back:hover {
-  background-color: #1947a1;
-}
