@@ -83,19 +83,18 @@
     
 <!------------------------------------------------------------------------------------------------>
       <script>
-      console.log("Script loaded!");  // ✅ Debug line
-      let verifiedEmail = '';
-      let lastDownloadTime = 0;
-      const downloadCooldown = 10000; // 10 seconds
+  console.log("Script loaded!");  // ✅ Debug line
 
+  let verifiedEmail = '';
+  let lastDownloadTime = 0;
+  const downloadCooldown = 10000; // 10 seconds
 
-      function verifyEmail() {
-      const emailInput = document.getElementById("email");
-      const email = emailInput.value.trim();
-      const errorBox = document.getElementById("emailError");
-      document.getElementById("downloadsWrapper").scrollIntoView({ behavior: 'smooth' });
+  function verifyEmail() {
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
+    const errorBox = document.getElementById("emailError");
 
-
+    // Validate email
     if (!email || !validateEmail(email)) {
       console.log("Invalid email format!");
       errorBox.textContent = "⚠️ Please enter a valid email.";
@@ -106,87 +105,81 @@
       errorBox.classList.add("hidden");
     }
 
+    // Save email
+    verifiedEmail = email;
+    console.log("Verified email set to:", verifiedEmail);
 
-      verifiedEmail = email;
-      console.log("Verified email set to:", verifiedEmail);
+    // Show download area
+    document.getElementById("emailPrompt").classList.add("hidden");
+    document.getElementById("downloadInstructions").classList.remove("hidden");
 
-// Hide email prompt and show download UI
-      document.getElementById("emailPrompt").classList.add("hidden");
-      document.getElementById("downloadInstructions").classList.remove("hidden");
-      document.querySelectorAll('.download-item').forEach(el => {
+    document.querySelectorAll('.download-item').forEach(el => {
       el.classList.remove('hidden');
       el.classList.add('show');
     });
-      }
 
+    // ✅ Restart green animation
+    const wrapper = document.getElementById("downloadsWrapper");
+    wrapper.classList.remove("download-highlight");
+    void wrapper.offsetWidth; // Force reflow
+    wrapper.classList.add("download-highlight");
 
-// Restart green animation
-      const wrapper = document.getElementById("downloadsWrapper");
-      wrapper.classList.remove("download-highlight");
-      void wrapper.offsetWidth; // Force reflow to restart animation
-      wrapper.classList.add("download-highlight");
+    // ✅ Show arrow
+    document.getElementById("arrowIndicator").classList.remove("hidden");
 
-      // Show arrow indicator
-      document.getElementById("arrowIndicator").classList.remove("hidden");
+    // ✅ Scroll into view
+    wrapper.scrollIntoView({ behavior: 'smooth' });
 
-      // Scroll into view AFTER making content visible
-      document.getElementById("downloadsWrapper").scrollIntoView({ behavior: 'smooth' });
+    // ✅ Hide arrow after 5 seconds
+    setTimeout(() => {
+      document.getElementById("arrowIndicator").classList.add("hidden");
+    }, 5000);
+  }
 
-      // Hide arrow after 5 seconds
-      setTimeout(() => {
-        document.getElementById("arrowIndicator").classList.add("hidden");
-      }, 5000);
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
 
+  function downloadDoc(fileName) {
+    const now = Date.now();
+    if (now - lastDownloadTime < downloadCooldown) {
+      alert("⏳ Please wait a few seconds before downloading again.");
+      return;
+    }
 
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
+    if (!verifiedEmail) {
+      alert("Please verify your email before downloading.");
+      return;
+    }
 
-      function downloadDoc(fileName) {
-        const now = Date.now();
-        if (now - lastDownloadTime < downloadCooldown) {
-          alert("⏳ Please wait a few seconds before downloading again.");
-          return;
-        } 
+    lastDownloadTime = now;
 
-        // Safety check
-        if (!verifiedEmail) {
-          alert("Please verify your email before downloading.");
-          return;
-        }
+    // Rename file using email
+    const sanitizedEmail = verifiedEmail.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    const dynamicName = `Document_${sanitizedEmail}_${fileName}`;
 
+    const downloadLink = document.createElement("a");
+    downloadLink.href = `./DownloadDoc/${fileName}`;
+    downloadLink.download = dynamicName;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 
+    // Show confirmation
+    const confirmation = document.getElementById("confirmation");
+    confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
+    confirmation.classList.remove("hidden");
+    confirmation.classList.add("show");
 
-        lastDownloadTime = now;
+    setTimeout(() => {
+      confirmation.classList.add("hidden");
+    }, 5000);
 
+    // ✅ Remove green highlight after download
+    document.getElementById("downloadsWrapper").classList.remove("download-highlight");
+  }
+</script>
 
-// Dynamically rename file with user's email
-        const sanitizedEmail = verifiedEmail.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const dynamicName = `Document_${sanitizedEmail}_${fileName}`;
-
-        const downloadLink = document.createElement("a");
-        downloadLink.href = `./DownloadDoc/${fileName}`;
-        downloadLink.download = dynamicName;
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-
-        // Show confirmation
-        const confirmation = document.getElementById("confirmation");
-        confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
-        confirmation.classList.remove("hidden");
-        confirmation.classList.add("show");
-
-        // Optional: Hide after 5 seconds
-        setTimeout(() => {
-          confirmation.classList.add("hidden");
-        }, 5000);
-
-        // Remove highlit after download
-        document.getElementById("downloadsWrapper").classList.remove("download-highlight");
-
-      }
-    </script>
   </body>
 </html>
