@@ -116,8 +116,14 @@
   </section>
 
       
-
-
+<!-- ALERT MESSAGE START -->
+      <div id="customAlert" class="hidden">
+        <div class="alert-box">
+          <p id="alertMessage"></p>
+          <button onclick="closeCustomAlert()">OK</button>
+        </div>
+      </div>
+<!-- ALERT MESSAGE END -->
   
 
 
@@ -134,6 +140,8 @@
       let lastDownloadTime = 0;
       const downloadCooldown = 10000; // 10 seconds
 
+
+// VERIFY EMAIL
       function verifyEmail() {
         const emailInput = document.getElementById("email");
         const email = emailInput.value.trim().toLowerCase();
@@ -196,11 +204,13 @@
         }, 5000);
       }
 
+// VALIDATE EMAIL
       function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
       }
 
+// DOWNLOAD DOC
       function downloadDoc(fileName) {
         const now = Date.now();
         if (now - lastDownloadTime < downloadCooldown) {
@@ -214,8 +224,9 @@
         }
 
         triggerDownload(fileName); // ✅ Call it
-      }
+      } 
 
+// TRIGGER DOWNLOAD
         function triggerDownload(fileName) {
           const now = new Date();
           lastDownloadTime = Date.now();
