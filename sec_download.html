@@ -160,15 +160,26 @@
 
         // Check if email is authorize
         if (!authorizedEmails.includes(email)) {
-          alert("Please contact us to obtain authorization to download a specific document.");
+        // 👇 This replaces the browser alert
+          showCustomAlert("Please contact us to obtain authorization to download a specific document.");
+          
           const form = document.getElementById("contactForm");
           form.classList.remove("hidden");
           form.classList.add("visible", "form-reveal"); // Add animation/styling class
           
-          document.getElementById("contactForm").classList.remove("hidden");
           document.getElementById("requestEmail").value = email; //auto-fill
           return
         }
+
+      function showCustomAlert(message) {
+          document.getElementById("alertMessage").textContent = message;
+          document.getElementById("customAlert").classList.remove("hidden");
+          }
+
+          function closeCustomAlert() {
+          document.getElementById("customAlert").classList.add("hidden");
+      }
+
 
         // ✅ Email is authorized
         verifiedEmail = email;
@@ -274,7 +285,21 @@
           "contact@lunyns.com",
           "sonia.nyimi@gmail.com"
         ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+        function showCustomAlert(message) {
+        document.getElementById("alertMessage").textContent = message;
+        document.getElementById("customAlert").classList.remove("hidden");
+        }
+
+        function closeCustomAlert() {
+        document.getElementById("customAlert").classList.add("hidden");
+        }
+
+        // Expose function to global scope so the button can find it
+        window.showCustomAlert = showCustomAlert;
+        window.closeCustomAlert = closeCustomAlert;
+        });
     </script>
-<!------------------------------------------------------------------------------------------------>
   </body>
 </html>
