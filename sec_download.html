@@ -124,8 +124,9 @@
     void wrapper.offsetWidth; // Force reflow
     wrapper.classList.add("download-verified");
 
-    // ✅ Show arrow
-    document.getElementById("arrowIndicator").classList.remove("hidden");
+    // ✅ Show arrow indicator
+    const arrow = document.getElementById("arrowIndicator");
+    arrow.classList.remove("hidden");
 
     // ✅ Scroll into view
     wrapper.scrollIntoView({ behavior: 'smooth' });
@@ -137,7 +138,7 @@
 
     // ✅ Hide arrow after 5 seconds
     setTimeout(() => {
-      document.getElementById("arrowIndicator").classList.add("hidden");
+      arrow.classList.add("hidden");
     }, 5000);
   }
 
