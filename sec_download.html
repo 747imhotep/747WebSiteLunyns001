@@ -73,9 +73,11 @@
     </div>
   </section>
 
-  <div id="downloadInstructions" class="hidden">
-    <div class="confirmation" id="confirmation"></div>
-    <button id="confirmation" class="hidden" onclick="/index.html">Return to HOME</button>
+  <!-- Return button -->
+   <div>
+  <button id="returnHomeBtn" class="hidden" onclick="window.location.href='/index.html'">
+    Return to HOME
+  </button>
   </div>
 
 
@@ -176,6 +178,9 @@
     confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
     confirmation.classList.remove("hidden");
     confirmation.classList.add("show");
+
+    // Optional: Show return button after download
+    document.getElementById("returnHomeBtn").classList.remove("hidden");
 
     setTimeout(() => {
       confirmation.classList.add("hidden");
