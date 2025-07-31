@@ -62,7 +62,7 @@ Step	│ What to Do								│ What Should Happen
 
     Help me to:
 
-    	➡️ Making it mobile-friendly
+    	➡️ Improve responsiveness or UX for mobile.
 
     	➡️ Packaging it as a standalone secure page
 
@@ -92,5 +92,20 @@ I'd like to:
 | Downloads renamed with email           | ✅        |
 | Download rate limit                    | ✅        |
 | Confirmation shown                     | ✅        |
+/* ==================================================================================================================== */
+
+
+	I need to add more secure options. When Visitor comes on this webpage, we need to give the authorization to use a certain 
+	email address. Not all email address should be use to download any document. If Visitor use an unauthorized email address 
+	a popup message would say: "Please contact us to obtain the authorization to download a specific document." then a feeling 
+	form appears. 
+
+		WHAT YOU NEED:
+		1. ✅ A list of authorized emails (for example, in JavaScript or fetched from server)
+		2. ✅ Check the email against that list during verification
+		3. ✅ Show popup and contact form if unauthorized
+		4. ✅ Hide download UI if unauthorized
+
+/* ==================================================================================================================== */
 
 

@@ -19,7 +19,24 @@
     </div>
     <div id="emailError" class="error-message hidden"></div>
     
+<!-- Contact form (hidden by default) -->
+    <div id="contactForm" class="hidden">
+      <h3>Request Access</h3>
+      <p>Please complete the form to request download authorization.</p>
+      <form id="requestForm">
+        <label for="requestName">Your Name:</label>
+        <input type="text" id="requestName" required>
 
+        <label for="requestEmail">Your Email:</label>
+        <input type="email" id="requestEmail" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" required>I'd like access to the download section.</textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+<!-- Contact form END) -->
 
 
 <!-- Instructions block -->
@@ -42,7 +59,7 @@
       <div class="confirmation" id="confirmation"></div>
       <p id="confirmation" class="hidden" style="color: green; margin-top: 20px;"></p>
     </div>
-    
+
 <!-- Return button -->
    <div>
   <button id="returnHomeBtn" class="download-btn hidden" onclick="window.location.href='/index.html'">
@@ -53,7 +70,7 @@
 
 
 
-    <section id="downloadsWrapper" class="downloadDocuments download-highlight">
+    <section id="downloadswrapper" class="downloadDocuments download-highlight">
     <div class="download-item hidden">
       <img src="/IMAGEDO/DownloadFlag/Doc1.png" alt="Download Document" class="download-image">
       <p class="download-text">Click the button below to download your document.</p>
@@ -79,6 +96,24 @@
     </div>
   </section>
 
+  <div id="contactForm" class="hidden">
+  <h3>Contact Us for Access</h3>
+  <p>Please fill in the form below to request the document you need.</p>
+  <form id="requestForm">
+    <label for="requestName">Your Name:</label>
+    <input type="text" id="requestName" name="requestName" required>
+
+    <label for="requestEmail">Your Email:</label>
+    <input type="email" id="requestEmail" name="requestEmail" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</div>
+
+
   
 
 
@@ -88,109 +123,148 @@
 
     
 <!------------------------------------------------------------------------------------------------>
-      <script>
-  console.log("Script loaded!");  // ✅ Debug line
+    <script>
+      console.log("Script loaded!");  // ✅ Debug line
 
-  let verifiedEmail = '';
-  let lastDownloadTime = 0;
-  const downloadCooldown = 10000; // 10 seconds
+      let verifiedEmail = '';
+      let lastDownloadTime = 0;
+      const downloadCooldown = 10000; // 10 seconds
 
-  function verifyEmail() {
-    const emailInput = document.getElementById("email");
-    const email = emailInput.value.trim();
-    const errorBox = document.getElementById("emailError");
+      function verifyEmail() {
+        const emailInput = document.getElementById("email");
+        const email = emailInput.value.trim().toLowerCase;
+        const errorBox = document.getElementById("emailError");
 
-    // Validate email
-    if (!email || !validateEmail(email)) {
-      console.log("Invalid email format!");
-      errorBox.textContent = "⚠️ Please enter a valid email.";
-      errorBox.classList.remove("hidden");
-      return;
-    } else {
-      console.log("Email is valid.");
-      errorBox.classList.add("hidden");
-    }
+        // Validate email
+        if (!email || !validateEmail(email)) {
+          console.log("Invalid email format!");
+          errorBox.textContent = "⚠️ Please enter a valid email.";
+          errorBox.classList.remove("hidden");
+          return;
+        } else {
+          console.log("Email is valid.");
+          errorBox.classList.add("hidden");
+        }
 
-    // Save email
-    verifiedEmail = email;
-    console.log("Verified email set to:", verifiedEmail);
+        // Check if email is authorize
+        if(!authorizedEmails.includes(email)) {
+          alert("Please contact us to obtain authorization to download a specific document.");
+          document.getElementById("contactForm").classList.remove("hidden");
+          document.getElementById("requestEmail").value = email; //auto-fill
+          return
+        }
 
-    // Show download area
-    document.getElementById("emailPrompt").classList.add("hidden");
-    document.getElementById("downloadInstructions").classList.remove("hidden");
+        // ✅ Email is authorized
+        verifiedEmail = email;
 
-    document.querySelectorAll('.download-item').forEach(el => {
-      el.classList.remove('hidden');
-      el.classList.add('show');
-    });
+        // Save email
+        verifiedEmail = email;
+        console.log("Verified email set to:", verifiedEmail);
 
-    // ✅ Restart green animation
-    const wrapper = document.getElementById("downloadsWrapper");
-    wrapper.classList.remove("download-highlight");
-    void wrapper.offsetWidth; // Force reflow
-    wrapper.classList.add("download-verified");
+        // Show download area
+        document.getElementById("emailPrompt").classList.add("hidden");
+        document.getElementById("downloadInstructions").classList.remove("hidden");
 
-    // ✅ Show arrow indicator
-    const arrow = document.getElementById("arrowIndicator");
-    arrow.classList.remove("hidden");
+        document.querySelectorAll('.download-item').forEach(el => {
+          el.classList.remove('hidden');
+          el.classList.add('show');
+        });
 
-    // ✅ Scroll into view
-    wrapper.scrollIntoView({ behavior: 'smooth' });
-    
+        // Animate box
+        const wrapper = document.getElementById("downloadwrapper");
+        wrapper.classList.add("download-verified");
 
-    // ✅ Hide arrow after 5 seconds
-    setTimeout(() => {
-      arrow.classList.add("hidden");
-    }, 5000);
-  }
+        // Scroll and show arrow
+        const arrow = document.getElementById("arrowIndicator");
+        arrow.classList.remove("hidden");
+        wrapper.scrollIntoView({ behavior: 'smooth'});
 
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
+        // Hide arrow & instruction after timeout
+        setTimeout(() => {
+          arrow.classList.add("hidden");
+          document.getElementById("downloadInstructions").classList.add("hidden");
+        }, 5000);
 
-  function downloadDoc(fileName) {
-    const now = Date.now();
-    if (now - lastDownloadTime < downloadCooldown) {
-      alert("⏳ Please wait a few seconds before downloading again.");
-      return;
-    }
+        // ✅ Restart green animation
+        const wrapper = document.getElementById("downloadswrapper");
+        wrapper.classList.remove("download-highlight");
+        void wrapper.offsetWidth; // Force reflow
+        wrapper.classList.add("download-verified");
 
-    if (!verifiedEmail) {
-      alert("Please verify your email before downloading.");
-      return;
-    }
+        // ✅ Show arrow indicator
+        const arrow = document.getElementById("arrowIndicator");
+        arrow.classList.remove("hidden");
 
-    lastDownloadTime = now;
+        // ✅ Scroll into view
+        wrapper.scrollIntoView({ behavior: 'smooth' });
+        
 
-    // Rename file using email
-    const sanitizedEmail = verifiedEmail.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    const dynamicName = `Document_${sanitizedEmail}_${fileName}`;
+        // ✅ Hide arrow after 5 seconds
+        setTimeout(() => {
+          arrow.classList.add("hidden");
+        }, 5000);
+      }
 
-    const downloadLink = document.createElement("a");
-    downloadLink.href = `./DownloadDoc/${fileName}`;
-    downloadLink.download = dynamicName;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
 
-    // Show confirmation
-    const confirmation = document.getElementById("confirmation");
-    confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
-    confirmation.classList.remove("hidden");
-    confirmation.classList.add("show");
+      function downloadDoc(fileName) {
+        const now = Date.now();
+        if (now - lastDownloadTime < downloadCooldown) {
+          alert("⏳ Please wait a few seconds before downloading again.");
+          return;
+        }
 
-    // Optional: Show return button after download
-    document.getElementById("returnHomeBtn").classList.remove("hidden");
+        if (!verifiedEmail) {
+          alert("Please verify your email before downloading.");
+          return;
+        }
 
-    setTimeout(() => {
-      confirmation.classList.add("hidden");
-    }, 5000);
+        function triggerDownload(fileName) {
+          const now = new Date();
+          lastDownloadTime = now;
 
-    // ✅ Remove green highlight after download
-    document.getElementById("downloadsWrapper").classList.remove("download-highlight");
-  }
-</script>
+        if (!verifiedEmail){
+          console.error("Verified email is not set.");
+          return;
+        }
+
+          const sanitizedEmail = verifiedEmail.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+          const dynamicName = `Document_${sanitizedEmail}_${fileName}`;
+
+          const downloadLink = document.createElement("a");
+          downloadLink.href = `./DownloadDoc/${fileName}`;
+          downloadLink.download = dynamicName;
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+
+          const confirmation = document.getElementById("confirmation");
+          confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
+          confirmation.classList.remove("hidden");
+          confirmation.classList.add("show");
+
+          document.getElementById("returnHomeBtn").classList.remove("hidden");
+
+          setTimeout(() => {
+            confirmation.classList.add("hidden");
+          }, 5000);
+
+          document.getElementById("downloadswrapper").classList.remove("download-highlight");
+        }
+
+
+      // For better security, you’ll want to replace this later 
+      // with a server-side check (e.g., via API or database).
+        const authorizedEmails = [
+          "user1@example.com",
+          "trusted.person@yourdomain.com",
+          "manager@company.org"
+        ];
+
+    </script>
 
   </body>
 </html>
