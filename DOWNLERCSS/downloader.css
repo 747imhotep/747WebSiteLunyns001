@@ -68,7 +68,7 @@ body {
 
 /* Initially red */
 #downloadsWrapper {
-  background-color: #c78f8f;
+  background-color: #f5c4c4;
   border: 2px solid red;
   padding: 20px;
   border-radius: 10px;
@@ -91,7 +91,7 @@ body {
 
 @keyframes backgroundFade {
   0% {
-    background-color: #c78f8f;
+    background-color: #f5c4c4;
     border-color: red;
   }
   100% {
