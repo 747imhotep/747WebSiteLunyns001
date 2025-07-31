@@ -69,7 +69,6 @@
       <script>
       console.log("Script loaded!");  // ✅ Debug line
       let verifiedEmail = '';
-
       let lastDownloadTime = 0;
       const downloadCooldown = 10000; // 10 seconds
 
@@ -77,30 +76,29 @@
       function verifyEmail() {
       const emailInput = document.getElementById("email");
       const email = emailInput.value.trim();
+      const errorBox = document.getElementById("emailError");
 
-        const errorBox = document.getElementById("emailError");
     if (!email || !validateEmail(email)) {
-          console.log("Invalid email format!");
+      console.log("Invalid email format!");
       errorBox.textContent = "⚠️ Please enter a valid email.";
       errorBox.classList.remove("hidden");
       return;
     } else {
-          console.log("Email is valid.");
+      console.log("Email is valid.");
       errorBox.classList.add("hidden");
     }
 
 
-        verifiedEmail = email;
-          console.log("Verified email set to:", verifiedEmail);
+      verifiedEmail = email;
+      console.log("Verified email set to:", verifiedEmail);
 
-        // Hide email prompt and show download UI
-        document.getElementById("emailPrompt").classList.add("hidden");
-        document.getElementById("downloadInstructions").classList.remove("hidden");
-        document.querySelectorAll('.download-item').forEach(el => {
+// Hide email prompt and show download UI
+      document.getElementById("emailPrompt").classList.add("hidden");
+      document.getElementById("downloadInstructions").classList.remove("hidden");
+      document.querySelectorAll('.download-item').forEach(el => {
       el.classList.remove('hidden');
       el.classList.add('show');
     });
-
       }
 
       function validateEmail(email) {
@@ -109,27 +107,20 @@
       }
 
       function downloadDoc(fileName) {
+        const now = Date.now();
+        if (now - lastDownloadTime < downloadCooldown) {
+          alert("⏳ Please wait a few seconds before downloading again.");
+          return;
+        } 
+
         // Safety check
         if (!verifiedEmail) {
           alert("Please verify your email before downloading.");
           return;
         }
 
-// Update downloadDoc()
-        function downloadDoc(fileName) {
-        const now = Date.now();
-        if (now - lastDownloadTime < downloadCooldown) {
-        alert("⏳ Please wait a few seconds before downloading again.");
-        return;
-        }
-
-        // Safety check
-        if (!verifiedEmail) {
-        alert("Please verify your email before downloading.");
-        return;
-        }
-
         lastDownloadTime = now;
+
 
 // Dynamically rename file with user's email
         const sanitizedEmail = verifiedEmail.replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -143,11 +134,15 @@
         document.body.removeChild(downloadLink);
 
         // Show confirmation
-        document.getElementById("confirmation").textContent = `✅ ${dynamicName} has been downloaded.`;
-        document.getElementById("confirmation").classList.remove("hidden");
         const confirmation = document.getElementById("confirmation");
         confirmation.textContent = `✅ ${dynamicName} has been downloaded.`;
-        confirmation.classList.remove("hidden");
+        confirmation.classList.add("hidden");
+        confirmation.classList.remove("show");
+
+        // Optional: Hide after 5 seconds
+        setTimeout(() => {
+          confirmation.classList.remove("hidden");
+        }, 5000);
       }
     </script>
   </body>

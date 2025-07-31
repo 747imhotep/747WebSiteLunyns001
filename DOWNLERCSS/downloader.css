@@ -26,9 +26,6 @@ body {
     display: block !important;
   }
 
- 
-
-
 .download-image{
   display: block;
   width: 250px;
@@ -44,6 +41,9 @@ body {
 }
 
 .confirmation{
+  opacity: 0;
+  pointer-events: none; /* Prevents interaction when hidden */
+  transition: opacity 0.4s ease-in-out;
   margin-top: 20px;
   padding: 12px 16px;
   background-color: #e6ffed;
@@ -52,6 +52,11 @@ body {
   color: #256029;
   font-weight: bold;
   transition: opacity 0.4s ease-in-out;
+}
+
+.confirmation.show {
+  opacity: 1;
+  pointer-events: auto; /* Allows interaction when shown */
 }
 
 /* ========================================================================== */
