@@ -171,7 +171,9 @@
         });
 
         // Animate box
-        const wrapper = document.getElementById("downloadwrapper");
+        const wrapper = document.getElementById("downloadswrapper");
+        wrapper.classList.remove("download-highlight");
+        void wrapper.offsetWidth; // Force reflow
         wrapper.classList.add("download-verified");
 
         // Scroll and show arrow
@@ -183,25 +185,6 @@
         setTimeout(() => {
           arrow.classList.add("hidden");
           document.getElementById("downloadInstructions").classList.add("hidden");
-        }, 5000);
-
-        // ✅ Restart green animation
-        const wrapper = document.getElementById("downloadswrapper");
-        wrapper.classList.remove("download-highlight");
-        void wrapper.offsetWidth; // Force reflow
-        wrapper.classList.add("download-verified");
-
-        // ✅ Show arrow indicator
-        const arrow = document.getElementById("arrowIndicator");
-        arrow.classList.remove("hidden");
-
-        // ✅ Scroll into view
-        wrapper.scrollIntoView({ behavior: 'smooth' });
-        
-
-        // ✅ Hide arrow after 5 seconds
-        setTimeout(() => {
-          arrow.classList.add("hidden");
         }, 5000);
       }
 
