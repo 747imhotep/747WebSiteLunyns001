@@ -21,6 +21,8 @@
     
 
 
+
+
     <div id="downloadInstructions" class="informer">
         <h3>Instructions:</h3>
         <p>This is a test</p>
@@ -33,9 +35,21 @@
       </div>
 
 <p id="confirmation" class="hidden" style="color: green; margin-top: 20px;"></p>
+<div id="arrowIndicator" class="hidden arrow">⬇️</div>
+
+<div id="downloadInstructions" class="hidden">
+  <div class="confirmation" id="confirmation"></div>
+
+  <div id="downloadsWrapper" class="downloadDocuments download-highlight">
+    <!-- your .download-item elements here -->
+  </div>
+</div>
 
 
-    <section id="downloadDocuments" class="downloadDocuments">
+
+
+
+    <section id="downloadsWrapper" class="downloadDocuments download-highlight">
     <div class="download-item hidden">
       <img src="/IMAGEDO/DownloadFlag/Doc1.png" alt="Download Document" class="download-image">
       <p class="download-text">Click the button below to download your document.</p>
@@ -64,6 +78,8 @@
 
     
 
+
+
     
 <!------------------------------------------------------------------------------------------------>
       <script>
@@ -77,6 +93,8 @@
       const emailInput = document.getElementById("email");
       const email = emailInput.value.trim();
       const errorBox = document.getElementById("emailError");
+      document.getElementById("downloadsWrapper").scrollIntoView({ behavior: 'smooth' });
+
 
     if (!email || !validateEmail(email)) {
       console.log("Invalid email format!");
@@ -100,6 +118,13 @@
       el.classList.add('show');
     });
       }
+
+      // Show arrow indicator
+      document.getElementById("arrowIndicator").classList.remove("hidden");
+
+      // Scroll into view AFTER making content visible
+      document.getElementById("downloadsWrapper").scrollIntoView({ behavior: 'smooth' });
+
 
       function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
