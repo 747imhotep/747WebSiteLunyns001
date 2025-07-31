@@ -73,7 +73,8 @@ body {
   border: 2px solid red;
   padding: 20px;
   border-radius: 10px;
-  animation: highlightFade 1.5s forwards;
+  /* animation: highlightFade 1.5s forwards; */
+  animation: backgroundFade 1.8s forwards;
 }
 
 @keyframes blink {
