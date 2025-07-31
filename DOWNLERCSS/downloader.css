@@ -82,15 +82,6 @@ body {
 }
 
 
-/* Blinking green glow effect */
-.download-highlight {
-  background-color: #c78f8f;
-  border: 2px solid red;
-  padding: 20px;
-  border-radius: 10px;
-  /* animation: highlightFade 1.5s forwards; */
-  animation: backgroundFade 1.8s forwards;
-}
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
