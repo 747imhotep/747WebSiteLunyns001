@@ -51,7 +51,7 @@ Step	│ What to Do								│ What Should Happen
     ➡️ Basic spam protection:
     Rate-limit downloads or add server-side validation of email address.
 
-    ➡️ Success confirmation after download:
+    ✅ Success confirmation after download:
     There's already a confirmation message — looks good! we could style it more if possible.
 
     ➡️ Accessibility & UX polish:
@@ -81,5 +81,16 @@ I'd like to:
 
     ➡️ Store email addresses to a database (with consent)
 /* ==================================================================================================================== */
+
+
+| Feature                                | Working? |
+| -------------------------------------- | -------- |
+| Email validation                       | ✅        |
+| Downloads revealed on valid email      | ✅        |
+| Green box animation starts after email | ✅        |
+| Arrow indicator shown + hides          | ✅        |
+| Downloads renamed with email           | ✅        |
+| Download rate limit                    | ✅        |
+| Confirmation shown                     | ✅        |
 
 

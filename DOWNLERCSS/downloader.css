@@ -67,6 +67,22 @@ body {
   animation: blink 1s infinite;
 }
 
+/* Initially red */
+#downloadsWrapper {
+  background-color: #c78f8f;
+  border: 2px solid red;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 1s ease, border-color 1s ease;
+}
+
+/* Turns green after email is verified */
+.download-verified {
+  border-color: #4caf50;
+  background-color: #e6ffed;
+}
+
+
 /* Blinking green glow effect */
 .download-highlight {
   background-color: #c78f8f;
