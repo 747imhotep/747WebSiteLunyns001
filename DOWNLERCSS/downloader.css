@@ -69,6 +69,7 @@ body {
 
 /* Blinking green glow effect */
 .download-highlight {
+  background-color: #c78f8f;
   border: 2px solid red;
   padding: 20px;
   border-radius: 10px;
@@ -82,7 +83,7 @@ body {
 
 @keyframes backgroundFade {
   0% {
-    background-color: red;
+    background-color: #c78f8f;
     border-color: red;
   }
   100% {
