@@ -69,10 +69,10 @@ body {
 
 /* Blinking green glow effect */
 .download-highlight {
-  border: 2px solid #4caf50;
+  border: 2px solid red;
   padding: 20px;
   border-radius: 10px;
-  animation: pulse-border 1.5s infinite;
+  animation: highlightFade 1.5s forwards;
 }
 
 @keyframes blink {
