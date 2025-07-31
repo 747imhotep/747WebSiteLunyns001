@@ -132,7 +132,7 @@
 
       function verifyEmail() {
         const emailInput = document.getElementById("email");
-        const email = emailInput.value.trim().toLowerCase;
+        const email = emailInput.value.trim().toLowerCase();
         const errorBox = document.getElementById("emailError");
 
         // Validate email
@@ -198,16 +198,19 @@
         if (now - lastDownloadTime < downloadCooldown) {
           alert("⏳ Please wait a few seconds before downloading again.");
           return;
-        }}
+        }
 
         if (!verifiedEmail) {
           alert("Please verify your email before downloading.");
           return;
         }
 
+        triggerDownload(fileName); // ✅ Call it
+      }
+
         function triggerDownload(fileName) {
           const now = new Date();
-          lastDownloadTime = now;
+          lastDownloadTime = Date.now();
 
         if (!verifiedEmail){
           console.error("Verified email is not set.");
