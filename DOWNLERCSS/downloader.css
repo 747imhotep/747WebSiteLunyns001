@@ -18,13 +18,13 @@ body {
 }
 
 
-  .hidden {
-    display: none !important;
-  }
+.hidden {
+  display: none !important;
+}
 
-  .show {
-    display: block !important;
-  }
+.show {
+  display: block !important;
+}
 
 .download-image{
   display: block;
