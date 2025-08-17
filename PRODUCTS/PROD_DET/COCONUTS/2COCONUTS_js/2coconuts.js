@@ -1,15 +1,15 @@
 // CLEAR FORM 
   
   // Clear all form fields when Clear Form button is clicked
-  document.getElementById('clearFormBtn').addEventListener('click', () => {
-    document.getElementById('contactForm')?.reset();  // resets all input/textarea/select to their default values (empty in your case)
-    document.getElementById('requiredForm')?.reset();
-    const form = document.querySelector('form[action^="mailto"]');
-    
-    if (form) {
-      form.reset();  // resets all input/textarea/select to their default values (empty in your case)
-    }
-  });
+  document.getElementById('clearFormBtn')?.addEventListener('click', () => {
+  // Reset both forms if they exist
+  document.getElementById('contactForm')?.reset();
+  document.getElementById('requiredForm')?.reset();
+});
+
+
+
+
 
 // CLEAR FORM END 
 

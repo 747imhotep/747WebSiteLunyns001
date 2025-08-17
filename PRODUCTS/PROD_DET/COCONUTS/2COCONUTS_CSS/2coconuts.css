@@ -2,7 +2,7 @@
   background-color: #001f3f;
   background-size: contain;
   /* background-size: cover; */
-  background-image: url(../../../../IMAGES/PRODUCT_EN590_01.png);
+  background-image: url(../../../../IMAGES/products/EN590_01.png);
   /**/
   background-position: center;
 
@@ -25,7 +25,7 @@
 
 
 .hero {
-  background: url(../../2COCONUTS/2IMAGES/CoconutShell276.jpg) center center/cover no-repeat;
+  background: url(../../../../IMAGES/mainIMAGES/imgCOCONUTS/CoconutShell276.jpg) center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
