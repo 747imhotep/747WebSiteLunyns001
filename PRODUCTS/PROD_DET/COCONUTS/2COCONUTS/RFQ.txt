@@ -1,0 +1,15 @@
+ PLEASE FIND MORE DETAILS:
+
+- Commodity: coconuts
+- Grade: Husks
+- Target price in USD: $70 per MT  
+- Destination port: Chittagong  port, Bangladesh
+- Loading port: ASWP
+- Min quantity (trial): 100 MT
+- Min frequency per month/year: 100 MT per month
+- Max annual capacity: 
+- Shipping terms: CIF
+- Payment method: LC in sight
+- Bank address: Bangladesh
+- Commission: 9%
+

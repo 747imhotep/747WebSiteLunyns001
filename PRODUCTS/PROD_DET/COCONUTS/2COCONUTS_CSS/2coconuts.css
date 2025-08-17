@@ -1,0 +1,306 @@
+.header-content {
+  background-color: #001f3f;
+  background-size: contain;
+  /* background-size: cover; */
+  background-image: url(../../../../IMAGES/PRODUCT_EN590_01.png);
+  /**/
+  background-position: center;
+
+  /* height: 100vh; /* or 97vh if you want a slight margin */
+  min-height: 100vh; 
+  width: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center;
+  text-align: center;
+  /* box-sizing: border-box; */
+  color: #eff0eb;
+  position: relative; /* relative Or fixed, depending on layout */
+  overflow: hidden;
+  margin: 0; /* remove extra spacing */
+  left: 0;
+}
+
+
+
+.hero {
+  background: url(../../2COCONUTS/2IMAGES/CoconutShell276.jpg) center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  color: #333;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
+  text-align: center;
+}
+
+.glossy-text {
+  color: #f4f4f4;                 /* Make sure text is visible */
+  font-weight: bold;
+  background: linear-gradient(to top, #ffffff 0%, #65ece6 40%, #dcdcdc 60%, #f4f4f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+h1 span[aria-hidden="true"] {
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.supplier-callout {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  line-height: 1.6;
+  color: #333;
+}
+
+.supplier-callout .emoji {
+  font-size: 2rem;
+}
+
+.supplier-callout h1 {
+  margin: 0.2em 0;
+  font-size: 2rem;
+  color: #d9534f;
+  text-transform: uppercase;
+}
+
+.supplier-callout h2 {
+  margin: 0.3em 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.supplier-callout h3 {
+  margin-top: 1.5em;
+  font-size: 1.2rem;
+  color: #0056b3;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3em;
+}
+
+.supplier-callout ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1em;
+}
+
+.supplier-callout ul li {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.supplier-callout ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.product-image {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*REQUIREMENTS MODAL*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content .btn-primary {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* END OF REQUIREMENTS MODAL */
+
+
+
+@media (min-width: 1300px) {
+  .responsive-img {
+    max-width: 1300px;
+  }
+}
+
+
+/*...................IMAGE CAROUSEL 
+.styled-img {
+  max-width: 1200px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+....................*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+  display: flex;
+  width: 400%; /* 4 images = 100% * 4 */
+  animation: slide 20s infinite;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+
+  100% { transform: translateX(0); }
+}
+
+
+
+
+
+
