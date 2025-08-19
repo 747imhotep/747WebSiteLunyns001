@@ -46,6 +46,12 @@ img{
   box-shadow: 0 4px 16px rgba(238, 5, 5, 0.322);
 }
 
+.red-shadow {
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.4);
+
+}
+
+
 @media (min-width: 1300px) {
   .responsive-img {
     max-width: 1300px;
