@@ -46,10 +46,26 @@ img{
   box-shadow: 0 4px 16px rgba(238, 5, 5, 0.322);
 }
 
-.red-shadow {
-    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.4);
+.hover-glow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  transform: scale(1.03); /* slight zoom */
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6); /* more intense */
+  transform: scale(1.03) rotate(0.3deg);
 
 }
+
+
+.red-shadow-left-only {
+  box-shadow: -4px 0 10px red; /* shadow only to the left */
+}
+
+.red-shadow-right-only {
+  box-shadow: 4px 0 10px red; /* shadow only to the right */
+}
+
 
 
 @media (min-width: 1300px) {
