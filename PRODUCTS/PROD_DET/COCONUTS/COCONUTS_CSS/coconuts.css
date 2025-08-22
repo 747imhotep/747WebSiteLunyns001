@@ -48,6 +48,11 @@ h1 span[aria-hidden="true"] {
   vertical-align: middle;
 }
 
+h2{
+  margin-top: 3rem;
+  text-align: center;
+}
+
 .responsive-img {
   max-width: 100%;
   height: auto;
