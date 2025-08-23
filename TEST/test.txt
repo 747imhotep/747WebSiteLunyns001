@@ -1,0 +1,251 @@
+Great! Since you're using **Sender.net**, have a **Zapier account already set up**, and want:
+
+1. ✅ A **clean HTML form** (with email consent + segmentation fields)
+2. ✅ Help **writing the welcome email**
+3. ✅ A clear **Zapier setup guide** (for integration with Sender.net)
+
+Let’s go step by step:
+
+---
+
+## ✅ 1. Clean Version of Your Updated HTML Form
+
+Here’s your full updated form with:
+
+* Required consent checkbox
+* Dropdown for buyer/seller/intermediary
+* Product type input
+* Everything wrapped and ready to plug into your site
+
+```html
+<!-- RFQ Modal -->
+<div id="RFQ-modal" class="modal" style="display: none;">
+  <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
+    <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
+
+    <div class="boxquote">
+      <h2>Request FREE Quotation!</h2>
+
+      <form id="contactForm" action="https://formsubmit.co/contact@company.com" method="POST">
+        
+        <!-- FormSubmit Hidden Inputs -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="New submission!">
+        <input type="hidden" name="_next" value="https://company.com/Thanks/Thanks.html">
+        <input type="text" name="_honey" style="position:absolute;left:-9999px;">
+
+        <!-- Name -->
+        <label for="name">Name:*</label>
+        <input type="text" id="name" name="name" required class="form-control mb-3">
+
+        <!-- Email -->
+        <label for="email">Email:*</label>
+        <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
+
+        <!-- User Type Dropdown -->
+        <label for="userType">You are a:*</label>
+        <select id="userType" name="userType" class="form-control mb-3" required>
+          <option value="">-- Select --</option>
+          <option value="Buyer">Buyer</option>
+          <option value="Seller">Seller</option>
+          <option value="Intermediary">Intermediary</option>
+        </select>
+
+        <!-- Product Type -->
+        <label for="productType">Product Type:*</label>
+        <input type="text" id="productType" name="productType" required class="form-control mb-3">
+
+        <!-- Subject -->
+        <label for="subject">Subject:*</label>
+        <input type="text" id="subject" name="subject" class="form-control mb-3">
+
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
+
+        <!-- Consent Checkbox -->
+        <div style="margin-bottom: 1em;">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="consent" required style="margin-right: 8px;">
+            I agree to allow the company to store my email address.
+            <span style="margin-left: 6px; font-size: 0.9em; color: #ccc;">
+              <span title="We use your email to send updates and respond to your inquiry.">ⓘ</span>
+              <a href="/privacy-policy" target="_blank" style="margin-left: 5px; color: #ccc;">Learn more</a>
+            </span>
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit" class="btn btn-light">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
+          <i class="fas fa-eraser"></i> Clear Form
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- RFQ Modal END -->
+```
+
+---
+
+## ✅ 2. Welcome Email Copy (for Sender.net)
+
+Here's a **simple, professional welcome message** you can use in Sender.net:
+
+---
+
+### **Subject Line:**
+
+Welcome & Thank You for Your Request!
+
+---
+
+### **Body:**
+
+Hi {{name}},
+
+Thank you for reaching out to us! 🎉
+We’ve received your request and our team will get back to you shortly.
+
+---
+
+### 💼 Your Details:
+
+* **Email:** {{email}}
+* **You are a:** {{userType}}
+* **Product Type:** {{productType}}
+
+If you have additional questions, feel free to reply directly to this message.
+
+---
+
+Best regards,
+**The \[Your Company Name] Team**
+📩 \[[contact@yourcompany.com](mailto:contact@yourcompany.com)]
+🌐 \[[https://yourcompany.com](https://yourcompany.com)]
+
+---
+
+> 🔐 We respect your privacy. You can [review our policy](https://yourcompany.com/privacy-policy) anytime.
+
+---
+
+If you want it styled in HTML format for Sender.net, let me know and I’ll format it that way.
+
+---
+
+## ✅ 3. Set Up Automation in Zapier (FormSubmit → Sender.net)
+
+Zapier doesn’t directly support FormSubmit as a trigger, but you can **use Webhooks or Email Parser**. Here's how to do it:
+
+---
+
+### OPTION A: ✅ **Using Webhooks (Recommended)**
+
+1. **Log into Zapier** and click **Create Zap**.
+
+2. **Trigger:**
+
+   * App: **Webhooks by Zapier**
+   * Event: **Catch Hook**
+   * Copy the Webhook URL Zapier gives you.
+
+3. **Modify Your FormSubmit Action:**
+   Replace your `action="https://formsubmit.co/contact@company.com"` with the Zapier Webhook URL like:
+
+   ```html
+   <form action="https://hooks.zapier.com/hooks/catch/xxxxx/yyyyy" method="POST">
+   ```
+
+4. **Submit a test form** to send data to Zapier.
+
+5. **Zapier: Test Trigger** → confirm it catches the form data.
+
+---
+
+### Step 2: **Send Welcome Email via Sender.net**
+
+1. Add **Sender.net** as the **Action app**.
+2. Event: **Send email** or **Add subscriber to list** (depending on what you want).
+3. Map the fields:
+
+   * Email → `email`
+   * Name → `name`
+   * Custom fields like `userType`, `productType`
+
+> If Sender.net doesn't appear in Zapier (some versions are invite-only), you may use **SMTP by Zapier** instead (Sender supports SMTP).
+
+**SMTP Settings for Sender.net:**
+
+* SMTP Server: `smtp.sender.net`
+* Port: `587`
+* Login: your Sender.net email
+* Password: your SMTP password
+
+Use **"SMTP by Zapier"** if direct integration is not available:
+
+* App: **SMTP by Zapier**
+* Action: **Send Email**
+* Fill in your Sender.net SMTP credentials
+* Compose the message using mapped fields
+
+---
+
+## 🔄 Recap: What You Have Now
+
+| ✅ Task                                 | Status               |
+| --------------------------------------  | -------------------- |
+| Updated Form HTML                       | ✅ Done               |
+| Consent + Segmentation Fields           | ✅ Included           |
+| Email Copy                              | ✅ Written            |
+| Zapier Setup (FormSubmit → Sender.net) | ✅ Instructions Ready |
+| Optional SMTP route                     | ✅ Explained          |
+
+---
+
+### Would you like help with:
+
+* Styling the **welcome email in HTML**?
+* Help testing or debugging the **Zapier webhook**?
+* Exporting leads into **Sender.net lists** or **Google Sheets**?
+
+Let me know and I’ll guide you further.
+
+
+| --------------------------------------  | -------------------- || --------------------------------------  
+
+
+I got a right box with 
+App: "Email Parser by zapier" selected.
+Trigger event: "New Email"
+Account: "connect Email parser by zapier"
+
+
+
+
+Sure! Here are a few alternative icons you can use for **"Your Details"**, depending on the tone or style you’re going for:
+
+### Professional / Neutral:
+
+* 🧾 (Receipt) – Represents documents or details
+* 📋 (Clipboard) – Suggests a form or checklist of personal info
+* 🧑‍💼 (Office Worker) – Personal/professional details
+* 📇 (Card Index) – Personal record or contact info
+
+### Friendly / Casual:
+
+* 🧍 (Person Standing) – Simple representation of a person
+* 🙋 (Person Raising Hand) – Suggests introducing oneself
+* 🗂️ (Card Index Dividers) – Organized personal data
+
+### Minimal / Modern:
+
+* 👤 (Bust in Silhouette) – Generic user profile
+* 🪪 (ID Card) – Direct representation of identity/details
+
+Would you like something more playful, formal, or minimalist?
+

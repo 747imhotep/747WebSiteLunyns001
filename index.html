@@ -174,48 +174,83 @@
     </section>
   </main>
 
-<!-- RFQ Modal 170-200-->
+<!-- RFQ Modal -->
 <div id="RFQ-modal" class="modal" style="display: none;">
   <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
     <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
 
     <div class="boxquote">
       <h2>Request FREE Quotation!</h2>
-      <!-- <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain"> -->
-      <form id="contactForm" action="https://formsubmit.co/contact@lunyns.com" method="POST">
+
+      <form id="contactForm" action="https://formsubmit.co/customserv1@lunyns.com
+" method="POST">
         
-        <!-- Required for FormSubmit -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="box">
-          <input type="hidden" name="_subject" value="New submission!">
-          <input type="hidden" name="_blacklist,scammer" value="spammy pattern, banned term, phrase">
-          <input type="text" name="_honey" style="position:absolute;left:-9999px;">
-          <input type="hidden" name="_next" value="https://lunyns.com/Thanks/Thanks.html">
+        <!-- FormSubmit Hidden Inputs -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_subject" value="New submission!">
+        <input type="text" name="_honey" style="position:absolute;left:-9999px;">
 
-
+        <!-- Name -->
         <label for="name">Name:*</label>
         <input type="text" id="name" name="name" required class="form-control mb-3">
 
+        <!-- Email -->
         <label for="email">Email:*</label>
-        <input type="email" id="email" name="email" placeholder="Email Address" class="form-control mb-3">
+        <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
 
+        <!-- User Type Dropdown -->
+        <label for="userType">You are a:*</label>
+        <select id="userType" name="userType" class="form-control mb-3" required>
+          <option value="">-- Select --</option>
+          <option value="Buyer">Buyer</option>
+          <option value="Seller">Seller</option>
+          <option value="Intermediary">Intermediary</option>
+        </select>
+
+        <!-- Product Type -->
+        <label for="productType">Product Type:*</label>
+        <select id="userType" name="userType" class="form-control mb-3" required>
+          <option value="">-- Select --</option>
+          <option value="Dry Nuts">Dry Nuts</option>
+          <option value="EN590">EN590 10ppm</option>
+          <option value="JET A1 FUEL">JET A1 FUEL</option>
+          <option value="Petroleum Products">Petroleum Products</option>
+        </select>
+
+        <!-- Subject -->
         <label for="subject">Subject:*</label>
         <input type="text" id="subject" name="subject" class="form-control mb-3">
 
+        <!-- Message -->
         <label for="message">Message:</label>
         <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
 
+        <!-- Consent Checkbox -->
+        <div style="margin-bottom: 1em;">
+          <label style="display: flex; align-items: center;">
+            <input type="checkbox" name="consent" required style="margin-right: 8px;">
+            I agree to allow the lunyns to store my email address.
+            <span style="margin-left: 6px; font-size: 0.9em; color: #ccc;">
+              <span title="We use your email to send updates and respond to your inquiry.">ⓘ</span>
+              <a href="/privacy-policy" target="_blank" style="margin-left: 5px; color: #ccc;">Learn more</a>
+            </span>
+          </label>
+        </div>
+
+        <!-- Buttons -->
         <button type="submit" class="btn btn-light">
           <i class="fas fa-paper-plane"></i> Send Message
         </button>
         <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
-            <i class="fas fa-eraser"></i> Clear Form
+          <i class="fas fa-eraser"></i> Clear Form
         </button>
       </form>
-    </div><!-- boxquote END-->
+    </div>
   </div>
 </div>
-<!-- RFQ Modal END-->
+<!-- RFQ Modal END -->
+
 
 <!-- Footer 215-250 -->
  <!-- Footer -->
