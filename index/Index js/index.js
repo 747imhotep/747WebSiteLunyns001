@@ -129,7 +129,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
   };
 
   try {
-    const response = await fetch("https://api.sender.net/v2/subscribers", {
+    const response = await fetch("https://<subdomain>.workers.dev", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
