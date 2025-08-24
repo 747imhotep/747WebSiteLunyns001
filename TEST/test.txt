@@ -250,3 +250,10 @@ Sure! Here are a few alternative icons you can use for **"Your Details"**, depen
 
 Would you like something more playful, formal, or minimalist?
 
+
+
+https://my-worker.lunyns.workers.dev
+✔ What would you like your workers.dev subdomain to be? It will be accessible at https://<subdomain>.workers.dev … lunyns
+✔ Creating a workers.dev subdomain for your account at https://lunyns.workers.dev. Ok to proceed? … yes
+✘ [ERROR] An unexpected error occurred, please try again.
+
