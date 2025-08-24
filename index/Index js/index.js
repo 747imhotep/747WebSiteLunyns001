@@ -129,7 +129,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
   };
 
   try {
-    const response = await fetch("https://<subdomain>.workers.dev", {
+    const response = await fetch("https://lunyns.workers.dev", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
