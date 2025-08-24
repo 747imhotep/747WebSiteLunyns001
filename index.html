@@ -227,16 +227,29 @@
         <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
 
         <!-- Consent Checkbox -->
-        <div style="margin-bottom: 1em;">
-          <label style="display: flex; align-items: center;">
-            <input type="checkbox" name="consent" required style="margin-right: 8px;">
-            I agree to allow the lunyns to store my email address.
-            <span style="margin-left: 6px; font-size: 0.9em; color: #ccc;">
-              <span title="We use your email to send updates and respond to your inquiry.">ⓘ</span>
-              <a href="/privacy-policy" target="_blank" style="margin-left: 5px; color: #ccc;">Learn more</a>
-            </span>
-          </label>
-        </div>
+<div style="margin-bottom: 1em;">
+  
+  <!-- Terms and Privacy Consent -->
+  <label style="display: flex; align-items: center; margin-bottom: 0.5em;">
+    <input type="checkbox" name="terms_consent" required style="margin-right: 8px;">
+    <span>
+      I agree to the <a href="/privacy-policy/Terms-Policy.html" target="_blank">Terms of Use & Privacy Policy</a>,
+      including data storage and cookie use.
+      <span style="font-size: 0.9em; color: #888; margin-left: 6px;" title="We use your data to provide and improve our services.">ⓘ</span>
+    </span>
+  </label>
+
+  <!-- Marketing/Email Updates Consent -->
+  <label style="display: flex; align-items: center;">
+    <input type="checkbox" name="marketing_consent" required style="margin-right: 8px;">
+    <span>
+      I consent to receive business-related emails and updates from www.lunyns.com.
+      I understand I can unsubscribe at any time.
+    </span>
+  </label>
+
+</div>
+
 
         <!-- Buttons -->
         <button type="submit" class="btn btn-light">
