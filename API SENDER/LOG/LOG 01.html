@@ -1,0 +1,136 @@
+<pre>cat wrangler-2025-08-25_15-22-48_446.log
+
+--- 2025-08-25T15:22:48.569Z debug
+🪵  Writing logs to &quot;/home/kmt/.config/.wrangler/logs/wrangler-2025-08-25_15-22-48_446.log&quot;
+---
+
+--- 2025-08-25T15:22:48.569Z debug
+Metrics dispatcher: Posting data {&quot;deviceId&quot;:&quot;98e1b957-d447-4818-bd3c-9f9c6957741c&quot;,&quot;event&quot;:&quot;wrangler command started&quot;,&quot;timestamp&quot;:1756135368569,&quot;properties&quot;:{&quot;amplitude_session_id&quot;:1756135368567,&quot;amplitude_event_id&quot;:0,&quot;wranglerVersion&quot;:&quot;4.32.0&quot;,&quot;osPlatform&quot;:&quot;Linux&quot;,&quot;osVersion&quot;:&quot;#68~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 15 18:06:34 UTC 2&quot;,&quot;nodeVersion&quot;:20,&quot;isFirstUsage&quot;:false,&quot;configFileType&quot;:&quot;none&quot;,&quot;isCI&quot;:false,&quot;isPagesCI&quot;:false,&quot;isWorkersCI&quot;:false,&quot;isInteractive&quot;:true,&quot;hasAssets&quot;:false,&quot;argsUsed&quot;:[],&quot;argsCombination&quot;:&quot;&quot;,&quot;command&quot;:&quot;wrangler deploy&quot;,&quot;args&quot;:{&quot;xJsonConfig&quot;:true,&quot;j&quot;:true,&quot;noBundle&quot;:false,&quot;latest&quot;:false,&quot;keepVars&quot;:false,&quot;xAutoCreate&quot;:true}}}
+---
+
+--- 2025-08-25T15:22:48.579Z debug
+Failed to load .env file &quot;/home/kmt/.env&quot;: Error: ENOENT: no such file or directory, open &apos;/home/kmt/.env&apos;
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83510:48)
+    at Object.config (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83528:29)
+    at loadDotEnv (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83697:61)
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:156340:19
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:78718:20
+    at maybeAsyncResult (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:76891:44)
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:78717:18
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:76813:22
+    at Array.reduce (&lt;anonymous&gt;) {
+  errno: -2,
+  code: &apos;ENOENT&apos;,
+  syscall: &apos;open&apos;,
+  path: &apos;/home/kmt/.env&apos;
+}
+---
+
+--- 2025-08-25T15:22:48.579Z debug
+Failed to load .env file &quot;/home/kmt/.env.local&quot;: Error: ENOENT: no such file or directory, open &apos;/home/kmt/.env.local&apos;
+    at Object.readFileSync (node:fs:449:20)
+    at Object.configDotenv (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83510:48)
+    at Object.config (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83528:29)
+    at loadDotEnv (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83697:61)
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:156340:19
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:78718:20
+    at maybeAsyncResult (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:76891:44)
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:78717:18
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:76813:22
+    at Array.reduce (&lt;anonymous&gt;) {
+  errno: -2,
+  code: &apos;ENOENT&apos;,
+  syscall: &apos;open&apos;,
+  path: &apos;/home/kmt/.env.local&apos;
+}
+---
+
+--- 2025-08-25T15:22:48.619Z log
+
+ ⛅️ wrangler 4.32.0
+───────────────────
+---
+
+--- 2025-08-25T15:22:48.626Z log
+
+---
+
+--- 2025-08-25T15:22:48.661Z error
+✘ [ERROR] Missing entry-point to Worker script or to assets directory
+
+  
+  If there is code to deploy, you can either:
+  - Specify an entry-point to your Worker script via the command
+  line (ex: `npx wrangler deploy src/index.ts`)
+  - Or create a &quot;wrangler.jsonc&quot; file containing:
+  
+  ```
+  {
+    &quot;name&quot;: &quot;worker-name&quot;,
+    &quot;compatibility_date&quot;: &quot;2025-08-25&quot;,
+    &quot;main&quot;: &quot;src/index.ts&quot;
+  }
+  ```
+  
+  
+  If are uploading a directory of assets, you can either:
+  - Specify the path to the directory of assets via the command
+  line: (ex: `npx wrangler deploy --assets=./dist`)
+  - Or create a &quot;wrangler.jsonc&quot; file containing:
+  
+  ```
+  {
+    &quot;name&quot;: &quot;worker-name&quot;,
+    &quot;compatibility_date&quot;: &quot;2025-08-25&quot;,
+    &quot;assets&quot;: {
+      &quot;directory&quot;: &quot;./dist&quot;
+    }
+  }
+  ```
+  
+
+
+---
+
+--- 2025-08-25T15:22:48.661Z debug
+Error: Missing entry-point to Worker script or to assets directory
+
+If there is code to deploy, you can either:
+- Specify an entry-point to your Worker script via the command line (ex: `npx wrangler deploy src/index.ts`)
+- Or create a &quot;wrangler.jsonc&quot; file containing:
+
+```
+{
+  &quot;name&quot;: &quot;worker-name&quot;,
+  &quot;compatibility_date&quot;: &quot;2025-08-25&quot;,
+  &quot;main&quot;: &quot;src/index.ts&quot;
+}
+```
+
+
+If are uploading a directory of assets, you can either:
+- Specify the path to the directory of assets via the command line: (ex: `npx wrangler deploy --assets=./dist`)
+- Or create a &quot;wrangler.jsonc&quot; file containing:
+
+```
+{
+  &quot;name&quot;: &quot;worker-name&quot;,
+  &quot;compatibility_date&quot;: &quot;2025-08-25&quot;,
+  &quot;assets&quot;: {
+    &quot;directory&quot;: &quot;./dist&quot;
+  }
+}
+```
+
+    at getEntry (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:86400:11)
+    at Object.handler (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:86996:29)
+    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83881:20
+    at AsyncLocalStorage.run (node:async_hooks:346:14)
+    at run (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:34295:61)
+    at Object.handler (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:83856:13)
+---
+
+--- 2025-08-25T15:22:48.662Z debug
+Metrics dispatcher: Posting data {&quot;deviceId&quot;:&quot;98e1b957-d447-4818-bd3c-9f9c6957741c&quot;,&quot;event&quot;:&quot;wrangler command errored&quot;,&quot;timestamp&quot;:1756135368662,&quot;properties&quot;:{&quot;amplitude_session_id&quot;:1756135368567,&quot;amplitude_event_id&quot;:1,&quot;wranglerVersion&quot;:&quot;4.32.0&quot;,&quot;osPlatform&quot;:&quot;Linux&quot;,&quot;osVersion&quot;:&quot;#68~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 15 18:06:34 UTC 2&quot;,&quot;nodeVersion&quot;:20,&quot;isFirstUsage&quot;:false,&quot;configFileType&quot;:&quot;none&quot;,&quot;isCI&quot;:false,&quot;isPagesCI&quot;:false,&quot;isWorkersCI&quot;:false,&quot;isInteractive&quot;:true,&quot;hasAssets&quot;:false,&quot;argsUsed&quot;:[],&quot;argsCombination&quot;:&quot;&quot;,&quot;command&quot;:&quot;wrangler deploy&quot;,&quot;args&quot;:{&quot;xJsonConfig&quot;:true,&quot;j&quot;:true,&quot;noBundle&quot;:false,&quot;latest&quot;:false,&quot;keepVars&quot;:false,&quot;xAutoCreate&quot;:true},&quot;durationMs&quot;:111,&quot;durationSeconds&quot;:0.111,&quot;durationMinutes&quot;:0.00185,&quot;errorType&quot;:&quot;UserError&quot;,&quot;errorMessage&quot;:&quot;missing worker entrypoint or assets directory&quot;}}
+</pre>
