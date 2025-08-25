@@ -95,7 +95,7 @@ https://app.sender.net/subscribers/ZzmLgD5/view
 the correct Group ID is:	ZzmLgD5
 -----------------------------------------------------------------
 
-wrangler init [name]            📥 Initialize a basic Worker
+  wrangler init [name]            📥 Initialize a basic Worker
   wrangler dev [script]           👂 Start a local server for developing your Worker
   wrangler deploy [script]        🆙 Deploy a Worker to Cloudflare
   wrangler deployments            🚢 List and view the current and past deployments for your Worker
@@ -108,4 +108,7 @@ wrangler init [name]            📥 Initialize a basic Worker
   wrangler types [path]           📝 Generate types from your Worker configuration
 
 
+we have this path: my-worker/src/index.ts
 
+so, in wrangler.jsonc (wrangler.toml) I've put: "name": "sender-proxy-Worker",
+Hopefully, it's correct now.
