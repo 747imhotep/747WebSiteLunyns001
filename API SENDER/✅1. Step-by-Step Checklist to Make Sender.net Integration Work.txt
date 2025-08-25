@@ -94,7 +94,7 @@ export default {
 };
 ```
 
----
+------------------------
 
 ### ➡️3. **"Network Error" — Where Are You Seeing This?**
 
@@ -110,7 +110,7 @@ export default {
 
     ```bash
     wrangler dev
-    wrangler publish
+    wrangler deploy
     wrangler tail
     ```
 * **Sender.net dashboard?**

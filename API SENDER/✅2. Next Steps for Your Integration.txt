@@ -83,5 +83,19 @@ If you'd like, I can help you write the **Cloudflare Worker code** that:
 * Validates consent
 * Sends subscriber data to Sender.net
 
-Would you like help with that next?
+-----------------------------------------------------------------
+On the SENDER EMAIL SETUP, we have
+Step name: 		After Opt-in
+From name:		L***
+Sender`s email address:	***@lunyns.com
+Email subject:		Welcom & Thanks
+Email Preview text:	You've become a part of
+
+https://app.sender.net/subscribers/ZzmLgD5/view
+the correct Group ID is:	ZzmLgD5
+-----------------------------------------------------------------
+
+
+
+
 
