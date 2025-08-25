@@ -1,0 +1,87 @@
+
+
+export TOKEN="your-real-token-goes-here"
+
+curl --http1.1 -X POST "https://api.sender.net/v2/subscribers" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@example.com",
+    "name": "Test User",
+    "list_ids": ["your-list-id"]
+  }'
+
+
+Awesome — that response means everything **worked correctly**! 🎉
+
+Here's what just happened:
+
+---
+
+## ✅ What This Response Means
+
+* `"success": true` → Your request was successful
+* `"email": "test@example.com"` → The subscriber was added
+* `"status": { "email": "active" }` → The email is valid and the subscriber is now **active**
+* `"source": "API"` → The contact was created via your custom integration
+* `"columns"` → You even passed custom fields like `userType: Buyer` — great!
+
+---
+
+## 🔒 About the Token Tip (Safe Handling)
+
+You referenced this line:
+
+> 🔒 This way you only paste the token once, and you avoid breaking the command...
+
+Just to clarify:
+
+* Using `export TOKEN="your-token"` sets the API token **once per session**
+* Then you can reuse `$TOKEN` in every `curl` command — no need to paste the long token again
+* It's also safer than leaving it in plain text or repeatedly copying it
+
+### 🔁 Example Reuse:
+
+```bash
+curl --http1.1 -X POST "https://api.sender.net/v2/subscribers" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "newuser@example.com",
+    "name": "New User",
+    "list_ids": ["your-list-id"]
+  }'
+```
+
+---
+
+## ✅2. Next Steps for Your Integration
+
+1. **Add Subscriber via Cloudflare Worker**
+   Now that your `curl` works, you can copy the logic into your **Cloudflare Worker** script.
+
+2. **Verify Welcome Email in Sender.net**
+
+   * Log into **Sender.net**
+   * Go to **Automations** → confirm you have one set up like:
+
+     * Trigger: “Subscriber is added to List X”
+     * Action: “Send Welcome Email”
+   * Make sure the **list ID in your curl** matches the list that triggers the automation
+
+3. **Connect it to your website form**
+   When someone submits the form, your front-end should:
+
+   * Send a `POST` request to your Cloudflare Worker endpoint
+   * Your Worker should forward the data to Sender.net API (as the curl does)
+
+---
+
+If you'd like, I can help you write the **Cloudflare Worker code** that:
+
+* Handles the form submission
+* Validates consent
+* Sends subscriber data to Sender.net
+
+Would you like help with that next?
+

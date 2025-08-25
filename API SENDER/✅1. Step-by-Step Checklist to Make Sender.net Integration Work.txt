@@ -1,0 +1,190 @@
+It sounds like you’re trying to integrate a custom form on your website with **Sender.net** using their **API**, and possibly using **Cloudflare Workers** to do so. You're also encountering a **"Network error. Please check your connection."** issue when trying to connect — that could stem from a few sources.
+
+Let’s break it down and go through the likely causes and solutions.
+
+---
+
+## ✅ Step-by-Step Checklist to Make Sender.net Integration Work
+
+### ➡️1. **Verify the API Token**
+
+* Ensure you copied the **correct Sender.net API Token** from your account.
+* The API token should have sufficient permissions to:
+
+  * Add subscribers
+  * Send emails (like welcome emails, if triggered automatically)
+* Test the token via `curl` or Postman to validate it's working:
+
+```bash
+curl -X POST https://api.sender.net/v2/subscribers \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"email": "example@example.com", "name": "John"}'
+```
+
+Replace:
+
+YOUR_API_TOKEN → Your real Sender.net API token
+
+email and name with test data
+
+* If you get a 401 or 403, it's an **auth issue**.
+
+---
+
+### ➡️2. **Check Your Worker Setup (Cloudflare Workers)**
+
+✅ Objective
+
+- You want your Cloudflare Worker to:
+- Receive form submissions from your website (via POST)
+- Validate the consent checkbox
+- Send the subscriber data to Sender.net using the API token
+- Respond back with success or error
+
+#### In `wrangler.toml`:
+
+Make sure you have:
+
+```toml
+name = "my-worker"
+type = "javascript"
+
+[vars]
+SENDER_API_KEY = "your_actual_token"
+
+[triggers]
+routes = ["yourdomain.com/api/subscribe"]
+
+compatibility_date = "2023-08-25"
+```
+
+#### Your `index.js` or `worker.js` (basic example):
+
+```js
+export default {
+  async fetch(request, env, ctx) {
+    if (request.method === "POST") {
+      const body = await request.json();
+
+      const response = await fetch("https://api.sender.net/v2/subscribers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${env.SENDER_API_KEY}`,
+        },
+        body: JSON.stringify({
+          email: body.email,
+          name: body.name,
+          custom_fields: {
+            consent: body.consent,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        return new Response("Failed to subscribe user.", { status: 500 });
+      }
+
+      return new Response("Subscribed successfully!", { status: 200 });
+    }
+
+    return new Response("Method not allowed", { status: 405 });
+  },
+};
+```
+
+---
+
+### ➡️3. **"Network Error" — Where Are You Seeing This?**
+
+#### Possible locations:
+
+* **Browser Console (JS error)?**
+
+  * Check DevTools → Console or Network tab.
+  * Look for CORS issues or blocked requests.
+* **Cloudflare Worker log or deployment output?**
+
+  * Check with:
+
+    ```bash
+    wrangler dev
+    wrangler publish
+    wrangler tail
+    ```
+* **Sender.net dashboard?**
+
+  * Possibly if you're testing API calls from within their dashboard?
+
+#### Possible causes:
+
+| Cause    | Solution                                           |
+| -------- | -------------------------------------------------- |
+| **CORS** | Make sure your worker returns proper CORS headers: |
+
+```js
+return new Response(JSON.stringify({ message: "ok" }), {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST",
+  },
+});
+```
+
+\| **Invalid API endpoint or token** | Test API directly using `curl` or Postman. |
+\| **Cloudflare Worker failing silently** | Add logging or use `wrangler tail` to debug. |
+\| **HTTPS required but not used** | Sender.net API requires HTTPS; ensure fetch is done securely. |
+
+---
+
+### 4. **Ensure Sender.net is Set to Trigger Welcome Email**
+
+* Inside **Sender.net**, go to:
+
+  * **Automation** → Create or Edit a Workflow
+  * Trigger: “When a subscriber is added to a list”
+  * Action: Send Email (welcome email)
+* Make sure your API request is adding the user to the correct **list** that triggers the automation.
+
+---
+
+## 🛠️ How to Debug This Now
+
+### A. Test API Key with Postman or curl
+
+Check if it works outside of Cloudflare.
+
+### B. Test Worker Endpoint with curl:
+
+```bash
+curl -X POST https://yourdomain.com/api/subscribe \
+  -H "Content-Type: application/json" \
+  -d '{"email": "test@example.com", "name": "Test User", "consent": true}'
+```
+
+### C. Use `wrangler tail` to see real-time logs
+
+```bash
+wrangler tail
+```
+
+Watch for errors thrown inside your worker function.
+
+---
+
+## 🎁 Optional: I Can Review Your Code
+
+If you paste:
+
+* Your `wrangler.toml`
+* Your worker script (JS)
+* The HTML form you're using
+
+I can double-check for anything out of place.
+
+---
+
+Would you like a **working example repo or code snippet** that does everything you’re aiming for — including the welcome email setup and storing consent?
+
