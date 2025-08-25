@@ -138,7 +138,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(formData)
   });
 
     if (response.ok) {
