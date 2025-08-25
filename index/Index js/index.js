@@ -125,7 +125,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
       userType: userType,
       productType: productType,
       subject: subject,
-      message: message
+      message: message,
       marketing_consent: form.marketing_consent?.checked ?? true
     },
     tags: [userType], // e.g., "Buyer", "Seller", etc.
@@ -133,7 +133,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
   };
 
   try {
-    const response = await fetch("https://my-worker.my-workerlunyns.workers.dev", {
+    const response = await fetch("https://my-worker.my-workerlunyns.workers.dev", { // sending form to your Cloudflare Worker.
     method: "POST",
     headers: {
       "Content-Type": "application/json"
