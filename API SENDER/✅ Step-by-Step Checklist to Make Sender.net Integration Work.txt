@@ -6,7 +6,7 @@ Let’s break it down and go through the likely causes and solutions.
 
 ## ✅ Step-by-Step Checklist to Make Sender.net Integration Work
 
-### ➡️1. **Verify the API Token**
+### 1. **Verify the API Token**
 
 * Ensure you copied the **correct Sender.net API Token** from your account.
 * The API token should have sufficient permissions to:
@@ -23,24 +23,21 @@ curl -X POST https://api.sender.net/v2/subscribers \
 ```
 
 Replace:
+→  YOUR_API_TOKEN → Your real Sender.net API token
+→  email and name with test data
 
-YOUR_API_TOKEN → Your real Sender.net API token
-
-email and name with test data
+```bash
+curl -X POST https://api.sender.net/v2/subscribers \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"email": "support@lunyns.com", "name": "Imhotep"}'
+    -d '{support@lunyns.com, Imhotep}'
 
 * If you get a 401 or 403, it's an **auth issue**.
 
 ---
 
-### ➡️2. **Check Your Worker Setup (Cloudflare Workers)**
-
-✅ Objective
-
-- You want your Cloudflare Worker to:
-- Receive form submissions from your website (via POST)
-- Validate the consent checkbox
-- Send the subscriber data to Sender.net using the API token
-- Respond back with success or error
+### 2. **Check Your Worker Setup (Cloudflare Workers)**
 
 #### In `wrangler.toml`:
 
@@ -94,9 +91,9 @@ export default {
 };
 ```
 
-------------------------
+---
 
-### ➡️3. **"Network Error" — Where Are You Seeing This?**
+### 3. **"Network Error" — Where Are You Seeing This?**
 
 #### Possible locations:
 
