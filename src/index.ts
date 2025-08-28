@@ -1,0 +1,29 @@
+// INDEX.TS 
+
+export default {
+  async fetch(request: Request): Promise<Response> {
+    if (request.method === "POST") {
+      try {
+        const data = await request.json();
+        console.log("📨 Form received:", data);
+
+        // Example: Return success response
+        return new Response(JSON.stringify({ success: true, message: "Data received!" }), {
+          headers: { "Content-Type": "application/json" },
+          status: 200,
+        });
+      } catch (err) {
+        console.error("❌ Error parsing request:", err);
+        return new Response(JSON.stringify({ success: false, message: "Invalid JSON" }), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+    }
+
+    return new Response("Method Not Allowed", {
+      status: 405,
+    });
+  },
+};
+

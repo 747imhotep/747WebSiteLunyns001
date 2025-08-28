@@ -1,0 +1,20 @@
+// INDEX.JS 
+
+export default {
+  async fetch(request) {
+    if (request.method === "POST") {
+      const data = await request.json();
+      console.log("Received:", data);
+
+      // TODO: You can forward data to another API, send emails, store in KV, etc.
+      return new Response(JSON.stringify({ message: "Form received!" }), {
+        headers: { "Content-Type": "application/json" },
+        status: 200
+      });
+    }
+
+    return new Response("Use POST to send data.", {
+      status: 405,
+    });
+  },
+};

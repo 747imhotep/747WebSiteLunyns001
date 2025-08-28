@@ -1,0 +1,53 @@
+// INDEX.TS 
+
+export default {
+  async fetch(request: Request): Promise<Response> {
+    if (request.method === "OPTIONS") {
+      // Handle CORS preflight requests
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
+
+    if (request.method !== "POST") {
+      return new Response("Method Not Allowed", {
+        status: 405,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
+  
+
+  const data = await request.json();
+
+  const apiResponse = await fetch("https://api.sender.net/v2/subscribers", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${SENDER_API_KEY}`, // NO API TOKEN KEY VISIBLE 
+    },
+    body: JSON.stringify(data)
+  });
+
+//  const result = await Response.json(); // THERE IS AN ISSUE WITH "json()" this line has been changed.
+  const result = await apiResponse.json(); // this replace the line 40, here above.
+	
+
+  return new Response(JSON.stringify(result), {
+    status: apiResponse.status,
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*", // 👈 fix is here Allow from anywhere
+    },
+  });
+}
+};
+

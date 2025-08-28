@@ -1,0 +1,46 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "sender-proxy-Worker",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-08-25",
+	"vars": {
+		"SENDER_API_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWY3YmFiNThkNjA2YTBjZDIzNWYyNDU4ZGJjY2Y1MWRjYTBhMDc2NTQ3NDZkZDJiYzIxNTBlYzc4MjVmMTgzYTI5NzU5ODY1NzllYTUwZmMiLCJpYXQiOjE3NTU5NTE5NzIuNzQ4ODk0LCJuYmYiOjE3NTU5NTE5NzIuNzQ4ODk2LCJleHAiOjQ5MDk1NTE5NzIuNzQ2OTc3LCJzdWIiOiIxMDA0NzM4Iiwic2NvcGVzIjpbXX0.HJqBlaqRemjd7qDjAOepLvHSVcm5YsZMuJjOw4f0Jp_AkHuYaG1l9PmFe6EE8_SfLXdWE41u_vKU1_yoMo_Amal0yUHadaIZSNpDQIjrGArwZHLS5YnMKVZsid__QK_DP-MkTUW6skSWyRofilxsdpOb7Lk89DegIUgGCi16WLdli43Fy7LMN5XIKPp6RmE6iAw4BhGufxDsjqFZRxYlG93pIaEixxsqnnA3kV43M8QxDex9n61S_Llp5tP6wbzOmvdLwf1K1zu7cmLGkm21AvpYrJCZjFLSx9-HEjtuT_hw3KF0FUSp33M1Tfgmtld4XdZhkq5XyVhFtSomH2FuQgKphEbS-KEUVYvgTccbL8sPsbRCxRnh5Md18esLFP0nxLzfHJ1bdK8DYY4UTL_cOMNvdxMNwPLV_FnjSuYuadQ_8jKCmHZ3SGVfB8sSfLOI335-ou3_5nVO1Pa0Uehg7aSeGZMHXUYVlx7CcG8GStKnkBb9KzYYxNsK70sOo7PYv2cdyWjmjC0mKWevbdXN08_N8XtCjgS3sTdqxEfc2nGZspsLLpoSBNLnZHQRJJl6Fk03ZOGDClVbdTpsnKRBOBxNG0WO3PQ_bZeOf6TqP92IhrbuPnYpkikLHXxWDsNOq4POco8xOCOuJcmXUzrOYaDJIrO83hdkhxst9CW1lMY"
+	},
+	"observability": {
+		"enabled": true
+	}
+	/**
+	 * Smart Placement
+	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": { "mode": "smart" }
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 */
+	// "vars": { "MY_VARIABLE": "production_value" }
+	/**
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+	/**
+	 * Static Assets
+	 * https://developers.cloudflare.com/workers/static-assets/binding/
+	 */
+	// "assets": { "directory": "./public/", "binding": "ASSETS" }
+	/**
+	 * Service Bindings (communicate between multiple Workers)
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	 */
+	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
+}
