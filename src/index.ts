@@ -21,7 +21,7 @@ export default {
       }
     }
 
-    return new Response("Method Not Allowed", {
+    return new Response("Ooooh Sorry, Method Not Allowed", {
       status: 405,
     });
   },

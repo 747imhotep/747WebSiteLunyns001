@@ -15,7 +15,7 @@ console.log("Script loaded:", document.readyState);
 
 // <!---------------------------------------------------------------------------------------->
 
-// ✅ OPEN RFQ MODAL
+      // ✅ OPEN RFQ MODAL
       function openRFQModal(prefillProduct = null) {
         const modal = document.getElementById('RFQ-modal');
         if (modal) {
@@ -35,7 +35,7 @@ console.log("Script loaded:", document.readyState);
         }
       }
 
-// ✅ OPEN MODAL BASED ON URL
+      // ✅ OPEN MODAL BASED ON URL
       window.addEventListener('DOMContentLoaded', () => {
         const hash = window.location.hash;
 
