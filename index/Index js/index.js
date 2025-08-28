@@ -94,10 +94,12 @@ document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
 // <!---------------------------------------------------------------------------------------->
 
 // ✅ SUBMIT HANDLER — MAIN FORM
-document.querySelector('contactForm')?.addEventListener('submit', async function(e) {
-  e.preventDefault();
+const form = document.querySelector('#contactForm');
+form?.addEventListener('submit', async function(e) {
+  e.preventDefault(); // ✅ prevents page reload
 
-  const form = e.target;
+  // now you can use `form` safely
+  const formElement = e.target;
 
 // Convert form fields to a JS object
   const data = {

@@ -8,10 +8,8 @@ export default {
         console.log("📨 Form received:", data);
 
         // Example: Return success response
-        return new Response(JSON.stringify({ success: true, message: "Data received!" }), {
-          headers: { "Content-Type": "application/json" },
-          status: 200,
-        });
+        return Response.redirect("https://lunyns.com/thanks/thanks.html", 303);
+
       } catch (err) {
         console.error("❌ Error parsing request:", err);
         return new Response(JSON.stringify({ success: false, message: "Invalid JSON" }), {
