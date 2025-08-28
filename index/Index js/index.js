@@ -1,41 +1,33 @@
-// INDEX JS
+// INDEX JS LIVE VER. 2025-08-29-01
 
 console.log("Script loaded:", document.readyState);
 
 
 // <!---------------------------------------------------------------------------------------->
 
-
-// <!-- CLEAR FORM -->
-
-  // Clear all form fields when Clear Form button is clicked
+// ✅ CLEAR FORM BUTTON
   document.getElementById('clearFormBtn').addEventListener('click', () => {
-    const form = document.querySelector('form[action^="mailto"]');
+    const form = document.querySelector('contactForm');
     if (form) {
       form.reset();  // resets all input/textarea/select to their default values (empty in your case)
     }
   });
 
-// <!-- CLEAR FORM END -->
+// <!---------------------------------------------------------------------------------------->
 
-
-// <!-- OPEN RFQ -->
-
-      // Function to open modal and optionally prefill form
+// ✅ OPEN RFQ MODAL
       function openRFQModal(prefillProduct = null) {
         const modal = document.getElementById('RFQ-modal');
         if (modal) {
           modal.style.display = 'block';
         }
 
-        // Prefill the subject if product info is provided
         if (prefillProduct) {
           const subjectInput = document.getElementById('subject');
           if (subjectInput) {
             subjectInput.value = `${prefillProduct.toUpperCase()}  Quotation Request`;
           }
 
-          // Optional: Prefill the message textarea
           const messageInput = document.getElementById('message');
           if (messageInput) {
             messageInput.value = `Dear team,\n\nI would like to request a quotation for ${prefillProduct.toUpperCase()} \nKindly provide details regarding pricing, payment method, and minimum order quantity (MOQ) at your earliest convenience.\n\nThank you.`;
@@ -43,8 +35,7 @@ console.log("Script loaded:", document.readyState);
         }
       }
 
-
-      // Handle opening the modal on page load based on URL hash
+// ✅ OPEN MODAL BASED ON URL
       window.addEventListener('DOMContentLoaded', () => {
         const hash = window.location.hash;
 
@@ -56,14 +47,15 @@ console.log("Script loaded:", document.readyState);
         }
       });
 
-      // Close the modal when the close button is clicked
+      // ✅ CLOSE MODAL BUTTON
       document.querySelector('#RFQ-modal .close')?.addEventListener('click', function () {
         const modal = document.getElementById('RFQ-modal');
         if (modal) {
           modal.style.display = 'none';
         }
       });
-      // Also close the modal when Escape key is pressed
+
+      // ✅ ESC KEY CLOSE
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
           const modal = document.getElementById('RFQ-modal');
@@ -72,7 +64,8 @@ console.log("Script loaded:", document.readyState);
           }
         }
       });
-      // Close the modal if user clicks outside of it
+
+      // ✅ CLICK OUTSIDE MODAL TO CLOSE
       window.onclick = function (event) {
         const modal = document.getElementById('RFQ-modal');
         if (event.target === modal) {
@@ -80,7 +73,7 @@ console.log("Script loaded:", document.readyState);
         }
       };
 
-       // Handle links like <a href="#RFQ">
+       // ✅ LINK TRIGGERS FOR RFQ
 document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -89,7 +82,6 @@ document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
   });
 });
 
-// Handle links like <a href="#RFQ-10ppm">
 document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -99,52 +91,44 @@ document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
   });
 });
 
+// <!---------------------------------------------------------------------------------------->
 
-
-
-// Here's the final cleaned version of your submit handler:
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
+// ✅ SUBMIT HANDLER — MAIN FORM
+document.querySelector('contactForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
 
   const form = e.target;
 
-  // Get values from form
-  const email = form.email.value;
-  const name = form.name.value;
-  const userType = form.userType.value;
-  const productType = form.productType.value;
-  const subject = form.subject.value;
-  const message = form.message.value;
-
-  // Build the data object
+// Convert form fields to a JS object
   const data = {
-    email: email,
-    name: name,
+    email: form.email.value,
+    name: form.name.value,
     list_ids: ["ZzmLgD5"], // 👈 Use this exact ID from Sender.net
     fields: {
-      userType: userType,
-      productType: productType,
-      subject: subject,
-      message: message,
+      userType: form.userType.value,
+      productType: form.productType.value,
+      subject: form.subject.value,
+      message: form.message.value,
       marketing_consent: form.marketing_consent?.checked ?? true
     },
-    tags: [userType], // e.g., "Buyer", "Seller", etc.
+    tags: [form.userType.value], // e.g., "Buyer", "Seller", etc.
     status: "active" // required to trigger automations
   };
 
   try {
-    const response = await fetch("https://my-worker.my-workerlunyns.workers.dev", { // sending form to your Cloudflare Worker.
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(formData)
-  });
+    const response = await fetch('https://rfq-worker.my-workerlunyns.workers.dev', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        // Add authorization header if required by your API
+      },
+      body: JSON.stringify(data)
+    });
 
     if (response.ok) {
       alert("Thank you! Your request has been submitted.");
       form.reset(); // optional
-      window.location.href = "https://lunyns.com/Thanks/Thanks.html"; // redirect to thank you page
+      window.location.href = "https://lunyns.com/thanks/thanks.html"; // redirect to thank you page
     } else {
       const error = await response.json();
       console.error("Sender API Error:", error);
@@ -159,7 +143,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 // <!---------------------------------------------------------------------------------------->
-//     Tawk.to Script START
+// ✅ TAWK.TO SCRIPT — (LEAVE AS IS)
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
