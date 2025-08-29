@@ -105,7 +105,7 @@ form?.addEventListener('submit', async function(e) {
   const data = {
     email: form.email.value,
     name: form.name.value,
-    list_ids: ["ZzmLgD5"], // 👈 Use this exact ID from Sender.net
+    list_ids: ["ZzmLgD5"], // 👈 Use this exact YOUR_LIST_ID from Sender.net
     fields: {
       userType: form.userType.value,
       productType: form.productType.value,
