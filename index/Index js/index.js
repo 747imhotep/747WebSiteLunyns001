@@ -130,16 +130,16 @@ form?.addEventListener('submit', async function(e) {
     if (response.ok) {
       alert("Thank you! Your request has been submitted.");
       form.reset(); // optional
-      window.location.href = "https://lunyns.com/thanks/thanks.html"; // redirect to thank you page
+      window.location.href = "hidden"; // redirect to thank you page
     } else {
       const error = await response.json();
       console.error("Sender API Error:", error);
       alert("Error submitting form. Please try again.");
     }
-  } catch (err) {
-    console.error("Request failed:", err);
-    alert("Oh No! Network error. Please check your connection.");
-  }
+    } catch (err) {
+      console.error("Request failed:", err);
+      alert("Oh No! Network error. Please check your connection.");
+    }
 });
 
 

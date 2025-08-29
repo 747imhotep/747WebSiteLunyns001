@@ -26,7 +26,7 @@ export default {
         return new Response(null, {
           status: 303,
           headers: {
-            "Location": "https://https://lunyns.com/thanks/thanks.html", // Change to your real redirect
+            "Location": "https://lunyns.com/thanks/thanks.html", // Change to your real redirect
             "Access-Control-Allow-Origin": origin,
           },
         });
