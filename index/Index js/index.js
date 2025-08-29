@@ -131,7 +131,7 @@ form?.addEventListener('submit', async function(e) {
   const result = await response.json();
     if (result.success) {
       // ✅ Success — redirect to thank-you page
-      window.location.href = "https://lunyns.com/thanks/thanks.html";
+      window.location.href = "https://lunyns.com/Thanks/Thanks.html";
     } else {
       // ⚠️ Backend returned 200 but success: false (edge case)
       console.error("Unexpected response:", result);
