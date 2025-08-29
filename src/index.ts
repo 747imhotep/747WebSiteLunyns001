@@ -24,7 +24,8 @@ export default {
         console.log("📨 Form received:", data);
 
     // 🔐 Sender.net API credentials
-    const senderApiKey = "747imhotep"; // Replace with secret later
+    declare const SENDER_LIST_ID: string;
+    const senderApiKey = "SENDER_API_KEY"; // Replace with secret later
     const senderListId = "ZzmLgD5"; // Replace with actual list ID
 
     // 📤 Send subscriber to Sender.net
