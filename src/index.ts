@@ -1,4 +1,6 @@
 // INDEX.TS - Cloudflare Worker
+// "name": "SENDER_API_KEY",
+// "type": "secret_text"
 
 export default {
   async fetch(request: Request): Promise<Response> {
