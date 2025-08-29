@@ -1,4 +1,4 @@
-// INDEX.TS 
+// INDEX.TS - Cloudflare Worker
 
 export default {
   async fetch(request: Request): Promise<Response> {
@@ -23,10 +23,10 @@ export default {
         const data = await request.json();
         console.log("📨 Form received:", data);
 
-        return new Response(null, {
-          status: 303,
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200,
           headers: {
-            "Location": "https://lunyns.com/thanks/thanks.html", // Change to your real redirect
+            "Content-Type": "application/json",
             "Access-Control-Allow-Origin": origin,
           },
         });

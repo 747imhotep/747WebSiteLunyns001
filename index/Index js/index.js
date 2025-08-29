@@ -1,4 +1,4 @@
-// INDEX JS LIVE VER. 2025-08-29-01
+// INDEX JS LIVE VER. 2025-08-29-01  -  FRONTEND
 
 console.log("Script loaded:", document.readyState);
 
@@ -127,11 +127,18 @@ form?.addEventListener('submit', async function(e) {
       body: JSON.stringify(data)
     });
 
-    if (response.ok) {
-      alert("Thank you! Your request has been submitted.");
-      form.reset(); // optional
-      window.location.href = "hidden"; // redirect to thank you page
+  if (response.ok) {
+  const result = await response.json();
+    if (result.success) {
+      // ✅ Success — redirect to thank-you page
+      window.location.href = "https://lunyns.com/thanks/thanks.html";
     } else {
+      // ⚠️ Backend returned 200 but success: false (edge case)
+      console.error("Unexpected response:", result);
+      alert("Error submitting form. Please try again.");
+    }
+    } else {
+      // ❌ Server returned error status (e.g. 400)
       const error = await response.json();
       console.error("Sender API Error:", error);
       alert("Error submitting form. Please try again.");
