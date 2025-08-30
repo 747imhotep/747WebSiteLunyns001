@@ -1,0 +1,56 @@
+Great! Since Points 1 and 2 are done, here's a quick summary of the next steps and what you should focus on:
+
+---
+
+### ✅ **Completed**
+
+1. **Get Sender.net API key**
+2. **Get your List ID**
+
+---
+
+### 🔄 **Next Steps**
+
+3. **Test using a test email address**
+
+   * Use your backend code (or API tool like Postman) to send a test email 
+   to Sender.net using the API.
+   * Confirm that the test email appears in the correct list.
+
+
+
+
+
+
+4. **Ensure welcome email automation is set up in Sender.net**
+
+   * Go to **Sender.net Dashboard > Automation**
+   * Set a trigger: *"When a contact is added to \[your list]"*
+   * Action: *"Send welcome email"*
+   * Ensure it's **enabled** and tested.
+
+---
+
+### 🧪 **Post-Backend Verification**
+
+5. **Verify that subscribers are added properly via the backend**
+
+   * Confirm response from Sender.net is `200 OK` or success
+   * Check list to ensure the contact was added
+
+6. **Test the modal on your live site**
+
+   * Add a real email via the modal
+   * Confirm it's reaching the Sender.net list
+   * Check for any frontend errors in the console
+
+7. **Ensure smooth UX flow**
+
+   * The modal should submit via AJAX/fetch
+   * No full page reloads
+   * Show success/error messages instantly
+
+---
+
+Would you like help writing the API call to add a subscriber (step 3)?
+

@@ -1,4 +1,6 @@
 // INDEX.TS - Cloudflare Worker
+// "name": "SENDER_API_KEY",
+// "type": "secret_text"
 
 export default {
   async fetch(request: Request): Promise<Response> {
@@ -24,7 +26,8 @@ export default {
         console.log("📨 Form received:", data);
 
     // 🔐 Sender.net API credentials
-    const senderApiKey = "YOUR_API_KEY"; // Replace with secret later
+    declare const SENDER_LIST_ID: string;
+    const senderApiKey = "SENDER_API_KEY"; // Replace with secret later
     const senderListId = "ZzmLgD5"; // Replace with actual list ID
 
     // 📤 Send subscriber to Sender.net
