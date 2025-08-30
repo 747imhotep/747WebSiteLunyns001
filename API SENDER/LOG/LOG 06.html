@@ -1,105 +1,56 @@
-<pre>--- 2025-08-29T14:23:36.691Z debug
-🪵  Writing logs to &quot;/home/kmt/.config/.wrangler/logs/wrangler-2025-08-29_14-23-36_571.log&quot;
----
-
---- 2025-08-29T14:23:36.691Z debug
-Metrics dispatcher: Posting data {&quot;deviceId&quot;:&quot;98e1b957-d447-4818-bd3c-9f9c6957741c&quot;,&quot;event&quot;:&quot;wrangler command started&quot;,&quot;timestamp&quot;:1756477416691,&quot;properties&quot;:{&quot;amplitude_session_id&quot;:1756477416689,&quot;amplitude_event_id&quot;:0,&quot;wranglerVersion&quot;:&quot;4.33.1&quot;,&quot;osPlatform&quot;:&quot;Linux&quot;,&quot;osVersion&quot;:&quot;#68~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 15 18:06:34 UTC 2&quot;,&quot;nodeVersion&quot;:20,&quot;isFirstUsage&quot;:false,&quot;configFileType&quot;:&quot;none&quot;,&quot;isCI&quot;:false,&quot;isPagesCI&quot;:false,&quot;isWorkersCI&quot;:false,&quot;isInteractive&quot;:true,&quot;hasAssets&quot;:false,&quot;argsUsed&quot;:[],&quot;argsCombination&quot;:&quot;&quot;,&quot;command&quot;:&quot;wrangler deploy&quot;,&quot;args&quot;:{&quot;noBundle&quot;:false,&quot;latest&quot;:false,&quot;keepVars&quot;:false,&quot;xAutoCreate&quot;:true}}}
----
-
---- 2025-08-29T14:23:36.699Z debug
-.env file not found at &quot;/home/kmt/.env&quot;. Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
----
-
---- 2025-08-29T14:23:36.699Z debug
-.env file not found at &quot;/home/kmt/.env.local&quot;. Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
----
-
---- 2025-08-29T14:23:36.739Z log
-
- ⛅️ wrangler 4.33.1
-───────────────────
----
-
---- 2025-08-29T14:23:36.745Z log
-
----
-
---- 2025-08-29T14:23:36.780Z error
-✘ [ERROR] Missing entry-point to Worker script or to assets directory
-
-  
-  If there is code to deploy, you can either:
-  - Specify an entry-point to your Worker script via the command line (ex: `npx
-  wrangler deploy src/index.ts`)
-  - Or create a &quot;wrangler.jsonc&quot; file containing:
-  
-  ```
-  {
-    &quot;name&quot;: &quot;worker-name&quot;,
-    &quot;compatibility_date&quot;: &quot;2025-08-29&quot;,
-    &quot;main&quot;: &quot;src/index.ts&quot;
-  }
-  ```
-  
-  
-  If are uploading a directory of assets, you can either:
-  - Specify the path to the directory of assets via the command line: (ex: `npx
-  wrangler deploy --assets=./dist`)
-  - Or create a &quot;wrangler.jsonc&quot; file containing:
-  
-  ```
-  {
-    &quot;name&quot;: &quot;worker-name&quot;,
-    &quot;compatibility_date&quot;: &quot;2025-08-29&quot;,
-    &quot;assets&quot;: {
-      &quot;directory&quot;: &quot;./dist&quot;
-    }
-  }
-  ```
-  
-
-
----
-
---- 2025-08-29T14:23:36.781Z debug
-Error: Missing entry-point to Worker script or to assets directory
-
-If there is code to deploy, you can either:
-- Specify an entry-point to your Worker script via the command line (ex: `npx wrangler deploy src/index.ts`)
-- Or create a &quot;wrangler.jsonc&quot; file containing:
-
-```
-{
-  &quot;name&quot;: &quot;worker-name&quot;,
-  &quot;compatibility_date&quot;: &quot;2025-08-29&quot;,
-  &quot;main&quot;: &quot;src/index.ts&quot;
-}
-```
-
-
-If are uploading a directory of assets, you can either:
-- Specify the path to the directory of assets via the command line: (ex: `npx wrangler deploy --assets=./dist`)
-- Or create a &quot;wrangler.jsonc&quot; file containing:
-
-```
-{
-  &quot;name&quot;: &quot;worker-name&quot;,
-  &quot;compatibility_date&quot;: &quot;2025-08-29&quot;,
-  &quot;assets&quot;: {
-    &quot;directory&quot;: &quot;./dist&quot;
-  }
-}
-```
-
-    at getEntry (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:87661:11)
-    at Object.handler (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:88257:29)
-    at /home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:85142:20
-    at AsyncLocalStorage.run (node:async_hooks:346:14)
-    at run (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:41973:61)
-    at Object.handler (/home/kmt/.nvm/versions/node/v20.19.4/lib/node_modules/wrangler/wrangler-dist/cli.js:85117:13)
----
-
---- 2025-08-29T14:23:36.781Z debug
-Metrics dispatcher: Posting data {&quot;deviceId&quot;:&quot;98e1b957-d447-4818-bd3c-9f9c6957741c&quot;,&quot;event&quot;:&quot;wrangler command errored&quot;,&quot;timestamp&quot;:1756477416781,&quot;properties&quot;:{&quot;amplitude_session_id&quot;:1756477416689,&quot;amplitude_event_id&quot;:1,&quot;wranglerVersion&quot;:&quot;4.33.1&quot;,&quot;osPlatform&quot;:&quot;Linux&quot;,&quot;osVersion&quot;:&quot;#68~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 15 18:06:34 UTC 2&quot;,&quot;nodeVersion&quot;:20,&quot;isFirstUsage&quot;:false,&quot;configFileType&quot;:&quot;none&quot;,&quot;isCI&quot;:false,&quot;isPagesCI&quot;:false,&quot;isWorkersCI&quot;:false,&quot;isInteractive&quot;:true,&quot;hasAssets&quot;:false,&quot;argsUsed&quot;:[],&quot;argsCombination&quot;:&quot;&quot;,&quot;command&quot;:&quot;wrangler deploy&quot;,&quot;args&quot;:{&quot;noBundle&quot;:false,&quot;latest&quot;:false,&quot;keepVars&quot;:false,&quot;xAutoCreate&quot;:true},&quot;durationMs&quot;:107,&quot;durationSeconds&quot;:0.107,&quot;durationMinutes&quot;:0.0017833333333333334,&quot;errorType&quot;:&quot;UserError&quot;,&quot;errorMessage&quot;:&quot;missing worker entrypoint or assets directory&quot;}}
----
+<pre>cat 2025-08-30T09_15_34_284Z-debug-0.log
+0 verbose cli /home/kmt/.nvm/versions/node/v22.19.0/bin/node /home/kmt/.nvm/versions/node/v22.19.0/bin/npm
+1 info using npm@10.9.3
+2 info using node@v22.19.0
+3 silly config load:file:/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/.npmrc
+5 silly config load:file:/home/kmt/.npmrc
+6 silly config load:file:/home/kmt/.nvm/versions/node/v22.19.0/etc/npmrc
+7 verbose title npm init
+8 verbose argv &quot;init&quot; &quot;--yes&quot;
+9 verbose logfile logs-max:10 dir:/home/kmt/.npm/_logs/2025-08-30T09_15_34_284Z-
+10 verbose logfile /home/kmt/.npm/_logs/2025-08-30T09_15_34_284Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 verbose stack Error: EACCES: permission denied, open &apos;/home/package.json&apos;
+13 verbose stack     at async open (node:internal/fs/promises:641:25)
+13 verbose stack     at async writeFile (node:internal/fs/promises:1215:14)
+13 verbose stack     at async PackageJson.save (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/index.js:256:23)
+13 verbose stack     at async init (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/node_modules/init-package-json/lib/init-package-json.js:125:5)
+13 verbose stack     at async Init.template (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/commands/init.js:167:20)
+13 verbose stack     at async Init.exec (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/commands/init.js:48:5)
+13 verbose stack     at async Npm.exec (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/npm.js:207:9)
+13 verbose stack     at async module.exports (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/cli/entry.js:74:5)
+14 error code EACCES
+15 error syscall open
+16 error path /home/package.json
+17 error errno -13
+18 error Error: EACCES: permission denied, open &apos;/home/package.json&apos;
+18 error     at async open (node:internal/fs/promises:641:25)
+18 error     at async writeFile (node:internal/fs/promises:1215:14)
+18 error     at async PackageJson.save (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/index.js:256:23)
+18 error     at async init (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/node_modules/init-package-json/lib/init-package-json.js:125:5)
+18 error     at async Init.template (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/commands/init.js:167:20)
+18 error     at async Init.exec (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/commands/init.js:48:5)
+18 error     at async Npm.exec (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/npm.js:207:9)
+18 error     at async module.exports (/home/kmt/.nvm/versions/node/v22.19.0/lib/node_modules/npm/lib/cli/entry.js:74:5) {
+18 error   errno: -13,
+18 error   code: &apos;EACCES&apos;,
+18 error   syscall: &apos;open&apos;,
+18 error   path: &apos;/home/package.json&apos;
+18 error }
+19 error
+19 error The operation was rejected by your operating system.
+19 error It is likely you do not have the permissions to access this file as the current user
+19 error
+19 error If you believe this might be a permissions issue, please double-check the
+19 error permissions of the file and its containing directories, or try running
+19 error the command again as root/Administrator.
+20 verbose cwd /home
+21 verbose os Linux 6.8.0-78-generic
+22 verbose node v22.19.0
+23 verbose npm  v10.9.3
+24 verbose exit -13
+25 verbose code -13
+26 error A complete log of this run can be found in: /home/kmt/.npm/_logs/2025-08-30T09_15_34_284Z-debug-0.log
 </pre>
