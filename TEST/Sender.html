@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sender.net Test</title>
+</head>
+<body>
+  <h2>Add Subscriber to Sender.net</h2>
+  <form id="subscribeForm">
+    <input type="email" id="email" placeholder="Enter test email" required />
+    <input type="text" id="name" placeholder="Name (optional)" />
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const API_KEY = 'SENDER_API_KEY'; // <-- Replace with your real API key
+    const LIST_ID = 'ZzmLgD5'; // <-- Replace with your real List ID
+
+    document.getElementById('subscribeForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const name = document.getElementById('name').value;
+
+      const response = await fetch('https://api.sender.net/v2/subscribers', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + API_KEY,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          listIds: [LIST_ID]
+        })
+      });
+
+      const resultDiv = document.getElementById('result');
+      if (response.ok) {
+        resultDiv.innerText = '✅ Subscriber added successfully!';
+      } else {
+        const error = await response.json();
+        resultDiv.innerText = '❌ Error: ' + (error.message || 'Something went wrong');
+      }
+    });
+  </script>
+</body>
+</html>
