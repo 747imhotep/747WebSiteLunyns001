@@ -172,89 +172,45 @@
     </section>
   </main>
 
-<!-- ✅ RFQ Modal START 260-->
+<!-- ✅ RFQ Modal START 218-->
 <div id="RFQ-modal" class="modal" style="display: none;">
   <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
     <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
 
     <div class="boxquote">
       <h2>Request FREE Quotation!</h2>
-
-      <form id="contactForm" action="https://rfq-worker.my-workerlunyns.workers.dev" method="POST" novalidate>
+      <!-- <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain"> -->
+      <form id="contactForm" action="https://formsubmit.co/contact@lunyns.com" method="POST">
         
-        <!-- FormSubmit Hidden Inputs -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_subject" value="New submission!">
-        <input type="text" name="_honey" style="position:absolute;left:-9999px;">
+        <!-- Required for FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_subject" value="New submission!">
+          <input type="hidden" name="_blacklist,scammer" value="spammy pattern, banned term, phrase">
+          <input type="text" name="_honey" style="position:absolute;left:-9999px;">
+          <input type="hidden" name="_next" value="https://lunyns.com/Thanks/Thanks.html">
 
-        <!-- Name -->
+
         <label for="name">Name:*</label>
         <input type="text" id="name" name="name" required class="form-control mb-3">
 
-        <!-- Email -->
         <label for="email">Email:*</label>
-        <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
+        <input type="email" id="email" name="email" placeholder="Email Address" class="form-control mb-3">
 
-        <!-- User Type Dropdown -->
-        <label for="userType">You are a:*</label>
-        <select id="userType" name="userType" class="form-control mb-3" required>
-          <option value="">-- Select --</option>
-          <option value="Buyer">Buyer</option>
-          <option value="Seller">Seller</option>
-          <option value="Intermediary">Intermediary</option>
-        </select>
-
-        <!-- Product Type -->
-        <label for="productType">Product Type:*</label>
-        <select id="productType" name="productType" class="form-control mb-3" required>
-          <option value="">-- Select --</option>
-          <option value="Dry Nuts">Dry Nuts</option>
-          <option value="EN590">EN590 10ppm</option>
-          <option value="JET A1 FUEL">JET A1 FUEL</option>
-          <option value="Petroleum Products">Petroleum Products</option>
-        </select>
-
-        <!-- Subject -->
         <label for="subject">Subject:*</label>
         <input type="text" id="subject" name="subject" class="form-control mb-3">
 
-        <!-- Message -->
         <label for="message">Message:</label>
         <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
 
-        <!-- Consent Checkbox -->
-<div style="margin-bottom: 2em;">
-  
-  <!-- Terms and Privacy Consent -->
-  <label style="display: flex; align-items: center; margin-bottom: 0.5em;">
-    <input type="checkbox" name="terms_consent" required style="margin-right: 8px;">
-    <span>
-      I agree to the <a href="/privacy-policy/terms-and-privacy.html" target="_blank">Terms of Use & Privacy Policy</a>,
-      including data storage and cookie use.
-      <span style="font-size: 0.9em; color: #f4f4f4; margin-left: 6px;" title="We use your data to provide and improve our services.">ⓘ</span>
-    </span>
-  </label>
-
-  <!-- Marketing/Email Updates Consent -->
-  <label style="display: flex; align-items: center;">
-    <input type="checkbox" name="marketing_consent" required style="margin-right: 8px;">
-    <span>
-      I consent to receive business-related emails and updates from www.lunyns.com.
-      I understand I can unsubscribe at any time.
-    </span>
-  </label>
-</div>
-
-        <!-- Buttons -->
         <button type="submit" class="btn btn-light">
           <i class="fas fa-paper-plane"></i> Send Message
         </button>
         <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
-          <i class="fas fa-eraser"></i> Clear Form
+            <i class="fas fa-eraser"></i> Clear Form
         </button>
       </form>
-    </div>
+    </div><!-- boxquote END-->
   </div>
 </div>
 <!-- 175 RFQ Modal TEST END -->
