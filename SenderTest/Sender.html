@@ -4,14 +4,26 @@
   <title>Sender.net Test</title>
 </head>
 <body>
-  <h2>Add Subscriber to Sender.net</h2>
+  <div style="border: 2px solid rgb(151, 145, 145);
+  display: flex; justify-content: center; align-items: center; 
+  padding: 20px; margin: 20px; border-radius: 10px;
+  background-color: rgb(241, 238, 233);">
+    <h2 style="text-align: center;">Add Subscriber to Sender.net</h2>
+    <p></p>
+    <br><br>
   <form id="subscribeForm">
     <input type="email" id="email" placeholder="Enter test email" required />
     <input type="text" id="name" placeholder="Name (optional)" />
     <button type="submit">Subscribe</button>
   </form>
+  </div>
 
   <div id="result"></div>
+  <DIV>
+    <BR></BR>
+    <p style="text-align: center; font-weight: 700; font-size: 50px; 
+    color: brown;"> YOU'RE ENTERING IN A RESTRICTED AREA</p>
+  </DIV>
 
   <script>
     const API_KEY = 'SENDER_API_KEY'; // <-- Replace with your real API key
