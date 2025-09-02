@@ -1,8 +1,13 @@
-<label for="paymentTerms">Payment Terms:</label>
-<select name="paymentTerms" id="paymentTerms" required>
-  <option value="" disabled selected>–select–</option>
-  <option value="LC at sight">LC at sight</option>
-  <option value="LC">LC</option>
-  <option value="TT">TT (Telegraphic Transfer)</option>
-  <option value="DP">DP (Documents against Payment)</option>
-</select>
+<!-- Salutation -->
+<label>Salutation:</label>
+<div class="radio-group" role="radiogroup" aria-labelledby="salutation-label">
+  <label>
+    <input type="radio" name="salutation" value="Mr" required> Mr
+  </label>
+  <label>
+    <input type="radio" name="salutation" value="Mrs"> Mrs
+  </label>
+  <label>
+    <input type="radio" name="salutation" value="Dr"> Dr
+  </label>
+</div>

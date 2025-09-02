@@ -174,7 +174,7 @@ h2{
   font-size: 0.9rem; /* Slightly smaller font size */
 }
 
-/*  */
+/* FEW DETAILS */
 .input-with-currency {
   display: flex;
   align-items: center;
@@ -199,7 +199,60 @@ h2{
   color: #f1ebeb;
 }
 
-/*  */
+
+
+
+
+/* Aligns label with radios */
+.form-group-inline label {
+  display: flex;
+  gap: 1rem; /* nothing happened */
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000; /* Title color only*/
+}
+
+.form-group-inline {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem; /* Space between Title and Radios */
+  margin-bottom: 0.9rem;
+  background-color: #ffffff; /* box color */
+  padding: 0.1rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc; /* match Modal design setup */
+  border-radius: 4px;
+}
+
+/* Label and radio side by side */
+.radio-box label{
+  display: flex;
+  align-items: center; /* nothig happened */
+  gap: 7px;          /* space between circle and text */
+  color: #000;    /* Mr color */
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 2px 4px;
+}
+
+.radio-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  gap: 7rem;               /* Space between radio options */
+  flex-wrap: wrap;
+  padding: 0;       /* no inner padding */
+  background-color: transparent;
+  border: none;
+  flex-wrap: wrap;
+}
+
+/* RADIO TITLE END */
+
+
 
 /* Container for both checkboxes */
 .consent-item {
@@ -368,21 +421,7 @@ h2{
 }
 
 
-/*...................IMAGE CAROUSEL 
-.styled-img {
-  max-width: 1200px;
-  display: block;
-  margin: 30px auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.styled-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-....................*/
 
 * {
   margin: 0;
@@ -390,58 +429,7 @@ h2{
   box-sizing: border-box;
 }
 
-.carousel {
-  max-width: 1200px;
-  height: 100vh;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
 
-.carousel-inner {
-  display: flex;
-  width: 400%; /* 4 images = 100% * 4 */
-  animation: slide 20s infinite;
-}
-
-.carousel-item {
-  flex: 0 0 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-item img {
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-item img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
-
-  100% { transform: translateX(0); }
-}
 
 
 
