@@ -1,3 +1,6 @@
+/* 2coconuts.css */
+/* TO DELETE OLD COCONUTS.CSS FILE */
+
 .header-content {
   background-color: #001f3f;
   background-size: contain;
@@ -148,7 +151,61 @@ h1 span[aria-hidden="true"] {
   margin-right: auto;
 }
 
-/*REQUIREMENTS MODAL*/
+/*-----------REQUIREMENTS MODAL-----------*/
+.modal-content .consent-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Container for both checkboxes */
+.consent-item{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* The checkbox itself */
+.consent-checkbox{
+  margin-top: 5px;
+  flex-shrink: 0;  
+}
+
+/* The label text next to the checkbox */
+.consent-text{
+  display: inline-block;
+  line-height: 1.5;
+  color: #f4f4f4; /* Light text color */
+  font-weight: 0.9rem;
+  cursor: default;
+}
+
+.modal-content .consent-label{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap : 10px;
+  font-weight: normal; /* override modal label weight */
+  width: 100%;
+}
+
+
+
+
+.modal-content .info-icon {
+  font-size: 0.85em;
+  color: #f4f4f4;
+  background: #d9534f;
+  margin-left: 5px;
+  border-radius: 50%;
+  padding: 0 4px;
+  cursor: help;
+}
+/*second part*/
 .modal {
   display: none;
   position: fixed;
@@ -179,7 +236,7 @@ h1 span[aria-hidden="true"] {
   color: #f4f4f4; /* Light text color */
 }
 
-.modal-content label {
+.modal-content label { /* Override consent-label */
   display: block;
   margin-top: 1rem;
   font-weight: 600;
@@ -217,7 +274,19 @@ h1 span[aria-hidden="true"] {
   font-size: 24px;
   cursor: pointer;
 }
-/* END OF REQUIREMENTS MODAL */
+
+/* Override block label layout */
+.modal-content .consent-item label.consent-text {
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: normal;
+  margin-top: 0;
+  color: #f4f4f4;
+  line-height: 1.5;
+  cursor: default;
+}
+
+/*----------- END OF REQUIREMENTS MODAL-----------*/
 
 
 

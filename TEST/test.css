@@ -1,0 +1,69 @@
+/* THIS CODE IS PROBLEMATIC - IT PUSHES TEXT TO THE RIGHT*/
+.consent-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.consent-checkbox{
+  margin-top: 1px;
+  margin-left: 0;
+  flex: 1;
+}
+
+/* The label text next to the checkbox */
+.consent-text{
+  line-height: 1.5;
+  color: #f4f4f4; /* Light text color */
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin: 0;
+  flex: 9;
+}
+
+
+
+
+
+
+Try this combo for best results
+
+/* Container for both checkbox and label */
+.consent-item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1rem;
+  gap: 0.6rem; /* does not reduce space between checkbox and label */
+}
+
+/* The checkbox itself – keep it simple */
+.consent-checkbox {
+  margin-top: 4px; /* Nudge down slightly to align with text */
+  width: auto;
+  height: auto;
+  /* ❌ No flex or shrink here! */
+}
+
+/* Label text beside the checkbox */
+.consent-text {
+  color: #f4f4f4;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1; /* ✅ Pushes text ans checkbox to the right */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
