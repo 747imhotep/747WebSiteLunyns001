@@ -127,11 +127,11 @@
   <div class="header">
     
     <figure class="product-image">
-      <img id="makoffer" src="../../../IMAGES/mainIMAGES/imgCOCONUTS/Searching01.png" alt="Coconut husks">
+      <img id="makoffer" src="../../../IMAGES/mainIMAGES/imgCOCONUTS/Searching02.png" alt="Coconut husks">
     </figure>
     
     <div>
-      <h2> <span class="emoji">🌍</span> <b>Coconut Husk Supplier – Urgently Seeking Competitive Prices</b></h2>
+      <h2> <span class="emoji">🌍</span> <b>Coconut Shell Supplier – Urgently Seeking Competitive Prices</b></h2>
     </div>
     <p>
       We’re seeking a reliable supplier or verified trader for coconut shell with 
@@ -161,17 +161,17 @@
 <div class="details">
   <h3><b>Requirements:</b></h3>
     <ul>
-      <li>✅ <strong>Product:</strong> Coconut Husk (raw, or fiber-grade)</li>
-      <li>✅ <strong>Quantity:</strong> 100 MT</li>
-      <li>✅ <strong>Target Price:</strong> Very competitive – please quote less than $60</li>
-      <li>✅ <strong>Destination:</strong> Chittagong  port, Bangladesh</li>
+      <li>✅ <strong>Product:</strong> Coconut Shell (raw)</li>
+      <li>✅ <strong>Quantity:</strong> 300,000 MT yearly</li>
+      <li>✅ <strong>Target Price:</strong> Very competitive – please quote less than $600</li>
+      <li>✅ <strong>Destination:</strong> Coimbatore port, India</li>
       <li>✅ <strong>Location:</strong> Any safe would port</li>
-      <li>✅ <strong>Min quantity (trial):</strong> 100 MT</li>
-      <li>✅ <strong>Min frequency per month/year:</strong> 100 MT per month</li>
+      <li>✅ <strong>Min quantity (trial):</strong> 1-2 MT</li>
+      <li>✅ <strong>Min frequency per month/year:</strong> 25,000 MT per month</li>
       <li>✅ <strong>Shipping terms:</strong> CIF</li>
       <li>✅ <strong>Payment method:</strong> LC in sight</li>
-      <li>✅ <strong>Bank location:</strong> Bangladesh</li>
-      <li>✅ <strong>Commission:</strong> 4.5% seller side / 4.5% buyer side</li>
+      <li>✅ <strong>Bank location:</strong> India</li>
+      <li>✅ <strong>Commission:</strong> 2.5% seller side / 2.5% buyer side</li>
     </ul>
   </div>
 
@@ -179,7 +179,7 @@
 <div class="cta">
   <h3 id="Together" ><b>Let’s Work Together</b></h3>
   <p>
-    Ready to supply coconut husks at competitive rates? We're prepared to move fast with the right partner.
+    Ready to supply coconut shell at competitive rates? We're prepared to move fast with the right partner.
   </p>
   <p>
     <strong>Submit your best offer and product details:</strong><br>
@@ -269,6 +269,7 @@
 
       <label for="productType">Product Type:</label>
       <select id="productType" name="productType" required>
+        <option value="" selected>–select–</option>
         <option value="fiber">Fiber-grade Coconut Husk</option>
         <option value="raw-husk">Raw Coconut Husk</option>
         <option value="raw-shell">Raw Coconut Shell</option>
@@ -276,31 +277,35 @@
 
       <label for="quotationPrice">Your Quotation Price (USD / MT):</label>
       <input type="number" id="quotationPrice" name="quotationPrice" placeholder="e.g. 58" required>
+      <span class="currency-label">USD</span>
 
       <label for="availableQuantity">Available Quantity (MT):</label>
       <input type="number" id="availableQuantity" name="availableQuantity" placeholder="e.g. 100" required>
+      <span class="quantity-label">/MT</span>
 
       <label for="portLocation">Port of Loading:</label>
       <input type="text" id="portLocation" name="portLocation" placeholder="e.g. Jakarta, Indonesia" required>
 
       <label for="shippingTerms">Shipping Terms:</label>
       <select id="shippingTerms" name="shippingTerms" required>
-        <option value="CIF" selected>CIF – Cost, Insurance & Freight</option>
+        <option value="selectTerms" selected>–select–</option>
+        <option value="CIF">CIF – Cost, Insurance & Freight</option>
         <option value="FOB">FOB – Free On Board</option>
         <option value="EXW">EXW – Ex Works</option>
       </select>
 
       <label for="paymentTerms">Payment Terms:</label>
-      <!-- <input type="text" id="paymentTerms" name="paymentTerms" value="LC at sight" readonly> -->
       <select name="paymentTerms" id="paymentTerms">
-        <option value="LC at sight" selected>LC at sight</option>
-        <option value="LC"><i> LC </i></option>
-        <option value="TT"><i> TT (Telegraphic Transfer)</i></option>
-        <option value="DP"><i> DP (Documents against Payment)</i></option>
+        <option value="" selected>–select–</option>
+        <option value="LC at sight">LC at sight</option>
+        <option value="LC"> LC </option>
+        <option value="TT"> TT (Telegraphic Transfer)</option>
+        <option value="DP"> DP (Documents against Payment)</option>
       </select>
 
       <label for="commissionConfirmation">Commission Agreement (4.5% seller side / 4.5% buyer side):</label>
       <select id="commissionConfirmation" name="commissionConfirmation" required>
+        <option value="" selected>–select–</option>
         <option value="agree">I agree</option>
         <option value="disagree">I do not agree</option>
         <option value="discuss">To discuss</option>
