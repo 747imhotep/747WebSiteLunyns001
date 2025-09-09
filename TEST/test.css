@@ -106,17 +106,65 @@ Try this combo for best results
   color: #f4f4f4;
 }
 
-/* Container holding radio buttons */
+/* ✅Container holding radio buttons✅ */
+.radio-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.3rem;
+}
+
 .radio-box label {
-  display: inline-flex;
-  align-items: center;      /* ✅ Vertically center radio + label */
-  gap: 6px;                 /* ✅ Small gap between radio and text */
+  display: inline-flex;           /* ✅ THIS is critical */
+  align-items: center;            /* ✅ Vertically centers radio and text */
+  gap: 6px;                       /* space between circle and label */
   font-size: 0.95rem;
   font-weight: 600;
   color: #000;
   padding: 4px 8px;
   cursor: pointer;
+  user-select: none;
 }
+
+.radio-box input[type="radio"] {
+  appearance: none;               /* ✅ Remove default style */
+  width: 16px;
+  height: 16px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio-box input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.radio-box label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;  /* ✅ Helps balance radio/text height */
+  gap: 6px;
+  font-weight: 600;
+}
+
+.radio-box input[type="radio"] {
+  margin: 0;
+}
+
 
 
 

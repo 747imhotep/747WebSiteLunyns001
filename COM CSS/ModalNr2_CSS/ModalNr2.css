@@ -46,7 +46,7 @@
 
 
 
-/* RADIO TITLE START */
+/* ✅RADIO TITLE START */
 
 /* Aligns label with radios */
 
@@ -60,9 +60,9 @@
 .radio-box{
   display: flex;
   margin-top: 0.3rem;
-  gap: 10rem;               /* Space between radio options */
+  gap: 8rem;               /* Space between radio options */
   flex-wrap: wrap;
-  padding: 0.5rem;       /* space just below radio/label box */
+  padding: 0rem;       /* space just below radio/label box */
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -73,23 +73,42 @@
 
 /* Label and radio side by side */
 .radio-box label{
-  display: flex;
+  display: inline-flex;           /* ✅ THIS is critical */
+  align-items: center;            /* ✅ Vertically centers radio and text */ /* nothig happened */
+  line-height: 1.2;
   cursor: pointer;
-  align-items: center; /* nothig happened */
-  gap: 3px;          /* space between circle/label. But nothing happend. */
+  user-select: none;
+  gap: 6px;          /* space between circle/label. But nothing happend. */
   color: #000;    /* Mr color */
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 600;
   padding: 4px 8px;
   background-color: transparent;
 }
 
 .radio-box input[type="radio"]{
+    appearance: none;               /* ✅ Remove default style */
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #555;
+    border-radius: 50%;
+    position: relative;
     accent-color: #007bff;
     transform: scale(1.1);
     margin: 0;
 }
 
+.radio-box input[type="radio"]:checked::before{
+    content: "";
+    display: block;
+    width: 11px;
+    height: 11px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
 }
 
 /* RADIO TITLE END */
