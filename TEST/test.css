@@ -96,26 +96,28 @@ Try this combo for best results
 }
 
 /* The container for the radio options */
-.radio-box {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  background-color: #ffffff;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* ------------------ Radio Buttons Section ------------------ */
+
+/* Label on top, like all other form fields */
+.modal-content label.modal-label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #f4f4f4;
 }
 
-/* Each radio + label pair */
+/* Container holding radio buttons */
 .radio-box label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  display: inline-flex;
+  align-items: center;      /* ✅ Vertically center radio + label */
+  gap: 6px;                 /* ✅ Small gap between radio and text */
   font-size: 0.95rem;
-  color: #000;
   font-weight: 600;
-  padding: 0.2rem 0.5rem;
+  color: #000;
+  padding: 4px 8px;
+  cursor: pointer;
 }
+
 
 
 

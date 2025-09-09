@@ -57,43 +57,15 @@
 }
 
 
-.form-group-inline {
-  display: flex;
-  align-items: center;
-  margin-top: 0.3rem;
-  gap: 1rem; /* Space between Title and Radios */
-  margin-bottom: 0.9rem;
-  background-color: #ffffff; /* box color */
-  padding: 0.1rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc; /* match Modal design setup */
-  border-radius: 4px;
-  flex-wrap: wrap;
-}
-
-.form-group-inline label {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* nothing happened */
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  background-color: #ffffff;
-  padding: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  flex-wrap: wrap;
-}
-
-
-
 .radio-box{
   display: flex;
-  margin-top: 0.01rem;
-  gap: 7rem;               /* Space between radio options */
+  margin-top: 0.3rem;
+  gap: 10rem;               /* Space between radio options */
   flex-wrap: wrap;
   padding: 0.5rem;       /* space just below radio/label box */
-  background-color: transparent;
-  border: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   flex-wrap: wrap;
 }
 
@@ -102,14 +74,23 @@
 /* Label and radio side by side */
 .radio-box label{
   display: flex;
+  cursor: pointer;
   align-items: center; /* nothig happened */
-  gap: 5px;          /* space between circle/label. But nothing happend. */
+  gap: 3px;          /* space between circle/label. But nothing happend. */
   color: #000;    /* Mr color */
   font-size: 0.95rem;
   font-weight: 400;
-  padding: 0.2rem 0.5rem;
+  padding: 4px 8px;
+  background-color: transparent;
 }
 
+.radio-box input[type="radio"]{
+    accent-color: #007bff;
+    transform: scale(1.1);
+    margin: 0;
+}
+
+}
 
 /* RADIO TITLE END */
 
@@ -276,8 +257,7 @@
 /*----------- END OF REQUIREMENTS MODAL-----------*/
 
 @media (max-width: 480px) {
-  .form-group-inline {
+  .radio-box{
     flex-direction: column;
-    align-items: flex-start;
   }
 }
