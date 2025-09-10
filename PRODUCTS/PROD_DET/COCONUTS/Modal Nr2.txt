@@ -1,0 +1,135 @@
+<!-- ✅ REQUIREMENT Modal Nr.2 -->
+
+<div id="requiredModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Submit Your Quotation</h2>
+    <p>Please fill in the details below to respond to our coconut husk supply request.</p>
+
+    <form id="requiredForm" action="https://formsubmit.co/contact@uuuuuuuuuuuuuuu.com" method="POST">
+    <!-- Required for FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_subject" value="New submission!">
+          <!-- <input type="hidden" name="_blacklist,scammer" value="spammy pattern, banned term, phrase">  FormSubmit doesn't recognize _blacklist,scammer as a valid field. -->
+          <input type="text" name="_honey" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1">
+          <input type="hidden" name="_next" value="https://uuuuuuuuuuuuuuu.com/Thanks/Thanks.html">
+
+
+      <!-- Title -->
+      <label class="modal-label">Title:</label>
+
+        
+      <div class="radio-box">
+        <label>
+          <input type="radio" name="title" value="Mr" required> Mr
+        </label>
+        <label>
+          <input type="radio" name="title" value="Mrs"> Mrs
+        </label>
+        <label>
+          <input type="radio" name="title" value="Dr"> Dr
+        </label>
+      </div>
+
+
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" required>
+
+      <label for="contactName">Contact Person:</label>
+      <input type="text" id="contactName" name="contactName" required>
+
+      <label for="position">Position:</label>
+      <input type="text" id="position" name="position">
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="productType">Product Type:</label>
+      <select id="productType" name="productType" required>
+        <option value="" selected>–select–</option>
+        <option value="fiber">Fiber-grade Coconut Husk</option>
+        <option value="raw-husk">Raw Coconut Husk</option>
+        <option value="raw-shell">Raw Coconut Shell</option>
+      </select>
+
+      <label for="quotationPrice">Your Quotation Price (USD / MT):</label>
+      <input type="number" id="quotationPrice" name="quotationPrice" placeholder="e.g. 58" required>
+      <span class="currency-label">USD</span>
+
+      <label for="availableQuantity">Available Quantity (MT):</label>
+      <input type="number" id="availableQuantity" name="availableQuantity" placeholder="e.g. 100" required>
+      <span class="quantity-label">/MT</span>
+
+      <label for="portLocation">Port of Loading:</label>
+      <input type="text" id="portLocation" name="portLocation" placeholder="e.g. Jakarta, Indonesia" required>
+
+      <label for="shippingTerms">Shipping Terms:</label>
+      <select id="shippingTerms" name="shippingTerms" required>
+        <option value="selectTerms" selected>–select–</option>
+        <option value="CIF">CIF – Cost, Insurance & Freight</option>
+        <option value="FOB">FOB – Free On Board</option>
+        <option value="EXW">EXW – Ex Works</option>
+      </select>
+
+      <label for="paymentTerms">Payment Terms:</label>
+      <select name="paymentTerms" id="paymentTerms">
+        <option value="" selected>–select–</option>
+        <option value="LC at sight">LC at sight</option>
+        <option value="LC"> LC </option>
+        <option value="TT"> TT (Telegraphic Transfer)</option>
+        <option value="DP"> DP (Documents against Payment)</option>
+      </select>
+
+      <label for="commissionConfirmation">Commission Agreement (4.5% seller side / 4.5% buyer side):</label>
+      <select id="commissionConfirmation" name="commissionConfirmation" required>
+        <option value="" selected>–select–</option>
+        <option value="agree">I agree</option>
+        <option value="disagree">I do not agree</option>
+        <option value="discuss">To discuss</option>
+      </select>
+
+      <label for="additionalNotes">Additional Notes (optional):</label>
+      <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Include any relevant certifications, lead time, or packaging details..."></textarea>
+
+<!-- -------------------Consent Checkbox -->
+<div class="consent-container">
+
+  <!-- Terms and Privacy Consent -->
+  <div class="consent-item">
+    <input type="checkbox" class="consent-checkbox" id="terms_consent" 
+    name="terms_consent" required aria-describedby="termsHelp">
+    <label for="terms_consent" class="consent-text" id="termsHelp">
+      I agree to the 
+      <a href="../../../privacy-policy/terms-and-privacy.html" 
+      target="_blank" rel="noopener noreferrer">Terms of Use & Privacy Policy</a>,
+      including data storage and cookie use.
+      <span class="info-icon" title="We use your data to provide and improve our services.">ⓘ</span>
+    </label>
+  </div>
+
+  <!-- Marketing/Email Updates Consent -->
+  <div class="consent-item">
+    <input type="checkbox" class="consent-checkbox" 
+    id="marketing_consent" 
+    name="marketing_consent" required>
+    <label for="marketing_consent" class="consent-text">
+      I consent to receive business-related emails and updates 
+      from www.uuuuuuuuuuuuuuu.com.
+      I understand I can unsubscribe at any time.
+    </label>
+  </div>
+</div>
+<!-- -------------------Consent Checkbox END -->
+
+     
+<div class="btn-group">
+  <button type="submit" class="btn btn-primary">Submit Quotation</button>
+  <button type="reset" id="clearRequiredFormBtn" class="btn btn-secondary">Reset</button>
+</div>
+
+    </form>
+  </div>
+</div>
+
+<!-- REQUIREMENT Modal Nr.2  END -->

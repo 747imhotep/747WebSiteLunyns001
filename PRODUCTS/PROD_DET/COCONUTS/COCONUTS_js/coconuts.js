@@ -11,9 +11,6 @@
       document.getElementById('requiredForm')?.reset();
     });
 
-
-
-
 // CLEAR FORM END 
 
 
