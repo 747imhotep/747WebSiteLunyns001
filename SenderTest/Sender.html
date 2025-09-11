@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sender.net Test</title>
+  <title>send.net Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SenderTest/SenderCSS/sender.css">
+
 </head>
 
+
+
+<!--------------------------------------->
 <body>
-  <div style="border: 2px solid rgb(151, 145, 145);
-  display: flex; justify-content: center; align-items: center; 
-  padding: 20px; margin: 20px; border-radius: 10px;
-  background-color: rgb(241, 238, 233);">
-    <h2 style="text-align: center;">Add Subscriber to Sender.net</h2>
-    <form id="subscribeForm">
-      <input type="email" id="email" placeholder="Enter test email" required />
-      <input type="text" id="name" placeholder="Name (optional)" />
-      <button type="submit">Subscribe</button>
+  <div class="sendParent">
+    <div class="sendChild" >
+    <h2>Add Subscriber to send.net</h2>
+    <form  id="subscribeForm">
+      <input class="sendinput" type="email" id="email" placeholder="Enter test email" required />
+      <input class="sendinput" type="text" id="name" placeholder="Name (optional)" />
+      <button class="sendButton" type="submit">Subscribe</button>
     </form>
   </div>
-
-  <div id="result"></div>
-
-  <div>
-    <br>
-    <p style="text-align: center; font-weight: 700; font-size: 50px; color: brown;">
-      YOU'RE ENTERING IN A RESTRICTED AREA
-    </p>
   </div>
 
-  <!-- Sender Embedded Form -->
+  <!--------------------------------------->
+  <div class="sendParent">
+    <div class="sendChild">
+    <br>
+    <p style="text-align: center; font-weight: 700; font-size: 50px; color: brown;">
+      YOU'RE ENTERING IN A MODAL AREA
+    </p>
+  </div>
+  </div>
+
+  <!--------------------------------------->
+  <!-- Fallback or test link -->
+  <div class="sendParent">
+    <div class="sendChild">
+    <a style="display: block; text-align: center;" 
+  href="https://stats.send.net/forms/bo2mmj/view"><p>View Form</p></a>
+  </div>
+  </div>
+
+  <!-- Navigation -->
+  <a href="/NewIndex/indexSS.html"> Come back</a>
+
+  <!--------------------------------------->
+  <div class="sendParent">
+    <div id="result" class="sendChild">
+     send MODAL
+  </div>
+  </div>
+
+  <!--------------------------------------->
+  
+  
+
+  <!-- sender Embedded Form -->
   <!--
   <div style="text-align: center" class="sender-form-field" 
   data-sender-form-id="bo2mmj"></div>
   -->
 
   <div class="sender-form-field" data-sender-form-id="bo2mmj">
-
   </div>
 
-  <!-- Fallback or test link -->
-  <a style="display: block; text-align: center;" 
-  href="https://stats.sender.net/forms/bo2mmj/view">View Form</a>
+  
 
-  <!-- Navigation -->
-  <li><a href="/NewIndex/indexSS.html">index</a></li>
 
-  <!-- External Sender loader -->
-  <script src="../COM_CSS/SenderJS/sender.js"></script>
-</body>
+<!-- External sender loader 
+    <script src="../COM CSS/SenderJS/sender.js"></script>
+-->
+    <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (typeof sender === "function") {
+      sender('load');
+    } else if (typeof Sender === "function") {
+      Sender('load');
+    }
+  });
+    </script>
+
+    <script>
+(function (s, e, n, d, er) {
+  s['Sender'] = er;
+  s[er] = s[er] || function () {
+    (s[er].q = s[er].q || []).push(arguments);
+  };
+  s[er].l = 1 * new Date();
+  var a = e.createElement(n),
+      m = e.getElementsByTagName(n)[0];
+  a.async = 1;
+  a.src = 'https://cdn.sender.net/accounts_resources/universal.js';
+  m.parentNode.insertBefore(a, m);
+})(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+</script>
+
+
+
+
+  </body>
 </html>

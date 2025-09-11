@@ -1,0 +1,42 @@
+
+.sendParent{
+    display: flex;
+    justify-content: center; /* align horizontaly*/
+    align-items: center; /* align verticaly*/
+    height: 20vh; /* full viewport for vertical centering*/
+}
+.sendChild{
+    width: 60%;
+    color: brown;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    border: 2px solid rgb(151, 145, 145);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(241, 238, 233);
+    box-shadow: 0 0 0.2;
+}
+
+h2{
+    text-align: center;
+    padding-right: 10px;
+}
+
+p{
+    font-size: large;
+    font-weight: 700;
+}
+
+.senderinput{
+    justify-content: center;
+    margin-top: 7px;
+    background-color: rgb(241, 245, 245);
+}
+
+.senderButton{
+    border: 2px solid blue;
+    border-radius: 7px;
+    background-color: aquamarine;
+}
