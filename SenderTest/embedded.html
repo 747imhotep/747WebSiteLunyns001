@@ -3,33 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sender Embed Test</title>
+  <title>Sender Popup Test</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/SenderTest/SenderCSS/sender.css">
+    <link rel="stylesheet" href="/SenderTest/SenderCSS/embedded.css">
 
 </head>
 
 
 
-<!--------------------------------------->
-<body>
-  <div class="sendParent">
-    <div class="sendChild" >
-      <h2>Add Subscriber to send.net</h2>
-      <form  id="subscribeForm">
-          <input class="sendinput" type="email" id="email" placeholder="Enter test email" required />
-          <input class="sendinput" type="text" id="name" placeholder="Name (optional)" />
-          <button class="sendButton" type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
 
+<body>
+  
   <!--------------------------------------->
   <div class="sendParent">
       <div class="sendChild">
       <br>
         <p>
-          YOU&#39;RE ENTERING IN A SENDER AREA
+          YOU&#39;RE ENTERING IN A EMBEDDED AREA
         </p>
     </div>
   </div>
@@ -38,7 +28,7 @@
   <!-- Works only on click | Does not embedded -->
   <div class="sendParent">
     <div class="sendChild2">
-      <a href="https://stats.sender.net/forms/bo2mmj/view">
+      <a href="https://stats.sender.net/forms/bo2m0K/view">
       <div >View Form in a different page.</div></a>
     </div>
   </div>
@@ -47,10 +37,12 @@
   <!-- Second Form START-->
   <!-- Does not embedded -->
  <div class="Second">
-    <div class="sender-form-field" 
-    data-sender-form-id="bo2mmj"></div>
+    <div class="sender-form-field" data-sender-form-id="bo2m0K"></div>
+
  </div>
  <!-- Second Form ENDS-->
+
+ 
 
 
 <!-- You want Sender.net to automatically send a 
@@ -79,6 +71,8 @@
 
 <!--✅ 2. Static Script Tag + Manual Load-->
     
-    <script src="../COM CSS/Sender-JS/quotation.js"></script>
+  <script src="/COM CSS/Sender-JS/popup.js"></script>
+
+
   </body>
 </html>

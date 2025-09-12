@@ -1,4 +1,4 @@
-/* SENDER.NET CSS */
+/* EMBEDDED.NET CSS */
 .sendParent{
     display: flex;
     justify-content: center; /* align horizontaly*/
@@ -11,7 +11,7 @@
     text-align: center;
     font-weight: 600;
     font-size: large;
-    border: 3px solid rgb(177, 12, 12);
+    border: 4px solid rgb(123, 201, 136);
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
