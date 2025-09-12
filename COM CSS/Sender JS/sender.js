@@ -1,4 +1,4 @@
-<script>
+// ✅ 1. Dynamic Async Loader
   (function (s, e, n, d, er) {
     s['Sender'] = er;
     s[er] = s[er] || function () {
@@ -11,7 +11,7 @@
     m.parentNode.insertBefore(a, m)
   })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
   sender('8ff476a5273454')
-</script>
+
 
 
 const API_KEY = 'SENDER_API_KEY'; // <-- Replace with your real API key

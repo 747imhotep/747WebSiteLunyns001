@@ -1,4 +1,4 @@
-
+/* SENDER.NET CSS */
 .sendParent{
     display: flex;
     justify-content: center; /* align horizontaly*/
@@ -23,11 +23,9 @@
     width: 50%;
     display: block;
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
     font-size: large;
-    border: 2px solid rgb(151, 145, 145);
     border-radius: 10px;
-    background-color: rgb(245, 215, 164);
     padding: 20px;
     margin: 10px;
 }
@@ -35,6 +33,7 @@
 .retour{
     text-align: center;
     margin-top: 34px;
+    background-color: #f4f4f4;
 }
 
 .Second{
@@ -43,10 +42,9 @@
     align-items: center;
     text-align: left;
     width: 50%;
-    height: 7vh;
+    height: 34vh;
     padding: 10px;
-    border-radius: 10px;
-    border: 2px solid rgb(151, 145, 145);
+    border-radius: 10px
 }
 
 h2{
