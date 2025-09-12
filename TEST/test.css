@@ -1,26 +1,18 @@
 /* THIS CODE IS PROBLEMATIC - IT PUSHES TEXT TO THE RIGHT*/
-.consent-item{
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 10px;
-}
 
-.consent-checkbox{
-  margin-top: 1px;
-  margin-left: 0;
-  flex: 1;
-}
+  (function (s, e, n, d, er) {
+    s['Sender'] = er;
+    s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+    a.async = 1;
+    a.src = d;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('8ff476a5273454')
 
-/* The label text next to the checkbox */
-.consent-text{
-  line-height: 1.5;
-  color: #f4f4f4; /* Light text color */
-  font-weight: normal;
-  font-size: 0.9rem;
-  margin: 0;
-  flex: 9;
-}
 
 
 
