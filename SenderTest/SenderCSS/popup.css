@@ -13,15 +13,22 @@
     display: flex;
     justify-content: center; /* align horizontaly*/
     align-items: center; /* align verticaly*/
-    height: 20vh; /* full viewport for vertical centering*/
+    height: 10vh; /* full viewport for vertical centering*/
 }
 
 .container{
+    justify-content: center;
     text-align: center;
     font-size: large;
     font-weight: 700;
     font-size: 50px;
     color: #f4f4f4;
+}
+
+.hero{
+    height: 60vh;
+    background-image: url(/IMAGES/mainIMAGES/imgGENERAL/beingReviewedorSigned02.png);
+
 }
 
 .sendChild{
@@ -65,13 +72,13 @@
     background-color: #f4f4f4;
 }
 
-.Second{
-    display: flex;
+.Sender{
     justify-content: center;
     align-items: center;
     text-align: left;
     width: 50%;
     height: 34vh;
+    margin-top: 50px;
     padding: 10px;
     border-radius: 10px
 }
