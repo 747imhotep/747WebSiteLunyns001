@@ -39,12 +39,18 @@
 .Second{
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: left;
     width: 50%;
-    height: 34vh;
-    padding: 10px;
-    border-radius: 10px
+    margin-top: 0;
+    height: 1vh;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #dcc8ee;
+}
+
+h1{
+    text-align: center;
+    padding-top: 50px;
 }
 
 h2{
@@ -60,7 +66,7 @@ p{
     color: rgb(165, 42, 42);
 }
 
-
+/* ✅ BUTTON STARTS*/
 .senderinput{
     justify-content: center;
     margin-top: 7px;
@@ -68,7 +74,27 @@ p{
 }
 
 .senderButton{
-    border: 2px solid blue;
-    border-radius: 7px;
-    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
 }
+
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #34f3e9;
+    color: #000;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butpop.hover{
+    background-color: #af83d8;
+}
+/* BUTTON ENDS*/

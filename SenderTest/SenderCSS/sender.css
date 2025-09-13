@@ -1,10 +1,32 @@
 /* SENDER.NET CSS */
+
+.hero{
+    height: 30vh;
+    background-image: url(../../IMAGES/mainIMAGES/imgBANNER/LOGObanner04.png);
+
+}
+
 .sendParent{
     display: flex;
+    flex-direction: column;
+    gap: 30px;
     justify-content: center; /* align horizontaly*/
     align-items: center; /* align verticaly*/
     height: 20vh; /* full viewport for vertical centering*/
 }
+
+
+.sendChild2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    margin-top: 0;
+    height: 5vh;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .sendChild{
     width: 60%;
     color: brown;
@@ -15,20 +37,10 @@
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
-    background-color: rgb(241, 238, 233);
+    background-color: #da15e0;
     box-shadow: 0 0 0.2;
 }
 
-.sendChild2{
-    width: 50%;
-    display: block;
-    text-align: center;
-    font-weight: 400;
-    font-size: large;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-}
 
 .retour{
     text-align: center;
@@ -39,12 +51,18 @@
 .Second{
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: left;
     width: 50%;
-    height: 34vh;
-    padding: 10px;
-    border-radius: 10px
+    margin-top: 0;
+    height: 1vh;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #af83d8;
+}
+
+h1{
+    text-align: center;
+    padding-top: 50px;
 }
 
 h2{
@@ -60,7 +78,7 @@ p{
     color: rgb(165, 42, 42);
 }
 
-
+/* ✅ BUTTON STARTS*/
 .senderinput{
     justify-content: center;
     margin-top: 7px;
@@ -68,7 +86,27 @@ p{
 }
 
 .senderButton{
-    border: 2px solid blue;
-    border-radius: 7px;
-    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
 }
+
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #3457f3;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butpop.hover{
+    background-color: #af83d8;
+}
+/* BUTTON ENDS*/
