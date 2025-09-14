@@ -6,3 +6,24 @@
   color: white;                 /* Make sure text is visible */
   padding: 100px 0;             /* Add vertical spacing */
 }
+
+/* ✅ BUTTON STARTS*/
+
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #001d4f;
+    color: #faebd7;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butpop:hover {
+    background-color: #ceacee;
+}
+
+/* BUTTON ENDS*/

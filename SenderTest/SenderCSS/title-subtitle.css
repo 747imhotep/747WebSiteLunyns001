@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    padding-top: 50px;
+}
+
+h2{
+    padding-right: 10px;
+}
+
+p{
+    font-size: large;
+    font-weight: 700;
+}
+
+/* ✅ BUTTON STARTS*/
+.senderinput{
+    justify-content: center;
+    margin-top: 7px;
+    background-color: rgb(241, 245, 245);
+}
+
+.senderButton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
+}
+
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #34f3e9;
+    color: #000;
+    border: 2px solid #07721e;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butpop.hover{
+    background-color: #af83d8;
+}
+/* BUTTON ENDS*/
