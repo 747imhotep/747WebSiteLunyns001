@@ -12,8 +12,8 @@
 .butpop{
     display: inline-block;
     padding: 9px 15px;
-    background-color: #001d4f;
-    color: #faebd7;
+    background-color: #aac0e6;
+    color: #001d4f;
     border: none;
     border-radius: 7px;
     text-decoration: none;
@@ -23,7 +23,8 @@
 }
 
 .butpop:hover {
-    background-color: #ceacee;
+    background-color: #aa0000;
+    color: #fff;
 }
 
 /* BUTTON ENDS*/
