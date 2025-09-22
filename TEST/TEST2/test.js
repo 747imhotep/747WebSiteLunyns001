@@ -1,5 +1,6 @@
-// POPUP.js | POPUP FORM
+// TEST TEST TEST
 
+// POPUP.js | POPUP FORM
 document.addEventListener("DOMContentLoaded", function () {
   // Check if sender already exists to prevent duplicate script load
   if (!window.sender) {
@@ -24,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 100);
   }
-// END POPUP.js | POPUP FORM
 
   // Move the injected Sender form into the shadow box once it loads
   const wrapper = document.getElementById('form-wrapper');
