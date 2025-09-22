@@ -1,0 +1,107 @@
+/* SENDER.NET CSS */
+
+.hero{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    height: 58vh;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ce2b2b;
+}
+
+
+.sendParent{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center; /* align horizontaly*/
+    align-items: center; /* align verticaly*/
+    height: 20vh; /* full viewport for vertical centering*/
+}
+
+
+.sendChild2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    height: 8vh;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.sendChild{
+    width: 60%;
+    color: brown;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    border: 3px solid rgb(177, 12, 12);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #da15e0;
+    box-shadow: 0 0 0.2;
+}
+
+.retour{
+    text-align: center;
+    margin-top: 34px;
+    background-color: #f4f4f4;
+}
+
+.Second{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    width: 50%;
+    margin-top: 0;
+    height: 1vh;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #af83d8;
+}
+
+
+
+
+
+
+
+/* ✅ BUTTON STARTS*/
+.senderinput{
+    justify-content: center;
+    margin-top: 7px;
+    background-color: rgb(241, 245, 245);
+}
+
+.senderButton{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
+}
+
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #3457f3;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butpop:hover{
+    background-color: #c6a5e5;
+    border: 2px solid #010413;
+    color: #010413;
+    font-weight: 600;
+}
+/* BUTTON ENDS*/

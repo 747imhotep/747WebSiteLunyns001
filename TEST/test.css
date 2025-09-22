@@ -1,14 +1,51 @@
 
-.Second {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    width: 100%;               /* Full width */
-    padding: 20px;             /* Space around */
-    margin-top: 0;             /* Remove any top spacing */
-    border-radius: 10px;
-    box-sizing: border-box;
+.lead {
+  font-size: 1.5rem;
+  color: aliceblue;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+.sendParent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+.sendChild2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+  min-height: 8vh;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.shadow-box {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(90, 88, 88, 0.1);
+  margin: 2rem 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #53c032;
+}
+
+/* Make sure the form fills the shadow box */
+.sender-form-field {
+  width: 100%;
+}
+
+/* Style the actual <body> element */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 
 
 

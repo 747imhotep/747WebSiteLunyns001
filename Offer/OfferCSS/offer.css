@@ -1,0 +1,105 @@
+/* SENDER.NET CSS */
+
+.herooffer{
+    height: 40vh;
+    background-image: url(../../IMAGES/mainIMAGES/imgBANNER/Hero57.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.testoffer{
+    display: flex;
+    color: rgb(12, 240, 228);
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+.display-4{ /* Hero Title */
+    font-size: 4.5rem;
+    color: aliceblue;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+}
+
+.lead{ /* Hero text */
+    font-size: 1.5rem;
+    color: aliceblue;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+
+.sendParent{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.sendChild2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    min-height: 8vh;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.shadow-box{ /* Embedded Shadow */
+    /* It doesn't surround the Embedded Box */
+    display: flex;
+    padding: 2rem;
+    align-items: center; /* centers the content vertically */
+    justify-content: center; /* Centers items horizontally */
+    background-color: #08167c; /* or light gray */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(205, 234, 236, 0.1);
+    margin: 2rem 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #28d6e2;
+}
+
+.shadow-box iframe,
+.shadow-box form,
+.shadow-box .sender-form-field{
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.sender-form-field { /* 3. Quotation Coconuts Husks */
+  width: 100%;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #28d6e2;
+}
+
+
+body{ /*  */
+    background-color: #000000;
+    color: #fff;
+    justify-content: center;
+}
+
+p{
+    display: inline-block;
+}
+
+/* ✅ BUTTON STARTS*/
+
+
+/* BUTTON ENDS*/

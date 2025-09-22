@@ -1,4 +1,5 @@
-// POPUP.js | POPUP FORM
+// embedded.js | Quotation Coconuts HusksID: bo2mmj
+
 document.addEventListener("DOMContentLoaded", function () {
   // Check if sender already exists to prevent duplicate script load
   if (!window.sender) {
@@ -24,7 +25,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
   }
 });
-
-
-
-

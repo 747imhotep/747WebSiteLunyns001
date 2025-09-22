@@ -1,5 +1,6 @@
 .hero {
   background: url(/IMAGES/mainIMAGES/imgBANNER/LogoBanner01.jpg) center center/cover no-repeat;
+
   min-height: 90vh;
   padding: 60px 20px;
   cursor: default;
@@ -13,11 +14,7 @@
   margin-right: auto;
 }
 
-@media (min-width: 1300px) {
-  .responsive-img {
-    max-width: 1300px;
-  }
-}
+
 
 .display-4 {
   margin-top: 20px;
@@ -93,3 +90,8 @@
   --footer-border: #360000; /* Plainte en rouge */
 }
 
+@media (min-width: 1300px) {
+  .responsive-img {
+    max-width: 1300px;
+  }
+}

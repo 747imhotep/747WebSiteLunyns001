@@ -68,9 +68,9 @@ h6{
 
 
 
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
 /*::::::::::::::::::::::::::::: NAVBAR ::::::::::::::::::::::::::*/
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
 
 /* Fixed Navbar */
 .navbar { /* Navbar started here */
@@ -99,20 +99,20 @@ h6{
   padding: 0;
 }
 
-.navbar .logo a { /* 1ere colonne */
+.navbar .logo a { /* 1rst column */
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
 }
 
-.logo img{ /* 1ere colonne */
+.logo img{ /* 1rst column */
   margin-left: 0.1vw;
   height: 5.6vw;
   max-height: 60px;
   width: auto;
 }
 
-.navbar .nav-links a { /* 2eme colonne */
+.navbar .nav-links a { /* 2d column */
   margin-left: 1px;
   gap: 20px;
   text-decoration: none;

@@ -7,11 +7,11 @@
 
   <!-- ✅ Bootstrap First -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="COM CSS/Master-CSS/Master-css.css">
+  <link rel="stylesheet" href="/COM_CSS/Master-CSS/Master-css.css">
+  <link rel="stylesheet" href="/COM_CSS/Sender-CSS/sender.css">
   <link rel="stylesheet" href="index/index css/index.css">
   <link rel="icon" href="IMAGES/Favicon/Favicon-01.png">
   
-
 </head>
 <body>
 
@@ -29,20 +29,21 @@
 
       <div class="collapse gap-2 navbar-collapse" id="navbarNav">
           <ul class="navbar-nav  ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="ABOUT/about2_us.html">ABOUT US</a></li>
-            <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle " href="PRODUCTS/products20.html" id="productsDropdown" role="button">PRODUCTS20</a>
-          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/EN590/en590ppm20.html">DIESEL EN590</a></li>
-            <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
-            <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
-            <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
-            <!-- Add more sub-links as needed -->
-          </ul>
-         </li><!-- FIN products -->
+              <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+              <li class="nav-item"><a class="nav-link" href="ABOUT/about2_us.html">ABOUT US</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="productsDropdown" 
+                role="button">PRODUCTS20
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/EN590/en590ppm20.html">DIESEL EN590</a></li>
+                  <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
+                  <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
+                  <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
+                  <!-- Add more sub-links as needed -->
+                </ul>
+            </li><!-- FIN products -->
             <li class="nav-item"><a class="nav-link" href="CONTACT/contact.html">CONTACT US</a></li>
-
           </ul>
 
 
@@ -70,8 +71,6 @@
     
     <h1 class="display-4 fw-bold">Global Trade, Made Simple</h1>
     <p class="lead">Your trusted bridge to energy and agricultural markets</p>
-    <!-- <a href="#learn-more" class="btn btn-light btn-lg mt-3" role="button" 
-     aria-label="Learn more about our products">Explore Our Products</a> -->
   </div>
 </section>
 <!-- Hero Section END -->
@@ -164,12 +163,26 @@
 
 <!-- ✅ Call to Action -->
     <section class="text-center my-5" id="contact">
-      <h2>Let’s Trade Smarter</h2>
-      <p>Looking for a reliable trade partner? We're ready to help you grow.</p>
-      <a href="#RFQ" id="openQuote" class="btn btn-primary btn-lg">Get in Touch</a>
+        <h2>Let’s Trade Smarter</h2>
+        <p>Looking for a reliable trade partner? We're ready to help you grow.</p>
+      <!-- <a href="#RFQ" id="openQuote" class="btn btn-primary btn-lg">Get in Touch</a> -->
+      <!-- First Form START-->
+      <div class="sendChild2">
+        <a href="#" class="sender-form-popup butpop" data-sender-form-id="epYnmr">
+          Get in Touch
+        </a>
+      </div>
 
-
+        <!-- Second Form START-->
+      <div class="Second">
+        <div class="sender-form-field" data-sender-form-id="epYnmr"></div>
+      </div>
+ <!-- Second Form ENDS-->
     </section>
+
+
+
+
   </main>
 
 <!-- ✅ RFQ Modal START 218-->
@@ -216,20 +229,7 @@
 <!-- 175 RFQ Modal TEST END -->
 
 
-<!-- First Form START-->
-  <div class="sendParent">
-    <div class="sendChild2">
-      <a href="https://stats.sender.net/forms/epYnmr/view">
-      <div></div></a>
-    </div>
-  </div>
-<!-- First Form ENDS-->
 
-  <!-- Second Form START-->
- <div class="Second">
-    <div class="sender-form-field" data-sender-form-id="epYnmr"></div>
- </div>
- <!-- Second Form ENDS-->
 
 
 
@@ -301,8 +301,8 @@
 <!-- Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
       <script src="/index/Index js/index.js" defer></script>
-      <script src="/COM CSS/tawkJS/tawk.js"></script>
-      <script src="/COM CSS/Sender-JS/popup.js"></script>
+      <script src="/COM_CSS/Sender-JS/popup.js"></script>
+      <script src="/COM_CSS/tawkJS/tawk.js"></script>
   </body>
 </html>
 
