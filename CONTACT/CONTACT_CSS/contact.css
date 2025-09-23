@@ -1,116 +1,33 @@
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE HEADER ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-.header{
-  width: 100%;
-  background-color: #f4f4f4;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  CONTACT CSS  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+
+.hero-contact {
+  background: url(../../IMAGES/mainIMAGES/imgBANNER/LogoBanner01.jpg) center center/cover no-repeat;
+  background-size: cover;       /* Makes sure image covers entire section */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* No repeating */
+  color: white;                 /* Make sure text is visible */
+  padding: 100px 0;             /* Add vertical spacing */
 }
 
-.header-content{
-  background-image: url(/home/kmt/Documents/Web_Sites/IMAGES/Contact/Contact\ Us\ 01.jpg);
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 70vh;
-  text-align: center;
-  color: #eff0eb;
-  margin-top: 7px; /* marge top de l' image*/
-  padding: 16px;
-}/* */
+/* ✅ BUTTON STARTS*/
 
-.locpage{
-  background-color: #aa0000;
-  color: #dbffac;
-  text-align: left;
-  font-size: large;
-  text-decoration: underline;
-}
-
-/* MISE EN PAUSE START
-
-
-* TABLEAU  *
-
-
-* INPUT layout *
-input[type="text"],
-input[type="email"],
-.textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.input[type="submit"] {
-    background-color: #e6e6fa;
-    color: rgb(233, 166, 166);
-    padding: 12px 20px;
+.butpop{
+    display: inline-block;
+    padding: 9px 15px;
+    color: #001d4f;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
 }
 
-.input[type="submit"]:hover {
-    background-color: #22f02d;
-    color: rgb(7, 1, 1);
+.butpop:hover {
+    background-color: #aa0000;
+    color: #fff;
 }
 
-
- MISE EN PAUSE END*/
-
-
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  PARTIE DIALOG BOX ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-/* DEBUT
-
-.section{
-  margin: 40px 0;
-}
-
-button[type="submit"] {
-    background-color: #e6e6fa;
-    color: rgb(233, 166, 166);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-
-button[type="submit"]:hover {
-    background-color: #22f02d;
-    color: rgb(7, 1, 1);
-}
-
-button i {
-    font-size: 18px;
-}
-
-#map {
-  width: 100%;
-  height: 400px;
-}
-
-FIN                                */ 
+/* BUTTON ENDS*/
