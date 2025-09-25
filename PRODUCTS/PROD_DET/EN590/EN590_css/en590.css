@@ -26,7 +26,7 @@
 
 .hero {
   /* TO MODIFY */
-  background: url(../../../../IMAGES/imgVIGNETTES/VIGNETTES005.png) center center/cover no-repeat;
+  background: url(../../../../IMAGES/mainIMAGES/imgPETROLEUM/PRODUCT_EN590_01.png) center center/cover no-repeat;
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
@@ -36,14 +36,22 @@
   text-align: center;
 }
 
-- .glossy-text {
-  color: #f4f4f4;                 /* Make sure text is visible */
-  font-weight: bold;
-  background: linear-gradient(to top, #ffffff 0%, #03302d 40%, #420d0d 60%, #f4f4f4 100%);
+.glossy-text {
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    to top,
+    #ffffff 0%, 
+    #e0e0e0 20%, 
+    #444444 50%, 
+    #222222 70%, 
+    #f0f0f0 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
 
 h1 span[aria-hidden="true"] {
   margin-right: 0.3rem;
@@ -59,7 +67,34 @@ h1 span[aria-hidden="true"] {
   color: var(--text-footer);
 }
 
+.ParentForm {
+  max-width: 600px;
+  padding-bottom: 50px;
+  justify-content: left;
+}
 
+.SecondForm {
+  max-width: 420px;
+  font-size: large;
+  font-weight: 600;
+  color: #f4f4f4;
+  padding: 10px;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  background-color: #614d04;
+  border: 2px solid #fedd62;
+  box-shadow: #413818 0px 0px 10px  ;
+  border-radius: 7px;
+}
+
+.EmbeddedEN590{
+  font-size: large;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 7px;
+}
 
 
 
