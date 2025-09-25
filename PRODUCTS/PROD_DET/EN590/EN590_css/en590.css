@@ -36,20 +36,20 @@
   text-align: center;
 }
 
+.glossy-text-wrapper {
+  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent black */
+  padding: 20px 30px;
+  border-radius: 6px;
+  display: inline-block;
+  max-width: 90%;
+}
+
 .glossy-text {
   font-weight: 700;
+  font-size: 2em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(
-    to top,
-    #ffffff 0%, 
-    #e0e0e0 20%, 
-    #444444 50%, 
-    #222222 70%, 
-    #f0f0f0 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 
