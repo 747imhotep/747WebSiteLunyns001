@@ -37,16 +37,16 @@
 }
 
 .glossy-text-wrapper {
-  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent black */
-  padding: 20px 30px;
-  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.35); /* Semi-transparent black */
+  padding: 40px 30px;
+  border-radius: 7px;
   display: inline-block;
   max-width: 90%;
 }
 
 .glossy-text {
-  font-weight: 700;
-  font-size: 2em;
+  font-weight: 400;
+  font-size: 1.5em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -94,6 +94,11 @@ h1 span[aria-hidden="true"] {
   margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 7px;
+}
+
+.img-fluid {
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.35); /* Semi-transparent black */
 }
 
 
