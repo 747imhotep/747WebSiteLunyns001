@@ -68,23 +68,25 @@ h1 span[aria-hidden="true"] {
 }
 
 .ParentForm {
+  display: flex;
+  justify-content: flex-start;
   max-width: 600px;
+  margin 0 auto;
+  padding: 20px;
   padding-bottom: 50px;
-  justify-content: left;
 }
 
 .SecondForm {
-  max-width: 420px;
+  width: 100%;
+  max-width: 430px;
   font-size: large;
   font-weight: 600;
   color: #f4f4f4;
-  padding: 10px;
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin: 40px auto 20px auto;
   background-color: #614d04;
   border: 2px solid #fedd62;
-  box-shadow: #413818 0px 0px 10px  ;
+  box-shadow: 0 0 10px #413818;
   border-radius: 7px;
 }
 
@@ -102,7 +104,19 @@ h1 span[aria-hidden="true"] {
 }
 
 
+/* ✅ Mobile responsiveness */
+@media screen and (max-width: 768px) {
+.ParentForm  {
+  jutify-content: center; /* Center on small screens */
+  padding: 10px; /* Reduce padding */
+}
 
+.SecondForm {
+  margin: 20px auto; /* Center and reduce margin */
+  padding: 15px; /* Reduce padding */
+  font-size: 1rem; /* Adjust font size */
+}  
+}
 
 
 
