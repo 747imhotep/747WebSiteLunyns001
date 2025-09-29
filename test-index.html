@@ -58,10 +58,9 @@
 
             
             <!-- ⚠️ I need to replace the RFQ here below, which is link to a Modal form by sender popup -->
-            <a href="#" class="sender-form-popup btn quote-btn ms-3" data-sender-form-id="epYnmr">
+            <a href="#TalkToUs" class="btn-primary btn quote-btn ms-3" data-sender-form-id="bo2m0K">
               RFQ
             </a>
-          </div>
         </div>
      </nav>
     <!-- ✅ Navigation ENDS -->
@@ -166,14 +165,41 @@
       <h2>Let’s Trade Smarter</h2>
       <p>Looking for a reliable trade partner? We're ready to help you grow.</p>
       <div class="sendChild2">
-        <a class="sender-form-popup butpop" data-sender-form-id="epYnmr" href="#">
-          Talk to Us
-        </a>
+        <a class="btn btn-primary butpop" href="#TalkToUs">Talk to Us</a>
       </div>
      </section>
     <!-- ✅ Call to Action ENDS -->
 
-     <script src="COM_CSS/Sender-JS/popup.js"></script>
+
+     <div id="TalkToUs"></div>
+
+
+
+    <!-- ✅ Footer -->
+
+        <script>
+          (function (s, e, n, d, er) {
+            s['Sender'] = er;
+            s[er] = s[er] || function () {
+              (s[er].q = s[er].q || []).push(arguments)
+            }, s[er].l = 1 * new Date();
+            var a = e.createElement(n),
+                m = e.getElementsByTagName(n)[0];
+            a.async = 1;
+            a.src = d;
+            m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+          sender('8ff476a5273454')
+
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href="#TalkToUs"]').forEach(function (el) {
+              el.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent jump to #TalkToUs
+              });
+            });
+          });
+
+    </script>
   </body>
 </html>
 
