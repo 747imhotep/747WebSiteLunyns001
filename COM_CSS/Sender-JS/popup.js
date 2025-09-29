@@ -7,15 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
     s['Sender'] = er;
     s[er] = s[er] || function () {
       (s[er].q = s[er].q || []).push(arguments)
-    }, s[er].l = 1 * new Date();
+    }, 
+    s[er].l = 1 * new Date();
     var a = e.createElement(n),
         m = e.getElementsByTagName(n)[0];
     a.async = 1;
     a.src = d;
     m.parentNode.insertBefore(a, m)
   })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+
   sender('8ff476a5273454');
   }
+  
+   // Prevent default scroll-to-top on sender buttons
+  document.querySelectorAll('.sender-form-popup').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault(); // Stop the href="#" from scrolling to top
+    });
+  });
 });
 
 
