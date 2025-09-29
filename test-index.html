@@ -24,19 +24,21 @@
               <img src="IMAGES/mainIMAGES/imgBANNER/LOGO _HTEST_03.png" alt="LUNYNS Ltd. Logo" height="40" class="me-2">
             </a>
 
-            <!-- ✅ here there is a button. I don't know why -->  
+            <!-- ⚠️ here there is a button. I don't know why -->  
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
               <span class="navbar-toggler-icon"></span>
             </button> 
-            <!-- ✅ here there is a button. I don't know why -->  
+            <!-- ❗️Here above, this button. I don't know why -->  
 
+
+            <!-- 🔴 "PRODUCTS20"-->  
             <div class="collapse gap-2 navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
               <li class="nav-item"><a class="nav-link" href="ABOUT/about2_us.html">ABOUT US</a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" 
-                role="button">PRODUCTS20
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTS
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="productsDropdown">
                   <li><a class="dropdown-item" href="PRODUCTS/PROD_DET/EN590/en590ppm.html">DIESEL EN590</a></li>
@@ -54,7 +56,11 @@
               <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
 
-            <a href="#RFQ" id="openQuote" class="btn quote-btn ms-3">RFQ</a>
+            
+            <!-- ⚠️ I need to replace the RFQ here below, which is link to a Modal form by sender popup -->
+            <a href="#" class="sender-form-popup btn quote-btn ms-3" data-sender-form-id="epYnmr">
+              RFQ
+            </a>
           </div>
         </div>
      </nav>
