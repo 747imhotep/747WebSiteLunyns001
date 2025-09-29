@@ -27,7 +27,6 @@
     justify-content: center;
     text-align: center;
     margin-top: 0;
-    height: 8vh;
     padding: 10px;
     border-radius: 10px;
 }
@@ -86,6 +85,7 @@
 .butpop{
     display: inline-block;
     padding: 15px 15px;
+    margin-bottom: 20px;
     background-color: #3457f3;
     color: #f4f4f4;
     border: none;
@@ -95,6 +95,7 @@
     font-weight: 600;
     cursor:pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .butpop:hover{
@@ -102,6 +103,6 @@
     border: 1px solid #0d30db;
     color: #010413;
     font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 /* BUTTON ENDS*/
