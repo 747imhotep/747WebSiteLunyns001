@@ -85,7 +85,7 @@
 
 .butpop{
     display: inline-block;
-    padding: 9px 15px;
+    padding: 15px 15px;
     background-color: #3457f3;
     color: #f4f4f4;
     border: none;
@@ -98,9 +98,10 @@
 }
 
 .butpop:hover{
-    background-color: #c6a5e5;
-    border: 2px solid #010413;
+    background-color: #ffdb6b;
+    border: 1px solid #0d30db;
     color: #010413;
     font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 /* BUTTON ENDS*/
