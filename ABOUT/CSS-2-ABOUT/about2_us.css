@@ -1,7 +1,7 @@
 .hero {
   background-color: #001f3f;
   background-size: contain;
-  background: url(../../IMAGES/mainIMAGES/imgBANNER/Hero58.jpg) center center/cover no-repeat;
+  background: url(../../IMAGES/imgSENDER/AboutUs01.jpg) center center/cover no-repeat;
   /* modifier ici */
   width: 100%;
   color: #fff;
@@ -18,6 +18,10 @@
 .hero h1, .hero p {
   max-width: 90%;
   margin: 0 auto;
+  margin-top: 20px;
+  color: #fbfefe;
+  font-weight: 800;
+  text-shadow: 2px 2px 14px rgba(48, 243, 22, 0.35);
 }
 
 /* Responsive adjustments */
