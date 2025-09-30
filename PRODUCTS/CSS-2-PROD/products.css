@@ -116,6 +116,7 @@
   margin-bottom: 2rem;
 }
 
+
 .product-list {
   display: flex;
   justify-content: center;
@@ -150,9 +151,10 @@
 }
 
 .product-img{
+  display: block;
   width: 190px;
+  max-width: 300px; /* new */
   height: auto; /* 190px */
-  max-width: 100%; /* new */
   padding: 0.20rem;
   margin: 1rem;
   margin-right: 1rem;
@@ -170,13 +172,20 @@
   cursor: pointer;
 }
 
+.container h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--brand-blue);
+}
+
 .product-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .product-item p {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   margin: 0;
 }
 
