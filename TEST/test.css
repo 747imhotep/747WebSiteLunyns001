@@ -1,15 +1,9 @@
-.glossy-text-wrapper {
-  background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent black */
-  padding: 20px 30px;
-  border-radius: 6px;
-  display: inline-block;
-  max-width: 90%;
-}
+/* TEST CSS */
 
-.glossy-text {
-  font-weight: 700;
-  font-size: 2em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+.product-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
