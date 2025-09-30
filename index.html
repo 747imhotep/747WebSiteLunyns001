@@ -14,6 +14,30 @@
   
 </head>
 
+<script>
+          (function (s, e, n, d, er) {
+            s['Sender'] = er;
+            s[er] = s[er] || function () {
+              (s[er].q = s[er].q || []).push(arguments)
+            }, s[er].l = 1 * new Date();
+            var a = e.createElement(n),
+                m = e.getElementsByTagName(n)[0];
+            a.async = 1;
+            a.src = d;
+            m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+          sender('8ff476a5273454')
+
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href="#TalkToUs"]').forEach(function (el) {
+              el.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent jump to #TalkToUs
+              });
+            });
+          });
+
+    </script>
+
 
 
   <body>
@@ -165,7 +189,7 @@
       <h2 class="fw-bold">Let’s Trade Smarter</h2>
       <p class="lead">Looking for a reliable trade partner? We're ready to help you grow.</p>
       <div class="sendChild2">
-        <a class="btn butpop" href="https://stats.sender.net/forms/av25ZL/view">Talk to Us</a>
+        <button class="btn butpop">Talk To Us</button>
       </div>
      </section>
     <!-- ✅ Call to Action ENDS -->
@@ -240,29 +264,7 @@
         </footer>
 
 
-        <script>
-          (function (s, e, n, d, er) {
-            s['Sender'] = er;
-            s[er] = s[er] || function () {
-              (s[er].q = s[er].q || []).push(arguments)
-            }, s[er].l = 1 * new Date();
-            var a = e.createElement(n),
-                m = e.getElementsByTagName(n)[0];
-            a.async = 1;
-            a.src = d;
-            m.parentNode.insertBefore(a, m)
-          })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
-          sender('8ff476a5273454')
-
-          document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll('a[href="#TalkToUs"]').forEach(function (el) {
-              el.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent jump to #TalkToUs
-              });
-            });
-          });
-
-    </script>
+        
   </body>
 </html>
 
