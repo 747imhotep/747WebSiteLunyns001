@@ -215,6 +215,15 @@
     padding: 1rem;
     box-sizing: border-box;
   }
+
+  @media (max-width: 768px) {
+    .chat-widget {
+      bottom: 10px;
+      right: 10px;
+      transform: scale(0.8);
+      z-index: 1000;
+    }
+  }
 }
 
 
