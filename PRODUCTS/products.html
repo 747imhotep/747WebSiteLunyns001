@@ -16,22 +16,26 @@
 </head>
 <body>
 
-<!-- Navigation Bar (reused from original) -->
+<!-- ✅ Navigation Bar (reused from original) -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/index.html">
       <img src="../IMAGES/mainIMAGES/imgBANNER/LOGO _HTEST_03.png" alt="LUNYNS Ltd. Logo" height="40" class="me-2">
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- 🔴 "products"-->  
     <div class="collapse navbar-collapse gap-2" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="../ABOUT/about.html">ABOUT US</a></li>
-<!--         <li class="nav-item"><a class="nav-link active" href="../PRODUCTS/products.html">PRODUCTS20</a></li> -->
+<!--         <li class="nav-item"><a class="nav-link active" href="../PRODUCTS/products.html">products</a></li> -->
          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="../PRODUCTS/products20.html" id="productsDropdown" role="button">PRODUCTS20</a>
+          <a class="nav-link dropdown-toggle active" href="../PRODUCTS/products.html" id="productsDropdown" role="button">PRODUCTS</a>
+
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
             <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">DIESEL EN590</a></li>
             <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
@@ -39,18 +43,19 @@
             <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
             <!-- Add more sub-links as needed -->
           </ul>
-         </li><!-- FIN products -->
+         </li> <!-- FIN products -->
         <li class="nav-item"><a class="nav-link" href="../CONTACT/contact.html">CONTACT US</a></li>
       </ul>
+
       <form class="d-flex ms-3" action="/search" method="GET">
         <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
         <button class="btn btn-outline-light" type="submit">Search</button>
         <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ </a>
       </form>
 
-    </div>
-  </div>
-</nav>
+    </div> <!-- END collapse navbar-collapse gap-2 -->
+  </div> <!-- END container -->
+</nav> <!-- ✅ Navigation ENDS -->
 
 
 
@@ -248,7 +253,7 @@ BACKUP END-->
       <ul class="footer-list">
         <li><a href="/index.html">Home</a></li>
         <li><a href="../ABOUT/about.html">About Us</a></li>
-        <li><a href="../PRODUCTS/products20.html">Products</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
         <li><a href="../CONTACT/contact.html">Contact Us</a></li>
         <li><a href="../security.html">Security</a></li>
       </ul>
