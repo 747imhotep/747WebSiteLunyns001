@@ -90,12 +90,44 @@ h1 span[aria-hidden="true"] {
   border-radius: 7px;
 }
 
+.ParentFormEn590 {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
 .EmbeddedEN590{
   font-size: large;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 7px;
+}
+
+.EmbeddedEN590 h2{
+  text-align: center;
+  font-weight: bold;
+}
+
+.EmbeddedEN590 h3{
+  color: var(--brand-blue-light);
+  font-weight: 800;
+  padding-top: 30px;
+}
+
+.EmbeddedEN590 h4{
+  color: var(--brand-blue);
+  font-weight: 700;
+  padding-top: 10px;
+  margin-bottom: 1px;
+}
+
+.EmbeddedEN590 p{
+  font-weight: 300;
+  margin-top: 0;
+  font-size: 18px;
 }
 
 .img-fluid {
