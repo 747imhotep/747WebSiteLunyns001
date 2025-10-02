@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | LUNYNS Ltd.</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
+  <link rel="stylesheet" href="../COM_CSS/ModalNr2_CSS/ModalNr2.css">
+  <link rel="stylesheet" href="../CONTACT/CONTACT_CSS/message.css">
+  <link rel="icon" href="../IMAGES/Favicon/Favicon-01.png">
+</head>
+
+<body>
+
+<!-- Navigation -->  
+
+
+  <!-- Header (optional) -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="../IMAGES/mainIMAGES/imgBANNER/LOGO _HTEST_03.png" alt="LUNYNS Ltd. Logo" height="40" class="me-2">
+        
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse gap-2 navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav  ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="../ABOUT/about.html">ABOUT US</a></li>
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="../PRODUCTS/products.html" id="productsDropdown" role="button">PRODUCTS</a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">DIESEL EN590</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
+            <!-- Add more sub-links as needed -->
+          </ul>
+         </li><!-- FIN products -->
+            <li class="nav-item"><a class="nav-link active" href="../CONTACT/contact.html">CONTACT US</a></li>
+
+          </ul>
+
+
+        <form class="d-flex ms-3" action="/search" method="GET">
+          <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+          <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ </a>
+
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  
+
+<!-- Hero Section -->
+    <section class="hero-contact text-center py-5" style="margin-top: 20px;" >
+      <div class="container">
+        <h1>Message Us</h1>
+        <div class="lead">
+          <p> Got document to send ?  </p>
+          <p> want to complete your offer or your quotation with </p>
+          <p> valuable documents like ICPO, SCO, FCO, NCNDA/IMPFA... </p>
+          <p> Just fill out the Form. </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container my-5">
+    <div class="row">
+
+      <div>
+        <!-- RFQ Modal 180-210-->
+        <div id="RFQ-modal" class="modal" style="display: none;">
+          <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
+            <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
+
+            <div class="boxquote">
+              <h2>Request FREE Quotation!</h2>
+              <!-- <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain"> -->
+              <form id="contactForm" action="https://formsubmit.co/contact@lunyns.com" method="POST">
+                
+                <!-- Required for FormSubmit -->
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_template" value="box">
+                  <input type="hidden" name="_subject" value="New submission!">
+                  <input type="hidden" name="_blacklist,scammer" value="spammy pattern, banned term, phrase">
+                  <input type="text" name="_honey" style="position:absolute;left:-9999px;">
+                  <input type="hidden" name="_next" value="https://lunyns.com/Thanks/Thanks.html">
+
+
+                <label for="name">Name:*</label>
+                <input type="text" id="name" name="name" required class="form-control mb-3">
+
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" class="form-control mb-3">
+
+                <label for="subject">Subject:*</label>
+                <input type="text" id="subject" name="subject" class="form-control mb-3">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
+
+                <button type="submit" class="btn btn-light">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
+                    <i class="fas fa-eraser"></i> Clear Form
+                </button>
+              </form>
+            </div><!-- boxquote END-->
+          </div>
+        </div>
+<!-- RFQ Modal END-->
+      </div>
+
+
+
+
+    <!-- Contact Map (right column) -->
+    <div class="col-md-6">
+
+        <h5 class="mt-4" style="color: var(--brand-blue-dark);">Find Us on the Map</h5>
+        <div class="ratio ratio-4x3" mb-3>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_LINK" 
+            style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <h5 style="color: var(--brand-blue-dark);">Head Office</h5>
+        <p>
+          <strong>LUNYNS Ltd.</strong><br>
+          Suite A, 82, James Carter Road<br>
+          Mildenhall, Suffolk H28 7DE U.K.<br>
+        </p>
+        </div>
+    </div> <!-- end row-->
+  </section>
+<!-- Contact Section ENDS -->
+
+
+  
+
+
+
+
+<!-- Footer 215-250 -->
+<!-- Footer -->
+  <footer class="footer">
+  <section class="columns">
+    <!-- QUICK LINKS -->
+    <div class="column" id="quick-links">
+      <h2 class="titre1"><b>QUICK LINKS</b></h2>
+      <ul class="footer-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="../ABOUT/about.html">About Us</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+        <li><a href="../security.html">Security</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="column" id="products">
+      <h2 class="titre2"><b>PRODUCTS</b></h2>
+      <p><b>Let’s build a secure and long-term partnership.</b></p>
+      <ul class="footer-list">
+        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LNG/lng.html">LNG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="column" id="contact-info">
+      <h2 class="titre3"><b>CONTACT</b></h2>
+      <ul class="footer-list">
+        <li><strong>📄 Quotation:</strong> <a class="ms-3" href="#TalkToUs">My RFQ</a></li>
+        <li><strong>📧 Email:</strong> <a href="/CONTACT/contact.html">contact us</a></li>
+        <li><strong>🌐 Website:</strong> <a href="/index.html" target="_blank">www.lunyns.com</a></li>
+        <li><strong>📥 Download:</strong> <a href="/sec_download.html">Secure Download</a></li>
+        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
+        <li><br><strong> Gold Member of Go4WorldBusiness:</strong><br><a href="https://go4worldbusiness.com" target="_blank" rel="noopeneer">
+          <img src="../IMAGES/Go4WB/go4worldlogo.png" alt="go4worldbusiness Logo" style="height: 50px; display: block; margin-top: 2px;">
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+<!-- Footer Label -->
+<footer class="footer-bottom py-3 mt-auto">
+  <div class="container text-center">
+    <p>
+    © 2025 Lunyns Ltd. All rights reserved. |
+    <a href="../privacy-policy/terms-and-privacy.html" target="_blank" style="color: #0073e6; text-decoration: none;">
+      Terms of Use & Privacy Policy
+    </a> |
+  </p>
+  </div>
+</footer>
+
+
+<!-- SCRIPT 185-197 -->
+<!---------------------------------------------------------------------------------------->
+  <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/CONTACT/contact js/message.js" ></script>
+    <script src="../COM_CSS/tawkJS/tawk.js"></script>
+  </body>
+</html>
