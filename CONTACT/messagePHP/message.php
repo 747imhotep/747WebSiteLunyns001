@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $maxFileSize = 5 * 1024 * 1024; // 5MB
 
     $file = $_FILES['attachment'];
-    $fileName = basename($file['name']);
+    $fileName = preg_replace("/[^A-Za-z0-9_\-\.]/", '_', basename($file['name']));
     $fileTmp = $file['tmp_name'];
     $fileSize = $file['size'];
     $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
@@ -39,11 +39,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Error: File upload failed.");
     }
 
-    // Optional: process form data
+    // Process form data
     $name = htmlspecialchars($_POST['name'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
     $subject = htmlspecialchars($_POST['subject'] ?? '');
     $message = htmlspecialchars($_POST['message'] ?? '');
+
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($message)) {
+        die("Error: Please fill in all required fields.");
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Error: Invalid email address.");
+    }
 
     // Example: Save to a text log (or connect to a database/mail system)
     file_put_contents("form_submissions.log", date('Y-m-d H:i:s') . " - $name, $email, $subject\n", FILE_APPEND);
@@ -57,5 +66,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Method Not Allowed";
 }
 ?>
-
-
