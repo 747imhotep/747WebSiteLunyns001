@@ -19,39 +19,52 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.lead {
-  font-size: 1.5rem;
-  color: aliceblue;
-  font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.rfq-section {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: #001d4f;
+  padding: 30px;
+  color: antiquewhite;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
 }
 
-.SecondForm {
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-bottom: 20px;
+.rfq-section input,
+.rfq-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
 }
+
+.rfq-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.rfq-section button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rfq-section .btn-light {
+  background-color: #fff;
+  color: #001d4f;
+}
+
+.rfq-section .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
 
 /* ✅ BUTTON STARTS*/
 
-.butpop{
-    display: inline-block;
-    padding: 9px 15px;
-    border: none;
-    border-radius: 7px;
-    text-decoration: none;
-    font-size: 24px;;
-    cursor:pointer;
-    transition: background-color 0.3s ease;
-}
 
-.butpop:hover {
-    background-color: #c4f1ef;
-    color: #fff;
-}
-
-.testcontact{
-  font-size: 14px;
-  color: rgb(222, 222, 243);
-}
 /* BUTTON ENDS*/

@@ -6,20 +6,47 @@ Welcome Index			ID: epYnmr	popup		8ff476a5273454
 Contact Me			ID: bo2m0K	embedded	8ff476a5273454
 Quotation Coconuts Husks	ID: bo2mmj	quotation	8ff476a5273454
 
-Message Us
+Great — here’s a secure and production-ready version of your `upload.php` that:
 
-Improvement 
-Title:
-New Diesel Supply Inquiry: EN590 10PPM Diesel Fuel
+✅ Accepts form data and a file
+✅ Validates file type and size
+✅ Prevents executable/malicious file uploads
+✅ Redirects to your thank-you page
+✅ Is ready to upload via **cPanel or FTP**
 
-Subtitle:
-We’ve received a new inquiry for EN590 10PPM diesel fuel on behalf of a long-standing and valued client, with whom we’ve had a trusted partnership for over three years. Below are the specifications:
-
-
-📌 We are currently seeking a supplier of EN590 10PPM Diesel on behalf of a highly reliable and long-standing client with whom we have successfully partnered for over three years. This buyer is fully guaranteed by us and is known for their consistent professionalism and trustworthiness.
-
-Interested suppliers are kindly invited to complete the form below to be considered for the initial selection process. We appreciate timely and accurate submissions.
+---
 
 
+### ✅ What You Need to Do:
 
+1. **Upload this file as `upload.php`** to your server (e.g., via cPanel File Manager or FTP).
+2. **Create an `/uploads` folder** at the same level as `upload.php`.
+3. Set folder permissions to allow writing:
+
+   ```bash
+   chmod 755 uploads
+   ```
+4. **Point your form action to `upload.php`:**
+
+```html
+<form action="/upload.php" method="POST" enctype="multipart/form-data">
+```
+
+5. Customize the redirect URL:
+
+```php
+header("Location: https://yourdomain.com/Thanks/Thanks.html");
+```
+
+---
+
+### ✅ Optional (Recommended):
+
+* Store file paths and form data in a database
+* Email form data to yourself (can show you how)
+* Add CAPTCHA to block spam
+
+---
+
+Would you like me to add email notification or database storage next?
 
