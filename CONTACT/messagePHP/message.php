@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     file_put_contents("form_submissions.log", date('Y-m-d H:i:s') . " - $name, $email, $subject\n", FILE_APPEND);
 
     // Redirect to thank-you page
-    header("Location: https://lunyns.com/Thanks/Thanks.html");
+    header("Location: https://xxxxxxx.com/Thanks/Thanks.html");
     exit();
 } else {
     // Reject any non-POST requests
