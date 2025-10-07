@@ -42,3 +42,14 @@
         }
       }
     });
+// 📌 Optional Next Steps (When You're Ready)
+
+//1. Add a “Thank You” message after submission
+//   So users know the form worked (I can help you add this via JS or Formspree redirect).
+
+//2. Upgrade to Personal Plan when:
+//   You want file uploads
+//   Need more than 50 submissions/month
+//   Want advanced features (spam protection, confirmation emails, etc.)
+
+//3. Connect a custom domain with GitHub Pages + Cloudflare (optional but very polished setup)
