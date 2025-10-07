@@ -7,29 +7,35 @@
   background-size: cover;       /* Makes sure image covers entire section */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat; /* No repeating */
-  color: white;                 /* Make sure text is visible */
+  color: white;               /* Make sure text is visible */
   padding: 100px 0;             /* Add vertical spacing */
 }
 
-h1 {
+h1 { /* Hero Title */
   font-size: 3rem;
   color: aliceblue;
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.rfq-section {
+.rfq-section h2 {
+  font-size: 2rem;
+  color: rgb(144, 198, 245);
+  font-weight: 500;
+}
+
+.rfq-section { /* Entire Form */
   max-width: 600px;
   margin: 60px auto;
   background-color: #001d4f;
   padding: 30px;
-  color: antiquewhite;
+  color: #faebd7;
   border-radius: 8px;
   position: relative;
   z-index: 1;
 }
 
-.rfq-section input,
+.rfq-section input, /* Fow what ? */
 .rfq-section textarea {
   width: 100%;
   padding: 10px;
@@ -38,13 +44,13 @@ h1 {
   border: none;
 }
 
-.rfq-section label {
+.rfq-section label { /* Fow what ? */
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.rfq-section button {
+.rfq-section button { /* Fow what ? */
   padding: 10px 20px;
   font-weight: bold;
   border: none;
@@ -52,26 +58,34 @@ h1 {
   cursor: pointer;
 }
 
-.rfq-section .btn-light {
-  background-color: #fff;
-  color: #5b8feb;
-}
-
-.rfq-section .btn-light:hover{
-  background-color: #e0e0e0;
-}
-
-.rfq-section .btn-secondary {
+.rfq-section .btn-light { /* Submit button ? */
   background-color: #1a89eb;
   color: #fff;
+  font-weight: 400;
 }
 
-.rfq-section .btn-secondary:hover{
-  background-color: #0066cc;
+.rfq-section .btn-light:hover{ /* Submit button */
+  background-color: #0bf39a;
+  color: #333;
+  font-weight: 400;
+  border: 1px solid #c8f0e1;
+}
+
+.rfq-section .btn-secondary { /* Reset button ? */
+  background-color: #174a74;
+  color: #fff;
+  font-weight: 400;
+}
+
+.rfq-section .btn-secondary:hover{ /* Reset button ? */
+  background-color: #030011;
+  color: #fff;
+  font-weight: 400;
+  border: 1px solid #7c0303;
 }
 
 /* add some focus*/
-.rfq-section input:focus,
+.rfq-section input:focus, /* When input field are focused */
 .rfq-section textarea:focus{
   outline: 2px solid #5b8feb;
   background-color: #f0f0f0;
