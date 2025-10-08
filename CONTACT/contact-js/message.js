@@ -7,7 +7,7 @@
   document.getElementById('clearFormBtn').addEventListener('click', () => {
     //const form = document.querySelector('form[action^="mailto"]');
     // Select the form by tag, ID, or any other appropriate selector
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('contactFormsPree');
  // if it's the only form
 
     if (form) {
@@ -15,7 +15,7 @@
     }
   });
 
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('contactFormsPree');
   const thankYou = document.getElementById('thank-you');
 
   form.addEventListener('submit', async function (e) {
@@ -34,6 +34,23 @@
       thankYou.style.display = 'block';
     } else {
       alert('There was a problem submitting the form.');
+    }
+    if (form) form.reset();
+    if (thankYou) {
+      thankYou.style.display = 'none';
+      form.style.display = 'block'; // re-show the form if hidden
+    }
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+
+    if (response.ok) {
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+    } else{
+      alert('There was a problem submitting the form.');
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send';
     }
   });
 
