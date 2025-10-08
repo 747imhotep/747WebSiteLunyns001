@@ -15,6 +15,28 @@
     }
   });
 
+  const form = document.getElementById('contact-form');
+  const thankYou = document.getElementById('thank-you');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = form.action;
+    const response = await fetch(action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    if (response.ok) {
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+    } else {
+      alert('There was a problem submitting the form.');
+    }
+  });
+
 
   // Prefill the RFQ form based on URL hash like #RFQ-10ppm
     window.addEventListener('DOMContentLoaded', () => {
@@ -42,14 +64,4 @@
         }
       }
     });
-// 📌 Optional Next Steps (When You're Ready)
-
-//1. Add a “Thank You” message after submission
-//   So users know the form worked (I can help you add this via JS or Formspree redirect).
-
-//2. Upgrade to Personal Plan when:
-//   You want file uploads
-//   Need more than 50 submissions/month
-//   Want advanced features (spam protection, confirmation emails, etc.)
-
-//3. Connect a custom domain with GitHub Pages + Cloudflare (optional but very polished setup)
+// 📌 
