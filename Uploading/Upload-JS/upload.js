@@ -43,11 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // 📦 Optional: Add Submit Debugging
   document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
+  const serialInput = document.getElementById("serial-number");
 
-  if (form) {
+  if (form && serialInput) {
+    serialInput.value = generateSerialNumber();
+
     form.addEventListener('submit', (e) => {
-      console.log("Form submitted!");
+      console.log("Serial Number being submitted!", serialInput.value);
     });
+  }
+  function generateSerialNumber(){
+    const now = new Date();
+    const date = now.toISOString().slice(0, 10).replace(/-/g, "");
+    const rand = Math.floor(1000 + Math.random() * 9000);
+    return `SN-${date}-${rand}`;
   }
     });
 
