@@ -50,8 +50,8 @@ h1 {
     color: #fff;
 }
 
-.testcontact{
+.testcontact{ /* message hidden */
   font-size: 14px;
-  color: rgb(222, 222, 243);
+  color: #f9f9f9;
 }
 /* BUTTON ENDS*/
