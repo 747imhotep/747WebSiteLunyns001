@@ -3,7 +3,9 @@
 
 
 
+  document.addEventListener('DOMContentLoaded', () =>{
 
+  
   // Clear all form fields when Clear Form button is clicked
   document.getElementById('clearFormBtn').addEventListener('click', () => {
     const form = document.getElementById('contactFormsPree');
@@ -94,3 +96,4 @@
 
 
 // 📌 
+});
