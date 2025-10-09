@@ -2,28 +2,26 @@
 // <!---------------------------------------------------------------------------------------->
 
 
-
-  document.addEventListener('DOMContentLoaded', () =>{
-
   
   // Clear all form fields when Clear Form button is clicked
-  document.getElementById('clearFormBtn').addEventListener('click', () => {
-    const form = document.getElementById('contactFormsPree');
-    const thankYou = document.getElementById('thank-you');
-
-    if (form) {
-      form.reset();
-      form.style.display = 'block';
-    }
-
-    if (thankYou) {
-      thankYou.style.display = 'none';
-    }
-  });
-
+  document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
   const thankYou = document.getElementById('thank-you');
 
+  // Clear Form button logic
+  const clearBtn = document.getElementById('clearFormBtn');
+  if (clearBtn && form) {
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      form.style.display = 'block';
+
+      if (thankYou) {
+        thankYou.style.display = 'none';
+      }
+    });
+  }
+
+  // Submit handler
   if (form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -32,7 +30,6 @@
       const action = form.action;
       const submitButton = form.querySelector('button[type="submit"]');
 
-      // Disable submit button to prevent double click
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
@@ -49,51 +46,24 @@
 
         if (response.ok) {
           form.style.display = 'none';
-          thankYou.style.display = 'block';
+          if (thankYou) thankYou.style.display = 'block';
         } else {
           alert('There was a problem submitting the form.');
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Send';
-          }
         }
       } catch (error) {
         alert('An error occurred. Please try again.');
+      } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = 'Send';
+          submitButton.textContent = 'Send Message';
         }
       }
     });
   }
+  // DELETED: Prefill subject and message from URL hash (e.g., #RFQ-product123)
+  
+});
 
-  // Prefill the RFQ form based on URL hash like #RFQ-10ppm
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash;
-
-    if (hash.startsWith('#RFQ-')) {
-      const product = decodeURIComponent(hash.replace('#RFQ-', ''));
-
-      // Set subject
-      const subjectInput = document.getElementById('subject');
-      if (subjectInput) {
-        subjectInput.value = `${product.toUpperCase()} Quotation Request`;
-      }
-
-      // Set message
-      const messageInput = document.getElementById('message');
-      if (messageInput) {
-        messageInput.value = `Dear team,\n\nI would like to request a quotation for ${product.toUpperCase()}.\nKindly provide details regarding:\n- Pricing\n- Payment terms\n- Minimum order quantity (MOQ)\n\nThank you.`;
-      }
-
-      // Optional: Scroll smoothly to the RFQ form
-      const rfqSection = document.getElementById('RFQ');
-      if (rfqSection) {
-        rfqSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
 
 
 // 📌 
-});
