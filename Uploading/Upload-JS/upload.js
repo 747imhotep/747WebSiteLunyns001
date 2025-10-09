@@ -20,5 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // ✅ Generate the Serial Number automatically
+  document.addEventListener("DOMContentLoaded",() =>{
+    const SerialInput = document.getElementById("serial-number");
+
+    if(SerialInput) {
+      const serialNumber = generateSerialNumber();
+      SerialInput.value = serialNumber;
+    }
+
+    function generateSerialNumber(){
+      //Format: SN-20251010-XXX
+      const date = new Date();
+      const dateStr = date.toISOString().slice(0,10).replace(/-/g, "");
+      const random = Math.floor(1000 + Math.random() * 9000);
+      return `SN-${dateStr}-${random}`;
+    }
+  });
+
+
+  // 📦 Optional: Add Submit Debugging
+  document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactFormsPree');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      console.log("Form submitted!");
+    });
+  }
+    });
+
 });
 
