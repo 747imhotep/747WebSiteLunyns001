@@ -1,14 +1,14 @@
-//     MASSAGE US - JS
+//     🟢 MASSAGE US - JS
 // <!---------------------------------------------------------------------------------------->
 
 
   
-  // Clear all form fields when Clear Form button is clicked
-  document.addEventListener('DOMContentLoaded', () => {
+  // ✅ Clear all form fields when Clear Form button is clicked
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
   const thankYou = document.getElementById('thank-you');
 
-  // Clear Form button logic
+  // ✅ Clear Form button logic
   const clearBtn = document.getElementById('clearFormBtn');
   if (clearBtn && form) {
     clearBtn.addEventListener('click', () => {
@@ -21,7 +21,7 @@
     });
   }
 
-  // Submit handler
+  // ✅ Submit handler
   if (form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -51,6 +51,7 @@
           alert('There was a problem submitting the form.');
         }
       } catch (error) {
+        console.error('Form submission error:', error);
         alert('An error occurred. Please try again.');
       } finally {
         if (submitButton) {
@@ -60,9 +61,9 @@
       }
     });
   }
-  // DELETED: Prefill subject and message from URL hash (e.g., #RFQ-product123)
-  
 });
+  
+
 
 
 
