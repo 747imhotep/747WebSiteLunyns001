@@ -3,28 +3,22 @@
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
+// ✅ Clear all form fields when Clear Form button is clicked
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactFormsPree');
+  const thankYou = document.getElementById('thank-you');
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  // ✅ Clear Form button logic
+  const clearBtn = document.getElementById('clearFormBtn');
+  if (clearBtn && form) {
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      form.style.display = 'block';
 
-    const formData = new FormData(form);
-
-    fetch("messagephp/message.php", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => {
-      if (response.redirected) {
-        window.location.href = response.url;
-      } else {
-        return response.text().then(text => alert(text));
+      if (thankYou) {
+        thankYou.style.display = 'none';
       }
-    })
-    .catch(error => {
-      alert("An error occurred: " + error.message);
     });
-  });
+  }
 });
 
