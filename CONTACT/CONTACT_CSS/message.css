@@ -63,6 +63,7 @@ h1 { /* Hero Title */
   color: #333;
   font-weight: bold;
   font-size: 1.11rem;
+  border: 1px solid greenyellow;
 }
 
 .rfq-section .btn-light:hover{ /* Submit button */
