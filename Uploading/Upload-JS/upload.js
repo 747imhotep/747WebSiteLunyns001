@@ -1,15 +1,16 @@
-//     UPLOAD US - JS
-// <!---------------------------------------------------------------------------------------->
-
-
-
-// ✅ Clear all form fields when Clear Form button is clicked
+// ✅ UPLOAD US - JS
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
+  const serialInput = document.getElementById("serial-number");
+  const clearBtn = document.getElementById('clearFormBtn');
   const thankYou = document.getElementById('thank-you');
 
-  // ✅ Clear Form button logic
-  const clearBtn = document.getElementById('clearFormBtn');
+  // ✅ 1. Auto-generate Serial Number on page load
+  if (serialInput) {
+    serialInput.value = generateSerialNumber();
+  }
+
+  // ✅ 2. Clear Form logic
   if (clearBtn && form) {
     clearBtn.addEventListener('click', () => {
       form.reset();
@@ -18,47 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
       if (thankYou) {
         thankYou.style.display = 'none';
       }
+
+      // Re-generate serial number when form is cleared
+      if (serialInput) {
+        serialInput.value = generateSerialNumber();
+      }
     });
   }
-  // ✅ Generate the Serial Number automatically
-  document.addEventListener("DOMContentLoaded", () => {
-    const serialInput = document.getElementById("serial-number");
 
-    if (serialInput) {
-      const serialNumber = generateSerialNumber();
-      serialInput.value = serialNumber;
-    }
-
-    function generateSerialNumber() {
-      const date = new Date();
-      const dateStr = date.toISOString().slice(0,10).replace(/-/g, "");
-      const random = Math.floor(1000 + Math.random() * 9000);
-      return `SN-${dateStr}-${random}`;
-    }
-  });
-
-
-
-
-  // 📦 Optional: Add Submit Debugging
-  document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactFormsPree');
-  const serialInput = document.getElementById("serial-number");
-
+  // ✅ 3. Debug: Show Serial Number on submit
   if (form && serialInput) {
-    serialInput.value = generateSerialNumber();
+    form.addEventListener('submit', () => {
+      console.log("Serial Number being submitted:", serialInput.value);
+    });
+  }
 
-    form.addEventListener('submit', (e) => {
-      console.log("Serial Number being submitted!", serialInput.value);
-    });
+  // ✅ Generate numeric Serial Number: 0001 to 2000
+  function generateSerialNumber() {
+    const number = Math.floor(Math.random() * 2000) + 1;  // 1 to 2000
+    return String(number).padStart(4, '0');               // pad with zero to 4 digits
   }
-  function generateSerialNumber(){
-    const now = new Date();
-    const date = now.toISOString().slice(0, 10).replace(/-/g, "");
-    const rand = Math.floor(1000 + Math.random() * 9000);
-    return `SN-${date}-${rand}`;
+
+  // 
+  function attachSerialToRedirect() {
+    const serial = document.getElementById('serial-number')?.value || '';
+    const redirectField = document.getElementById('redirectField');
+
+    if(redirectField && serial) {
+      // Add serial as query param
+      redirectField.value = 'https://lunyns.com/Thanks/Thanks.html?serial=${serial}' ;
+    }
   }
-    });
 
 });
-

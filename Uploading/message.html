@@ -82,13 +82,16 @@
         <!-- RFQ Filling Form 82-113-->
           <div id="rfq-form" class="rfq-section">
               <h2>UPLOAD DOCUMENT</h2>
-              <form id="contactFormsPree" action="https://formspree.io/f/myzndwep" method="POST" enctype="multipart/form-data">
+              <form id="contactFormsPree" 
+              action="https://formspree.io/f/myzndwep" 
+              method="POST" 
+              enctype="multipart/form-data"
+              onsubmit="attchSerialToRedirect()">
+              
                 <input type="hidden" name="_redirect" value="https://lunyns.com/Thanks/Thanks.html">
                 <input type="hidden" name="_subject" value="New RFQ Request">
-
-
-                <label for="serial-number">Serial Number</label>
-                <input type="text" id="serial-number" name="Serial Number" placeholder="automatic serial-number" required readonly>
+                <input type="hidden" id="serial-number" name="Internal-Serial-Number" placeholder="automatic serial-number" required readonly>
+                <input type="hidden" name="_redirect" id="redirectField" value="">
                 
                 <label for="name">Name:*</label>
                 <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3">
