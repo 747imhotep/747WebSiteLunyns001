@@ -21,22 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   // ✅ Generate the Serial Number automatically
-  document.addEventListener("DOMContentLoaded",() =>{
-    const SerialInput = document.getElementById("serial-number");
+  document.addEventListener("DOMContentLoaded", () => {
+    const serialInput = document.getElementById("serial-number");
 
-    if(SerialInput) {
+    if (serialInput) {
       const serialNumber = generateSerialNumber();
-      SerialInput.value = serialNumber;
+      serialInput.value = serialNumber;
     }
 
-    function generateSerialNumber(){
-      //Format: SN-20251010-XXX
+    function generateSerialNumber() {
       const date = new Date();
       const dateStr = date.toISOString().slice(0,10).replace(/-/g, "");
       const random = Math.floor(1000 + Math.random() * 9000);
       return `SN-${dateStr}-${random}`;
     }
   });
+
+
 
 
   // 📦 Optional: Add Submit Debugging
