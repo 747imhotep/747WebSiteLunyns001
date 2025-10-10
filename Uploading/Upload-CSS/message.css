@@ -154,19 +154,36 @@ input[type="tel"]:focus {
 
 /* BUTTON ENDS*/
 
-/*
-📌 Optional Next Steps (When You're Ready)
+/* 📌 COUNTRIES CODE PHONE NUMBER */
 
-Add a “Thank You” message after submission
-So users know the form worked (I can help you add this via JS or Formspree redirect).
+/* Dropdown container */
+.iti__country-list {
+  background-color: #0b2a5a !important; /* Dark blue background, matches your form */
+  color: #f0f0f0 !important; /* Light text for readability */
+  max-height: 200px !important; /* Optional: limit height */
+  overflow-y: auto !important;
+  border-radius: 7px !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.72);
+}
 
-Upgrade to Personal Plan when:
+/* Each country option */
+.iti__country {
+  color: #f0f0f0 !important; /* Light text */
+  background-color: transparent !important;
+}
 
-You want file uploads
+/* Hover/focus on country options */
+.iti__country:hover,
+.iti__country.iti__country--highlight {
+  background-color: #639bcc !important; /* Your button color or other highlight */
+  color: #fff !important;
+}
 
-Need more than 50 submissions/month
-
-Want advanced features (spam protection, confirmation emails, etc.)
-
-Connect a custom domain with GitHub Pages + Cloudflare (optional but very polished setup)
-*/
+/* Scrollbar styling (optional for modern browsers) */
+.iti__country-list::-webkit-scrollbar {
+  width: 8px;
+}
+.iti__country-list::-webkit-scrollbar-thumb {
+  background-color: #639bcc;
+  border-radius: 4px;
+}
