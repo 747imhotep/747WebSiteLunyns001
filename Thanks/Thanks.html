@@ -7,7 +7,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../COM CSS/Master-CSS/Master-css.css"> <!-- ✅ Your existing general styles -->
+  <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
   <link rel="stylesheet" href="../Thanks/Thanks_CSS/Thanks.css">
   <link rel="icon" href="../IMAGES/Favicon/Favicon-01.png">
 </head>
@@ -45,15 +45,13 @@
           <button class="btn btn-outline-light" type="submit">Search</button>
           <!-- <a href="../CONTACT/contact.html#RFQ" class="quote-btn btn btn-light ms-2">RFQ</a> -->
           <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ </a>
-
         </form>
-
       </div>
     </div>
   </nav>
 
   
-<main class="merci"  ">
+<main class="merci">
   <!-- Hero Section -->
     <section class="hero-contact text-center py-5" style="margin-top: 20px;" >
       <div class="container">        
@@ -66,9 +64,12 @@
   <!-- THANK YOU MESSAGE -->
 
 
+
   <div class="thank-you-container">
-    <h1>Thank You!</h1>
-    <p>Your message has been successfully sent. We'll get back to you as soon as possible.</p>
+    <h2>Thank You!</h2>
+    
+    <h3>Your message has been successfully sent. We'll get back to you as soon as possible.</h3>
+    <h4>Your reference number is: <strong id="serialDisplay"></strong></h4>
     <a href="/index.html" class="btn-back">Return to Home</a>
   </div>
 </main>
@@ -84,5 +85,13 @@
   </div>
 </footer>
 
+        <script>
+          const params = new URLSearchParams(window.location.search);
+          const serial = params.get('serial');
+
+          if (serial) {
+            document.getElementById('serialDisplay').textContent = serial;
+          }
+    </script>
   </body>
 </html>
