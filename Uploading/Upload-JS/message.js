@@ -26,7 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const data = new FormData(form);
+      // Validate and set internatonal phone number vefore collection form data
+      if (!iti.isValidNumber()) {
+        alert; // Stop submission if invalid
+      }
+
+      phoneInput.value = iti.getNumber(); // Set the correct international format
+
+      const data = new FormData(form); // ✅ Now it will include the updated phone number
       const action = form.action;
       const submitButton = form.querySelector('button[type="submit"]');
 
@@ -74,15 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Attach listener to form submission
-      const form = document.querySelector("#contactFormsPree");
-      form.addEventListener("submit", function (e) {
-        // Replace input value with full international number
-        if (iti.isValidNumber()) {
-          phoneInput.value = iti.getNumber(); // e.g. +11234567890
-        } else {
-          alert("Please enter a valid phone number.");
-          e.preventDefault(); // Prevent submission if invalid
-        }
+  const form2 = document.querySelector("#contactFormsPree");
+  form2.addEventListener("submit", function (e) {
+    // Replace input value with full international number
+    if (iti.isValidNumber()) {
+      phoneInput.value = iti.getNumber(); // e.g. +11234567890
+    } else {
+      alert("Please enter a valid phone number.");
+      e.preventDefault(); // Prevent submission if invalid
+    }
 });
   
 
