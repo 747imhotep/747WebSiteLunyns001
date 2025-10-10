@@ -42,6 +42,10 @@ h1 { /* Hero Title */
   height: auto;
 }
 
+input[type="tel"]:focus {
+  outline: 2px solid #084377; /* matching your primary color */
+  box-shadow: none;
+}
 
 .rfq-section{
   box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.3);

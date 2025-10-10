@@ -61,6 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // ✅ PHONE NUMBER
+      const phoneInput = document.querySelector("#phone");
+      const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "auto",
+        geoIpLookup: function (callback) {
+          fetch("https://ipinfo.io/json?token=<YOUR_TOKEN>")
+            .then(resp => resp.json())
+            .then(resp => callback(resp.country || "us"));
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+      });
+
+      // Attach listener to form submission
+      const form = document.querySelector("#contactFormsPree");
+      form.addEventListener("submit", function (e) {
+        // Replace input value with full international number
+        if (iti.isValidNumber()) {
+          phoneInput.value = iti.getNumber(); // e.g. +11234567890
+        } else {
+          alert("Please enter a valid phone number.");
+          e.preventDefault(); // Prevent submission if invalid
+        }
 });
   
 
