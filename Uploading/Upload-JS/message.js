@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const iti = window.intlTelInput(phoneInput, {
         initialCountry: "auto",
         geoIpLookup: function (callback) {
-          fetch("https://ipinfo.io/json?token=<YOUR_TOKEN>")
+          fetch("https://ipinfo.io/json?token=64aa12a0b8c627")
             .then(resp => resp.json())
             .then(resp => callback(resp.country || "us"));
         },
