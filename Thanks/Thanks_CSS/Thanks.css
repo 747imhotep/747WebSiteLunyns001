@@ -24,9 +24,10 @@
   justify-content: center;
   align-items: right;
   text-align: center;
+  height: 12vh;
   width: 420px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(32, 2, 2, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(32, 2, 2, 0.5);
   margin: 0 auto; /* Center the container horizontally */
   box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
   padding: 40px 20px;
@@ -37,27 +38,40 @@
 
 
 .thank-you-container h1 {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   color: #002f81; /* brand blue */
   margin-bottom: 20px;
 }
 
-.thank-you-container p {
-  font-size: 1.1rem;
+.thank-you-container h2 {
+  font-size: 2.5rem;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
+.thank-you-container h3 {
+  font-size: 1.90rem;
+  margin-bottom: 20px;
+}
+
+.thank-you-container h4{
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
 .btn-back {
-  background-color: #002f81;
+  background-color: #04255e;
   color: white;
   border: none;
   padding: 10px 20px;
+  margin: 20px 20px;
   text-decoration: none;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 7px;
   transition: background-color 0.3s ease;
 }
 
 .btn-back:hover {
   background-color: #375ba5;
+  color : #ebe5c8; 
 }
