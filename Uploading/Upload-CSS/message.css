@@ -187,3 +187,10 @@ input[type="tel"]:focus {
   background-color: #639bcc;
   border-radius: 4px;
 }
+
+/* Make sure the dial code is also readable on hover */
+.iti__country:hover .iti__dial-code,
+.iti__country.iti__country--highlight .iti__dial-code {
+  color: #5f5858 !important; /* Match the text color on hover */
+  font-weight: bold;
+}
