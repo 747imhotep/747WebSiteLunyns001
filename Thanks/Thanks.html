@@ -85,15 +85,19 @@
   </div>
 </footer>
 
-        <script>
+      <script>
+      // Extract the 'serial' parameter from URL and insert into the page
+        document.addEventListener('DOMContentLoaded', () => {
           const urlParams = new URLSearchParams(window.location.search);
           const serial = urlParams.get('serial');
 
-          if (serial) {
-            document.getElementById('serialDisplay').textContent = serial;
-          } else {
-            document.getElementById('serialDisplay').textContent = 'N/A';
+          const serialDisplayElem = document.getElementById('serialDisplay');
+          if (serial && serialDisplayElem) {
+          serialDisplayElem.textContent = serial;
+          } else if (serialDisplayElem) {
+          serialDisplayElem.textContent = "N/A";
           }
-    </script>
+        });
+      </script>
   </body>
 </html>

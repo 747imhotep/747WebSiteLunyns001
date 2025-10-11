@@ -1,9 +1,10 @@
 // 🟢 UPLOAD JAVA SCRIPT
 
 // ✅ 1. Beginning
+let form, serialInput;
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactFormsPree');
-  const serialInput = document.getElementById("serial-number");
+  form = document.getElementById('contactFormsPree');
+  serialInput = document.getElementById("serial-number");
   const clearBtn = document.getElementById('clearFormBtn');
   const thankYou = document.getElementById('thank-you');
 
@@ -28,14 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-}) // ends of No 1
+// ends of No 1
+// 🔴🔴🔴 the issue is here. If this line is removed, it says "There was a problem submittin the form"
 
-// ✅ 2. Debug: Show Serial Number on submit
+// ✅ 2.0 Debug: Show Serial Number on submit
   if (form && serialInput) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-// 🔁 2.1 Get full phone number with country code
+// 🔁 2.1 Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
     const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const fullPhoneNumber = iti.getNumber(); // E.g., +123456789
@@ -43,19 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
-// 🔧 2.3 Debug 
+    const data = new FormData(form);
+    
+
+// 🔧 2.3 Debug 🟡
       console.log("Serial Number being submitted:", serialInput.value);
 
 // 2.4 Attach serial to redirect URL BEFORE form submission
     attachSerialToRedirect();
 
 
-// 🔧 2.5 Optional: show serial in console
-    console.log("Serial Number being submitted:", serialInput.value);
-
-
-
-    const data = new FormData(form);
+// 🔧 2.5 Optional: show serial in console 
     const action = form.action;
     const submitButton = form.querySelector('button[type="submit"]');
 
@@ -63,6 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.disabled = true;
       submitButton.textContent = 'Sending...';
     }
+
+// Debug: log all form data before submission
+    for (let pair of data.entries()) {
+    console.log(`${pair[0]}:`, pair[1]);
+    }
+
+// Update the submit button before the fetch begins
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'sending...';
+    }// END of Debug
+
+// ✅ Log the action URL (to double-check Formspree URL)
+    console.log("Form action URL:", action);
 
     fetch(action, {
       method: 'POST',
@@ -73,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok) {
 
         // ❗ MODIFICATION ❗window.location.href = form.querySelector('#redirectField').value;// ❗ MODIFICATION ❗
+        
         const redirectURL = document.getElementById('redirectField')?.value;
         if (redirectURL) {
           window.location.href = redirectURL;
@@ -94,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  }
+}// 🟡🟡🟡 DOMContent is closed here.
 
 // ✅ 3. Serial number generator: 0001 to 2000
   function generateSerialNumber() {
@@ -111,6 +126,5 @@ document.addEventListener('DOMContentLoaded', () => {
       redirectField.value = `https://lunyns.com/Thanks/Thanks.html?serial=${serial}`;
     }
   }
-// ✅ END
-
+}); // ✅ END of DOMContentLoaded 
 
