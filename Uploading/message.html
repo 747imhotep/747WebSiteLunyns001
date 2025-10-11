@@ -112,7 +112,12 @@
                 <input type="hidden" name="_redirect" value="https://lunyns.com/Thanks/Thanks.html">
                 <input type="hidden" name="_subject" value="New RFQ Request">
                 <input type="hidden" id="serial-number" name="Internal-Serial-Number" placeholder="automatic serial-number" required readonly>
-                <input type="hidden" name="_redirect" id="redirectField" value="">
+                <!-- Serial Number Field -->
+                <input type="hidden" id="serial-number" name="serial" />
+
+                <!-- Redirect Field for Formspree -->
+                <input type="hidden" name="_redirect" id="redirectField" />
+
                 
                 <label for="name">Name:*</label>
                 <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3">

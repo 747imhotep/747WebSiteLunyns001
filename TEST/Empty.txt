@@ -19,14 +19,17 @@ Great — here’s a secure and production-ready version of your `upload.php` th
 
 
 project-folder/
-├── CONTACT/
+├── Upload/
 │   ├── message.html      ✅ your form page
 │
 │   ├── messagephp        ✅ the PHP Folder
 │       └── message.php   ✅ php handler ?
 │
-│   └── contact js/
-│       └── message.js    ✅ JS file (currently missing)
+│   └── upload js/
+│       └── message.js    ✅ JS file 
+│
+│   └── upload css/
+│       └── message.css   ✅ CSS file 
 │
 ├── IMAGES/
 │   └── Go4WB/
@@ -35,3 +38,18 @@ project-folder/
 ├── COM_CSS/
 │   └── tawkJS/
 │       └── tawk.js       ✅ works perfectly
+
+
+This is the Data sent by Formspree. The phone number doesn't keep the country code.
+
+Internal-Serial-Number
+0639
+
+name
+customserv1
+
+email
+customserv1@lunyns.com
+
+phone
+7440405100
