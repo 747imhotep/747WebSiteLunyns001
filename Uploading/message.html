@@ -106,21 +106,19 @@
               <form id="contactFormsPree" 
               action="https://formspree.io/f/myzndwep" 
               method="POST" 
-              enctype="multipart/form-data"
-              onsubmit="attchSerialToRedirect()">
+              enctype="multipart/form-data">
               
-                <input type="hidden" name="_redirect" value="https://lunyns.com/Thanks/Thanks.html">
-                <input type="hidden" name="_subject" value="New RFQ Request">
-                <input type="hidden" id="serial-number" name="Internal-Serial-Number" placeholder="automatic serial-number" required readonly>
+                <input type="hidden" name="_subject" value="New RFQ Request" />
+
                 <!-- Serial Number Field -->
-                <input type="hidden" id="serial-number" name="serial" />
+                <input type="hidden" id="serial-number" name="serial" placeholder="automatic serial-number" required readonly />
 
                 <!-- Redirect Field for Formspree -->
-                <input type="hidden" name="_redirect" id="redirectField" />
+                <input type="hidden" name="redirectField" id="_redirect" />
 
                 
                 <label for="name">Name:*</label>
-                <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3">
+                <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3" >
 
                 <label for="email">Email:*</label>
                 <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
