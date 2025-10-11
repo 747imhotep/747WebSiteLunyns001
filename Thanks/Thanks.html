@@ -86,8 +86,8 @@
 </footer>
 
         <script>
-          const params = new URLSearchParams(window.location.search);
-          const serial = params.get('serial');
+          const urlParams = new URLSearchParams(window.location.search);
+          const serial = urlParams.get('serial');
 
           if (serial) {
             document.getElementById('serialDisplay').textContent = serial;

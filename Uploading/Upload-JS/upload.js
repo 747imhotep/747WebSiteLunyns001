@@ -1,4 +1,6 @@
-// ✅ 1. UPLOAD US - JS
+// 🟢 UPLOAD JAVA SCRIPT
+
+// ✅ 1. Beginning
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
   const serialInput = document.getElementById("serial-number");
@@ -31,25 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // ✅ 2. Debug: Show Serial Number on submit
   if (form && serialInput) {
   form.addEventListener('submit', function (e) {
-  
-// 2.1 Your existing form submission logic goes here...
-//     For example, if you're using fetch to send via AJAX:
     e.preventDefault();
 
-// 🔁 2.2 Get phoe input and attach full international number
+// 🔁 2.1 Get full phone number with country code
     const phoneInput = document.querySelector("#phone");
     const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const fullPhoneNumber = iti.getNumber(); // E.g., +123456789
 
-// 2.3 Set the phone input value to the full international number
+// 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
+// 🔧 2.3 Debug 
+      console.log("Serial Number being submitted:", serialInput.value);
 
-// 2.4 Optional: show serial in console
+// 2.4 Attach serial to redirect URL BEFORE form submission
+    attachSerialToRedirect();
+
+
+// 🔧 2.5 Optional: show serial in console
     console.log("Serial Number being submitted:", serialInput.value);
 
-// 2.5 Attach serial to redirect URL BEFORE form submission
-    attachSerialToRedirect();
+
 
     const data = new FormData(form);
     const action = form.action;
@@ -67,7 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(response => {
       if (response.ok) {
-        window.location.href = form.querySelector('#redirectField').value;
+
+        // ❗ MODIFICATION ❗window.location.href = form.querySelector('#redirectField').value;// ❗ MODIFICATION ❗
+        const redirectURL = document.getElementById('redirectField')?.value;
+        if (redirectURL) {
+          window.location.href = redirectURL;
+      } else {
+        alert("Form submitted, but redirect URL missing.");
+        }
       } else {
         alert('There was a problem submitting the form.');
       }
@@ -85,33 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   }
 
-// ✅ 3. Generate numeric Serial Number: 0001 to 2000
+// ✅ 3. Serial number generator: 0001 to 2000
   function generateSerialNumber() {
     const number = Math.floor(Math.random() * 2000) + 1;  // 1 to 2000
     return String(number).padStart(4, '0');               // pad with zero to 4 digits
   }
 
-// ✅ 4. 
+// ✅ 4. Attach serial number to redirect URL
   function attachSerialToRedirect() {
-    const serial = document.getElementById('serial-number')?.value || '';
+    // ❗ MODIFICATION ❗const serial = document.getElementById('serial-number')?.value || '';
+    const serial = serialInput?.value || '';
     const redirectField = document.getElementById('redirectField');
     if (redirectField && serial) {
       redirectField.value = `https://lunyns.com/Thanks/Thanks.html?serial=${serial}`;
     }
   }
+// ✅ END
 
 
-// ✅ 5. Example: Set the serial number on page load (if needed)
-  const serialInput = document.getElementById('serial-number');
-  if (serialInput) {
-    serialInput.value = generateSerialNumber();
-  }
-
-// ✅ 6. Attach serial to redirect on form submit
-  const form = document.getElementById('contactFormsPree');
-  if (form && serialInput) {
-    form.addEventListener('submit', function () {
-      console.log("Serial Number being submitted:", serialInput.value);
-      attachSerialToRedirect();
-   }
-  )};
