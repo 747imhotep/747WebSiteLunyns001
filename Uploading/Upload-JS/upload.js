@@ -39,8 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🔁 2.1 Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
-    const fullPhoneNumber = iti.getNumber(); // E.g., +123456789
+    const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "auto",
+    separateDialCode: false,
+    nationalMode: false,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+
+    // 🟡 const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164); // E.g., +123456789
 
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
@@ -108,8 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = 'Send Message';
       }
     });
-  });
-}// 🟡🟡🟡 DOMContent is closed here.
+  }); // 🟡🟡🟡 DOMContent is closed here.
 
 // ✅ 3. Serial number generator: 0001 to 2000
   function generateSerialNumber() {
