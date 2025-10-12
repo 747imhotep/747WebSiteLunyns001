@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 🟡 const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164); // E.g., +123456789
-
+    
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
