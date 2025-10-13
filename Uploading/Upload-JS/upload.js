@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // 🔴 2.4 Attach serial to redirect URL BEFORE form submission
     attachSerialToRedirect();
 
-// 🛠️ 🔴 Your function attachSerialToRedirect() is being called after FormData is created:
+// 🛠️ 🔴 Your function attachSerialToRedirect() must be called before FormData is created:
     const data = new FormData(form);
     
 
