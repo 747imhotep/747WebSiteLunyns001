@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+}
 // ends of No 1
 // 🔴🔴🔴 the issue is here. If this line is removed, it says "There was a problem submittin the form"
 
@@ -39,27 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🔁 2.1 Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    const iti = window.intlTelInput(phoneInput, {
-    initialCountry: "auto",
-    separateDialCode: false,
-    nationalMode: false,
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-});
-
-    // 🟡 const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+// ✅ Fix It: In upload.js, get the existing instance using:   (BACKUP: const iti = window.intlTelInput(phoneInput, {)
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    
+// 🟡 const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164); // E.g., +123456789
     
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
+// 🔴 2.4 Attach serial to redirect URL BEFORE form submission
+    attachSerialToRedirect();
+
+// 🛠️ 🔴 Your function attachSerialToRedirect() is being called after FormData is created:
     const data = new FormData(form);
     
 
 // 🔧 2.3 Debug 🟡
       console.log("Serial Number being submitted:", serialInput.value);
-
-// 2.4 Attach serial to redirect URL BEFORE form submission
-    attachSerialToRedirect();
 
 
 // 🔧 2.5 Optional: show serial in console 
@@ -132,5 +130,4 @@ document.addEventListener('DOMContentLoaded', () => {
       redirectField.value = `https://lunyns.com/Thanks/Thanks.html?serial=${serial}`;
     }
   }
-}); // ✅ END of DOMContentLoaded 
-
+}); // ✅ END of DOMContentLoaded

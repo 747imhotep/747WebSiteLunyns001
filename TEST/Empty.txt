@@ -42,14 +42,45 @@ project-folder/
 
 This is the Data sent by Formspree. The phone number doesn't keep the country code.
 
-Internal-Serial-Number
-0639
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="_subject"
 
-name
-customserv1
+New RFQ Request
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="serial"
 
-email
-customserv1@lunyns.com
 
-phone
-7440405100
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="_redirect"
+
+
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="name"
+
+Paul customserv1
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="email"
+
+lunywholesaler771@yahoo.com
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="phone"
+
+(755) 050-1122
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="subject"
+
+Request a quote
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="message"
+
+This test is done from 127.0.0.1
+the submission works well.
+the phone number is still an issue.
+The Serial Number is still not seeing in the Thanks page.
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+✅ Content-Disposition: form-data; name="attachment"; filename=""
+Content-Type: application/octet-stream
+
+
+------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4--
+

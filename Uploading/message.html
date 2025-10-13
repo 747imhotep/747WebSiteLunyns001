@@ -269,17 +269,20 @@ Connect a custom domain with GitHub Pages + Cloudflare (optional but very polish
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
         <script src="../COM_CSS/tawkJS/tawk.js"></script>
 
-      <!-- Initialize phone input -->
+      <!-- Initialize phone input (SAFELY) -->
         <script>
-          const input = document.querySelector("#phone");
-          window.intlTelInput(input, {
-            initialCountry: "us",
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+          document.addEventListener("DOMContentLoaded", function () {
+            const input = document.querySelector("#phone");
+            if (input) {
+              window.intlTelInput(input, {
+                initialCountry: "us",
+                separateDialCode: true,
+                nationalMode: false,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+              });
+            }
           });
         </script>
-
-      <!-- The custom form logic -->
-        <script src="/Uploading/Upload-JS/upload.js"></script>
 
   </body>
 </html>
