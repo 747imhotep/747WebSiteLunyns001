@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const thankYou = document.getElementById('thank-you');
 
 // ✅ a) Auto-generate Serial Number on page load
-  if (serialInput) {
+  if (serialInput && serialInput.value.trim() === '') {
     serialInput.value = generateSerialNumber();
-    // ❗ where to place this ?
+    console.log("✅ Serial generated on page load:", serialInput.value); // ❗ where to place this ?
   }
 
 // ✅ b) Clear Form logic
@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // ✅ c) Re-generate serial number when form is cleared
       if (serialInput) {
         serialInput.value = generateSerialNumber();
-        console.log("Serial after clear:", serialInput.value); // ❗ CHECK CONSOL LOG
+        console.log("🔁 Serial after clear:", serialInput.value); // ❗🟢 CHECK this CONSOLE LOG
       }
-    });
-  }
+  });
 }
 // ends of No 1
-// 🔴🔴🔴 the issue is here. If this line is removed, it says "There was a problem submittin the form"
+// 🔴🔴🔴 
 
-// ✅ 2.0 Debug: Show Serial Number on submit
-  if (form && serialInput) {
+
+// ✅ 2  Debug: Show Serial Number on submit. Until line Nr. 133
+if (form && serialInput) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -54,30 +54,34 @@ document.addEventListener('DOMContentLoaded', () => {
 // 🟡 Explicitly set serial input value BEFORE calling attachSerialToRedirect in submit:
     if (serialInput.value === '') {
   serialInput.value = generateSerialNumber();
-  console.log("Generated serial on submit:", serialInput.value); // ❗🟢 CHECK CONSOLE LOG
+  console.log("Generated serial on submit:", serialInput.value); // ❗🟢 CHECK this CONSOLE LOG
 }
 
 
-// 🔴 2.4 Attach serial to redirect URL AFTER form submission
+// 🔗 2.4 Attach serial to redirect URL AFTER form submission
     attachSerialToRedirect();
 
-// 🛠️ 🔴 Your function attachSerialToRedirect() must be called before FormData is created:
-    const data = new FormData(form);
+// 🛠️ Your function attachSerialToRedirect() must be called before FormData is created:
+    const redirectField = document.getElementById('redirectField');
     
 
 // 🔧 2.3 Debug 🟡
-      console.log("Serial Number being submitted:", serialInput.value); // ❗🟢 CHECK CONSOLE LOG
-      console.log("Redirect URL:", document.getElementById('redirectField').value); // ❗🟢 CHECK CONSOLE LOG
-      console.log("Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK CONSOLE LOG
-      console.log("Serial on page load:", serialInput.value); // ❗ where to place this ?
-      console.log("Redirect URL before submit:", redirectField.value); // ❗ where to place this ?
-      console.log("Phone input value after assignment:", phoneInput.value); // ❗ where to place this ?
+
+      console.log("➡️ Redirect URL before FormData:", redirectField?.value); // ❗🟢 CHECK this CONSOLE LOG
+      console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
+      console.log("📦 Serial Number being submitted:", serialInput.value); // ❗🟢 CHECK this CONSOLE LOG
+      
+      console.log("➡️ Redirect URL:", document.getElementById('redirectField').value); // ❗🟢 CHECK this CONSOLE LOG
+      console.log("Serial on page load:", serialInput.value); // ❗ where to place this line ?
+      console.log("Phone input value after assignment:", phoneInput.value); // ❗ where to place this line ?
 
 
 
 
 
 // 🔧 2.5 Optional: show serial in console 
+
+    const data = new FormData(form);
     const action = form.action;
     const submitButton = form.querySelector('button[type="submit"]');
 
@@ -88,17 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Debug: log all form data before submission
     for (let pair of data.entries()) {
-    console.log(`${pair[0]}:`, pair[1]);
+    console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
     }
+
+// ✅ Log the action URL (to double-check Formspree URL)
+    console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
 
 // Update the submit button before the fetch begins
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = 'sending...';
-    }// END of Debug
+    }
 
-// ✅ Log the action URL (to double-check Formspree URL)
-    console.log("Form action URL:", action);
 
     fetch(action, {
       method: 'POST',
@@ -110,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // ❗ MODIFICATION ❗window.location.href = form.querySelector('#redirectField').value;// ❗ MODIFICATION ❗
         
-        const redirectURL = document.getElementById('redirectField')?.value;
+        const redirectURL = redirectField?.value
         if (redirectURL) {
           window.location.href = redirectURL;
       } else {
@@ -130,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = 'Send Message';
       }
     });
-  }); // 🟡🟡🟡 DOMContent is closed here.
+  }); // 🟡🟡🟡 DOMContent is closed here. From line Nr. 39
+}
 
 // ✅ 3. Serial number generator: 0001 to 2000
   function generateSerialNumber() {
