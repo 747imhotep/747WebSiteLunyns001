@@ -3,7 +3,7 @@
 // ✅ 1. Beginning
 let form;
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactFormsPree');
+  form = document.getElementById('contactFormsPree');
   const clearBtn = document.getElementById('clearFormBtn');
   const thankYou = document.getElementById('thank-you');
 
@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       form.style.display = 'block';
       if (thankYou) {
         thankYou.style.display = 'none';
+      }
     });
    }
-
+  
 // ✅ b) ✅ Debug: Until line Nr. 133 ❗🟢 CHECK this CONSOLE LOG
       if (form) {
         form.addEventListener('submit', function (e) {
@@ -37,24 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
-// 🛠️ Your function attachSerialToRedirect() must be called before FormData is created:
-    const redirectField = document.getElementById('redirectField');
-
 // 🟡  ❗🟢 CHECK this CONSOLE LOG 🔗 
     
 
 // 🔧 2.3 Console Debugging 🟡
 
       console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
-      console.log("➡️ Redirect URL before FormData:", redirectField?.value); // ❗🟢 CHECK this CONSOLE LOG
       
-      console.log("➡️ Redirect URL:", document.getElementById('redirectField').value); // ❗ Need to delete ?
       console.log("Phone input value after assignment:", phoneInput.value); // ❗ Need to delete ?
 
 
-// 🔧 2.5 Optional: show serial in console 
 
     const data = new FormData(form);
+    data.delete('_redirect'); // 👈 This line removes the hidden redirect field
     const action = form.action;
     const submitButton = form.querySelector('button[type="submit"]');
 
@@ -76,17 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
       body: data,
       headers: { 'Accept': 'application/json' }
     })
+
     .then(response => {
       if (response.ok) {
-
-        // ❗ MODIFICATION ❗window.location.href = form.querySelector('#redirectField').value;// ❗ MODIFICATION ❗
-        
-        const redirectURL = redirectField?.value
-        if (redirectURL) {
-          window.location.href = redirectURL;
-      } else {
-        alert("Form submitted, but redirect URL missing.");
-        }
+      form.style.display = 'none'
+      thankYou.style.display = 'block'
       } else {
         alert('There was a problem submitting the form.');
       }
