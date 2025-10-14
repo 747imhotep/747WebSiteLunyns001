@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ✅ a) Auto-generate Serial Number on page load
   if (serialInput) {
     serialInput.value = generateSerialNumber();
+    // ❗ where to place this ?
   }
 
 // ✅ b) Clear Form logic
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ✅ c) Re-generate serial number when form is cleared
       if (serialInput) {
         serialInput.value = generateSerialNumber();
+        console.log("Serial after clear:", serialInput.value); // ❗ CHECK CONSOL LOG
       }
     });
   }
@@ -49,7 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
-// 🔴 2.4 Attach serial to redirect URL BEFORE form submission
+// 🟡 Explicitly set serial input value BEFORE calling attachSerialToRedirect in submit:
+    if (serialInput.value === '') {
+  serialInput.value = generateSerialNumber();
+  console.log("Generated serial on submit:", serialInput.value); // ❗🟢 CHECK CONSOLE LOG
+}
+
+
+// 🔴 2.4 Attach serial to redirect URL AFTER form submission
     attachSerialToRedirect();
 
 // 🛠️ 🔴 Your function attachSerialToRedirect() must be called before FormData is created:
@@ -57,7 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 // 🔧 2.3 Debug 🟡
-      console.log("Serial Number being submitted:", serialInput.value);
+      console.log("Serial Number being submitted:", serialInput.value); // ❗🟢 CHECK CONSOLE LOG
+      console.log("Redirect URL:", document.getElementById('redirectField').value); // ❗🟢 CHECK CONSOLE LOG
+      console.log("Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK CONSOLE LOG
+      console.log("Serial on page load:", serialInput.value); // ❗ where to place this ?
+      console.log("Redirect URL before submit:", redirectField.value); // ❗ where to place this ?
+      console.log("Phone input value after assignment:", phoneInput.value); // ❗ where to place this ?
+
+
+
 
 
 // 🔧 2.5 Optional: show serial in console 

@@ -62,6 +62,7 @@ input[type="tel"]:focus {
   max-width: 600px;
   margin: 60px auto;
   background-color: #001d4f;
+  background: linear-gradient(135deg, #001d4f, #345183);
   padding: 30px;
   color: #faebd7;
   border-radius: 8px;
@@ -158,7 +159,7 @@ input[type="tel"]:focus {
 
 /* Dropdown container */
 .iti__country-list {
-  background-color: #031e46 !important; /* Dark blue background, matches your form */
+  background: linear-gradient(135deg, #416c92, #066b44);
   color: #f0f0f0 !important; /* Light text for readability */
   max-height: 200px !important; /* Optional: limit height */
   overflow-y: auto !important;
@@ -175,7 +176,7 @@ input[type="tel"]:focus {
 /* Hover/focus on country options */
 .iti__country:hover,
 .iti__country.iti__country--highlight {
-  background-color: #f7f447 !important; /* Mouse Selection highlight */
+  background-color: #0bf39a !important; /* Mouse Selection highlight BACKUP: #f7f447*/
   color: #360000 !important;
 }
 
