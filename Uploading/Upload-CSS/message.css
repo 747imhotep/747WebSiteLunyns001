@@ -93,8 +93,8 @@ input[type="tel"]:focus {
   cursor: pointer;
 }
 
-.rfq-section .btn-light { /* Submit button ? */
-  background-color: #90c6f5;
+.rfq-section .btn-light { /* Submit button  */
+  background-color: #67d2db; /* #1aafbe */
   color: #333;
   font-weight: bold;
   font-size: 1.11rem;
@@ -108,14 +108,14 @@ input[type="tel"]:focus {
   border: 1.2px solid #f7f447; /*0bf39a*/
 }
 
-.rfq-section .btn-secondary { /* Reset button ? */
-  background-color: #174a74;
+.rfq-section .btn-secondary { /* Reset button */
+  background-color: #3a3068;
   color: #fff;
   font-weight: 400;
 }
 
-.rfq-section .btn-secondary:hover{ /* Reset button ? */
-  background-color: #030011;
+.rfq-section .btn-secondary:hover{ /* Reset button */
+  background-color: #221e33;
   color: #fff;
   font-weight: 400;
   border: 1px solid #360000;
@@ -132,7 +132,7 @@ input[type="tel"]:focus {
 /* ✅ BUTTON STARTS*/
 
 .btn-upload{
-  background-color: #084377;
+  background-color: #084377; 
   padding: 12px 20px;
   margin-bottom: 20px;
   border-radius: 7px;
