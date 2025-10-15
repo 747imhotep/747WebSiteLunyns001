@@ -28,11 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🔁 c) Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    const iti = window.intlTelInputGlobals.getElementById(phoneInput);
 
-// 🟢 Get full phone number in E.164 format (e.g., +18449498192)
-    const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+// ✅ Fix It: In upload.js, get the existing instance using:   (BACKUP: const iti = window.intlTelInput(phoneInput, {)
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     
+// 🟡 const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164); // E.g., +123456789
     
 // 2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 // 🔧 2.3 Console Debugging 🟡
+
       console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
       
       console.log("Phone input value after assignment:", phoneInput.value); // ❗ Need to delete ?
@@ -100,12 +102,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //      } // END of before going live.  
 
 }); // ✅ END of DOMContentLoaded
-
-
-
-// remove that <script> block (where intlTelInput() is initialized)
-// ✅ Submit the form
-
-// ✅ Check Network > Request > Form Data
-
-// ✅ Look at what value is sent for the phone field

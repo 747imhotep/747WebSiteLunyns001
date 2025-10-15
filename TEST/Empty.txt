@@ -42,45 +42,40 @@ project-folder/
 
 This is the Data sent by Formspree. The phone number doesn't keep the country code.
 
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+
+
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="_subject"
 
 New RFQ Request
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
-✅ Content-Disposition: form-data; name="serial"
-
-
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
-✅ Content-Disposition: form-data; name="_redirect"
-
-
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="name"
 
 Paul customserv1
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="email"
 
-lunywholesaler771@yahoo.com
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+lunywholesaler9@yahoo.com
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="phone"
 
-(755) 050-1122
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+844-949-8192
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="subject"
 
 Request a quote
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="message"
 
-This test is done from 127.0.0.1
-the submission works well.
-the phone number is still an issue.
-The Serial Number is still not seeing in the Thanks page.
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4
+Serial Number has been removed.
+We need to work on Phone number Country Code.
+Submit button Works well, that's very nice.
+Hopefully we can end this work. We've been working on it since two weeks.
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
 ✅ Content-Disposition: form-data; name="attachment"; filename=""
 Content-Type: application/octet-stream
 
 
-------geckoformboundary38a9affe17c6f771fc384ea6917d9cb4--
+------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41--
+
 

@@ -138,12 +138,13 @@
                 </button>
             </form>
 
-            <!-- Success message (hidden by default) -->
-            <div id="thank-you" style="display: none;">
+            <!-- Success message (hidden by default) --> 
+            <!--<div id="thank-you" style="display: none;">
                 <h2>Thank You!</h2>
                 
                 <h3>Your message has been successfully sent. We'll get back to you as soon as possible.</h3>
             </div>
+            -->
 
       </div> <!-- frq-section ENDS -->
 
@@ -274,19 +275,17 @@ Connect a custom domain with GitHub Pages + Cloudflare (optional but very polish
         <script src="../COM_CSS/tawkJS/tawk.js"></script>
 
       <!-- Initialize phone input (SAFELY) -->
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const input = document.querySelector("#phone");
-            if (input) {
-              window.intlTelInput(input, {
-                initialCountry: "us",
-                separateDialCode: true,
-                nationalMode: false,
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
-              });
-            }
+       <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.querySelector("#phone");
+        if (input) {
+          window.intlTelInput(input, {
+            initialCountry: "auto",
+            nationalMode: false,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
           });
-        </script>
-
+        }
+      });
+    </script>
   </body>
 </html>
