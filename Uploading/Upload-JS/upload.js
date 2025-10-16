@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
  // ends of No 1 🔴🔴🔴 
 
 
-// 🔁 c) Get full phone number with country code 
+// 🔁 c) SUBMIT HANDLER: Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    const iti = window.intlTelInputGlobals.getElementById(phoneInput);
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    if(iti) {
+
 
 // 🟢 Get full phone number in E.164 format (e.g., +18449498192)
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🔧 2.3 Console Debugging 🟡
       console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
-      
+    }
       console.log("Phone input value after assignment:", phoneInput.value); // ❗ Need to delete ?
 
 
