@@ -19,63 +19,280 @@ Great — here’s a secure and production-ready version of your `upload.php` th
 
 
 project-folder/
-├── Upload/
-│   ├── message.html      ✅ your form page
-│
-│   ├── messagephp        ✅ the PHP Folder
-│       └── message.php   ✅ php handler ?
-│
-│   └── upload js/
-│       └── message.js    ✅ JS file 
-│
-│   └── upload css/
-│       └── message.css   ✅ CSS file 
-│
 ├── IMAGES/
 │   └── Go4WB/
-│       └── go4worldlogo.png   ✅ in the PC 
-│
-├── COM_CSS/
-│   └── tawkJS/
-│       └── tawk.js       ✅ works perfectly
+│       └── go4worldlogo.png   	  ✅ in the PC 
+
+	├── Upload/
+	│   ├── message.html      ✅ the form page
+	│
+	│   ├── messagephp        ✅ the PHP Folder
+	│       └── message.php   ✅ php handler ?
+	│
+	│   └── upload js/
+	│       └── message.js    ✅ JS file 
+	│
+	│   └── upload css/
+	│       └── message.css   ✅ CSS file 
+	│
+	│
+	├── COM_CSS/
+	│   └── tawkJS/
+	│       └── tawk.js       ✅ works perfectly
+
+--------------------------------------------------------------------------------------------------------
+➔➔🟢 This is a Form builded to send data and attach documents via Formspree. There are some issue:
+
+Let's try to solve this today, within one hour.
+We've been working on this matter for 2 weeks now.
+It's still doesn't work propally. Yesterday you admit you made a mistakes.
+I understand that you're learning too.
+
+The today goal is to make the full phone number working perfectly on the website for visitors, with Flags and Country Code.
+
+We will also add an information popup to guide visitor on how to insert the phone number.
+The visitor needs to first select the Country Code. Then insert the phone number with two 
+digits per two digits.
+
+I will share codes here below. You need to recheck the codes each time you drop an answer to avoid mistakes.
+You also needs to recheck all the conversation after 5 answers, for updating your memory.
+Let's go
+
+➔➔🟢 UPLOAD.JS CODE
+//   🟢 UPLOAD JAVA SCRIPT
+
+//   ✅ 1. Beginning
+let form;
+document.addEventListener('DOMContentLoaded', () => {
+  form = document.getElementById('contactFormsPree');
+  const clearBtn = document.getElementById('clearFormBtn');
+  const thankYou = document.getElementById('thank-you');
+
+//   ✅ a) Clear Form logic
+  if (clearBtn && form) {
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      form.style.display = 'block';
+      if (thankYou) {
+        thankYou.style.display = 'none';
+      }
+    });
+   }
+  
+//   ✅ b) ✅ Debug: Until line Nr. 133 ❗🟢 CHECK this CONSOLE LOG
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+ //  ends of No 1 🔴🔴🔴 
 
 
-This is the Data sent by Formspree. The phone number doesn't keep the country code.
+//   🔁 c) SUBMIT HANDLER: Get full phone number with country code 
+    const phoneInput = document.querySelector("#phone");
+    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    if(iti) {
+
+
+//   🟢 Get full phone number in E.164 format (e.g., +18449498192)
+    const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+    
+    
+//   2.2 Set the phone input value to the full international number
+    phoneInput.value = fullPhoneNumber;
+
+// 🟡  ❗🟢 CHECK this CONSOLE LOG 🔗 
+    
+
+// 🔧 2.3 Console Debugging 🟡
+      console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
+    }
+      console.log("Phone input value after assignment:", phoneInput.value); // ❗ Need to delete ?
 
 
 
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="_subject"
+    const data = new FormData(form);
+    data.delete('_redirect'); // 👈 This line removes the hidden redirect field
+    const action = form.action;
+    const submitButton = form.querySelector('button[type="submit"]');
 
-New RFQ Request
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="name"
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
 
-Paul customserv1
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="email"
+//   Debug: log all form data before submission
+    for (let pair of data.entries()) {
+    console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
+    }
 
-lunywholesaler9@yahoo.com
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="phone"
+// ✅ Log the action URL (to double-check Formspree URL)
+    console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
 
-844-949-8192
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="subject"
+    fetch(action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+
+    .then(response => {
+      if (response.ok) {
+      form.style.display = 'none'
+      thankYou.style.display = 'block'
+      } else {
+        alert('There was a problem submitting the form.');
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      alert('An error occurred. Please try again.');
+    })
+    .finally(() => {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+      }
+    });
+  }); // 🟡🟡🟡 DOMContent is closed here. From line Nr. 39
+  }
+
+
+
+// Activate before going live.  
+//  const DEBUG = false;
+//      if (DEBUG) {
+//        console.log("➡️ Full phone number E164:", fullPhoneNumber);
+        // etc.
+//      } // END of before going live.  
+
+}); // ✅ END of DOMContentLoaded
+
+
+
+// remove that <script> block (where intlTelInput() is initialized)
+
+
+
+----------------------------------------------------
+➔➔🟢 HTML CODE part A
+<!-- RFQ Filling Form 101-169-->
+          <div id="rfq-form" class="rfq-section">
+              <h2>UPLOAD DOCUMENT</h2>
+              <form id="contactFormsPree" 
+              action="https://formspree.io/f/myzndwep" 
+              method="POST" 
+              enctype="multipart/form-data">
+
+              
+              
+
+                <input type="hidden" name="_subject" value="New RFQ Request" />
+                
+                <label for="name">Name:*</label>
+                <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3" >
+
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
+
+                <label for="phone">Phone Number:*</label>
+                <input type="tel" id="phone" name="phone" placeholder="Select Code | 12 34 56 78 90" required class="form-control">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Phone Number
+                <span class="info-icon" title="Select first the Country Code, then insert your Phone 
+                Number at format: 12 34 56 78 90.">ⓘ</span>
+                <!--
+                <i class="fa-thin fa-circle-info" aria-hidden="true"></i>
+                <i class="fa-light fa-circle-info" aria-hidden="true"></i>
+                <i class="fa-regular fa-circle-info" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+                -->
+                <br>
+                
+
+
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="your products" class="form-control mb-3">
+
+                <label for="message">Message:*</label>
+                <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
+
+                <label for="file">Upload Document</label>
+                <input type="file" id="file" name="attachment" class="form-control mb-3" accept=".pdf, .doc, .docx, .jpg, .png">
+
+                <button type="submit" class="btn btn-light">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+
+                <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
+                    <i class="fas fa-eraser"></i> Clear Form
+                </button>
+            </form>
+
+            <!-- Success message (hidden by default) --> 
+            <!--<div id="thank-you" style="display: none;">
+                <h2>Thank You!</h2>
+                
+                <h3>Your message has been successfully sent. We'll get back to you as soon as possible.</h3>
+            </div>
+            -->
+
+      </div> <!-- frq-section ENDS -->
+      
+      
+----------------------------------------------------
+➔➔🟢 HTML CODE part B
+<!-- Initialize phone input (SAFELY) -->
+       <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const input = document.querySelector("#phone");
+        if (input) {
+          window.intlTelInput(input, {
+            initialCountry: "auto",
+            separateDialCode: false, // Re-added
+            nationalMode: false,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+          });
+            // ✅ Save instance globally so we can access it in submit logic
+            input._iti = iti;
+        }
+      });
+    </script>
+    
+
+----------------------------------------------------
+➔➔🟢 >> Network >> Request
+
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="_subject"
+
+✅ New RFQ Request
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="name"
+
+✅ Paul customserv1
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="email"
+
+✅ lunywholesaler771@yahoo.com
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="phone"
+
+✅ +11234567890
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="subject"
 
 Request a quote
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="message"
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="message"
 
-Serial Number has been removed.
-We need to work on Phone number Country Code.
-Submit button Works well, that's very nice.
-Hopefully we can end this work. We've been working on it since two weeks.
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41
-✅ Content-Disposition: form-data; name="attachment"; filename=""
+Finalizing this code.
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624
+Content-Disposition: form-data; name="attachment"; filename=""
 Content-Type: application/octet-stream
 
 
-------geckoformboundaryc99d9e0d796591966fb4a4d5b9a53f41--
+------geckoformboundary18d7dd032ad1ede5c7b48ebd88710624--
+
+----------------------------------------------------
 
 

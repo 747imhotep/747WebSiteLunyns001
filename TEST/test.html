@@ -1,5 +1,22 @@
-<!-- TEST HTML -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.querySelector("#phone");
+    if (input) {
+      const iti = window.intlTelInput(input, {
+        initialCountry: "auto",
+        separateDialCode: true, // ✅ show country code visually
+        nationalMode: false,    // ✅ allow full number input
+        geoIpLookup: function(callback) {
+          fetch('https://ipinfo.io/json?token=YOUR_TOKEN') // Optional, replace YOUR_TOKEN
+            .then(response => response.json())
+            .then(data => callback(data.country || "us"))
+            .catch(() => callback("us"));
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+      });
 
-<a href="#uploadable" class="btn btn-upload">
-  <i class="fas fa-upload"></i> Upload Documents
-</a>
+      // ✅ Store the instance globally to access it in upload.js
+      window.itiInstance = iti;
+    }
+  });
+</script>

@@ -1,13 +1,13 @@
-// 🟢 UPLOAD JAVA SCRIPT
+//   🟢 UPLOAD JAVA SCRIPT
 
-// ✅ 1. Beginning
+//   ✅ 1. Beginning
 let form;
 document.addEventListener('DOMContentLoaded', () => {
   form = document.getElementById('contactFormsPree');
   const clearBtn = document.getElementById('clearFormBtn');
   const thankYou = document.getElementById('thank-you');
 
-// ✅ a) Clear Form logic
+//   ✅ a) Clear Form logic
   if (clearBtn && form) {
     clearBtn.addEventListener('click', () => {
       form.reset();
@@ -18,25 +18,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
    }
   
-// ✅ b) ✅ Debug: Until line Nr. 133 ❗🟢 CHECK this CONSOLE LOG
+//   ✅ b) ✅ Debug: Until line Nr. 133 ❗🟢 CHECK this CONSOLE LOG
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
- // ends of No 1 🔴🔴🔴 
+ //  ends of No 1 🔴🔴🔴 
 
 
-// 🔁 c) SUBMIT HANDLER: Get full phone number with country code 
+//   🔁 c) SUBMIT HANDLER: Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    // const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+    const iti = window.iti;
     if(iti) {
 
 
-// 🟢 Get full phone number in E.164 format (e.g., +18449498192)
+//   🟢 Get full phone number in E.164 format (e.g., +18449498192)
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
     
     
-// 2.2 Set the phone input value to the full international number
+//   2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
 // 🟡  ❗🟢 CHECK this CONSOLE LOG 🔗 
@@ -45,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 🔧 2.3 Console Debugging 🟡
       console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
     }
-      console.log("Phone input value after assignment:", phoneInput.value); // ❗ Need to delete ?
 
 
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.textContent = 'Sending...';
     }
 
-// Debug: log all form data before submission
+//   Debug: log all form data before submission
     for (let pair of data.entries()) {
     console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
     }
@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }); // 🟡🟡🟡 DOMContent is closed here. From line Nr. 39
   }
 
+
+
 // Activate before going live.  
 //  const DEBUG = false;
 //      if (DEBUG) {
@@ -106,8 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // remove that <script> block (where intlTelInput() is initialized)
-// ✅ Submit the form
-
-// ✅ Check Network > Request > Form Data
-
-// ✅ Look at what value is sent for the phone field
+// ✅ 
+// ✅ 
+// ✅ 
