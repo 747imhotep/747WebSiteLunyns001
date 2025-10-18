@@ -111,6 +111,14 @@ h1 span[aria-hidden="true"] {
   border-radius: 7px;
 }
 
+.EmbeddedEN590 h1{
+  font-size: 2.5rem;
+  color: var(--brand-blue-dark);
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
 .EmbeddedEN590 h2{
   text-align: center;
   font-weight: 700;
