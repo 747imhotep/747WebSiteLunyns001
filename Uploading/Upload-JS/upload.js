@@ -23,25 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
- //  ends of No 1 🔴🔴🔴 
 
 
 //   🔁 c) SUBMIT HANDLER: Get full phone number with country code 
     const phoneInput = document.querySelector("#phone");
-    // const iti = window.intlTelInputGlobals.getInstance(phoneInput);
     const iti = window.iti;
     if(iti) {
-
 
 //   🟢 Get full phone number in E.164 format (e.g., +18449498192)
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
     
-    
 //   2.2 Set the phone input value to the full international number
     phoneInput.value = fullPhoneNumber;
 
-// 🟡  ❗🟢 CHECK this CONSOLE LOG 🔗 
-    
+// few icons 🟡 ❗🟢  🔗 
+
 
 // 🔧 2.3 Console Debugging 🟡
       console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
@@ -64,8 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
     }
 
-// ✅ Log the action URL (to double-check Formspree URL)
-    console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
+  // ✅ Log the action URL (to double-check Formspree URL)
+  console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
+  // Only submit when the form is valid
+  if (form.checkValidity()) {
 
     fetch(action, {
       method: 'POST',
@@ -75,10 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .then(response => {
       if (response.ok) {
-      form.style.display = 'none'
-      thankYou.style.display = 'block'
+        form.style.display = 'none'
+        if (thankYou) {
+          thankYou.style.display = 'block'
+        }
       } else {
-        alert('There was a problem submitting the form.');
+        alert('Oh noo! There was a problem submitting the form.');
       }
     })
     .catch(error => {
@@ -91,17 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = 'Send Message';
       }
     });
-  }); // 🟡🟡🟡 DOMContent is closed here. From line Nr. 39
+
+  } else {
+    // show validation errors to the user and re-enable the submit button
+    if (typeof form.reportValidity === 'function') {
+      form.reportValidity();
+    } else {
+      alert('Please fill out the form correctly before submitting.');
+    }
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Message';
+    }
   }
+
+}); // 🟡🟡🟡 THIS closes submit handler — ADD THIS LINE
+
+} // 🟢 THIS stays — it closes if(form) {
 
 
 
 // Activate before going live.  And we're live now
   const DEBUG = false;
-      if (DEBUG) {
-        console.log("➡️ Full phone number E164:", fullPhoneNumber);
-         etc.
-      } // END of before going live.  
+  if (DEBUG) {
+    console.log("Debug mode enabled");
+  } // END of before going live.
 
 }); // ✅ END of DOMContentLoaded
 
