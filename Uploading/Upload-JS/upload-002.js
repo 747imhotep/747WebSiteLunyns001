@@ -1,4 +1,4 @@
-//   🟢 UPLOAD JAVA SCRIPT
+//   🟢 UPLOAD 002 JAVA SCRIPT
 
 //   ✅ 1. Beginning
 let form;
@@ -23,91 +23,90 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
- //  ends of No 1 🔴🔴🔴 
 
 
-//   🔁 c) SUBMIT HANDLER: Get full phone number with country code 
-    const phoneInput = document.querySelector("#phone");
-    // const iti = window.intlTelInputGlobals.getInstance(phoneInput);
-    const iti = window.iti;
-    if(iti) {
+//   🔁 
+    // ----- REPLACE FROM HERE -----
+/* Build FormData properly (keep files) */
+const formData = new FormData(form);
 
-
-//   🟢 Get full phone number in E.164 format (e.g., +18449498192)
+/* If you are using intl-tel-input, set the #phone value to E.164 first */
+try {
+  const phoneInput = form.querySelector('#phone');
+  const iti = window.iti || (window.intlTelInputGlobals && phoneInput && window.intlTelInputGlobals.getInstance(phoneInput));
+  if (iti && typeof iti.getNumber === 'function' && typeof intlTelInputUtils !== 'undefined') {
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    
-    
-//   2.2 Set the phone input value to the full international number
-    phoneInput.value = fullPhoneNumber;
+    if (phoneInput) formData.set('phone', fullPhoneNumber || '');
+    console.log('➡️ Full phone number E164:', fullPhoneNumber);
+  }
+} catch (err) {
+  console.warn('Phone formatting error (non-fatal):', err);
+}
 
-// 🟡  ❗🟢 CHECK this CONSOLE LOG 🔗 
-    
+/* Remove redirect hidden field if you don't want it */
+formData.delete('_redirect');
 
-// 🔧 2.3 Console Debugging 🟡
-      console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
-    }
+/* Debug: log formData entries (for dev only) */
+for (const pair of formData.entries()) {
+  console.log('FormData:', pair[0], pair[1]);
+}
 
-
-
-    const data = new FormData(form);
-    data.delete('_redirect'); // 👈 This line removes the hidden redirect field
-    const action = form.action;
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
-    }
-
-//   Debug: log all form data before submission
-    for (let pair of data.entries()) {
-    console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
-    }
-
-// ✅ Log the action URL (to double-check Formspree URL)
-    console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
-
-    fetch(action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    })
-
-    .then(response => {
-      if (response.ok) {
-      form.style.display = 'none'
-      thankYou.style.display = 'block'
-      } else {
-        alert('There was a problem submitting the form.');
-      }
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      alert('An error occurred. Please try again.');
-    })
-    .finally(() => {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
-      }
-    });
-  }); // 🟡🟡🟡 DOMContent is closed here. From line Nr. 39
+/* Submit using fetch with FormData body — DO NOT set Content-Type header */
+fetch(action, {
+  method: 'POST',
+  body: formData,
+  headers: { 'Accept': 'application/json' } // allow JSON response
+})
+.then(async (response) => {
+  const contentType = response.headers.get('content-type') || '';
+  let body = null;
+  try {
+    if (contentType.includes('application/json')) body = await response.json();
+    else body = await response.text();
+  } catch (err) {
+    body = `Failed to parse response body: ${err}`;
   }
 
+  console.log('Response status:', response.status, 'body:', body);
+
+  if (response.ok) {
+    form.style.display = 'none';
+    if (thankYou) thankYou.style.display = 'block';
+  } else {
+    // show server-provided message if available
+    const msg = (body && body.error) ? body.error : (body && body.message) ? body.message : 'There was a problem submitting the form.';
+    alert('Submit error: ' + msg + ' (status ' + response.status + ')');
+  }
+})
+.catch(error => {
+  console.error('Form submission network/error:', error);
+  alert('Network error occurred. Please try again.');
+})
+.finally(() => {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Send Message';
+  }
+});
+// ----- REPLACE TO HERE -----
+
+}); // 🟡🟡🟡 THIS closes submit handler — ADD THIS LINE
+
+} // 🟢 THIS stays — it closes if(form) {
 
 
-// Activate before going live.  
-//  const DEBUG = false;
-//      if (DEBUG) {
-//        console.log("➡️ Full phone number E164:", fullPhoneNumber);
-        // etc.
-//      } // END of before going live.  
+
+// Activate before going live.  And we're live now
+  const DEBUG = false;
+  if (DEBUG) {
+    console.log("Debug mode enabled");
+  } // END of before going live.
 
 }); // ✅ END of DOMContentLoaded
 
 
 
-// remove that <script> block (where intlTelInput() is initialized)
+
 // ✅ 
 // ✅ 
 // ✅ 
