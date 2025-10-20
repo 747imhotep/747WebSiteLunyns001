@@ -25,94 +25,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//   🔁 c) SUBMIT HANDLER: Get full phone number with country code 
-    const phoneInput = document.querySelector("#phone");
-    const iti = window.iti;
-    if(iti) {
+//   🔁 
+    // ----- REPLACE FROM HERE -----
+/* Build FormData properly (keep files) */
+const formData = new FormData(form);
 
-//   🟢 Get full phone number in E.164 format (e.g., +18449498192)
+/* If you are using intl-tel-input, set the #phone value to E.164 first */
+try {
+  const phoneInput = form.querySelector('#phone');
+  const iti = window.iti || (window.intlTelInputGlobals && phoneInput && window.intlTelInputGlobals.getInstance(phoneInput));
+  if (iti && typeof iti.getNumber === 'function' && typeof intlTelInputUtils !== 'undefined') {
     const fullPhoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-    
-//   2.2 Set the phone input value to the full international number
-    phoneInput.value = fullPhoneNumber;
-
-// few icons 🟡 ❗🟢  🔗 
-
-
-// 🔧 2.3 Console Debugging 🟡
-      console.log("➡️ Full phone number E164:", fullPhoneNumber); // ❗🟢 CHECK this CONSOLE LOG
-    }
-
-
-
-    const data = {};
-    const FormData = new FormData(form);
-    FormData.delete('_redirect'); // 👈 This line removes the hidden redirect field
-
-    FormData.forEach((value, key) => {
-      data[key] = value;
-    });
-    
-    const action = form.action;
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
-    }
-
-//   Debug: log all form data before submission
-    for (let pair of data.entries()) {
-    console.log(`${pair[0]}:`, pair[1]); // ❗🟢 CHECK this CONSOLE LOG
-    }
-
-  // ✅ Log the action URL (to double-check Formspree URL)
-  console.log("Form action URL:", action); // ❗🟢 CHECK this CONSOLE LOG
-  // Only submit when the form is valid
-  if (form.checkValidity()) {
-
-    fetch(action, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-
-    .then(response => {
-      if (response.ok) {
-        form.style.display = 'none'
-        if (thankYou) {
-          thankYou.style.display = 'block'
-        }
-      } else {
-        alert('Oh noo! There was a problem submitting the form.');
-      }
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      alert('An error occurred. Please try again.');
-    })
-    .finally(() => {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
-      }
-    });
-
-  } else {
-    // show validation errors to the user and re-enable the submit button
-    if (typeof form.reportValidity === 'function') {
-      form.reportValidity();
-    } else {
-      alert('Please fill out the form correctly before submitting.');
-    }
-    if (submitButton) {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Send Message';
-    }
+    if (phoneInput) formData.set('phone', fullPhoneNumber || '');
+    console.log('➡️ Full phone number E164:', fullPhoneNumber);
   }
+} catch (err) {
+  console.warn('Phone formatting error (non-fatal):', err);
+}
+
+/* Remove redirect hidden field if you don't want it */
+formData.delete('_redirect');
+
+/* Debug: log formData entries (for dev only) */
+for (const pair of formData.entries()) {
+  console.log('FormData:', pair[0], pair[1]);
+}
+
+/* Submit using fetch with FormData body — DO NOT set Content-Type header */
+fetch(action, {
+  method: 'POST',
+  body: formData,
+  headers: { 'Accept': 'application/json' } // allow JSON response
+})
+.then(async (response) => {
+  const contentType = response.headers.get('content-type') || '';
+  let body = null;
+  try {
+    if (contentType.includes('application/json')) body = await response.json();
+    else body = await response.text();
+  } catch (err) {
+    body = `Failed to parse response body: ${err}`;
+  }
+
+  console.log('Response status:', response.status, 'body:', body);
+
+  if (response.ok) {
+    form.style.display = 'none';
+    if (thankYou) thankYou.style.display = 'block';
+  } else {
+    // show server-provided message if available
+    const msg = (body && body.error) ? body.error : (body && body.message) ? body.message : 'There was a problem submitting the form.';
+    alert('Submit error: ' + msg + ' (status ' + response.status + ')');
+  }
+})
+.catch(error => {
+  console.error('Form submission network/error:', error);
+  alert('Network error occurred. Please try again.');
+})
+.finally(() => {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Send Message';
+  }
+});
+// ----- REPLACE TO HERE -----
 
 }); // 🟡🟡🟡 THIS closes submit handler — ADD THIS LINE
 
