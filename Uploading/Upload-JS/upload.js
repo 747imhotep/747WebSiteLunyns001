@@ -45,8 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const data = new FormData(form);
-    data.delete('_redirect'); // 👈 This line removes the hidden redirect field
+    const data = {};
+    const FormData = new FormData(form);
+    FormDatadata.delete('_redirect'); // 👈 This line removes the hidden redirect field
+
+    FormData.forEach((value, key) => {
+      data[key] = value;
+    });
+    
     const action = form.action;
     const submitButton = form.querySelector('button[type="submit"]');
 
@@ -68,7 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(action, {
       method: 'POST',
       body: data,
-      headers: { 'Accept': 'application/json' }
+      headers: {
+        'content-type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
     })
 
     .then(response => {
