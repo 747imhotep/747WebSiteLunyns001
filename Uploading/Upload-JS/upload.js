@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const data = {};
     const FormData = new FormData(form);
-    FormDatadata.delete('_redirect'); // 👈 This line removes the hidden redirect field
+    FormData.delete('_redirect'); // 👈 This line removes the hidden redirect field
 
     FormData.forEach((value, key) => {
       data[key] = value;
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch(action, {
       method: 'POST',
-      body: data,
       headers: {
         'content-type': 'application/json',
         'Accept': 'application/json'
