@@ -96,18 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Activate before going live.  
-//  const DEBUG = false;
-//      if (DEBUG) {
-//        console.log("➡️ Full phone number E164:", fullPhoneNumber);
-        // etc.
-//      } // END of before going live.  
+// Activate before going live.  And we're live now
+  const DEBUG = false;
+      if (DEBUG) {
+        console.log("➡️ Full phone number E164:", fullPhoneNumber);
+         etc.
+      } // END of before going live.  
 
 }); // ✅ END of DOMContentLoaded
 
 
 
-// remove that <script> block (where intlTelInput() is initialized)
+
 // ✅ 
 // ✅ 
 // ✅ 
