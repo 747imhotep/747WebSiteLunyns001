@@ -50,6 +50,17 @@ h1 { /* Hero Title */
   width: auto;
 }
 
+/* image motion */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+
 input[type="tel"]:focus {
   outline: 2px solid #084377; /* matching your primary color */
   box-shadow: none;
