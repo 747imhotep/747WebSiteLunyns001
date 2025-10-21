@@ -1,12 +1,16 @@
 Lettre for website 
- Due Diligence Questionnaire
 
-For Sellers, Mandate Holders, or Intermediaries in Petroleum Transactions
+
+Due Diligence Questionnaire
+
+For Sellers, Mandate Holders, or Intermediaries.
 
 Thank you for your interest in working with LUNYNS Ltd.
-As part of our compliance and risk management procedures, we kindly ask you to complete the following due diligence form. This information is required to evaluate your company’s legitimacy, your role in the transaction, and your stated relationship with O&G Resources LLP (if applicable).
+As part of our compliance and risk management procedures, we kindly ask you to complete the following due diligence form. This information is required to evaluate your company’s legitimacy, your role in the transaction, and your stated relationship with the Refinery (if applicable).
 
-Please ensure that all details are accurate and complete. If you have any questions, feel free to contact us at [your contact email or form support link].
+Please ensure that all details are accurate and complete. 
+If you have any questions, feel free to contact us at 
+[your contact email or form support link].
 
 
 ---
@@ -37,9 +41,7 @@ _________________________
 Phone number (including country code):
 _________________________
 
-
-
----
+<!-- --- CORPORATE STRUCTURE --- -->
 
 2. Corporate Structure
 
@@ -51,7 +53,7 @@ _________________________
 
 
 
----
+<!-- --- BANKING INFORMATION --- -->
 
 3. Banking Information (if applicable at this stage)
 
@@ -68,7 +70,7 @@ _________________________
 
 
 
----
+<!-- --- BUSINESS ACTIVITY --- -->
 
 4. Business Activity
 
@@ -83,7 +85,7 @@ Your specific role in the proposed transaction:
 
 
 
----
+<!-- --- RELATIONSHIP WITH REFINERY --- -->
 
 5. Relationship with O&G Resources LLP
 
@@ -106,26 +108,18 @@ Please upload a copy of the mandate letter and any supporting documentation (e.g
 📎 [Upload field here]
 
 
-
-
----
+<!-- --- ADDITIONAL DOCUMENTS --- -->
 
 6. Additional Documents (Optional but helpful)
 
 Please upload any other documents that support your company’s position, such as:
 
-Company profile
-
-SCO or ICPO
-
-Certificate of incorporation
-
-Trade references
-
+- Company profile
+- SCO or ICPO
+- Certificate of incorporation
+- Trade references
 
 📎 [Upload field here]
-
-
 ---
 
 ✅ Declaration & Submission
@@ -133,16 +127,11 @@ Trade references
 I hereby confirm that the information provided above is accurate and complete to the best of my knowledge.
 
 ☐ I agree to the terms and conditions and understand that this information is provided for due diligence purposes only.
-
+☐ I consent to receive business-related emails and updates from LUNYNS Ltd.  
 [Submit Button]
 
 
----
-
-Let me know if you’d like this in HTML, WordPress, or another platform format — I can generate the right code or layout for easy embedding.
-
-
-
+____________________________________________________________________________________________________
 Due Diligence Request Sender.net
 Due Diligence Information Form
 

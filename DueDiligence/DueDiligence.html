@@ -40,9 +40,10 @@
             
             <h2>Thank you for your interest in working with LUNYNS Ltd.</h2>
             <p>
-                As part of our compliance and risk management procedures, we kindly ask you to complete the following 
-                due diligence form. This information is required to evaluate your company's legitimacy, your role in 
-                the transaction, and your stated relationship with O&G Resources LLP (if applicable).
+                As part of our compliance and risk management procedures, we kindly ask 
+                you to complete the following due diligence form. This information is 
+                required to evaluate your company’s legitimacy, your role in the 
+                transaction, and your stated relationship with the Refinery (if applicable).
             </p>
             <p>
                 Please ensure that all details are accurate and complete.
@@ -55,7 +56,7 @@
 
         <!-- Your existing form here - I'll just include a simplified version -->
         <form class="dd-form" id="ddForm" novalidate>
-            
+<!-- --- COMPANY INFORMATION --- -->            
             <section class="form-section">
                 <h2 class="section-title">1. Company Information</h2>
 
@@ -132,7 +133,7 @@
                     </div>
                 </div>
             </section>
-
+<!-- --- CORPORATE STRUCTURE --- -->
             <section class="form-section">
                 <h2 class="section-title">2. Corporate Structure</h2>
 
@@ -156,7 +157,7 @@
                     </div>
                 </div>
             </section>
-
+<!-- --- BANKING INFORMATION --- -->
             <section class="form-section">
                 <h2 class="section-title">3. Banking Information</h2>
                 <div class="section-note">
@@ -184,7 +185,7 @@
                     </div>
                 </div>
             </section>
-
+<!-- --- BUSINESS ACTIVITY --- -->
             <section class="form-section">
                 <h2 class="section-title">4. Business Activity</h2>
 
@@ -206,7 +207,7 @@
                         <div class="radio-group">
                             <div class="radio-item">
                                 <input type="radio" id="role_seller" name="transactionRole" value="Seller" required>
-                                <label for="role_seller">Seller</label>
+                                <label for="role_seller">End-Seller</label>
                             </div>
                             <div class="radio-item">
                                 <input type="radio" id="role_mandate" name="transactionRole" value="Mandate holder" required>
@@ -232,14 +233,14 @@
                     </div>
                 </div>
             </section>
-
+<!-- --- RELATIONSHIP WITH REFINERY --- -->
             <section class="form-section">
-                <h2 class="section-title">5. Relationship with O&G Resources LLP</h2>
+                <h2 class="section-title">5. Relationship with the REFINERY</h2>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">
-                            Are you currently authorized to represent O&G Resources LLP? <span class="required">*</span>
+                            Are you currently authorized to represent the Refinery? <span class="required">*</span>
                         </label>
                         <div class="radio-group">
                             <div class="radio-item">
@@ -295,14 +296,14 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="mandateLetter">
-                                Upload mandate letter
+                                Upload genuine mandate letter
                             </label>
                             <input type="file" id="mandateLetter" name="mandateLetter" class="form-input" multiple accept=".pdf,.doc,.docx">
                         </div>
                     </div>
                 </div>
             </section>
-
+<!-- --- ADDITIONAL DOCUMENTS --- -->
             <section class="form-section">
                 <h2 class="section-title">6. Additional Documents</h2>
                 <div class="form-row">
@@ -320,6 +321,14 @@
                     <input type="checkbox" id="dataConsent" name="dataConsent" required>
                     <label for="dataConsent">
                         I confirm that the information provided is accurate and complete. <span class="required">*</span>
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="dataConsent" name="dataConsent2" required>
+                    <label for="dataConsent2">
+                        I consent to LUNYNS Ltd. processing my data in accordance with the Privacy Policy. 
+                        I agree to receive business-related communications and updates from LUNYNS Ltd.
+                        <span class="required">*</span>
                     </label>
                 </div>
                 <span class="error-message" id="dataConsentError">You must agree to continue</span>
