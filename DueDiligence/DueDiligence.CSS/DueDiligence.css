@@ -102,6 +102,11 @@ body {
     line-height: 1.6;
 }
 
+.parenthesis {
+    font-style: italic;
+    color: var(--text-light);
+}
+
 .alert {
     background: #d1ecf1;
     border: 1px solid #bee5eb;
