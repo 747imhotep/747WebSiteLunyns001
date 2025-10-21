@@ -40,7 +40,7 @@ body {
 }
 
 .page-header {
-    background-image: url(../../IMAGES/mainIMAGES/imgBANNER/DueDiligence001\ .jpg) ;
+    background: url(../../IMAGES/mainIMAGES/imgBANNER/DueDiligence001\ .jpg) center center/cover no-repeat;
     /*background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);*/
     color: var(--white);
     padding: var(--spacing-lg) var(--spacing-md);
@@ -50,10 +50,13 @@ body {
 .header-content {
     max-width: 900px;
     margin: 0 auto;
+    height: 70vh;
 }
 
-.company-logo {
-    font-size: 28px;
+.company-logo { /* LOGO STYLE */
+    display: flex;
+    margin-top: 250px;
+    height: 70px;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     letter-spacing: 2px;
