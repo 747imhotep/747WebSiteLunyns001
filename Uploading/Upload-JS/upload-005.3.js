@@ -1,12 +1,12 @@
 // 🟢 UPLOAD VER. 005.3 JAVA SCRIPT
 
-// upload-003.js — production-ready upload + clear handler for #contactFormsPree
+// upload-005.3.js — production-ready upload + clear handler for #contactFormsPree
 // - Uses FormData so file uploads are preserved
 // - Formats phone to E.164 using intl-tel-input if available
 // - Robust Clear button resets phone widget and file inputs
-// - After successful submit: show thank-you, wait 5s, reset form and redirect to home
+// - After successful submit: show thank-you, wait 4s, reset form and redirect to home
 const DEBUG = false;
-const AUTO_RESET_MS = 5000; // milliseconds to wait before auto-reset + redirect
+const AUTO_RESET_MS = 3500; // milliseconds to wait before auto-reset + redirect
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactFormsPree');
