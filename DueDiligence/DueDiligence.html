@@ -6,13 +6,17 @@
     <title>Due Diligence Questionnaire | LUNYNS Ltd.</title>
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="DueDiligence.CSS/styles.css">
+    <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
     <link rel="stylesheet" href="/DueDiligence/DueDiligence.CSS/DueDiligence.css">
     
     <!-- Use jsPDF directly - much more reliable -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
+
+
+
+
+
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="spinner"></div>
@@ -23,7 +27,7 @@
         <div class="header-content">
             <div class="company-logo">LUNYNS Ltd.</div>
             <h1 class="page-title">Due Diligence Questionnaire</h1>
-            <p class="page-subtitle">For Sellers, Mandate Holders, or Intermediaries in Petroleum Transactions</p>
+            <p class="page-subtitle">For Sellers, Mandate Holders, or Intermediaries </p>
         </div>
     </header>
 
@@ -328,12 +332,66 @@
         </form>
     </main>
 
-    <footer class="page-footer">
-        <p><strong>LUNYNS Ltd.</strong></p>
-        <p>Suite A, 82 James Carter Road, Mildenhall, Suffolk, IP28 7DE, UK</p>
-        <p>Email: <a href="mailto:info@lunyns.com">info@lunyns.com</a> | Website: <a href="https://www.lunyns.com">www.lunyns.com</a></p>
-        <p style="margin-top: 20px;">© 2025 LUNYNS Ltd. All rights reserved.</p>
-    </footer>
+    <!-- Footer 215-250 -->
+<!-- Footer -->
+  <footer class="footer">
+  <section class="columns">
+    <!-- QUICK LINKS -->
+    <div class="column" id="quick-links">
+      <h2 class="titre1"><b>QUICK LINKS</b></h2>
+      <ul class="footer-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="../ABOUT/about.html">About Us</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+        <li><a href="../security.html">Security</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="column" id="products">
+      <h2 class="titre2"><b>PRODUCTS</b></h2>
+      <p><b>Let’s build a secure and long-term partnership.</b></p>
+      <ul class="footer-list">
+        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LNG/lng.html">LNG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="column" id="contact-info">
+      <h2 class="titre3"><b>CONTACT</b></h2>
+      <ul class="footer-list">
+        <li><strong>📄 Quotation:</strong> <a class="ms-3" href="#TalkToUs">My RFQ</a></li>
+        <li><strong>📧 Email:</strong> <a href="/CONTACT/contact.html">contact us</a></li>
+        <li><strong>🌐 Website:</strong> <a href="/index.html" target="_blank">www.lunyns.com</a></li>
+        <li><strong>📥 Download:</strong> <a href="/sec_download.html">Secure Download</a></li>
+        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
+        <li><br><strong> Gold Member of Go4WorldBusiness:</strong><br><a href="https://go4worldbusiness.com" target="_blank" rel="noopeneer">
+          <img src="../IMAGES/Go4WB/go4worldlogo.png" alt="go4worldbusiness Logo" style="height: 50px; display: block; margin-top: 2px;">
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+<!-- Footer Label -->
+<footer class="footer-bottom py-3 mt-auto">
+  <div class="container text-center">
+    <p>
+    © 2025 Lunyns Ltd. All rights reserved. |
+    <a href="../privacy-policy/terms-and-privacy.html" target="_blank" style="color: #0073e6; text-decoration: none;">
+      Terms of Use & Privacy Policy
+    </a> |
+  </p>
+  </div>
+</footer>
 
     <script>
         const { jsPDF } = window.jspdf;

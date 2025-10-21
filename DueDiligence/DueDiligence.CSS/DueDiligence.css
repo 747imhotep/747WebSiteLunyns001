@@ -40,7 +40,8 @@ body {
 }
 
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-image: url(../../IMAGES/mainIMAGES/imgBANNER/DueDiligence001\ .jpg) ;
+    /*background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);*/
     color: var(--white);
     padding: var(--spacing-lg) var(--spacing-md);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
