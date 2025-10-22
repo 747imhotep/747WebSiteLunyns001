@@ -40,8 +40,7 @@ body {
 }
 
 .page-header {
-    background: url(../../IMAGES/mainIMAGES/imgBANNER/DueDiligence001\ .jpg) center center/cover no-repeat;
-    /*background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);*/
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--white);
     padding: var(--spacing-lg) var(--spacing-md);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -50,14 +49,10 @@ body {
 .header-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
-    min-height: 70vh;
 }
 
-.company-logo { /* LOGO STYLE */
-    display: flex;
-    margin-top: 250px;
-    height: 70px;
+.company-logo {
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     letter-spacing: 2px;
@@ -100,11 +95,6 @@ body {
     color: var(--text-light);
     margin-bottom: var(--spacing-sm);
     line-height: 1.6;
-}
-
-.parenthesis {
-    font-style: italic;
-    color: var(--text-light);
 }
 
 .alert {
@@ -359,67 +349,23 @@ body {
     display: block;
 }
 
-
-
-/*--------------------------------------------------------------------------------------------------------------*/
-
-.footer {
-  background-color:var(--brand-blue-dark);/* #b6d3e5*/
-  border-top: 1px solid #c4bdbd;
-  padding: 40px 20px;
-  color: #fff;
+.page-footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xl);
 }
 
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+.page-footer p {
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
 }
 
-.column {
-  flex: 1 1 250px;
+.page-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
 }
-
-.footer h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-list li {
-  margin-bottom: 8px;
-}
-
-.footer-list a { /* footer text */
-  color: var(--text-footer);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-list a:hover {
-  color: #fbff00;
-  text-decoration: underline;
-}
-
-.quote-btn {
-  font-weight: bold;
-  color: #99b9f0;
-  padding: 4px 1px;
-}
-
-.quote-btn:hover {
-  color: #fbff00;
-}
-/*--------------------------------------------------------------------------------------------------------------*/
-
 
 .loading-overlay {
     display: none;

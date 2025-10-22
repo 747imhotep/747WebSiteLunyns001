@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Due Diligence Questionnaire | LUNYNS Ltd.</title>
+    <title>Due Diligence Questionnaire | LUNYNS Ltd. (WORKING VERSION)</title>
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
-    <link rel="stylesheet" href="/DueDiligence/DueDiligence.CSS/DueDiligence.css">
-
+    <link rel="stylesheet" href="styles.css">
     
     <!-- Use jsPDF directly - much more reliable -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-
-
-
-
-
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="spinner"></div>
@@ -26,10 +19,9 @@
 
     <header class="page-header">
         <div class="header-content">
-            <div class="company-logo"></div>
-            <h1 class="page-title">Your</h1>
-            <h2 class="page-title">Due Diligence Questionnaire</h2>
-            <h3 class="page-subtitle">For Sellers, Mandate Holders, or Intermediaries </h3>
+            <div class="company-logo">LUNYNS Ltd.</div>
+            <h1 class="page-title">Due Diligence Questionnaire</h1>
+            <p class="page-subtitle">For Sellers, Mandate Holders, or Intermediaries in Petroleum Transactions</p>
         </div>
     </header>
 
@@ -42,11 +34,9 @@
             
             <h2>Thank you for your interest in working with LUNYNS Ltd.</h2>
             <p>
-                As part of our compliance and risk management procedures, we kindly ask 
-                you to complete the following due diligence form. This information is 
-                required to evaluate your company’s legitimacy, your role in the 
-                transaction, and your stated relationship with the 
-                Refinery ( <span class="parenthesis">if applicable</span>).
+                As part of our compliance and risk management procedures, we kindly ask you to complete the following 
+                due diligence form. This information is required to evaluate your company's legitimacy, your role in 
+                the transaction, and your stated relationship with O&G Resources LLP (if applicable).
             </p>
             <p>
                 Please ensure that all details are accurate and complete.
@@ -59,7 +49,7 @@
 
         <!-- Your existing form here - I'll just include a simplified version -->
         <form class="dd-form" id="ddForm" novalidate>
-<!-- ---1. COMPANY INFORMATION --- -->            
+            
             <section class="form-section">
                 <h2 class="section-title">1. Company Information</h2>
 
@@ -102,7 +92,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="website">
-                            Website ( <span class="parenthesis">if applicable</span>)
+                            Website (if applicable)
                         </label>
                         <input type="url" id="website" name="website" class="form-input">
                     </div>
@@ -136,7 +126,7 @@
                     </div>
                 </div>
             </section>
-<!-- ---2. CORPORATE STRUCTURE --- -->
+
             <section class="form-section">
                 <h2 class="section-title">2. Corporate Structure</h2>
 
@@ -160,7 +150,7 @@
                     </div>
                 </div>
             </section>
-<!-- ---3. BANKING INFORMATION --- -->
+
             <section class="form-section">
                 <h2 class="section-title">3. Banking Information</h2>
                 <div class="section-note">
@@ -176,7 +166,7 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label" for="bankAddress">Bank address  ( <span class="parenthesis">City & Country</span>)</label>
+                        <label class="form-label" for="bankAddress">Bank address (City & Country)</label>
                         <input type="text" id="bankAddress" name="bankAddress" class="form-input">
                     </div>
                 </div>
@@ -188,7 +178,7 @@
                     </div>
                 </div>
             </section>
-<!-- ---4. BUSINESS ACTIVITY --- -->
+
             <section class="form-section">
                 <h2 class="section-title">4. Business Activity</h2>
 
@@ -210,7 +200,7 @@
                         <div class="radio-group">
                             <div class="radio-item">
                                 <input type="radio" id="role_seller" name="transactionRole" value="Seller" required>
-                                <label for="role_seller">End-Seller</label>
+                                <label for="role_seller">Seller</label>
                             </div>
                             <div class="radio-item">
                                 <input type="radio" id="role_mandate" name="transactionRole" value="Mandate holder" required>
@@ -236,15 +226,14 @@
                     </div>
                 </div>
             </section>
-<!-- ---5. RELATIONSHIP WITH REFINERY --- -->
+
             <section class="form-section">
-                <h2 class="section-title">5. Relationship with the REFINERY
-                    ( <span class="parenthesis">if applicable</span>)</h2>
+                <h2 class="section-title">5. Relationship with O&G Resources LLP</h2>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">
-                            Are you currently authorized to represent the Refinery? <span class="required">*</span>
+                            Are you currently authorized to represent O&G Resources LLP? <span class="required">*</span>
                         </label>
                         <div class="radio-group">
                             <div class="radio-item">
@@ -300,14 +289,14 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label" for="mandateLetter">
-                                Upload genuine mandate letter
+                                Upload mandate letter
                             </label>
                             <input type="file" id="mandateLetter" name="mandateLetter" class="form-input" multiple accept=".pdf,.doc,.docx">
                         </div>
                     </div>
                 </div>
             </section>
-<!-- ---6. ADDITIONAL DOCUMENTS --- -->
+
             <section class="form-section">
                 <h2 class="section-title">6. Additional Documents</h2>
                 <div class="form-row">
@@ -322,25 +311,11 @@
 
             <div class="submit-section">
                 <div class="consent-checkbox">
-
                     <input type="checkbox" id="dataConsent" name="dataConsent" required>
                     <label for="dataConsent">
-                        I confirm that the information provided is accurate and complete. 
-                        <span class="required">*</span>
+                        I confirm that the information provided is accurate and complete. <span class="required">*</span>
                     </label>
                 </div>
-
-                <div class="consent-checkbox">
-                    <input type="checkbox" id="dataConsent" name="dataConsent" required>
-                    <label for="dataConsent">
-                        I consent to LUNYNS Ltd. processing my data in accordance with the 
-                        <a href="https://lunyns.com/privacy-policy/terms-and-privacy.html">
-                            Privacy Policy</a>. 
-                        I agree to receive business-related communications and updates from LUNYNS Ltd.
-                        <span class="required">*</span>
-                    </label>
-                </div>
-
                 <span class="error-message" id="dataConsentError">You must agree to continue</span>
 
                 <div class="button-group">
@@ -351,72 +326,17 @@
         </form>
     </main>
 
-    <!-- Footer 215-250 -->
-<!-- Footer -->
-  <footer class="footer">
-  <section class="columns">
-    <!-- QUICK LINKS -->
-    <div class="column" id="quick-links">
-      <h2 class="titre1"><b>QUICK LINKS</b></h2>
-      <ul class="footer-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="../ABOUT/about.html">About Us</a></li>
-        <li><a href="../PRODUCTS/products.html">Products</a></li>
-        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
-        <li><a href="../security.html">Security</a></li>
-      </ul>
-    </div>
+    <footer class="page-footer">
+        <p><strong>LUNYNS Ltd.</strong></p>
+        <p>Suite A, 82 James Carter Road, Mildenhall, Suffolk, IP28 7DE, UK</p>
+        <p>Email: <a href="mailto:info@lunyns.com">info@lunyns.com</a> | Website: <a href="https://www.lunyns.com">www.lunyns.com</a></p>
+        <p style="margin-top: 20px;">© 2025 LUNYNS Ltd. All rights reserved.</p>
+    </footer>
 
-    <!-- PRODUCTS -->
-    <div class="column" id="products">
-      <h2 class="titre2"><b>PRODUCTS</b></h2>
-      <p><b>Let’s build a secure and long-term partnership.</b></p>
-      <ul class="footer-list">
-        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/LNG/lng.html">LNG</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
-        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
-      </ul>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="column" id="contact-info">
-      <h2 class="titre3"><b>CONTACT</b></h2>
-      <ul class="footer-list">
-        <li><strong>📄 Quotation:</strong> <a class="ms-3" href="#TalkToUs">My RFQ</a></li>
-        <li><strong>📧 Email:</strong> <a href="/CONTACT/contact.html">contact us</a></li>
-        <li><strong>🌐 Website:</strong> <a href="/index.html" target="_blank">www.lunyns.com</a></li>
-        <li><strong>📥 Download:</strong> <a href="/sec_download.html">Secure Download</a></li>
-        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
-        <li><br><strong> Gold Member of Go4WorldBusiness:</strong><br><a href="https://go4worldbusiness.com" target="_blank" rel="noopeneer">
-          <img src="../IMAGES/Go4WB/go4worldlogo.png" alt="go4worldbusiness Logo" style="height: 50px; display: block; margin-top: 2px;">
-        </a></li>
-      </ul>
-    </div>
-  </section>
-</footer>
-
-<!-- Footer Label -->
-<footer class="footer-bottom py-3 mt-auto">
-  <div class="container text-center">
-    <p>
-    © 2025 Lunyns Ltd. All rights reserved. |
-    <a href="../privacy-policy/terms-and-privacy.html" target="_blank" style="color: #0073e6; text-decoration: none;">
-      Terms of Use & Privacy Policy
-    </a> |
-  </p>
-  </div>
-</footer>
-
-    <script src="../DueDiligence/DueDiligence.js/DueDiligence.js">
-        // Due Diligence Form JavaScript
-        // (The full JavaScript code for form handling, validation, PDF generation, etc. goes here)
-    </script>
-</body>
+        <script src="../DueDiligence.js/DueDiligence.js">
+            // Due Diligence Form JavaScript
+            // (The full JavaScript code for form handling, validation, PDF generation, etc. goes here)
+        </script>
+    </body>
 </html>
-
 
