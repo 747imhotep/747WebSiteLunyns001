@@ -213,6 +213,10 @@ input[type="tel"]:focus {
 }
 /* BUTTON ENDS*/
 
+.hiddenDueDill{
+  color: #ffffff;
+}
+
 
 /* 📌 COUNTRIES CODE PHONE NUMBER */
 /* Dropdown container */
