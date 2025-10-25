@@ -23,6 +23,16 @@
   color: var(--text-light);
   text-align: center;
   margin-top: 20px;
+  text-shadow: 2px 2px 7px rgba(21, 22, 21, 0.7);
+}
+
+.display-4 p {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-light);
+  text-align: center;
+  text-shadow: 1px 2px 7px rgba(21, 22, 21, 0.7);
 }
 
 
@@ -30,6 +40,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--brand-blue);
+  margin-bottom: 20px;
 }
 
 .product-card {

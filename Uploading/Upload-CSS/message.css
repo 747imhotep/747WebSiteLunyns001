@@ -190,6 +190,11 @@ input[type="tel"]:focus {
   background-color: #f0f0f0;
 }
 
+.indicator{
+  color: #ffffff;
+  font-weight: bold;
+}
+
 
 /* ✅ BUTTON STARTS*/
 .btn-upload{
