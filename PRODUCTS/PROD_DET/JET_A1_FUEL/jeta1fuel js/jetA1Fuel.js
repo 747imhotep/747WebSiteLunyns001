@@ -26,7 +26,7 @@
         if (prefillProduct) {
           const subjectInput = document.getElementById('subject');
           if (subjectInput) {
-            subjectInput.value = `${prefillProduct.toUpperCase()}  Quotation Request`;
+            subjectInput.value = `CNSL Quotation Request`;
           }
 
           // Optional: Prefill the message textarea
