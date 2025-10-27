@@ -40,10 +40,17 @@
 .glossy-text {
   color: #f4f4f4;               /* Make sure text is visible */
   font-weight: bold;
-  background: linear-gradient(to top, #f5f4f1 0%, #d9f8a1 40%, #f7e70a 60%, #f4f4f4 100%);
+  background: linear-gradient(to top, #f3eded 10%, #f8e917 30%, #f7e70a 60%, #26f50b 100%);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.container p {
+  font-size: 1.85rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 /*--- END OF HERO ---*/
 
@@ -83,6 +90,7 @@ h1 span[aria-hidden="true"] {
   margin-left: 45px;
 }
 
+/* MESSAGE FROM SELLER */
 .Degummed {
   background-color: #f0f0f0;
   padding: 20px;
@@ -108,4 +116,87 @@ h1 span[aria-hidden="true"] {
   font-size: 1.4rem;
   line-height: 1.6;
   color: #555555;
+}
+
+/* BUTTON */
+.card-body h3{
+  color: #9abfe9;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.card-body h4 {
+  color: #07f1bf;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-body p {
+  color: #e1e1e1;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+/* BUTTON END*/
+
+
+ /* Optional: Prevent column resizing by content */
+table.table {
+  justify-content: center;
+  table-layout: fixed;
+  width: 99%;
+  }
+
+  table.table td,
+  table.table th {
+    word-wrap: break-word;
+    white-space: normal;
+    vertical-align: middle;
+  }
+
+ table.table td,
+ table.table th {
+  vertical-align: middle;
+ } 
+
+ /* Optional: Image styling */
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .product-image {
+    margin-top: 2rem;
+  }
+}
+
+.col-items {
+  border-top: 2px solid #ccc;
+  margin: 30px 0;
+  width: 40%
+}
+
+.col-unit {
+  border-top: 2px solid #ccc;
+  margin: 30px 0;
+  width: 15%;
+}
+
+.col-method {
+  border-top: 2px solid #ccc;
+  margin: 30px 0;
+  width: 30%;
+}
+
+.col-value {
+  border-top: 2px solid #ccc;
+  margin: 30px 0;
+  width: 15%;
 }
