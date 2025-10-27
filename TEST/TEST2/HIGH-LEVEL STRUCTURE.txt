@@ -1,0 +1,192 @@
+I need to create a schematic for the website.
+it's a trading website in the petroleum, coconuts, cardanol, cashew nuts products.
+
+When customer come on the webpage, the visitor can choose between 6 choices:
+"are you
+1. End Seller
+2. End Buyer
+3. Mandate Seller
+4. Mandate Buyer
+5. Broker (seller side)
+6. Broker (buyer side) "
+
+After that, they need to check on few confirmations like 
+confirm you're (end seller, end buyer, ...)
+confirm you understand we're broker
+tell us if you have document like SCO, LOI, ICPO, Draft,
+tell us if you have a target price
+Do you own a company
+Do you have a mandate letter
+
+
+According to the way they respond to the questions, they will be redirect to 
+- Due Diligence page to fullfill
+- NCNDA to fullfill
+
+example Broker or Mandate
+	if the VISITOR doesn't have a company he will be redirect to NCNDA page.
+	if the Broker own a company, he need to fullfill, first the Due Diligence, then the NCNDA.
+	For End Buyer or Seller, they will be redirect to the Due Diligence page.
+
+I need the best schematic as possible for the best customer experience possible.
+
+
+-------------------------------------------------------------------------------
+
+Perfect — you’re designing a **trading platform onboarding flow** that routes users through tailored verification and documentation steps depending on their role and credentials.
+
+Let’s build a **clear, professional schematic (UX flow)** that balances logic, simplicity, and trust — essential for trading in commodities like petroleum, coconuts, cardanol, and cashew nuts.
+
+---
+
+## 🌐 HIGH-LEVEL STRUCTURE
+
+**Home Page → Role Selection → Verification & Declarations → Redirect (Due Diligence / NCNDA)**
+
+---
+
+## 🧭 FLOW OVERVIEW (Step-by-Step)
+
+### **1️⃣ Landing Page**
+
+**Goal:** Welcome visitors, clearly explain your platform’s purpose and roles.
+
+**Elements:**
+
+* Brief tagline:
+  *“Connecting serious buyers and sellers in global commodities.”*
+* Button: **“Start Verification”** → leads to role selection
+
+---
+
+### **2️⃣ Role Selection Page**
+
+**Question:** *“Who are you?”*
+
+**6 options:**
+
+1. End Seller
+2. End Buyer
+3. Mandate Seller
+4. Mandate Buyer
+5. Broker (Seller Side)
+6. Broker (Buyer Side)
+
+**UX Tips:**
+
+* Use large clickable cards with icons
+* Hover tooltips that explain each role briefly
+
+🡒 After selection → moves to **Confirmation Step**
+
+---
+
+### **3️⃣ Confirmation & Information Form**
+
+**Dynamic form changes depending on role selected.**
+
+**Questions:**
+
+1. Confirm your role (auto-filled from previous page)
+2. Confirm you understand we act as brokers/intermediaries
+3. Do you have these documents? (multi-select checkboxes)
+
+   * SCO
+   * LOI
+   * ICPO
+   * Draft Contract
+4. Do you have a target price? (Y/N + input box if yes)
+5. Do you own a registered company? (Y/N)
+6. Do you have a mandate letter? (Y/N)
+
+✅ **Form auto-validates answers** (shows next steps in real time)
+
+---
+
+### **4️⃣ Logic-Based Routing**
+
+| User Type              | Has Company | Has Mandate Letter | Redirects To              |
+| ---------------------- | ----------- | ------------------ | ------------------------- |
+| End Buyer / End Seller | (any)       | (any)              | **Due Diligence**         |
+| Mandate Buyer / Seller | Yes         | Yes                | **Due Diligence → NCNDA** |
+| Mandate Buyer / Seller | No          | No                 | **NCNDA only**            |
+| Broker (any side)      | Yes         | –                  | **Due Diligence → NCNDA** |
+| Broker (any side)      | No          | –                  | **NCNDA only**            |
+
+🡒 Once routed, user gets a “Next Steps” summary screen.
+
+---
+
+### **5️⃣ Redirect Pages**
+
+#### **Due Diligence Page**
+
+**Purpose:** Gather professional information to verify legitimacy.
+
+Fields include:
+
+* Company info (name, registration number, address)
+* Contact details
+* Product(s) of interest (petroleum, coconuts, etc.)
+* Region(s) of operation
+* Upload supporting documents (e.g. registration cert.)
+
+🡒 After submission → automatic transition to **NCNDA** (if required)
+
+---
+
+#### **NCNDA Page**
+
+**Purpose:** Non-Circumvention, Non-Disclosure Agreement
+
+* Auto-filled with user name & company details
+* e-Signature capability (DocuSign or custom signature field)
+* Downloadable PDF after signing
+* Confirmation email sent
+
+---
+
+### **6️⃣ Final Confirmation Page**
+
+**Message example:**
+
+> ✅ Thank you, \[Name]!
+> Your submission has been received. Our compliance team will review your documents and contact you within 48 hours.
+
+Include:
+
+* Reference number
+* Contact button for support
+* Option to explore product listings while waiting
+
+---
+
+## 💡 DESIGN TIPS
+
+* **Progress bar:**
+  *“Step 1 of 4: Role → Confirmation → Verification → Done”*
+* **Conditional logic:** Form dynamically shows only relevant fields.
+  (Example: Brokers skip mandate questions.)
+* **Trust elements:**
+
+  * Secure badges (SSL, data protection)
+  * Professional tone
+  * Transparent contact info
+* **Language:**
+  Use plain terms for global users: “Do you have your own company?” instead of “Are you incorporated?”
+
+---
+
+## 🧩 OPTIONAL ENHANCEMENTS
+
+* **Auto-save** progress for long forms
+* **Chatbot assistant** to guide users through steps
+* **Language selector** (English, French, Portuguese for commodity markets)
+* **Dashboard** for returning users to check document status
+
+---
+
+Would you like me to **draw this schematic visually (flowchart style)** so you can use it in your web design or presentation?
+I can create a **clean flow diagram** showing all user paths and redirects.
+
+
