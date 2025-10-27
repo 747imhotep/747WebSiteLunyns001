@@ -136,6 +136,14 @@ h1 span[aria-hidden="true"] {
 }
 
 /* BUTTON */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  box-shadow: 0 4 6 rgba(0, 0, 0, 0.75);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 .card-body h3{
   color: #9abfe9;
   font-size: 1.6rem;
@@ -158,6 +166,67 @@ h1 span[aria-hidden="true"] {
 }
 /* BUTTON END*/
 
+
+
+/* FINGER SHOW */
+.lead{
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.uploadableImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.uploadableImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-arrow {
+  animation: bounce 2s infinite;
+  height: 150px;
+  width: auto;
+}
+
+/* image motion */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+/* FINGER SHOW END*/
+
+.savoir{
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.savoir h3{
+  color: #222222;
+  margin-bottom: 25px;
+}
+
+.savoir h5{
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.savoir li{
+  color: #555555;
+  margin-bottom: 10px;
+  margin-left: 45px;
+}
 
  /* Optional: Prevent column resizing by content */
 table.table {
