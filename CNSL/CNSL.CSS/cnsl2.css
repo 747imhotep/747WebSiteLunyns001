@@ -169,20 +169,42 @@ h1 span[aria-hidden="true"] {
 
 
 /* FINGER SHOW */
-<div class="lead">
-          <p> Have any important key-documents to send ? </p>
+.lead{
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+}
 
-          <a href="#uploadable" type="button" class="btn btn-upload">
-            <i class="fas fa-download">:   </i>
-            Just click here
-          </a>
+.uploadableImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
 
-          <p>or</p>
-          
-          <a class="return" href="../index.html">
-            <img src="../IMAGES/mainIMAGES/imgBANNER/Return.png" alt="Return Icon" class="return-icon">
-          </a>
-        </div>
+.uploadableImg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.return{
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.img-return {
+  justify-content: center;
+  align-items: center;
+  margin: 1px 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
 
 .img-arrow {
   animation: bounce 2s infinite;
