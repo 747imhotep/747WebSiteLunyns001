@@ -172,7 +172,7 @@
                 y += 5;
 
                 // Section 5
-                addText('5. Relationship with the REFINERY', 14, true);
+                addText('5. Relationship with the Supplyer or the REFINERY', 14, true);
                 const authorized = formData.get('authorizedToRepresent') || 'Not specified';
                 addText(`Authorized to Represent: ${authorized}`);
                 if (authorized === 'Yes') {
