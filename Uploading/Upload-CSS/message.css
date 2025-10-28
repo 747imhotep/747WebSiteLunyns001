@@ -59,6 +59,17 @@ h1 { /* Hero Title */
   height: auto;
 }
 
+.return-icon {
+  width: 110px;      /* Adjust size — try 30px, 40px, etc. */
+  height: auto;     /* Keep correct proportions */
+  transition: transform 0.2s ease;
+  vertical-align: middle; /* Optional: aligns nicely with text */
+}
+
+.return-icon:hover {
+  transform: scale(2.5); /* Optional: hover zoom effect */
+}
+
 .img-arrow {
   animation: bounce 2s infinite;
   height: 150px;
