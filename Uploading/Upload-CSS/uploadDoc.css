@@ -41,7 +41,7 @@ h1 { /* Hero Title */
 
 .lead{
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
   font-weight: 800;
@@ -60,7 +60,7 @@ h1 { /* Hero Title */
 }
 
 .return-icon {
-  width: 110px;      /* Adjust size — try 30px, 40px, etc. */
+  width: 90px;      /* Adjust size — try 30px, 40px, etc. */
   height: auto;     /* Keep correct proportions */
   transition: transform 0.2s ease;
   vertical-align: middle; /* Optional: aligns nicely with text */
