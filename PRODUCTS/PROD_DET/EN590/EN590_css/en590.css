@@ -128,7 +128,7 @@ h1 span[aria-hidden="true"] {
   color: var(--brand-blue-light);
   font-weight: 200;
   padding-top: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   text-align: left;
 }
 
