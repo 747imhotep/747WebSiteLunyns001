@@ -257,3 +257,12 @@ input[type="tel"]:focus {
   color: #5f5858 !important; /* Match the text color on hover */
   font-weight: bold;
 }
+
+.warning-message {
+  font-size: 0.9rem;
+  color: #b30000; /* dark red for warning */
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 600;
+}
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Us | LUNYNS Ltd.</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.19/build/css/intlTelInput.min.css" />
+
+  <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
+  <link rel="stylesheet" href="/Uploading/Upload-CSS/uploadDoc.css">
+  <link rel="icon" href="../IMAGES/Favicon/Favicon-01.png">
+</head>
+<body>
+
+<!-- Navigation -->  
+
+
+  <!-- Header (optional) -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="../IMAGES/mainIMAGES/imgBANNER/LOGO _HTEST_03.png" alt="LUNYNS Ltd. Logo" height="40" class="me-2">
+        
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse gap-2 navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav  ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="../ABOUT/about.html">ABOUT US</a></li>
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="//" id="productsDropdown" role="button">PRODUCTS</a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">DIESEL EN590</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">JET A1 FUEL</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
+            <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
+            <!-- Add more sub-links as needed -->
+          </ul>
+         </li><!-- FIN products -->
+            <li class="nav-item"><a class="nav-link active" href="../CONTACT/contact.html">CONTACT US</a></li>
+
+          </ul>
+
+        <form class="d-flex ms-3" action="/search" method="GET">
+          <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+          <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+
+<!-- Hero Section -->
+    <section class="hero-contact text-center py-5" style="margin-top: 20px;" >
+      <div class="container">
+        <h2>Enhance your message</h2>
+        <h1>Upload us...</h1>
+      </div>
+    </section>
+
+<!-- EVERYTHING IS OK, EXCEPT FOR RECAPTCHA-->
+
+    <section class="container my-5">
+      <div class="row">
+
+        <div class="lead">
+          <p> Have any important key-documents to send ? </p>
+
+          <a href="#uploadable" type="button" class="btn btn-upload">
+            <i class="fas fa-download">:   </i>
+            Just click here
+          </a>
+
+          <p>or</p>
+          
+          <a class="return" href="../index.html">
+            <img src="../IMAGES/mainIMAGES/imgBANNER/Return.png" alt="Return Icon" class="return-icon">
+          </a>
+        </div>
+
+        <div class="uploadableImg">
+          <img src="../../IMAGES/imgCONTACT/Upload02.jpg" alt="Upload">
+        </div>
+
+          <div id="uploadable"></div>
+
+
+        <div class="lead">
+          <p> <span>👉: </span> Enhance your offer by uploading key business documents  </p>
+          <p> such as LOI, ICPO, SCO, FCO, NCNDA, or IMPFA... </p>
+          <p> Just attach any documents to the form below </p> 
+            <p>and move forward with confidence. </p>
+            <img class="img-arrow" src="../IMAGES/imgCONTACT/DownArrow .png" alt="">
+        </div>
+
+        
+
+        <!-- RFQ Filling Form 101-169-->
+          <div id="rfq-form" class="rfq-section">
+              <h2>UPLOAD DOCUMENT</h2>
+              <form id="contactFormsPree" 
+              action="https://formspree.io/f/myzndwep" 
+              method="POST" 
+              enctype="multipart/form-data">
+              
+
+                <input type="hidden" name="_subject" value="New RFQ Request" />
+                
+                <label for="name">Name:*</label>
+                <input type="text" id="name" name="name" placeholder="First Name and Second Name" required class="form-control mb-3" >
+
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required class="form-control mb-3">
+
+                <label for="phone">Phone Number:*</label>
+                <input type="tel" id="phone" name="phone" placeholder="Select Code | 555-555-5555" required class="form-control">
+
+                Comment:
+                <i class="fa-solid fa-arrow-right">  </i>
+                <span class="info-icon" id="phone-info"> ⓘ</span>
+
+                <div id="phone-info-popup" class="phone-info-popup">
+                  <strong><br>
+                    How to enter your phone number:                    
+                  </strong><br>
+                  1. Select your Country Flag in the left. <br>
+                  2. Enter your number (e.g. 555-555-5555)
+                </div><br>
+
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="your products" class="form-control mb-3">
+
+                <label for="message">Message:*</label>
+                <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
+
+                <label for="file">Upload Document</label>
+                <input type="file" id="file" name="attachment" class="form-control mb-3" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+
+                <button type="submit" class="btn btn-light">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+
+                <button type="button" id="clearFormBtn" class="btn btn-secondary ms-2">
+                    <i class="fas fa-eraser"></i> Clear Form
+                </button>
+            </form>
+
+            <!-- Success message (hidden by default) --> 
+            <div id="thank-you" style="display: none;">
+                <h2>Thank You!</h2>
+                
+                <h3>Your message has been successfully sent. 
+                  We'll get back to you as soon as possible.</h3>
+            </div>
+      </div> <!-- frq-section ENDS -->
+    </div> <!-- end row-->
+  </section> <!-- Contact Section ENDS -->
+
+
+                <!-- ✅
+                <i class="fa-thin fa-circle-info" aria-hidden="true"> Comment</i> 🟡 
+                <i class="fa-light fa-circle-info" aria-hidden="true"> Comment</i> 🟡 
+                <i class="fa-regular fa-circle-info" aria-hidden="true"> Comment</i> 🟡 
+                <i class="fa-solid fa-circle-info" aria-hidden="true"> Comment</i> ✅ 
+                <i class="fa-solid fa-arrow-right"> Comment</i> ✅ 
+                <i class="fa-chisel fa-regular fa-circle-info" aria-hidden="true"> Comment</i> 🟡
+                <i class="fa-slab fa-regular fa-circle-info" aria-hidden="true"> Comment</i> 🟡
+                -->
+
+
+  
+<a class="indicator" href="../DueDiligence/DueDiligenceReq.html">DueDiligence</a><br> 
+
+
+
+<!-- Footer 215-250 -->
+<!-- Footer -->
+  <footer class="footer">
+  <section class="columns">
+    <!-- QUICK LINKS -->
+    <div class="column" id="quick-links">
+      <h2 class="titre1"><b>QUICK LINKS</b></h2>
+      <ul class="footer-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="../ABOUT/about.html">About Us</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+        <li><a href="../security.html">Security</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="column" id="products">
+      <h2 class="titre2"><b>PRODUCTS</b></h2>
+      <p><b>Let’s build a secure and long-term partnership.</b></p>
+      <ul class="footer-list">
+        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LNG/lng.html">LNG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="column" id="contact-info">
+      <h2 class="titre3"><b>CONTACT</b></h2>
+      <ul class="footer-list">
+        <li><strong>📄 Quotation:</strong> <a class="ms-3" href="#TalkToUs">My RFQ</a></li>
+        <li><strong>📧 Email:</strong> <a href="/CONTACT/contact.html">contact us</a></li>
+        <li><strong>🌐 Website:</strong> <a href="/index.html" target="_blank">www.lunyns.com</a></li>
+        <li><strong>📥 Download:</strong> <a href="/sec_download.html">Secure Download</a></li>
+        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
+        <li><br><strong> Gold Member of Go4WorldBusiness:</strong><br><a href="https://go4worldbusiness.com" target="_blank" rel="noopeneer">
+          <img src="../IMAGES/Go4WB/go4worldlogo.png" alt="go4worldbusiness Logo" style="height: 50px; display: block; margin-top: 2px;">
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+<!-- Footer Label -->
+<footer class="footer-bottom py-3 mt-auto">
+  <div class="container text-center">
+    <p>
+    © 2025 Lunyns Ltd. All rights reserved. |
+    <a href="../privacy-policy/terms-and-privacy.html" target="_blank" style="color: #0073e6; text-decoration: none;">
+      Terms of Use & Privacy Policy
+    </a> |
+  </p>
+  </div>
+</footer>
+
+
+<!-- SCRIPT 185-197 -->
+<!---------------------------------------------------------------------------------------->
+  <!-- Bootstrap JS and dependencies -->
+
+
+      <!-- JS libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+        <script src="Upload-JS/upload-005.3.js"></script>
+        <script src="/Uploading/Upload-JS/infoPopup.js"></script>
+        <script src="../COM_CSS/tawkJS/tawk.js"></script>
+
+      <!-- Initialize phone input (SAFELY) -->
+       <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const input = document.querySelector("#phone");
+            if (!input) return;
+
+            // Create the instance once, store it in a local const and also expose it globally
+            const iti = window.intlTelInput(input, {
+              initialCountry: "auto",
+              utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+              nationalMode: false,       // allow full number including country code
+              separateDialCode: false,   // adjust to true if you prefer separate dial code display
+              geoIpLookup: function (callback) {
+                fetch("https://ipinfo.io/json?token=64aa12a0b8c627")
+                  .then((resp) => resp.json())
+                  .then((data) => callback(data && data.country ? data.country : "us"))
+                  .catch(() => callback("us"));
+              }
+            });
+
+            // Make available globally so other scripts (upload.js) can use it
+            window.iti = iti;
+
+            // Optional: store a reference on the input element (if you use input._iti elsewhere)
+            input._iti = iti;
+          });
+       </script>
+  </body>
+</html>

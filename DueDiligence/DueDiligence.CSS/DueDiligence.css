@@ -453,6 +453,15 @@ body {
     margin-bottom: 20px;
 }
 
+.warning-message {
+  font-size: 0.9rem;
+  color: #b30000; /* dark red for warning */
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
