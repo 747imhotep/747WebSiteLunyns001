@@ -60,9 +60,9 @@
   <!-- THANK YOU MESSAGE -->
   <div class="thank-you-container" id="thanks-message">
     <h2>Thank You!</h2>
-    <small style="color: #5af0d7;">You’ll be redirected in <span id="redirect-countdown">4</span> seconds...</small>
+    <small style="color: #5af0d7;">You’ll be redirected in <span id="redirect-countdown">5</span> seconds...</small>
     <br><br>
-    
+
     <h3>Your message has been successfully sent. We'll get back to you as soon as possible.</h3>
     
     <button onclick="window.location.href='/'" style="padding:10px 20px; 
@@ -105,7 +105,7 @@
     document.addEventListener("DOMContentLoaded", () => {
     const msg = document.getElementById("thanks-message");
     const countdown = document.getElementById("redirect-countdown");
-    let seconds = 4; // 4-second delay
+    let seconds = 5; // 4-second delay
 
     // ✨ Fade-in effect
     msg.style.opacity = "0";
