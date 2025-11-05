@@ -11,10 +11,12 @@ document.getElementById("contactForm").addEventListener("submit", async function
         });
 
         let result;
+        const text = await response.text(); // read body once
+
         try {
-            result = await response.json();
+            result = JSON.parse(text); // try parse as JSON
         } catch {
-            result = await response.text(); // fallback
+            result = text; // fallback to raw text
         }
 
         if (!response.ok) throw new Error(JSON.stringify(result));
@@ -31,7 +33,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
 });
 
 
-  //⚠️ 
+
+//⚠️ 
 
 //    You don’t prevent the default form submission, which is correct for Formspree. ✅
 //    However, this means the browser immediately navigates away to Formspree’s redirect after the form submits.
