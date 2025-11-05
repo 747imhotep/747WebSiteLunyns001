@@ -96,6 +96,11 @@
       </script>
 
       <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const msg = document.getElementById("thanks-message");
+        msg.style.opacity = "0";
+        setTimeout(() => { msg.style.transition = "opacity 1s"; msg.style.opacity = "1"; }, 200);
+
         setTimeout(() => {
           window.location.href = '/index.html';
         }, 4000);

@@ -1,3 +1,13 @@
+body {
+  background: radial-gradient(circle at center, #001d4f 0%, #000a20 100%);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .hero-contact {
   height: 16vh;  
   padding: 100px 0;             /* Add vertical spacing */
