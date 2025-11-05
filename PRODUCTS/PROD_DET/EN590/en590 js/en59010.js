@@ -1,37 +1,42 @@
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault(); // stop immediate Formspree submission
 
-document.getElementById("contactForm").addEventListener("submit", function() {
+    const formData = new FormData(this);
 
-  //✅ Prepare form data
-  const formData = new FormData(this);
+    try {
+        // Send to Sender.net via Worker
+        const response = await fetch("https://sender-proxy-worker.my-workerlunyns.workers.dev/", {
+            method: "POST",
+            body: formData
+        });
 
-  //✅ Send to Sender.net via Cloudflare Worker
-  fetch("https://sender-proxy-worker.my-workerlunyns.workers.dev/", {
-      method: "POST",
-      body: formData
-  })
-  .then(async (response) => {
-      let result;
-      try {
-          result = await response.json();
-      } catch (err) {
-          console.error("❌ Invalid JSON from Worker:", err);
-          const text = await response.text();
-          console.error("Raw response:", text);
-          return;
-      }
+        let result;
+        try {
+            result = await response.json();
+        } catch {
+            result = await response.text(); // fallback
+        }
 
-      if (!response.ok) {
-          console.error("❌ Sender.net error:", result);
-      } else {
-          console.log("✅ Sender.net response:", result);
-      }
-  })
-  .catch(err => {
-      console.error("🚨 Network or Worker error:", err);
-  });
+        if (!response.ok) throw new Error(JSON.stringify(result));
 
-  //⚠️ Don’t prevent default — Formspree will submit normally
+        console.log("✅ Sender.net response:", result);
+
+        // After Sender.net succeeds, submit Formspree
+        this.submit();
+
+    } catch (error) {
+        console.error("❌ Sender.net submission failed:", error);
+        alert("There was a problem submitting your request. Please try again.");
+    }
 });
+
+
+  //⚠️ 
+
+//    You don’t prevent the default form submission, which is correct for Formspree. ✅
+//    However, this means the browser immediately navigates away to Formspree’s redirect after the form submits.
+//    That causes the fetch() to get aborted mid-request, exactly like your old NS_BINDING_ABORTED issue.
+//    So the Worker never fully completes the Sender.net submission.
 
 
 // <!---------------------------------------------------------------------------------------->
