@@ -96,14 +96,27 @@
       </script>
 
       <script>
-        document.addEventListener("DOMContentLoaded", () => {
-        const msg = document.getElementById("thanks-message");
-        msg.style.opacity = "0";
-        setTimeout(() => { msg.style.transition = "opacity 1s"; msg.style.opacity = "1"; }, 200);
+    document.addEventListener("DOMContentLoaded", () => {
+    const msg = document.getElementById("thanks-message");
+    const countdown = document.getElementById("redirect-countdown");
+    let seconds = 4; // 4-second delay
 
-        setTimeout(() => {
-          window.location.href = '/index.html';
-        }, 4000);
-      </script>
+    // ✨ Fade-in effect
+    msg.style.opacity = "0";
+    msg.style.transition = "opacity 1s ease-in-out";
+    setTimeout(() => { msg.style.opacity = "1"; }, 200);
+
+    // ⏳ Countdown display
+    const interval = setInterval(() => {
+      seconds--;
+      if (countdown) countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = "/"; // redirect home
+      }
+    }, 1000);
+  });
+</script>
+
   </body>
 </html>
