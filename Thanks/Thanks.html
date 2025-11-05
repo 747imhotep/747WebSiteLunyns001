@@ -58,16 +58,22 @@
 
 
   <!-- THANK YOU MESSAGE -->
-
-
-
-  <div class="thank-you-container">
+  <div class="thank-you-container" id="thanks-message">
     <h2>Thank You!</h2>
+    <small style="color: #5af0d7;">You’ll be redirected in <span id="redirect-countdown">4</span> seconds...</small>
+    <br><br>
     
     <h3>Your message has been successfully sent. We'll get back to you as soon as possible.</h3>
-    <a href="/index.html" class="btn-back">Return to Home</a>
+    
+    <button onclick="window.location.href='/'" style="padding:10px 20px; 
+    background:#cf9904; border:none; border-radius:5px; cursor:pointer;">
+    Return to Home
+  </button>
   </div>
 </main>
+
+
+
 
 <footer class="footer-bottom py-3 mt-auto">
   <div class="container text-center">
