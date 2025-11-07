@@ -99,12 +99,6 @@
           console.log(`${key}: ${value}`);
         }
 
-        // You can add a temporary log (for debugging) inside your Worker:
-      const formData = await request.formData();
-      for (const [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      } // go to Cloudflare Worker Logs / Wrangler / Dashboard → Logs
-
 
 
         // --- 2️⃣ Continue to Formspree submission ---
