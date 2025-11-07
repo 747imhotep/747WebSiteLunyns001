@@ -1,9 +1,10 @@
-  // ✅ ABOUT/about.js
+  // ✅ ABOUT/about.js / 📦 LUNYNS FORM HANDLER (2025-ready)
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
-  const modal = document.getElementById("RFQ-modal");
-  const clearBtn = document.getElementById("clearFormBtn");
+function initLunynsForm(formId) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(formId);
+    const modal = document.getElementById("RFQ-modal");
+    const clearBtn = document.getElementById("clearFormBtn");
 
   // ----------------------------------------------------------------
   // 🧹 CLEAR FORM
