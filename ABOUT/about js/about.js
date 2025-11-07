@@ -1,96 +1,90 @@
-//     ABOUT US JS
-// <!---------------------------------------------------------------------------------------->
+  // ✅ ABOUT/about.js
 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const modal = document.getElementById("RFQ-modal");
+  const clearBtn = document.getElementById("clearFormBtn");
 
-
-// <!-- CLEAR FORM -->
-  // Clear all form fields when Clear Form button is clicked
-  document.getElementById('clearFormBtn').addEventListener('click', () => {
-    const form = document.querySelector('form[action^="mailto"]');
-    if (form) {
-      form.reset();  // resets all input/textarea/select to their default values (empty in your case)
-    }
+  // ----------------------------------------------------------------
+  // 🧹 CLEAR FORM
+  // ----------------------------------------------------------------
+  clearBtn?.addEventListener("click", () => {
+    form?.reset();
   });
-// <!-- CLEAR FORM END -->
 
+  // ----------------------------------------------------------------
+  // 💡 OPEN & CLOSE RFQ MODAL
+  // ----------------------------------------------------------------
+  function openRFQModal() {
+    if (modal) modal.style.display = "block";
+  }
 
-// <!-- OPEN RFQ -->
-      // Function to open modal and optionally prefill form
-      function openRFQModal(prefillProduct = null) {
-        const modal = document.getElementById('RFQ-modal');
-        if (modal) {
-          modal.style.display = 'block';
-        }
+  function closeRFQModal() {
+    if (modal) modal.style.display = "none";
+  }
 
-        // Prefill the subject if product info is provided
-        if (prefillProduct) {
-          const subjectInput = document.getElementById('subject');
-          if (subjectInput) {
-            subjectInput.value = `${prefillProduct.toUpperCase()}  Quotation Request`;
-          }
+  // Open modal when hash matches
+  const hash = window.location.hash;
+  if (hash === "#RFQ" || hash.startsWith("#RFQ-")) {
+    openRFQModal();
+  }
 
-          // Optional: Prefill the message textarea
-          const messageInput = document.getElementById('message');
-          if (messageInput) {
-            messageInput.value = `Dear team,\n\nI would like to request a quotation for ${prefillProduct.toUpperCase()} \nKindly provide details regarding pricing, payment method, and minimum order quantity (MOQ) at your earliest convenience.\n\nThank you.`;
-          }
-        }
+  // Handle modal trigger links
+  document.querySelectorAll('a[href="#RFQ"], a[href^="#RFQ-"]').forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      openRFQModal();
+      history.replaceState(null, "", link.getAttribute("href"));
+    });
+  });
+
+  // Close modal actions
+  modal?.querySelector(".close")?.addEventListener("click", closeRFQModal);
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeRFQModal();
+  });
+
+  window.addEventListener("click", e => {
+    if (e.target === modal) closeRFQModal();
+  });
+
+  // ----------------------------------------------------------------
+  // 🚀 FORM SUBMISSION → Sender.net → Formspree
+  // ----------------------------------------------------------------
+  form?.addEventListener("submit", async function (e) {
+    e.preventDefault(); // stop immediate Formspree submission
+
+    const formData = new FormData(this);
+    //⚠️ const senderData = new FormData(this); // clone for Sender.net
+
+    try {
+      // Send to Sender.net via Cloudflare Worker
+      const response = await fetch("https://sender-proxy-worker.my-workerlunyns.workers.dev/", {
+        method: "POST",
+        body: senderData,
+      });
+
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch {
+        result = text;
       }
 
+      if (!response.ok) throw new Error(JSON.stringify(result));
+      console.log("✅ Sender.net response:", result);
 
-      // Handle opening the modal on page load based on URL hash
-      window.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash;
+      // Submit to Formspree (keep fields intact)
+      this.submit();
 
-        if (hash === '#RFQ') {
-          openRFQModal(); // basic modal open
-        } else if (hash.startsWith('#RFQ-')) {
-          const product = hash.replace('#RFQ-', ''); // e.g., "10ppm"
-          openRFQModal(product); // open and prefill
-        }
-      });
+      // Optional: clear form after Formspree
+      setTimeout(() => this.reset(), 1500);
 
-      // Close the modal when the close button is clicked
-      document.querySelector('#RFQ-modal .close')?.addEventListener('click', function () {
-        const modal = document.getElementById('RFQ-modal');
-        if (modal) {
-          modal.style.display = 'none';
-        }
-      });
-      // Also close the modal when Escape key is pressed
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-          const modal = document.getElementById('RFQ-modal');
-          if (modal && modal.style.display === 'block') {
-        modal.style.display = 'none';
-          }
-        }
-      });
-      // Close the modal if user clicks outside of it
-      window.onclick = function (event) {
-        const modal = document.getElementById('RFQ-modal');
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      };
-
-       // Handle links like <a href="#RFQ">
-document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    openRFQModal();
-    history.replaceState(null, '', '#RFQ');
+    } catch (error) {
+      console.error("❌ Sender.net submission failed:", error);
+      alert("There was a problem submitting your request. Please try again.");
+    }
   });
 });
-
-// Handle links like <a href="#RFQ-10ppm">
-document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const product = this.getAttribute('href').replace('#RFQ-', '');
-    openRFQModal(product);
-    history.replaceState(null, '', `#RFQ-${product}`);
-  });
-});
-
-// <!-- OPEN RFQ END -->

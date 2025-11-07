@@ -137,39 +137,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- RFQ Modal 170-200-->
+<!-- RFQ Modal 140-200-->
 <div id="RFQ-modal" class="modal" style="display: none;">
   <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
     <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
@@ -177,7 +145,7 @@
     <div class="boxquote">
       <h2>Request FREE Quotation!</h2>
       <!-- <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain"> -->
-      <form id="contactForm" action="https://formsubmit.co/contact@lunyns.com" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/movpgbql" method="POST">
         
         <!-- Required for FormSubmit -->
           <input type="hidden" name="_captcha" value="false">
@@ -199,6 +167,13 @@
 
         <label for="message">Message:</label>
         <textarea id="message" name="message" required class="form-control mb-4" rows="4"></textarea>
+
+        <label for="consent" class="form-check-label mb-3">
+        <input type="checkbox" id="consent" name="consent" required class="form-check-input">
+        I consent to receive business-related emails and updates from www.lunyns.com. 
+        I agree to LUNYNS Ltd.'s 
+        <a href="http://privacy-policy/terms-and-privacy.html">Terms of use & Privacy-Policy.</a>
+        </label>
 
         <button type="submit" class="btn btn-light">
           <i class="fas fa-paper-plane"></i> Send Message
@@ -284,5 +259,6 @@
       <script src="/ABOUT/about js/about.js" ></script>
       <script src="../COM_CSS/tawkJS/tawk.js"></script>
       <script src="../COM_CSS/Sender-JS/TalkToUs.js"></script>
+      <script src="/ABOUT/about js/about.js"></script>
   </body>
 </html>
