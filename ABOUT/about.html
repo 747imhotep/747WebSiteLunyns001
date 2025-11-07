@@ -43,12 +43,13 @@
         <li class="nav-item"><a class="nav-link" href="../CONTACT/contact.html">CONTACT US</a></li>
       </ul>
       <form class="d-flex ms-3" action="/search" method="GET">
-        <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
+        <input class="form-control me-2" type="text" name="q" placeholder="Search...">
         <button class="btn btn-outline-light" type="submit">Search</button>
-        
-        <button type="button" id="openQuote" class="btn quote-btn">RFQ</button>
-
       </form>
+
+      <!-- Separate RFQ button -->
+      <button type="button" id="openQuote" class="btn quote-btn ms-3">RFQ</button>
+
 
     </div>
   </div>
@@ -147,7 +148,7 @@
     <div class="boxquote">
       <h2>Request FREE Quotation!</h2>
       <!-- <form action="mailto:contact@lunyns.com" method="post" enctype="text/plain"> -->
-      <form id="contactForm" action="https://formspree.io/f/movpgbql" method="POST">
+      <form id="lunyns-form" action="https://formspree.io/f/movpgbql" method="POST">
         
         <!-- Required for FormSubmit -->
           <input type="hidden" name="_captcha" value="false">

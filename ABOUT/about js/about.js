@@ -18,8 +18,15 @@
     // 💡 OPEN & CLOSE RFQ MODAL
     // ----------------------------------------------------------------
     function openRFQModal() {
-      if (modal) modal.style.display = "block";
+      if (modal) {//modal.style.display = "block";
+        modal.style.display = "block";
+        modal.style.zIndex = 9999; // ensure it's on top
+        modal.style.position = "fixed";
+      }
     }
+
+    console.log("Button found:", openQuoteBtn);
+    console.log("Modal found:", modal);
 
 
     function closeRFQModal() {
@@ -27,7 +34,7 @@
     }
 
     // Open modal when hash matches
-    openQuoteBtn?.addEventListener("click"), openQuoteBtn // new button
+    openQuoteBtn?.addEventListener("click", openRFQModal); // new button
 
     // Close modal actions
     modal?.querySelector(".close")?.addEventListener("click", closeRFQModal);
