@@ -1,17 +1,17 @@
 // ✅ ABOUT/about.js / 📦 LUNYNS FORM HANDLER (2025-ready)
+// THIS NEW CODE DOESN'T OPEN THE MODAL
 
-function initLunynsForm(formId) {
+//function initLunynsForm(formId) {
   document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById(formId);
-    const modal = document.getElementById("RFQ-modal");
-    const clearBtn = document.getElementById("clearFormBtn");
+  const form = document.getElementById("lunyns-form");
+  const modal = document.getElementById("RFQ-modal");
+  const clearBtn = document.getElementById("clearFormBtn");
 
     // ----------------------------------------------------------------
     // 🧹 CLEAR FORM
     // ----------------------------------------------------------------
-    clearBtn?.addEventListener("click", () => {
-      form?.reset();
-    });
+      clearBtn?.addEventListener("click", () => form?.reset());
+      
 
     // ----------------------------------------------------------------
     // 💡 OPEN & CLOSE RFQ MODAL
@@ -24,31 +24,44 @@ function initLunynsForm(formId) {
       if (modal) modal.style.display = "none";
     }
 
-    // Open modal when hash matches
+    // ----------------------------------------------------------------
+    // 🔗 OPEN MODAL BASED ON HASH
+    // ----------------------------------------------------------------
     const hash = window.location.hash;
-    if (hash === "#RFQ" || hash.startsWith("#RFQ-")) {
+    if (hash === "#RFQ") {
       openRFQModal();
+    } else if (hash.startsWith("#RFQ-")) {
+      openRFQModal(hash.replace("#RFQ-", ""));
     }
 
-    // Handle modal trigger links
-    document.querySelectorAll('a[href="#RFQ"], a[href^="#RFQ-"]').forEach(link => {
+    // ----------------------------------------------------------------
+    // 🔗 HANDLE MODAL TRIGGER LINKS
+    // ----------------------------------------------------------------
+    document.querySelectorAll('a[href="#RFQ"]').forEach(link => {
       link.addEventListener("click", e => {
         e.preventDefault();
         openRFQModal();
-        history.replaceState(null, "", link.getAttribute("href"));
+        history.replaceState(null, "", "#RFQ");
       });
     });
 
-    // Close modal actions
+    document.querySelectorAll('a[href^="#RFQ-"]').forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const product = link.getAttribute("href").replace("#RFQ-", "");
+        openRFQModal(product);
+        history.replaceState(null, "", `#RFQ-${product}`);
+        });
+    });
+
+    // ----------------------------------------------------------------
+    // ❌ CLOSE MODAL ACTIONS
+    // ----------------------------------------------------------------
     modal?.querySelector(".close")?.addEventListener("click", closeRFQModal);
 
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape") closeRFQModal();
-    });
+    document.addEventListener("keydown", e => e.key === "Escape" && closeRFQModal());
 
-    window.addEventListener("click", e => {
-      if (e.target === modal) closeRFQModal();
-    });
+    window.addEventListener("click", e => e.target === modal && closeRFQModal());
 
     // ----------------------------------------------------------------
     // 🚀 FORM SUBMISSION → Sender.net → Formspree
@@ -58,7 +71,7 @@ function initLunynsForm(formId) {
 
       const formData = new FormData(this);
 
-      // ✅ Clone the data for Sender.net (must be independent)
+      // ✅ Clone the data for Sender.net so it can also receive data (must be independent)
       const senderData = new FormData();
       for (const [key, value] of formData.entries()) {
         senderData.append(key, value);
@@ -95,4 +108,4 @@ function initLunynsForm(formId) {
       }
     });
   }); // End of DOMContentLoaded
-} // End of initLunynsForm
+

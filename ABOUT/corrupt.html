@@ -29,7 +29,6 @@
         <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
         
         <li class="nav-item"><a class="nav-link active" href="../ABOUT/about.html">ABOUT US</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" href="../ABOUT/corrupt.html">cor</a></li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="//" id="productsDropdown" role="button">PRODUCTS</a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
@@ -38,20 +37,21 @@
             <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">COCONUTS</a></li>
             <li><a class="dropdown-item" href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">CASHEW NUTS</a></li>
             <li><a class="dropdown-item" href="../CNSL/cnsl.html">CNSL</a></li>
-            
             <!-- Add more sub-links as needed -->
           </ul>
          </li><!-- FIN products -->
         <li class="nav-item"><a class="nav-link" href="../CONTACT/contact.html">CONTACT US</a></li>
       </ul>
-
       <form class="d-flex ms-3" action="/search" method="GET">
-        <input class="form-control me-2" type="text" name="q" placeholder="Request a quote...">
+        <input class="form-control me-2" type="text" name="q" placeholder="Search...">
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
 
-      <!-- Separate RFQ BUTTON -->
-      <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ 1</a>
+      <!-- Separate RFQ button -->
+      <button type="button" id="openQuote" class="btn quote-btn ms-3">RFQ</button>
+      <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ 2</a>
+
+
     </div>
   </div>
 </nav>
@@ -139,7 +139,9 @@
 
 
 
-<!-- RFQ Modal 170-200-->
+
+
+<!-- RFQ Modal 140-200-->
 <div id="RFQ-modal" class="modal" style="display: none;">
   <div class="modal-content" style="max-width: 600px; margin: auto; background-color: #001d4f; padding: 30px; color: antiquewhite; border-radius: 8px; position: relative;">
     <span class="close" style="position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer;">&times;</span>
@@ -254,13 +256,10 @@
 
 <!-- SCRIPT 255-353 -->
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-      <script src="about_js/about_L.js"></script>
-
-      <script src="../COM_CSS/tawkJS/tawk.js"></script>
-      <script src="../COM_CSS/Sender-JS/TalkToUs.js"></script>
+    <script src="../COM_CSS/tawkJS/tawk.js"></script>
+    <!--<script src="../COM_CSS/Sender-JS/TalkToUs.js"></script>-->
+    <script src="/ABOUT/about-js/about-NB.js" defer></script>
   </body>
 </html>
