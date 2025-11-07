@@ -94,5 +94,5 @@ function initLunynsForm(formId) {
         alert("There was a problem submitting your request. Please try again.");
       }
     });
-  });
-}
+  }); // End of DOMContentLoaded
+} // End of initLunynsForm
