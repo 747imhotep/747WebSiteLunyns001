@@ -95,6 +95,18 @@
         if (!response.ok) throw new Error(JSON.stringify(result));
         console.log("✅ Sender.net response:", result);
 
+        for (const [key, value] of formData.entries()) {
+          console.log(`${key}: ${value}`);
+        }
+
+        // You can add a temporary log (for debugging) inside your Worker:
+      const formData = await request.formData();
+      for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      } // go to Cloudflare Worker Logs / Wrangler / Dashboard → Logs
+
+
+
         // --- 2️⃣ Continue to Formspree submission ---
         // Uses the form's native action/method attributes
         this.submit();
