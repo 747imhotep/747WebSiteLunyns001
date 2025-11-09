@@ -49,7 +49,7 @@
       </form>
 
       <!-- Separate RFQ button -->
-      <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ 2</a>
+      <a href="#RFQ" id="openQuote" class="btn quote-btn">RFQ-F</a>
     </div>
   </div>
 </nav>
@@ -162,12 +162,19 @@
         <label for="firstname">First Name:*</label>
         <input type="text" id="firstname" name="firstname" required class="form-control mb-3">
 
-        <label for="last-name">Last Name:*</label>
-        <input type="text" id="last-name" name="last-name" required class="form-control mb-3">
+        <label for="lastname">Last Name:*</label>
+        <input type="text" id="lastname" name="lastname" required class="form-control mb-3">
+
+        <label for="position">Position</label>
+        <input type="text" id="position" name="position" required class="form-control mb-3">
+
+        <label for="company_name">Company</label>
+        <input type="text" id="company_name" name="company_name" class="form-control mb-3">
 
         <label for="email">Email:*</label>
         <input type="email" id="email" name="email" required placeholder="Email Address" class="form-control mb-3">
-
+        
+        <!-- improve phone number-->
         <label for="phone">Phone Number:*</label>
         <input type="tel" id="phone" name="phone" placeholder="Select Code | 555-555-5555" required class="form-control">
 
@@ -182,8 +189,8 @@
         <label for="qty_in_metric_tons">Quantity MT</label>
         <input type="text" id="qty_in_metric_tons" name="qty_in_metric_tons" placeholder="Quantity in MT (Metric Tons)" class="form-control mb-3">
 
-        <label for="shipping">shipping Terms</label>
-        <select name="shipping" id="shipping" class="form-control mb-3">
+        <label for="shipping_terms">Shipping Terms</label>
+        <select name="shipping_terms" id="shipping_terms" class="form-control mb-3">
           <option value="">-- Select → →</option>
           <option value="cif">CIF</option>
           <option value="cfr">CFR</option>
@@ -192,8 +199,20 @@
           <option value="fob">FOB</option>          
         </select>
 
-        <label for="loading-port">Loading Port</label>
-        <input type="text" id="loading-port" name="loading-port" placeholder="Loading Port" class="form-control mb-3">
+        <label for="port_of_loading">Loading Port</label>
+        <input type="text" id="port_of_loading" name="port_of_loading" placeholder="Loading Port" class="form-control mb-3">
+
+        <label for="payment_terms">Payment Terms</label>
+        <select name="payment_terms" id="payment_terms">
+        <option value="">--</option>
+        <option value="lc">LC</option>
+        <option value="lcinsight">LC in Sight</option>
+        <option value="telegraphic">Telegraphic Transfer</option>
+        <option value="dpdocum">DP Doc against Payment</option>
+        <option value="mt700">MT700</option>
+        </select>
+
+
 
         <hr>
 
