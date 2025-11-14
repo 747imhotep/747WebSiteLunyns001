@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCNDA | LUNYNS Ltd.</title>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../COM_CSS/Master-CSS/Master-css.css">
+    <link rel="stylesheet" href="/NCNDA/Ncnda.CSS/Ncnda.css">
+
+    
+    <!-- Use jsPDF directly - much more reliable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+
+
+
+
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div>Generating your PDF...</div>
+    </div>
+
+    <header class="page-header">
+        <div class="header-content">
+            <div class="company-logo"></div>
+            <h1 class="page-title">Your</h1>
+            <h2 class="page-title">NCNDA Contract</h2>
+            <h3 class="page-subtitle">For Sellers, Mandate Holders, or Intermediaries </h3>
+        </div>
+    </header>
+
+    <main class="container">
+        <a style="color: #f0f4f8;" href="/DueDiligence/DueDiligenceReq.html">required</a>
+        <section class="intro-section">
+            <div class="alert">
+                <strong>✓ This version uses a different PDF library that actually works!</strong><br>
+                Your PDF will be a clean, text-based document with all your form data.
+            </div>
+            
+            <h2>Thank you for your interest in working with LUNYNS Ltd.</h2>
+
+            <p>
+            To ensure a transparent and secure business process, we kindly 
+            ask you to complete this NCNDA form. The information you provide 
+            will help us verify your company, understand your role in the 
+            transaction, and confirm any relationships with the Supplier, 
+            Buyer, or relevant partners.
+            </p>
+
+            <p>
+            Please provide accurate and complete details. By signing this 
+            form, all parties acknowledge that this document is <strong>legally 
+            binding</strong> and enforceable, ensuring confidentiality and protecting 
+            the interests of everyone involved in the transaction. 
+            </p>
+
+            <p>
+            (<span class="parenthesis">
+                Please ensure that all details are accurate and complete.
+            </span>)
+            </p>
+
+        </section>
+
+        <div class="success-message" id="successMessage">
+            ✓ Success! Your PDF has been downloaded and your form has been submitted.
+        </div>
+
+        <!-- Your existing form here - I'll just include a simplified version -->
+        <form class="dd-form" id="ddForm" novalidate>
+<!-- ---1. COMPANY INFORMATION --- -->            
+            <section class="form-section">
+                <h2 class="section-title">1. Company Information</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="companyName">
+                            Full legal name of your company <span class="required">*</span>
+                        </label>
+                        <input type="text" id="companyName" name="companyName" class="form-input" required>
+                        <span class="error-message" id="companyNameError">Please enter company name</span>
+                    </div>
+                </div>
+
+                <div class="form-row two-column">
+                    <div class="form-group">
+                        <label class="form-label" for="date">
+                            This Agreement is Made Effective on the:
+                        </label>
+
+                        <input type="date" id="dateOfAgreemnt" name="dateOfAgreemnt" class="dateOfAgreemnt" required>
+                        <span class="error-message" id="dateOfAgreemntError">Required</span>
+                    </div>
+
+                    <div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="form-row two-column">
+                    <div class="form-group">
+                        <label class="form-label" for="countryOfRegistration">
+                            Country of registration <span class="required">*</span>
+                        </label>
+                        <input type="text" id="countryOfRegistration" name="countryOfRegistration" class="form-input" required>
+                        <span class="error-message" id="countryOfRegistrationError">Required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="registrationNumber">
+                            Company registration number <span class="required">*</span>
+                        </label>
+                        <input type="text" id="registrationNumber" name="registrationNumber" class="form-input" required>
+                        <span class="error-message" id="registrationNumberError">Required</span>
+                    </div>
+                </div>
+
+                <div class="form-row two-column">
+                    <div class="form-group">
+                        <label class="form-label" for="yearOfIncorporation">
+                            Year of incorporation <span class="required">*</span>
+                        </label>
+                        <input type="number" id="yearOfIncorporation" name="yearOfIncorporation" class="form-input" min="1900" max="2025" required>
+                        <span class="error-message" id="yearOfIncorporationError">Required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="website">
+                            Website ( <span class="parenthesis">if applicable</span>)
+                        </label>
+                        <input type="url" id="website" name="website" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="registeredAddress">
+                            Registered address <span class="required">*</span>
+                        </label>
+                        <textarea id="registeredAddress" name="registeredAddress" class="form-textarea" required></textarea>
+                        <span class="error-message" id="registeredAddressError">Required</span>
+                    </div>
+                </div>
+
+                <div class="form-row two-column">
+                    <div class="form-group">
+                        <label class="form-label" for="officialEmail">
+                            Official email address <span class="required">*</span>
+                        </label>
+                        <input type="email" id="officialEmail" name="officialEmail" class="form-input" required>
+                        <span class="error-message" id="officialEmailError">Required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="phoneNumber">
+                            Phone number <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input" required>
+                        <span class="error-message" id="phoneNumberError">Required</span>
+                    </div>
+                </div>
+            </section>
+<!-- ---2. CORPORATE STRUCTURE --- -->
+            <section class="form-section">
+                <h2 class="section-title">2. Corporate Structure</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="shareholders">
+                            Name(s) of shareholder(s) / beneficial owner(s) <span class="required">*</span>
+                        </label>
+                        <textarea id="shareholders" name="shareholders" class="form-textarea" required></textarea>
+                        <span class="error-message" id="shareholdersError">Required</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="directors">
+                            Name(s) of directors <span class="required">*</span>
+                        </label>
+                        <textarea id="directors" name="directors" class="form-textarea" required></textarea>
+                        <span class="error-message" id="directorsError">Required</span>
+                    </div>
+                </div>
+            </section>
+<!-- ---3. BANKING INFORMATION --- -->
+            <section class="form-section">
+                <h2 class="section-title">3. Banking Information</h2>
+                <div class="section-note">
+                    <strong>Note:</strong> This information will be used for verification only and will be treated as confidential.
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="bankName">Name of your company's bank</label>
+                        <input type="text" id="bankName" name="bankName" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="bankAddress">Bank address  ( <span class="parenthesis">City & Country</span>)</label>
+                        <input type="text" id="bankAddress" name="bankAddress" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="accountHolder">Account holder name</label>
+                        <input type="text" id="accountHolder" name="accountHolder" class="form-input">
+                    </div>
+                </div>
+            </section>
+<!-- ---4. BUSINESS ACTIVITY --- -->
+            <section class="form-section">
+                <h2 class="section-title">4. Business Activity</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="businessDescription">
+                            Brief description of your company's main activities <span class="required">*</span>
+                        </label>
+                        <textarea id="businessDescription" name="businessDescription" class="form-textarea" required></textarea>
+                        <span class="error-message" id="businessDescriptionError">Required</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">
+                            Your specific role in the proposed transaction <span class="required">*</span>
+                        </label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="role_seller" name="transactionRole" value="Seller" required>
+                                <label for="role_seller">End-Seller</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="role_mandate" name="transactionRole" value="Mandate holder" required>
+                                <label for="role_mandate">Mandate holder</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="role_intermediary" name="transactionRole" value="Intermediary" required>
+                                <label for="role_intermediary">Intermediary</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="role_other" name="transactionRole" value="Other" required>
+                                <label for="role_other">Other</label>
+                            </div>
+                        </div>
+                        <span class="error-message" id="transactionRoleError">Please select your role</span>
+                    </div>
+                </div>
+
+                <div class="form-row" id="otherRoleWrapper" style="display: none;">
+                    <div class="form-group">
+                        <label class="form-label" for="otherRole">Please specify other role</label>
+                        <input type="text" id="otherRole" name="otherRole" class="form-input">
+                    </div>
+                </div>
+            </section>
+<!-- ---5. RELATIONSHIP WITH REFINERY --- -->
+            <section class="form-section">
+                <h2 class="section-title">5. Relationship with the Supplier or the REFINERY
+                    ( <span class="parenthesis">if applicable</span>)</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">
+                            Are you currently authorized to represent the Supplier or the Refinery? <span class="required">*</span>
+                        </label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="authorized_yes" name="authorizedToRepresent" value="Yes" required>
+                                <label for="authorized_yes">Yes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="authorized_no" name="authorizedToRepresent" value="No" required>
+                                <label for="authorized_no">No</label>
+                            </div>
+                        </div>
+                        <span class="error-message" id="authorizedToRepresentError">Please select an option</span>
+                    </div>
+                </div>
+
+                <div class="conditional-section" id="relationshipDetails">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="relationshipNature">
+                                Nature of the relationship <span class="required">*</span>
+                            </label>
+                            <input type="text" id="relationshipNature" name="relationshipNature" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Is the mandate exclusive? <span class="required">*</span>
+                            </label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="mandate_exclusive_yes" name="mandateExclusive" value="Yes">
+                                    <label for="mandate_exclusive_yes">Yes</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="mandate_exclusive_no" name="mandateExclusive" value="No">
+                                    <label for="mandate_exclusive_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="mandateValidity">
+                                Validity period of the mandate <span class="required">*</span>
+                            </label>
+                            <input type="text" id="mandateValidity" name="mandateValidity" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="mandateLetter">
+                                Upload genuine mandate letter
+                            </label>
+                            <input type="file" id="mandateLetter" name="mandateLetter" class="form-input" multiple accept=".pdf,.doc,.docx">
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!-- ---6. ADDITIONAL DOCUMENTS --- -->
+            <section class="form-section">
+                <h2 class="section-title">6. Additional Documents</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="additionalDocs">
+                            Upload supporting documents
+                        </label>
+                        <input type="file" id="additionalDocs" name="additionalDocs" class="form-input" multiple accept=".pdf,.doc,.docx">
+                    </div>
+                </div>
+            </section>
+
+            <div class="submit-section">
+                <div class="consent-checkbox">
+
+                    <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                    <label for="dataConsent">
+                        I confirm that the information provided is accurate and complete. 
+                        <span class="required">*</span>
+                    </label>
+                </div>
+
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                    <label for="dataConsent">
+                        I consent to LUNYNS Ltd. processing my data in accordance with the 
+                        <a href="https://lunyns.com/privacy-policy/terms-and-privacy.html">
+                            Privacy Policy</a>. 
+                        I agree to receive business-related communications and updates from LUNYNS Ltd.
+                        <span class="required">*</span>
+                    </label>
+                </div>
+
+                <span class="error-message" id="dataConsentError">You must agree to continue</span>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" id="resetBtn">Clear Form</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Submit Questionnaire</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+<!-- SHORTCUT TO Due Diligence Form -->
+<a class="hiddenDueDill" href="../DueDiligence/DueDiligenceReq.html">ReqDueDili</a>
+
+
+    <div class="warning-message">
+        This document is official and subject to verification by Action Fraud 
+        (UK Police) at any time.
+    </div>
+
+
+    <!-- Footer 215-250 -->
+<!-- Footer -->
+  <footer class="footer">
+  <section class="columns">
+    <!-- QUICK LINKS -->
+    <div class="column" id="quick-links">
+      <h2 class="titre1"><b>QUICK LINKS</b></h2>
+      <ul class="footer-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="../ABOUT/about.html">About Us</a></li>
+        <li><a href="../PRODUCTS/products.html">Products</a></li>
+        <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+        <li><a href="../security.html">Security</a></li>
+      </ul>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="column" id="products">
+      <h2 class="titre2"><b>PRODUCTS</b></h2>
+      <p><b>Let’s build a secure and long-term partnership.</b></p>
+      <ul class="footer-list">
+        <li><a href="../PRODUCTS/PROD_DET/EN590/en590ppm.html">EN590</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/JET_A1_FUEL/jetA1fuel.html">Jet A1 Fuel</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/Bitumen_60-70/bitumen.html">Bitumen 60/70</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/D6/D6_Fuel.html">D6</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LNG/lng.html">LNG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/LPG/lpg.html">LPG</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/COCONUTS/coconuts.html">Coconuts</a></li>
+        <li><a href="../PRODUCTS/PROD_DET/CASHEW_NUTS/cashewNuts.html">Cashew Nuts</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="column" id="contact-info">
+      <h2 class="titre3"><b>CONTACT</b></h2>
+      <ul class="footer-list">
+        <li><strong>📄 Quotation:</strong> <a class="ms-3" href="#TalkToUs">My RFQ</a></li>
+        <li><strong>📧 Email:</strong> <a href="/CONTACT/contact.html">contact us</a></li>
+        <li><strong>🌐 Website:</strong> <a href="/index.html" target="_blank">www.lunyns.com</a></li>
+        <li><strong>📥 Download:</strong> <a href="/sec_download.html">Secure Download</a></li>
+        <li><strong>🏢 Office:</strong><br>Suite A, 82 James Carter Road,<br>Mildenhall, Suffolk, IP28 7DE, UK</li>
+        <li><br><strong> Gold Member of Go4WorldBusiness:</strong><br><a href="https://go4worldbusiness.com" target="_blank" rel="noopeneer">
+          <img src="../IMAGES/Go4WB/go4worldlogo.png" alt="go4worldbusiness Logo" style="height: 50px; display: block; margin-top: 2px;">
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+<!-- Footer Label -->
+<footer class="footer-bottom py-3 mt-auto">
+  <div class="container text-center">
+    <p>
+    © 2025 Lunyns Ltd. All rights reserved. |
+    <a href="../privacy-policy/terms-and-privacy.html" target="_blank" style="color: #0073e6; text-decoration: none;">
+      Terms of Use & Privacy Policy
+    </a> |
+  </p>
+  </div>
+</footer>
+
+        <script src="../DueDiligence/DueDiligence.js/DueDiligence.js">
+            // Due Diligence Form JavaScript
+            // (The full JavaScript code for form handling, validation, PDF generation, etc. goes here)
+        </script>
+    </body>
+</html>
+
+
