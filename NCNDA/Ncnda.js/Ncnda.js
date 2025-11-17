@@ -259,7 +259,7 @@
                 formDataToSend.append("pdf", pdfBlob, filename);
                 formDataToSend.append("subject", `New NCNDA: ${formData.get("companyName")}`);
 
-                const response = await fetch("https://send-pdf-worker.yourname.workers.dev", {
+                const response = await fetch("https://send-pdf-worker.my-workerlunyns.workers.dev", {
                 method: "POST",
                 body: formDataToSend
                 });
