@@ -1,5 +1,5 @@
 /* ============================================
-   LUNYNS Ltd. Due Diligence Questionnaire
+   LUNYNS Ltd. NCNDA
    javascript File
    ============================================ */
         const { jsPDF } = window.jspdf;
@@ -121,11 +121,13 @@
                 // doc.setFontSize(24);
                 // doc.setFont(undefined, 'bold');
                 // doc.text('LUNYNS Ltd.', 15, 15);
-                doc.setFontSize(16);
+                doc.setFontSize(36);
                 doc.setFont(undefined, 'normal');
-                doc.text('Due Diligence Questionnaire', 15, 35);
-                doc.setFontSize(10);
-                doc.text('For Petroleum Transactions', 15, 42);
+                doc.text('NCNDA', 15, 35); // Title
+                doc.setFontSize(20);
+                doc.text('NON-CIRCUMVENTION', 15, 42); // Subtitle 
+                doc.text('NON-DISCLOSURE AND', 15, 42); // Subtitle 
+                doc.text('WORKING AGREEMENT', 15, 42); // Subtitle 
                 
                 // 🔽 Draw horizontal line under subtitle
                 doc.setLineWidth(0.2); // optional — default is 1
@@ -241,7 +243,7 @@
                     // Generate PDF
                     const pdf = await generatePDF(formData);
                     const companyName = (formData.get('companyName') || 'Submission').replace(/[^a-zA-Z0-9]/g, '_');
-                    const filename = `LUNYNS_Due_Diligence_${companyName}_${Date.now()}.pdf`;
+                    const filename = `LUNYNS_NCNDA_${companyName}_${Date.now()}.pdf`;
                     
                     // Download PDF
                     pdf.save(filename);
@@ -251,37 +253,20 @@
                     const pdfBlob = pdf.output('blob');
                     console.log('✓ PDF blob size:', pdfBlob.size, 'bytes');
                     
-                    // Send to Formspree
-                    const formspreeData = new FormData();
-                    for (let [key, value] of formData.entries()) {
-                        formspreeData.append(key, value);
-                    }
-                    formspreeData.append('pdf_attachment', pdfBlob, filename);
-                    formspreeData.append('_subject', `New Due Diligence: ${formData.get('companyName')}`);
+                    // ⭐ Send to Formspree
+                const formDataToSend = new FormData();
+                for (let [k, v] of formData.entries()) formDataToSend.append(k, v);
+                formDataToSend.append("pdf", pdfBlob, filename);
+                formDataToSend.append("subject", `New NCNDA: ${formData.get("companyName")}`);
 
-                    const response = await fetch('https://formspree.io/f/xrbyvqrb', {
-                        method: 'POST',
-                        body: formspreeData,
-                        headers: { 'Accept': 'application/json' }
-                    });
+                const response = await fetch("https://send-pdf-worker.yourname.workers.dev", {
+                method: "POST",
+                body: formDataToSend
+                });
 
-                    if (!response.ok) throw new Error('Formspree error');
 
-                    successMessage.classList.add('show');
-                    form.reset();
-                    otherRoleWrapper.style.display = 'none';
-                    relationshipDetails.classList.remove('show');
-                    
-                    setTimeout(() => successMessage.classList.remove('show'), 10000);
 
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Form submitted and PDF downloaded, but email may have failed. Please contact us directly if needed.');
-                } finally {
-                    submitBtn.disabled = false;
-                    loadingOverlay.classList.remove('active');
-                }
-            });
+                 // ⭐ End Send to Formspree
 
             resetBtn.addEventListener('click', function() {
                 if (confirm('Clear all form data?')) {
