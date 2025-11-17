@@ -126,8 +126,8 @@
                 doc.text('NCNDA', 15, 35); // Title
                 doc.setFontSize(20);
                 doc.text('NON-CIRCUMVENTION', 15, 42); // Subtitle 
-                doc.text('NON-DISCLOSURE AND', 15, 42); // Subtitle 
-                doc.text('WORKING AGREEMENT', 15, 42); // Subtitle 
+                doc.text('NON-DISCLOSURE AND', 15, 49); // Subtitle 
+                doc.text('WORKING AGREEMENT', 15, 56); // Subtitle 
                 
                 // 🔽 Draw horizontal line under subtitle
                 doc.setLineWidth(0.2); // optional — default is 1
@@ -143,13 +143,17 @@
                 // Section 1
                 addText('1. COMPANY INFORMATION', 14, true);
                 addText(`Company Name: ${getValue('companyName')}`);
-                addText(`Country: ${getValue('countryOfRegistration')}`);
-                addText(`Registration Number: ${getValue('registrationNumber')}`);
-                addText(`Year of Incorporation: ${getValue('yearOfIncorporation')}`);
-                addText(`Address: ${getValue('registeredAddress')}`);
-                addText(`Website: ${getValue('website(if any)')}`);
-                addText(`Email: ${getValue('officialEmail')}`);
-                addText(`Phone: ${getValue('phoneNumber')}`);
+                addText(`Date: ${getValue('dateOfAgreeemnt')} `);
+                addText(`Date of incorporation: ${getValue('yearOfIncorporation')}`);
+                addText(`Company Registration Number: ${getValue('registrationNumber')}`);
+                addText(`Country of registration: ${getValue('countryOfRegistration')}`);
+                addText(`Registered address: ${getValue('registeredAddress')}`);
+                addText(`Zip Code: ${getValue('zipCode')}`);
+                addText(`City: ${getValue('cityOfRegistration')}`);
+                addText(`Official email address: ${getValue('officialEmail')}`);
+                addText(`Phone number: ${getValue('phoneNumber')}`);
+                addText(`First Name: ${getValue('firstName')}`);
+                addText(`Last Name: ${getValue('lastName')}`);
                 y += 5;
 
                 // Section 2
@@ -237,45 +241,50 @@
                 submitBtn.disabled = true;
                 loadingOverlay.classList.add('active');
 
-                try {
-                    const formData = new FormData(form);
-                    
-                    // Generate PDF
-                    const pdf = await generatePDF(formData);
-                    const companyName = (formData.get('companyName') || 'Submission').replace(/[^a-zA-Z0-9]/g, '_');
-                    const filename = `LUNYNS_NCNDA_${companyName}_${Date.now()}.pdf`;
-                    
-                    // Download PDF
-                    pdf.save(filename);
-                    console.log('✓ PDF downloaded:', filename);
-                    
-                    // Get PDF as blob for email
-                    const pdfBlob = pdf.output('blob');
-                    console.log('✓ PDF blob size:', pdfBlob.size, 'bytes');
-                    
-                    // ⭐ Send to Formspree
-                const formDataToSend = new FormData();
-                for (let [k, v] of formData.entries()) formDataToSend.append(k, v);
-                formDataToSend.append("pdf", pdfBlob, filename);
-                formDataToSend.append("subject", `New NCNDA: ${formData.get("companyName")}`);
+            try {
+                const formData = new FormData(form);
+                
+                // Generate PDF
+                const pdf = await generatePDF(formData);
+                const companyName = (formData.get('companyName') || 'Submission').replace(/[^a-zA-Z0-9]/g, '_');
+                const filename = `LUNYNS_NCNDA_${companyName}_${Date.now()}.pdf`;
+                
+                // Download PDF
+                pdf.save(filename);
+                console.log('✓ PDF downloaded:', filename);
+                
+                // Get PDF as blob for email
+                const pdfBlob = pdf.output('blob');
+                console.log('✓ PDF blob size:', pdfBlob.size, 'bytes');
+                
+                // ⭐ Send to Formspree
+            const formDataToSend = new FormData();
+            for (let [k, v] of formData.entries()) formDataToSend.append(k, v);
+            formDataToSend.append("pdf", pdfBlob, filename);
+            formDataToSend.append("subject", `New NCNDA: ${formData.get("companyName")}`);
 
-                const response = await fetch("https://send-pdf-worker.my-workerlunyns.workers.dev", {
-                method: "POST",
-                body: formDataToSend
-                });
-
-
-
-                 // ⭐ End Send to Formspree
-
-            resetBtn.addEventListener('click', function() {
-                if (confirm('Clear all form data?')) {
-                    form.reset();
-                    otherRoleWrapper.style.display = 'none';
-                    relationshipDetails.classList.remove('show');
-                }
+            const response = await fetch("https://send-pdf-worker.my-workerlunyns.workers.dev", {
+            method: "POST",
+            body: formDataToSend
             });
+
+             // ⭐ End Send to Formspree
+            if (!response.ok) {
+                throw new Error(`Server responded with ${response.status}`);
+            }
+
+            successMessage.classList.add('show');
+            console.log('✓ Form submitted successfully');
+
+            } catch (err) {
+                console.error('Error submitting form:', err);
+                alert('An error occurred while submitting the form. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                loadingOverlay.classList.remove('active');
+            }
         });
+    });
 
 
 //-----------------------------------
