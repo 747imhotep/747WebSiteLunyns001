@@ -64,14 +64,18 @@ body {
 }
 
 .page-title {
-    font-size: 32px;
+    font-size: 52px;
     font-weight: 600;
+    color: #00184e;
+    
     margin-bottom: var(--spacing-sm);
 }
 
 .page-subtitle {
     font-size: 16px;
     opacity: 0.95;
+    color: #333;
+    text-shadow: 2px 1px 4px rgba(206, 43, 14, 09.53);
     font-weight: 300;
     line-height: 1.5;
 }
