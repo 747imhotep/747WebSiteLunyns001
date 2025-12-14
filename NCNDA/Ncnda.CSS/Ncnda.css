@@ -40,7 +40,7 @@ body {
 }
 
 .page-header {
-    background: url(../../IMAGES/mainIMAGES/imgBANNER/ncnda-banner1.1.jpg) center center/cover no-repeat;
+    background: url(../../IMAGES/mainIMAGES/imgBANNER/ncnda-banner2.1.jpg) center center/cover no-repeat;
     /*background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);*/
     color: var(--white);
     padding: var(--spacing-lg) var(--spacing-md);
@@ -66,17 +66,17 @@ body {
 .page-title {
     font-size: 52px;
     font-weight: 600;
-    color: #00184e;
-    
+    color: #021f61;
     margin-bottom: var(--spacing-sm);
 }
 
 .page-subtitle {
-    font-size: 16px;
+    font-size: 26px;
     opacity: 0.95;
-    color: #333;
-    text-shadow: 2px 1px 4px rgba(206, 43, 14, 09.53);
-    font-weight: 300;
+    color: #08bad1;
+    text-shadow: 2px 1px 4px rgba(8, 186, 209, 09.53);
+    color: #ffffff;
+    font-weight: 500;
     line-height: 1.5;
 }
 
@@ -100,6 +100,12 @@ body {
     font-size: 22px;
 }
 
+.intro-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 18px;
+}
+
 .intro-section p {
     color: var(--text-light);
     margin-bottom: var(--spacing-sm);
@@ -109,6 +115,24 @@ body {
 .parenthesis {
     font-style: italic;
     color: var(--text-light);
+}
+
+.contract-text{
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0 0 15px 0  ;
+}
+
+.contract-text b{
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contract-right{
+    text-align: right;
+    margin: 0 0 15px 0;
+    font-size: 14px;
 }
 
 .alert { /* This version uses dif. PDF*/
