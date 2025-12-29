@@ -41,6 +41,11 @@
 }
 
 /* ------------------RFQ SECTION------------------ */
+.text-muted {
+  font-size: 0.9rem;
+  color: #faebd7;
+}
+
 .rfq-section{ /* For what ? */
   box-shadow: 2 9px 16px rgba(11, 243, 154, 0.75)
 }
@@ -105,7 +110,8 @@
   display: block;
   margin-bottom: 5px;
   padding-top: 16px;
-  font-weight: bold;;
+  font-weight: bold;
+  color: #13e0d6;
 }
 
 .rfq-section button { /* For what ? */
